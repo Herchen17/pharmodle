@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmodle Pipeline — Complete Overview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #faf9fc; color: #1a1a2e; line-height: 1.6; padding: 2rem; max-width: 960px; margin: 0 auto; }
+  h1 { color: #7c3aed; font-size: 1.8rem; margin-bottom: 0.5rem; }
+  h2 { color: #5b21b6; font-size: 1.3rem; margin: 2rem 0 0.75rem; border-bottom: 2px solid #ede9fe; padding-bottom: 0.3rem; }
+  h3 { color: #6d28d9; font-size: 1.1rem; margin: 1.2rem 0 0.5rem; }
+  p { margin: 0.5rem 0; }
+  .card { background: white; border-radius: 10px; padding: 1.25rem; margin: 1rem 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .card-purple { border-left: 4px solid #7c3aed; }
+  .card-green { border-left: 4px solid #22c55e; }
+  .card-orange { border-left: 4px solid #f59e0b; }
+  .card-red { border-left: 4px solid #ef4444; }
+  .card-blue { border-left: 4px solid #3b82f6; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+  .stat { background: white; border-radius: 8px; padding: 1rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .stat-value { font-size: 1.8rem; font-weight: 700; color: #7c3aed; }
+  .stat-label { font-size: 0.8rem; color: #666; margin-top: 0.2rem; }
+  table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f5f3ff; font-weight: 600; color: #5b21b6; }
+  tr:hover { background: #faf9fc; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: white; }
+  .badge-purple { background: #7c3aed; }
+  .badge-green { background: #22c55e; }
+  .badge-orange { background: #f59e0b; }
+  .badge-red { background: #ef4444; }
+  .badge-blue { background: #3b82f6; }
+  .pipeline-step { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; margin: 0.5rem 0; background: #f5f3ff; border-radius: 8px; }
+  .pipeline-num { width: 36px; height: 36px; border-radius: 50%; background: #7c3aed; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .pipeline-arrow { text-align: center; color: #7c3aed; font-size: 1.2rem; }
+  code { background: #f5f3ff; padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; }
+  .cost-table td:last-child { text-align: right; font-weight: 600; }
+  .tier-box { display: flex; gap: 0.5rem; align-items: center; padding: 0.6rem; margin: 0.4rem 0; border-radius: 6px; }
+  .tier-correct { background: #dcfce7; border: 1px solid #86efac; }
+  .tier-acceptable { background: #dbeafe; border: 1px solid #93c5fd; }
+  .tier-near { background: #fef9c3; border: 1px solid #fde047; }
+  .tier-wrong { background: #fee2e2; border: 1px solid #fca5a5; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 0.3rem 0; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #22c55e; font-weight: 700; }
+  .file-list { font-size: 0.85rem; }
+  .file-list code { display: block; margin: 0.2rem 0; }
+  .warn { background: #fef9c3; padding: 0.75rem; border-radius: 6px; border-left: 3px solid #f59e0b; margin: 0.75rem 0; font-size: 0.9rem; }
+  .next-steps { background: #ecfdf5; padding: 1rem; border-radius: 8px; border: 1px solid #86efac; }
+</style>
+</head>
+<body>
+
+<h1>💊 Pharmodle Pipeline — Complete Overview</h1>
+<p style="color:#666; margin-bottom: 1.5rem;">Everything built, ready for your review. March 2026.</p>
+
+<!-- STATS OVERVIEW -->
+<div class="stat-grid">
+  <div class="stat"><div class="stat-value">1,079</div><div class="stat-label">Puzzle-worthy drugs</div></div>
+  <div class="stat"><div class="stat-value">302</div><div class="stat-label">High-priority (rating 4-5)</div></div>
+  <div class="stat"><div class="stat-value">700</div><div class="stat-label">Target puzzles</div></div>
+  <div class="stat"><div class="stat-value">~$15-25</div><div class="stat-label">Estimated cost (AUD)</div></div>
+</div>
+
+<!-- DRUG LIST -->
+<h2>1. Master Drug List</h2>
+<div class="card card-purple">
+  <p>Curated from your AMH content database (1,507 entries) cross-referenced with the rated spreadsheet (1,367 drugs). Filtered out 122 combination products, 68 obscure biologics, kept 15 well-known biologics (adalimumab, rituximab, trastuzumab, etc.).</p>
+  <table>
+    <tr><th>Rating</th><th>Count</th><th>Difficulty</th><th>Role</th></tr>
+    <tr><td>5 — Must Know</td><td>162</td><td><span class="badge badge-green">Easy</span></td><td>Primary pool — everyday drugs</td></tr>
+    <tr><td>4 — Important</td><td>140</td><td><span class="badge badge-orange">Medium</span></td><td>Secondary pool — regular use</td></tr>
+    <tr><td>3 — Moderate</td><td>777</td><td><span class="badge badge-red">Hard</span></td><td>Extended pool — specialty drugs</td></tr>
+  </table>
+  <p><strong>Drug usage cap:</strong> No drug appears as the answer more than twice across all 700 puzzles.</p>
+</div>
+
+<!-- THREE-TIER SYSTEM -->
+<h2>2. Three-Tier Answer System</h2>
+<div class="card card-green">
+  <p>Implemented in both the game frontend (checkGuess function) and the puzzle data schema.</p>
+  <div class="tier-correct"><strong>Tier 1 — Correct ✅</strong> Exact match, brand name alias, equivalence group, or parent term. Full points awarded.</div>
+  <div class="tier-acceptable"><strong>Tier 2 — Acceptable Alternative ✅</strong> A different drug that fits ALL 5 clues equally well. Full points awarded. Shows: "You guessed [X] — that's also correct! The target answer was [Y]."</div>
+  <div class="tier-near"><strong>Tier 3 — Near Miss ⚠️</strong> Same drug class, but at least one clue distinguishes the answer. Counts as wrong guess. Shows: "So close! [Educational feedback about the distinction]."</div>
+  <div class="tier-wrong"><strong>Tier 4 — Incorrect ❌</strong> No match. Standard wrong guess behaviour.</div>
+  <p style="margin-top: 0.75rem;"><strong>Key design decisions:</strong></p>
+  <ul style="margin-left: 1.5rem; font-size: 0.9rem;">
+    <li>Near miss = breaks streak (it's wrong, just with helpful feedback)</li>
+    <li>Acceptable alternatives capped at 3 per puzzle (more = bad puzzle)</li>
+    <li>Canonical answer always shown on game end</li>
+    <li>Each puzzle's tiers assessed individually during generation</li>
+  </ul>
+</div>
+
+<!-- AUTO-GRADING -->
+<h2>3. Auto-Grading Ruleset (12 Rules)</h2>
+<div class="card card-orange">
+  <table>
+    <tr><th>#</th><th>Rule</th><th>Severity</th><th>What it checks</th></tr>
+    <tr><td>1</td><td>NO_ANSWER_IN_CLUES</td><td><span class="badge badge-red">FAIL</span></td><td>Drug name/aliases never appear in any clue</td></tr>
+    <tr><td>2</td><td>NO_CLASS_NAME_EARLY</td><td><span class="badge badge-orange">WARN</span></td><td>Drug class name not in Clues 1-2</td></tr>
+    <tr><td>3</td><td>NO_BRAND_BEFORE_CLUE5</td><td><span class="badge badge-red">FAIL</span></td><td>Brand names only in Clue 5</td></tr>
+    <tr><td>4</td><td>NO_CYP_BEFORE_CLUE3</td><td><span class="badge badge-orange">WARN</span></td><td>CYP enzymes not before Clue 3</td></tr>
+    <tr><td>5</td><td>PROGRESSIVE_NARROWING</td><td><span class="badge badge-red">FAIL</span></td><td>Must have 5 clues, Clue 1 must be broad</td></tr>
+    <tr><td>6</td><td>CLUE_LENGTH</td><td><span class="badge badge-orange">WARN</span></td><td>Each clue 10-80 words</td></tr>
+    <tr><td>7</td><td>NO_REDUNDANCY</td><td><span class="badge badge-orange">WARN</span></td><td>No 4+ word phrases repeated across clues</td></tr>
+    <tr><td>8</td><td>HAS_EXPLANATION</td><td><span class="badge badge-red">FAIL</span></td><td>Explanation present and >20 chars</td></tr>
+    <tr><td>9</td><td>CORRECT_LABELS</td><td><span class="badge badge-orange">WARN</span></td><td>Clue labels match puzzle type</td></tr>
+    <tr><td>10</td><td>VALID_STRUCTURE</td><td><span class="badge badge-red">FAIL</span></td><td>All required fields present</td></tr>
+    <tr><td>11</td><td>NO_VAGUE_CLUES</td><td><span class="badge badge-orange">WARN</span></td><td>No filler like "commonly used"</td></tr>
+    <tr><td>12</td><td>MAX_ALTERNATIVES</td><td><span class="badge badge-red">FAIL</span></td><td>Max 3 acceptable alternatives</td></tr>
+  </table>
+  <p style="margin-top: 0.5rem;"><strong>Grading:</strong> GOOD (0 issues), ACCEPTABLE (1-2 warns), NEEDS_WORK (3+ warns), POOR (any fail)</p>
+</div>
+
+<!-- PIPELINE -->
+<h2>4. Generation Pipeline</h2>
+<div class="card card-blue">
+  <div class="pipeline-step">
+    <div class="pipeline-num">1</div>
+    <div><strong>Haiku Generation</strong> — Generates puzzles in batches of 5. Each puzzle includes self-rated confidence (1-5). Uses AMH-derived drug list with class-mates for three-tier assessment. ~140 API calls for 700 puzzles.</div>
+  </div>
+  <div class="pipeline-arrow">↓</div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">2</div>
+    <div><strong>Auto-Grading</strong> — 12 heuristic rules run locally (no API cost). Catches ~60% of issues. Separates into GOOD/ACCEPTABLE (pass through) and NEEDS_WORK/POOR (go to Sonnet).</div>
+  </div>
+  <div class="pipeline-arrow">↓</div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">3</div>
+    <div><strong>Sonnet Review</strong> — Reviews flagged puzzles + low-confidence ones. Checks factual accuracy, funnel quality, three-tier classification. Verdicts: PASS, REWORK, REJECT. ~100-150 API calls.</div>
+  </div>
+  <div class="pipeline-arrow">↓</div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">4</div>
+    <div><strong>Human QA (You)</strong> — HTML review report with approve/flag/notes for each puzzle. Cross-check pharmacology against AMH. Final quality gate.</div>
+  </div>
+</div>
+
+<!-- COST ESTIMATES -->
+<h2>5. Cost Estimates</h2>
+<div class="card card-purple">
+  <table class="cost-table">
+    <tr><th>Stage</th><th>Model</th><th>Est. Calls</th><th>Est. Tokens</th><th>Est. Cost (USD)</th></tr>
+    <tr><td>1. Generation</td><td>Haiku 4.5</td><td>~140</td><td>~2M in / ~1.5M out</td><td>~$2.40</td></tr>
+    <tr><td>1b. Reworks</td><td>Haiku 4.5</td><td>~60</td><td>~0.8M in / ~0.6M out</td><td>~$0.95</td></tr>
+    <tr><td>3. Sonnet Review</td><td>Sonnet 4.6</td><td>~100</td><td>~1.5M in / ~0.5M out</td><td>~$12.00</td></tr>
+    <tr><td colspan="4"><strong>Total estimated</strong></td><td><strong>~$15-20 USD<br>(~$22-30 AUD)</strong></td></tr>
+  </table>
+  <p class="warn">⚠️ Actual costs depend on puzzle complexity, rework rate, and token efficiency. Budget $30 AUD to be safe. Sonnet review is the biggest cost — if budget-tight, we can reduce Sonnet batch size or only send POOR-grade puzzles.</p>
+</div>
+
+<!-- PUZZLE TYPE DISTRIBUTION -->
+<h2>6. Puzzle Type Distribution</h2>
+<div class="card card-green">
+  <table>
+    <tr><th>Type</th><th>Target Count</th><th>Clue Labels</th><th>Suitable Drug Pool</th></tr>
+    <tr><td><span class="badge badge-purple">drug_id</span></td><td>~200</td><td>Clinical Context → Key Feature → Pharmacology → Narrowing → Identifying</td><td>1,079 drugs</td></tr>
+    <tr><td><span class="badge badge-red">adr_case</span></td><td>~200</td><td>Patient Presentation → Investigations → Key Finding → Drug Clue → Identifying</td><td>950 drugs</td></tr>
+    <tr><td><span class="badge badge-orange">drug_interaction</span></td><td>~150</td><td>Clinical Scenario → Co-prescribed → Interaction Effect → Mechanism → Identifying</td><td>186 drugs</td></tr>
+    <tr><td><span class="badge badge-blue">mixed_profile</span></td><td>~150</td><td>Clinical Context → Pharmacology → Key Feature → Narrowing → Identifying</td><td>284 drugs</td></tr>
+  </table>
+  <p>Distribution is uneven by design — only make puzzles that work well for each type.</p>
+</div>
+
+<!-- DIFFICULTY -->
+<h2>7. Difficulty Distribution (per week)</h2>
+<div class="card card-orange">
+  <table>
+    <tr><th>Day</th><th>Difficulty</th><th>Description</th></tr>
+    <tr><td>Mon-Tue</td><td><span class="badge badge-green">Easy</span></td><td>Must-know drugs (rating 5). Most pharmacists will know these.</td></tr>
+    <tr><td>Wed-Thu-Fri</td><td><span class="badge badge-orange">Medium</span></td><td>Important drugs (rating 4). Regular clinical use, may need a clue or two.</td></tr>
+    <tr><td>Sat-Sun</td><td><span class="badge badge-red">Hard</span></td><td>Specialty drugs (rating 3). Challenge for experienced pharmacists.</td></tr>
+  </table>
+</div>
+
+<!-- NEW PHYSIODLE FEATURES TO PORT -->
+<h2>8. Physiodle Features to Port to Pharmodle</h2>
+<div class="card card-blue">
+  <p>Your Physiodle codebase has evolved significantly. These features need to be brought across:</p>
+  <ul class="checklist">
+    <li>Timezone-aware puzzle delivery (getDayNumberForTimezone)</li>
+    <li>Personal stats profile page with expanded metrics</li>
+    <li>Scored autocomplete with multi-word matching and bold highlighting</li>
+    <li>Rate limiting on auth + analytics + submission endpoints</li>
+    <li>Analytics tracking (page views, events, admin dashboard with Chart.js)</li>
+    <li>Feedback system (per-puzzle ratings + comments)</li>
+    <li>Leaderboard pagination + gold/silver/bronze rank colours</li>
+    <li>Mobile autocomplete fix (spaces between words)</li>
+    <li>On-day leaderboard check for international timezones</li>
+    <li>Login prompt on every visit (no cooldown)</li>
+    <li>Helmet security headers + CORS restrictions</li>
+  </ul>
+  <p class="warn">⚠️ <strong>Action needed:</strong> You mentioned you've added features since we last spoke. Please show me the latest Physiodle code or describe the changes so I can sync Pharmodle fully.</p>
+</div>
+
+<!-- FILES CREATED -->
+<h2>9. Files Created</h2>
+<div class="card card-purple file-list">
+  <h3>Pipeline Infrastructure</h3>
+  <code>pharmodle-pipeline.js</code> — Main 4-stage orchestrator (Haiku → auto-grade → Sonnet → compile)
+  <code>pharmodle-auto-grader.js</code> — 12-rule heuristic grading engine
+  <code>generation-prompts.json</code> — System prompt + 4 type-specific templates + batch/review prompts
+  <code>puzzle-drug-list.json</code> — 1,079 curated drugs with ratings, types, suitability tags
+  <code>drug-class-groups.json</code> — 311 drug class similarity groups for three-tier assessment
+  <code>master-drug-list.json</code> — Full 1,269 drug master list
+  
+  <h3>Game Code Updates</h3>
+  <code>public/index.html</code> — Three-tier checkGuess(), acceptable/near-miss UI messaging
+  <code>puzzle-manager.js</code> — Added acceptable_alternatives + near_misses to sanitize/full functions
+</div>
+
+<!-- NEXT STEPS -->
+<h2>10. What Happens Next</h2>
+<div class="next-steps">
+  <ol style="margin-left: 1.5rem;">
+    <li><strong>You review this document</strong> — flag anything that doesn't look right</li>
+    <li><strong>Show me your latest Physiodle features</strong> — so I can sync Pharmodle</li>
+    <li><strong>You provide your Anthropic API key</strong> — I plug it into the pipeline</li>
+    <li><strong>We run the pipeline</strong> — I can do a dry-run first to validate everything</li>
+    <li><strong>You QA the generated puzzles</strong> — HTML review report with approve/flag per puzzle</li>
+    <li><strong>We deploy</strong> — puzzles go into puzzles.json, deploy to Railway</li>
+  </ol>
+</div>
+
+<p style="text-align: center; color: #999; margin-top: 2rem; font-size: 0.8rem;">Generated March 12, 2026 — Pharmodle Pipeline v1.0</p>
+
+</body>
+</html>

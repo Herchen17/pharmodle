@@ -1,0 +1,662 @@
+[
+  {
+    "id": 51,
+    "answer": "Metoprolol",
+    "aliases": ["Lopressor", "beta-blocker", "β-blocker"],
+    "category": "Cardiovascular",
+    "domain": "Cardiology",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "System",
+        "text": "This class of medication acts on the cardiovascular system to reduce heart rate and blood pressure. It works by blocking beta-adrenergic receptors on cardiac tissue."
+      },
+      {
+        "label": "Class",
+        "text": "Beta-blockers are widely used in hypertension, angina, and post-MI cardioprotection. Non-selective agents like this one block both β1 and β2 receptors with moderate lipophilicity."
+      },
+      {
+        "label": "Mechanism",
+        "text": "By inhibiting beta-1 adrenergic receptor signalling in the myocardium, this drug reduces contractility and heart rate through decreased cAMP production. The therapeutic window requires careful titration to avoid bradycardia."
+      },
+      {
+        "label": "Adverse Effect",
+        "text": "Long-term use may cause sexual dysfunction, fatigue, and cold extremities. In susceptible patients, abrupt withdrawal can precipitate rebound tachycardia and angina because of upregulation of beta-receptors."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "This beta-blocker is FDA-approved for post-myocardial infarction use and reduces mortality in that population. It also has mild intrinsic sympathomimetic activity, making it gentler on glucose metabolism than some alternatives."
+      }
+    ],
+    "explanation": "Metoprolol is a selective beta-1 adrenergic antagonist commonly used as a first-line antihypertensive and cardioprotective agent in Australia (TGA-approved). Pharmacists must counsel patients on gradual dose titration and counsel against abrupt cessation due to rebound hypertension. The drug's cardioselective profile makes it preferred in patients with concurrent COPD or diabetes compared to non-selective agents."
+  },
+  {
+    "id": 52,
+    "answer": "Clozapine",
+    "aliases": ["Clozaril", "atypical antipsychotic", "SEDA"],
+    "category": "Psychiatry",
+    "domain": "Neuropsychiatry",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "System",
+        "text": "This medication acts primarily on the central nervous system and is used in treatment-resistant psychosis. It has a unique receptor binding profile with high affinity for D2 and 5-HT2A receptors but lower prolactin elevation than first-generation agents."
+      },
+      {
+        "label": "Class",
+        "text": "Among atypical antipsychotics, this agent stands apart due to its unique hematologic risk profile and requirement for mandatory blood monitoring. It was the first atypical antipsychotic introduced and revolutionized treatment of refractory schizophrenia."
+      },
+      {
+        "label": "Mechanism",
+        "text": "The drug's rapid dissociation from the D2 receptor and low receptor occupancy paradoxically produce superior antipsychotic efficacy in treatment-resistant cases. Its anti-serotonergic action may contribute to reduced extrapyramidal symptoms compared to high-potency typical agents."
+      },
+      {
+        "label": "Adverse Effect",
+        "text": "This agent carries a black box warning for agranulocytosis with an incidence of 0.8-1.3% in the first year. Absolute neutrophil count monitoring is mandatory: baseline, weekly for 18 weeks, then fortnightly indefinitely—missing just one test requires reinitiation of monitoring."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Despite significant metabolic and hematologic risks, this drug remains the gold standard for treatment-resistant schizophrenia and reduces suicide risk—a unique benefit among antipsychotics. Australian PBS restrictions require documented failure of at least two other antipsychotics before initiation."
+      }
+    ],
+    "explanation": "Clozapine is a dibenzazepine antipsychotic approved for treatment-resistant schizophrenia where at least two antipsychotic trials have failed. Its mandatory ANC monitoring is non-negotiable, and pharmacists play a critical role in coordinating pathology appointments and educating patients about agranulocytosis symptoms. The drug's efficacy in reducing suicidality makes it invaluable despite rigorous monitoring requirements."
+  },
+  {
+    "id": 53,
+    "answer": "Leflunomide",
+    "aliases": ["Arava", "DMARD", "isoxazole"],
+    "category": "Rheumatology",
+    "domain": "Immunology",
+    "type": "drug_id",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "System",
+        "text": "This disease-modifying antirheumatic drug (DMARD) targets the immune system in autoimmune arthropathies. Its mechanism involves inhibition of mitochondrial dihydroorotate dehydrogenase, thereby reducing pyrimidine synthesis and lymphocyte proliferation."
+      },
+      {
+        "label": "Class",
+        "text": "It is the sole synthetic small-molecule DMARD that inhibits pyrimidine metabolism. Unlike methotrexate or sulfasalazine, it has a prolonged half-life due to extensive enterohepatic circulation of its active metabolite (A77-1726), which may persist for months after cessation."
+      },
+      {
+        "label": "Mechanism",
+        "text": "The drug is a prodrug; hepatic and gastrointestinal metabolism converts it to its active metabolite. This metabolite competitively inhibits dihydroorotate dehydrogenase in the mitochondrial respiratory chain, leading to selective suppression of proliferating T and B cells without affecting non-dividing cells."
+      },
+      {
+        "label": "Adverse Effect",
+        "text": "Hepatotoxicity and severe teratogenicity are major concerns: it is absolutely contraindicated in pregnancy and lactation. Women of childbearing potential require effective contraception and a wash-out period lasting 11 days plus activated charcoal (8 g three times daily for 11 days) to accelerate metabolite elimination if conception is planned."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "This agent is particularly useful in seronegative polyarticular juvenile idiopathic arthritis and demonstrates superior efficacy in combination with biologic DMARDs compared to monotherapy. Baseline LFTs, FBC, and lipid profile are mandatory; monitoring continues 8-weekly thereafter due to delayed adverse effects from metabolite accumulation."
+      }
+    ],
+    "explanation": "Leflunomide is a pyrimidine synthesis inhibitor DMARD used in rheumatoid arthritis and seronegative spondyloarthropathies. Its long elimination half-life (~2 weeks) and active metabolite require careful drug interaction assessment and meticulous pregnancy planning. Australian pharmacists must ensure baseline pathology is documented, emphasize the strict contraindication in pregnancy, and counsel patients about delayed symptom onset (6-12 weeks) before evaluating efficacy."
+  },
+  {
+    "id": 54,
+    "answer": "Ivabradine",
+    "aliases": ["Procoralan", "funny current inhibitor", "HCN channel blocker"],
+    "category": "Cardiovascular",
+    "domain": "Cardiology",
+    "type": "drug_id",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "System",
+        "text": "This agent selectively inhibits the cardiac 'funny current' (If) through HCN (hyperpolarization-activated cyclic nucleotide-gated) channels in the sinoatrial node. It reduces heart rate without affecting blood pressure, contractility, or conduction—a unique mechanism among antianginal drugs."
+      },
+      {
+        "label": "Class",
+        "text": "It is the first-in-class HCN channel blocker and specifically slows the diastolic depolarization phase of the SA node action potential. Unlike beta-blockers or calcium channel blockers, it has no negative inotropic or lusotropic effects, making it suitable for patients with reduced ejection fraction and bradycardia-sensitive conditions."
+      },
+      {
+        "label": "Mechanism",
+        "text": "By blocking the inward hyperpolarization-activated current in diastolic depolarization, the drug prolongs the time required for the SA node to reach action potential threshold. This selective bradycardia is thought to improve exercise-induced myocardial ischemia by increasing diastolic coronary perfusion time and reducing myocardial oxygen demand."
+      },
+      {
+        "label": "Adverse Effect",
+        "text": "Transient visual symptoms (luminopsia)—perceived brightness in a temporal crescent—occur in up to 3% of patients due to block of HCN channels in retinal cone cells. Ivabradine is contraindicated in patients with resting heart rate <60 bpm and combines cautiously with other negative chronotropes due to risk of excessive bradycardia."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Recent SIGNIFY and SHIFT trials have clarified its role: superior efficacy in symptomatic chronic heart failure with reduced ejection fraction and sinus rhythm, but limited benefit in stable CAD without heart failure. It is TGA-approved for chronic heart failure and is increasingly positioned as a cornerstone therapy in HFrEF alongside ACE-I, beta-blockers, and aldosterone antagonists."
+      }
+    ],
+    "explanation": "Ivabradine is a selective HCN channel inhibitor used in chronic heart failure with reduced ejection fraction and angina. Its unique mechanism—pure heart rate reduction without inotropic effects—differentiates it from traditional negative inotropes. Australian pharmacists must counsel patients about luminopsia, monitor heart rate target (usually 50-60 bpm), and recognize it as a complementary therapy rather than a replacement for guideline-directed medical therapy."
+  },
+  {
+    "id": 55,
+    "answer": "Spironolactone",
+    "aliases": ["Aldactone", "potassium-sparing diuretic", "aldosterone antagonist"],
+    "category": "Cardiovascular",
+    "domain": "Nephrology",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "System",
+        "text": "This medication acts on the distal convoluted tubule and collecting duct of the nephron, antagonizing mineralocorticoid receptors in the kidney. It reduces sodium reabsorption and potassium secretion, making it unique among diuretics as the sole potassium-sparing agent that is also an aldosterone antagonist."
+      },
+      {
+        "label": "Class",
+        "text": "Aldosterone antagonists comprise a small but clinically important class of diuretics used primarily in heart failure, resistant hypertension, and hyperaldosteronism. Unlike loop and thiazide diuretics that cause hypokalemia, this agent promotes potassium retention and is often combined with other antihypertensives to mitigate their electrolyte effects."
+      },
+      {
+        "label": "Mechanism",
+        "text": "The drug competitively binds to mineralocorticoid receptors in the collecting duct, preventing aldosterone-mediated upregulation of epithelial sodium channel (ENaC) expression. This reduces sodium reabsorption and subsequent water retention, thereby lowering blood volume and blood pressure while preserving serum potassium."
+      },
+      {
+        "label": "Adverse Effect",
+        "text": "Hyperkalemia is the most significant adverse effect, particularly in patients with renal impairment (eGFR <30), diabetes, or concurrent ACE-I/ARB use. Gynecomastia and sexual dysfunction occur due to inhibition of androgen synthesis and receptor antagonism, affecting up to 10% of male patients and necessitating dose adjustment or switch to eplerenone."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "The RALES trial established spironolactone as a cornerstone therapy in heart failure with reduced ejection fraction, where it reduces mortality by 30% even at low doses (12.5-25 mg daily). Baseline potassium and eGFR monitoring is essential, with repeat assessment at 1, 4, and 12 weeks post-initiation due to cumulative hyperkalemia risk."
+      }
+    ],
+    "explanation": "Spironolactone is a potassium-sparing aldosterone antagonist proven to reduce mortality in HFrEF. Its unique dual mechanism—diuretic and neurohormonal modulation—makes it invaluable in fluid-overloaded, hypokalemic patients. Australian pharmacists must emphasize potassium and renal function monitoring, counsel on the expected 4-6 week lag to full diuretic effect, and educate about gynecomastia as a reversible but bothersome side effect."
+  },
+  {
+    "id": 56,
+    "answer": "Amoxicillin",
+    "aliases": ["Amoxypen", "aminopenicillin", "amoxycillin"],
+    "category": "Infectious Diseases",
+    "domain": "Bacteriology",
+    "type": "adr_case",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Patient Presentation",
+        "text": "A 6-year-old girl presents to the ED with acute dyspnea, stridor, facial swelling, and urticaria within 15 minutes of receiving her first dose of oral antibiotics for acute otitis media. Parents report no prior known allergies, but the child developed a mild rash to penicillin-based medication 18 months ago (presumed viral exanthem at the time)."
+      },
+      {
+        "label": "Investigations",
+        "text": "Rapid assessment reveals oxygen saturation 94%, HR 125 bpm, and hypotension (70/40 mmHg). Skin examination shows confluent urticarial rash and significant angioedema of lips and tongue. Adrenaline IM is administered with rapid clinical improvement."
+      },
+      {
+        "label": "Key Finding",
+        "text": "The child's anaphylaxis occurred within minutes of first clinical exposure, suggesting prior sensitization. The previous 'rash' was likely a delayed allergic reaction (Type III/IV hypersensitivity) that indicated underlying IgE sensitization despite being attributed to viral illness."
+      },
+      {
+        "label": "Drug Clue",
+        "text": "The causative agent is an aminopenicillin—the most commonly prescribed oral antibiotic for children with otitis media in primary care. Its low cost, broad spectrum against otitis media pathogens, and palatability make it the first-line agent despite the residual allergy risk post-sensitization."
+      },
+      {
+        "label": "Identifying Detail",
+        "text": "This β-lactam antibiotic is notable for its higher cross-reactivity with cephalosporin allergy compared to other penicillins. The Australian eTG recommends avoiding all β-lactams in true IgE-mediated allergy but permits careful challenge or carbapenem substitution in penicillin-allergic patients requiring β-lactam therapy."
+      }
+    ],
+    "explanation": "Amoxicillin anaphylaxis represents a true IgE-mediated Type I hypersensitivity reaction. The prior rash was a sentinel event indicating underlying sensitization. Pharmacists must take allergy histories seriously, counsel that even mild rashes warrant allergy assessment before future β-lactam exposure, and ensure appropriate adrenaline auto-injector prescription for all children with confirmed beta-lactam anaphylaxis. This case exemplifies why family education and documentation are essential."
+  },
+  {
+    "id": 57,
+    "answer": "Lithium",
+    "aliases": ["Priadel", "Camcolit", "mood stabilizer"],
+    "category": "Psychiatry",
+    "domain": "Psychopharmacology",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Patient Presentation",
+        "text": "A 58-year-old man with bipolar I disorder presents to hospital with confusion, tremor, nausea, and vomiting following 3 days of acute gastroenteritis with diarrhea and fever. He reports taking his usual twice-daily medication throughout the illness and initially dismissed his symptoms as part of the infection."
+      },
+      {
+        "label": "Investigations",
+        "text": "Serum lithium level is 2.1 mmol/L (therapeutic range 0.6-1.0 mmol/L). Creatinine is elevated at 142 μmol/L (baseline 85 μmol/L). Serum sodium is 128 mmol/L (hyponatraemia from volume depletion and diarrhea). Venous blood gas shows metabolic acidosis. Urine output is reduced at 0.5 mL/kg/hr."
+      },
+      {
+        "label": "Key Finding",
+        "text": "Acute gastroenteritis caused volume depletion and dehydration, reducing renal clearance of lithium. The drug accumulated to supratherapeutic levels, triggering lithium toxicity. Concurrent hyponatraemia from fluid losses worsened intracellular lithium accumulation in the CNS."
+      },
+      {
+        "label": "Drug Clue",
+        "text": "This mood-stabilizing cation is eliminated entirely by the kidneys and has a narrow therapeutic window (0.6-1.0 mmol/L). Any condition reducing renal perfusion—dehydration, NSAIDs, ACE-I, thiazide diuretics—rapidly elevates serum levels and precipitates neuropsychiatric toxicity."
+      },
+      {
+        "label": "Identifying Detail",
+        "text": "Symptoms of lithium toxicity progress from fine tremor and nausea (early, at 1.5-2.0 mmol/L) to confusion, ataxia, and seizures (moderate-severe, >2.0 mmol/L). Acute GI illness is a notorious precipitant because volume depletion enhances proximal tubular reabsorption of lithium, and diarrhea increases net body lithium loss—necessitating dose reduction or temporary cessation."
+      }
+    ],
+    "explanation": "Lithium toxicity from dehydration-induced reduced renal clearance is a medical emergency. Pharmacists must educate all lithium-treated patients on maintaining fluid intake, avoiding concurrent NSAIDs and dehydrating agents, and immediately contacting their clinician if vomiting, diarrhea, or polyuria develops. Regular lithium level monitoring (3-monthly maintenance, or after dose change) is essential for safety, and patients must understand that acute illness may require temporary dose adjustment."
+  },
+  {
+    "id": 58,
+    "answer": "Carbamazepine",
+    "aliases": ["Tegretol", "anticonvulsant", "tricyclic aromatic antiepileptic"],
+    "category": "Neurology",
+    "domain": "Epilepsy",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Patient Presentation",
+        "text": "A 42-year-old woman with generalized tonic-clonic seizures presents with headache, confusion, muscle weakness, and lethargy 3 weeks after commencing antiepileptic therapy. She has been seizure-free since initiation but reports progressive drowsiness and some difficulty concentrating at work."
+      },
+      {
+        "label": "Investigations",
+        "text": "Serum sodium is 118 mmol/L (moderate hyponatraemia). Osmolality is low at 252 mOsm/kg. Urine osmolality is inappropriately high at 680 mOsm/kg despite low serum osmolality. Thyroid function tests are normal. Adrenal insufficiency has been excluded."
+      },
+      {
+        "label": "Key Finding",
+        "text": "SIADH (Syndrome of Inappropriate Antidiuretic Hormone secretion) has developed, characterized by excessive ADH secretion leading to free water retention and dilutional hyponatraemia. This is a recognized idiosyncratic adverse effect of carbamazepine that typically emerges within weeks of drug initiation."
+      },
+      {
+        "label": "Drug Clue",
+        "text": "This aromatic antiepileptic drug is well-known for inducing SIADH, with incidence of symptomatic hyponatraemia ranging from 0.5-3%. It also induces its own metabolism (autoinduction), increasing clearance by 25-30% over the first 3-4 weeks, which may necessitate dose escalation to maintain seizure control."
+      },
+      {
+        "label": "Identifying Detail",
+        "text": "The drug's SIADH risk is highest in the first 2 weeks but can emerge throughout therapy. Management includes fluid restriction (to <800 mL daily), sodium monitoring, and in severe symptomatic cases, saline infusion (3%) with careful osmolality correction (max 8-10 mmol/L per 24 hours) to avoid osmotic demyelination."
+      }
+    ],
+    "explanation": "Carbamazepine-induced SIADH is an important idiosyncratic adverse effect requiring vigilant monitoring. Baseline and 1-2 week post-initiation sodium and osmolality assessment is essential. Pharmacists must educate patients to report lethargy, headache, or confusion early, and counsel on fluid intake. This case exemplifies why patient monitoring extends beyond seizure control to encompassing metabolic complications."
+  },
+  {
+    "id": 59,
+    "answer": "Methotrexate",
+    "aliases": ["Trexall", "DMARD", "antimetabolite"],
+    "category": "Rheumatology",
+    "domain": "Hematology",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Patient Presentation",
+        "text": "A 54-year-old woman with rheumatoid arthritis presents with severe dyspnea, fever, sore throat, and petechial rash. She has been stable on once-weekly methotrexate 25 mg for 18 months but admits she missed her last two doses (4 weeks) due to a supply oversight and only restarted 1 week ago, taking a 'catch-up' double dose."
+      },
+      {
+        "label": "Investigations",
+        "text": "FBC shows hemoglobin 7.2 g/dL (anaemia), WCC 1.2 × 10^9/L (severe leukopenia), neutrophils 0.4 × 10^9/L (agranulocytosis), and platelets 45 × 10^9/L (thrombocytopenia). Reticulocyte count is low at 8 × 10^9/L. Bone marrow biopsy shows severely hypocellular marrow with aplasia."
+      },
+      {
+        "label": "Key Finding",
+        "text": "Pancytopenia from methotrexate toxicity has developed. The patient's missed doses allowed drug clearance, but restarting with doubled dose created acute high-dose exposure. Methotrexate's delayed toxicity profile means marrow aplasia emerged 1 week post-reintroduction, causing acute hematologic failure."
+      },
+      {
+        "label": "Drug Clue",
+        "text": "This folate antimetabolite DMARD inhibits dihydrofolate reductase, blocking pyrimidine synthesis essential for rapidly dividing cells. Once-weekly dosing (not daily) is absolutely mandatory because this spacing allows bone marrow recovery between doses. Dose escalations must be gradual (weekly increments by 2.5 mg), never doubled acutely."
+      },
+      {
+        "label": "Identifying Detail",
+        "text": "Pancytopenia is a severe, dose-limiting toxicity of methotrexate, distinct from the more common macrocytic anemia from folate antagonism. Risk escalates with age >65, renal impairment, and concomitant NSAIDs. Folinic acid rescue (5 mg daily starting 24 hours post-dose) mitigates toxicity; high-dose methotrexate requires IV folinic acid given in hospital."
+      }
+    ],
+    "explanation": "Methotrexate-induced pancytopenia from dose error and reintroduction highlights critical pharmacy roles. Pharmacists must never dispense double-dose reintroductions; instead, they should counsel on gradual dose restarts and strongly emphasize the absolute prohibition of daily dosing. This case exemplifies why patient education and dose verification by pharmacy are essential safeguards, and why missing doses requires clinician input before restarting."
+  },
+  {
+    "id": 60,
+    "answer": "Amiodarone",
+    "aliases": ["Cordarone", "antiarrhythmic", "Class III antiarrhythmic"],
+    "category": "Cardiovascular",
+    "domain": "Cardiology",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Patient Presentation",
+        "text": "A 67-year-old man with persistent atrial fibrillation presents with heat intolerance, tremor, palpitations, and weight loss (5 kg over 2 months). He has been on amiodarone 200 mg daily for 8 months for rhythm control. Thyroid examination reveals a diffuse goiter and proximal muscle weakness."
+      },
+      {
+        "label": "Investigations",
+        "text": "TSH is suppressed at <0.1 mIU/L (reference 0.4-4.0). Free T4 is elevated at 28 pmol/L (reference 10-20). Free T3 is markedly elevated at 9.8 pmol/L (reference 2.6-5.7). Thyroid peroxidase and thyroglobulin antibodies are both negative. Amiodarone level is 1.8 mg/L (therapeutic 0.5-2.5)."
+      },
+      {
+        "label": "Key Finding",
+        "text": "Amiodarone-induced thyrotoxicosis (AIT, Type II) has developed. Amiodarone's high iodine content (37% by weight) overwhelms normal thyroid autoregulation (Wolff-Chaikoff effect escape), leading to uncontrolled thyroid hormone synthesis. This is an iodine-induced thyroid dysfunction, not autoimmune in origin."
+      },
+      {
+        "label": "Drug Clue",
+        "text": "This Class III antiarrhythmic is heavily iodinated and accumulates in the thyroid gland, with a half-life of 25-110 days. Its high iodine load precipitates thyroid dysfunction in 6-10% of patients: hypothyroidism (more common, especially iodine-replete regions) or thyrotoxicosis (more severe and harder to treat)."
+      },
+      {
+        "label": "Identifying Detail",
+        "text": "AIT Type II (thyrotoxicosis) results from direct toxic effect of accumulated iodine on thyroid tissue and is distinct from AIT Type I (autoimmune). Treatment requires beta-blockers for symptomatic relief, potassium perchlorate (600-1000 mg daily in divided doses) to block thyroid iodine uptake, and continuation of amiodarone if arrhythmia control depends on it—discontinuation alone may not resolve thyrotoxicosis due to the drug's enormous tissue stores."
+      }
+    ],
+    "explanation": "Amiodarone-induced thyrotoxicosis is a challenging iodine-induced thyroid dysfunction requiring recognition and specialized management. Baseline TSH, free T4, and peroxidase antibodies should be measured before amiodarone initiation, with 6-monthly monitoring thereafter. Pharmacists must counsel patients on symptoms of thyroid dysfunction and emphasize that amiodarone's long half-life means thyroid function may take months to normalize after cessation. Type II AIT necessitates potassium perchlorate and specialist endocrinology involvement."
+  },
+  {
+    "id": 61,
+    "answer": "Clarithromycin",
+    "aliases": ["Klacid", "macrolide", "CYP3A4 inhibitor"],
+    "category": "Infectious Diseases",
+    "domain": "Drug Interactions",
+    "type": "drug_interaction",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Clinical Scenario",
+        "text": "A 72-year-old man presents to the ED with epistaxis and hemoptysis. He is on warfarin (INR target 2-3) for atrial fibrillation and initiated oral antibiotic therapy 4 days ago for a respiratory infection. His INR was 2.4 at clinic last week."
+      },
+      {
+        "label": "Co-prescribed Drugs",
+        "text": "The patient is taking warfarin 7.5 mg daily, simvastatin 40 mg daily for hyperlipidemia, and has been started on a macrolide antibiotic for respiratory tract infection. He reports no other new medications or dietary changes."
+      },
+      {
+        "label": "Interaction Mechanism",
+        "text": "The macrolide antibiotic potently inhibits CYP3A4 in the liver, the primary metabolic pathway of warfarin. This reduces warfarin clearance and increases its circulating concentration and anticoagulant effect."
+      },
+      {
+        "label": "Clinical Consequence",
+        "text": "Warfarin's anticoagulant effect is significantly enhanced, leading to supratherapeutic INR (likely >4.0) and serious bleeding manifestation. The patient's baseline INR of 2.4 provides some margin, but the macrolide interaction can readily push INR beyond 4.0 within days."
+      },
+      {
+        "label": "Resolution",
+        "text": "The precipitant drug (the macrolide antibiotic) must be identified and substituted with a non-interacting alternative (e.g., amoxicillin, doxycycline). INR must be rechecked in 2-3 days. Warfarin dose reduction may be required if INR remains elevated post-antibiotic cessation."
+      }
+    ],
+    "explanation": "Clarithromycin is a potent CYP3A4 inhibitor causing significant enhancement of warfarin effect. Pharmacists must screen for warfarin when prescribing macrolides, counsel patients on bleeding symptoms, and recommend INR checks 2-3 days after macrolide initiation or cessation. Alternative non-interacting antibiotics (amoxicillin, doxycycline) are preferred for warfarin-treated patients."
+  },
+  {
+    "id": 62,
+    "answer": "Simvastatin",
+    "aliases": ["Zocor", "statin", "CYP3A4 substrate"],
+    "category": "Cardiovascular",
+    "domain": "Drug Interactions",
+    "type": "drug_interaction",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Clinical Scenario",
+        "text": "A 58-year-old woman with coronary artery disease presents with severe myalgia, dark urine, and fatigue 3 weeks after starting a new antifungal for nail fungus. She has been stable on simvastatin 40 mg daily for 5 years without issue."
+      },
+      {
+        "label": "Co-prescribed Drugs",
+        "text": "The patient is concurrently taking simvastatin 40 mg daily, amlodipine 5 mg daily for hypertension, and has initiated systemic antifungal therapy. Her amylase and myoglobin levels are markedly elevated."
+      },
+      {
+        "label": "Interaction Mechanism",
+        "text": "The azole antifungal is a potent CYP3A4 inhibitor that dramatically reduces hepatic metabolism of simvastatin. Simvastatin accumulates to high concentrations, overwhelming the saturation of hepatic uptake transporters and saturating muscle tissue uptake, leading to excessive myocyte exposure."
+      },
+      {
+        "label": "Clinical Consequence",
+        "text": "Statin-induced myopathy has developed, manifested as severe myalgia, elevated creatine kinase, and myoglobinuria with dark urine. In severe cases, rhabdomyolysis with acute kidney injury can occur. The risk is amplified because simvastatin 40 mg is already higher-risk than pravastatin or rosuvastatin."
+      },
+      {
+        "label": "Resolution",
+        "text": "The azole antifungal (precipitant drug) must be ceased immediately and replaced with a non-interacting agent (e.g., terbinafine oral or topical amorolfine). Simvastatin should be temporarily discontinued until myoglobinuria resolves and CK normalizes. Switching to pravastatin (not a CYP3A4 substrate) is strongly recommended for future statin therapy."
+      }
+    ],
+    "explanation": "Simvastatin is a CYP3A4 substrate prone to accumulation when combined with azole antifungals. Pharmacists must screen for statin interactions before dispensing systemic antifungals and recommend alternatives such as terbinafine (non-interacting) for fungal nails. Risk stratification—pravastatin or rosuvastatin are preferable for high-interaction-risk patients—can prevent this serious toxicity."
+  },
+  {
+    "id": 63,
+    "answer": "Trimethoprim",
+    "aliases": ["Bactrim", "sulfonamide", "folate antagonist"],
+    "category": "Infectious Diseases",
+    "domain": "Hematology",
+    "type": "drug_interaction",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Clinical Scenario",
+        "text": "A 64-year-old man with rheumatoid arthritis receiving methotrexate 20 mg weekly develops severe pancytopenia requiring hospitalization. He had a UTI 10 days ago treated with trimethoprim-sulfamethoxazole (TMP-SMX) for 5 days and did not skip his methotrexate dose that week."
+      },
+      {
+        "label": "Co-prescribed Drugs",
+        "text": "The patient is concurrently taking methotrexate 20 mg weekly (with folinic acid 5 mg daily 24 hours post-dose), and received a 5-day course of TMP-SMX. He is also on amlodipine and aspirin for cardiovascular prophylaxis."
+      },
+      {
+        "label": "Interaction Mechanism",
+        "text": "Both methotrexate and trimethoprim are folate antagonists that inhibit dihydrofolate reductase. Combined use creates synergistic inhibition of folate metabolism, overwhelming the patient's folate reserves despite folinic acid supplementation. TMP-SMX also displaces methotrexate from plasma protein binding, increasing free methotrexate concentration."
+      },
+      {
+        "label": "Clinical Consequence",
+        "text": "Severe pancytopenia developed from cumulative folate antagonism. Bone marrow aplasia occurred with dangerous pancytopenia (Hgb 6.8 g/dL, WCC 0.9 × 10^9/L, platelets 35 × 10^9/L) requiring blood product transfusion and cessation of methotrexate. This combination is absolutely contraindicated without dose modification or enhanced monitoring."
+      },
+      {
+        "label": "Resolution",
+        "text": "TMP-SMX must be avoided entirely in methotrexate-treated patients. If UTI treatment is essential, alternatives such as amoxicillin-clavulanate or nitrofurantoin are preferred. If TMP-SMX is unavoidable, folinic acid dose must be increased (up to 20-30 mg daily), methotrexate dose should be reduced or withheld that week, and FBC monitoring must be intensified to baseline and 3-5 days post-antibiotic."
+      }
+    ],
+    "explanation": "Trimethoprim's synergistic folate antagonism with methotrexate is a critical drug-drug interaction. Pharmacists must screen all methotrexate-treated patients when dispensing TMP-SMX and recommend alternatives. If the interaction is unavoidable, folinic acid supplementation must be substantially increased and prescribers must be directly contacted to verify intent and arrange enhanced FBC monitoring."
+  },
+  {
+    "id": 64,
+    "answer": "Omeprazole",
+    "aliases": ["Prilosec", "PPI", "CYP2C19 inhibitor"],
+    "category": "Gastroenterology",
+    "domain": "Drug Interactions",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Clinical Scenario",
+        "text": "A 71-year-old man with acute coronary syndrome presents 8 weeks after stent insertion with acute stent thrombosis causing recurrent MI. He has been compliant with dual antiplatelet therapy (clopidogrel 75 mg daily plus aspirin 100 mg daily) and was concurrently started on a proton pump inhibitor 4 weeks post-stenting for dyspepsia prophylaxis."
+      },
+      {
+        "label": "Co-prescribed Drugs",
+        "text": "The patient is taking clopidogrel 75 mg daily, aspirin 100 mg daily, a PPI for gastroprotection, and has an elevated troponin indicating recurrent infarction. Coronary angiography shows thrombotic occlusion at the stent site without restenosis."
+      },
+      {
+        "label": "Interaction Mechanism",
+        "text": "The PPI is a potent CYP2C19 inhibitor that blocks the hepatic activation of the prodrug clopidogrel. Clopidogrel requires CYP2C19-mediated oxidation to its active thiol metabolite; PPI co-administration reduces active metabolite formation by 25-50%, severely impairing platelet inhibition."
+      },
+      {
+        "label": "Clinical Consequence",
+        "text": "Stent thrombosis occurred due to inadequate antiplatelet effect from clopidogrel inactivation. The patient maintained dual antiplatelet therapy compliance, but the PPI's inhibition of clopidogrel activation rendered the agent ineffective. This represents a preventable adverse event from a major drug interaction."
+      },
+      {
+        "label": "Resolution",
+        "text": "The PPI must be immediately ceased and replaced with a non-interacting gastroprotective agent (famotidine, which does not inhibit CYP2C19). Alternatively, if a PPI is essential (e.g., high GI bleed risk), clopidogrel should be replaced with prasugrel or ticagrelor, which do not require CYP2C19 activation. Prescriber notification is urgent to prevent recurrent thrombosis."
+      }
+    ],
+    "explanation": "Omeprazole-clopidogrel interaction is a life-threatening drug-drug interaction causing stent thrombosis. Australian therapeutic guidelines and SPC recommend avoiding this combination entirely. Pharmacists must proactively screen all clopidogrel dispensings for concurrent PPIs, counsel prescribers on alternatives (famotidine or non-CYP2C19-dependent antiplatelet agents), and document the interaction prominently. This case exemplifies critical pharmacy stewardship in preventing adverse outcomes."
+  },
+  {
+    "id": 65,
+    "answer": "NSAIDs",
+    "aliases": ["Non-steroidal anti-inflammatory drugs", "ibuprofen", "naproxen"],
+    "category": "Rheumatology",
+    "domain": "Drug Interactions",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Clinical Scenario",
+        "text": "A 67-year-old woman with stable chronic kidney disease (eGFR 35 mL/min/1.73m2) and hypertension controlled on lisinopril 10 mg daily presents with severe hyperkalemia (K+ 6.8 mmol/L) and acute kidney injury (creatinine 180 μmol/L, up from 140 baseline). She initiated regular ibuprofen 400 mg three times daily 1 week ago for osteoarthritis pain."
+      },
+      {
+        "label": "Co-prescribed Drugs",
+        "text": "The patient is taking lisinopril 10 mg daily for hypertension, metoprolol 50 mg daily for heart rate control, and initiated ibuprofen 400 mg TDS for OA pain. She reports good compliance with all medications and no dietary changes."
+      },
+      {
+        "label": "Interaction Mechanism",
+        "text": "NSAIDs inhibit renal vasodilatory prostaglandins (PGE2, PGI2) that maintain glomerular filtration pressure, especially in volume-depleted or renal-compromised states. Combined with ACE inhibitor (which blocks angiotensin-mediated vasoconstriction of the efferent arteriole), NSAIDs compromise the remaining glomerular filtration mechanism, causing acute kidney injury and hyperkalemia."
+      },
+      {
+        "label": "Clinical Consequence",
+        "text": "The triple whammy of ACE-I + NSAID + underlying CKD caused acute kidney injury with dangerous hyperkalemia. Reduced GFR impairs potassium excretion (ACE-I already reduces aldosterone-mediated excretion), and NSAID-induced renal dysfunction amplifies potassium retention. Acute pulmonary edema or cardiac arrhythmia from K+ 6.8 mmol/L is imminent."
+      },
+      {
+        "label": "Resolution",
+        "text": "The NSAID (precipitant drug) must be ceased immediately. Lisinopril is continued but kidney function must recover before ensuring cardio-renal protection remains balanced. Potassium-sparing diuretics or NSAIDs must be strictly avoided. Paracetamol (up to 3 g daily) or topical NSAIDs are preferred for OA analgesia in CKD. Prescriber contact is urgent to discuss safer analgesia."
+      }
+    ],
+    "explanation": "NSAIDs cause a 'triple whammy' interaction with ACE inhibitors in CKD patients, causing acute kidney injury and life-threatening hyperkalemia. Pharmacists must screen all NSAIDs prescribed to CKD patients on ACE-I or ARBs, counsel on safer alternatives (paracetamol, topical NSAIDs, or specialized pain management), and educate prescribers about this critical interaction. Early recognition and cessation can prevent dialysis-dependent renal failure."
+  },
+  {
+    "id": 66,
+    "answer": "Prednisolone",
+    "aliases": ["Prednisone", "corticosteroid", "glucocorticoid"],
+    "category": "Endocrinology",
+    "domain": "General Pharmacology",
+    "type": "mixed_profile",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Therapeutic Use",
+        "text": "This is a synthetic glucocorticoid used across multiple therapeutic domains: autoimmune (rheumatoid arthritis, lupus), allergic (anaphylaxis, asthma), inflammatory (COPD exacerbation, inflammatory bowel disease), and neoplastic (lymphoproliferative disorders). It is a cornerstone agent in Australian acute and chronic prescribing."
+      },
+      {
+        "label": "Drug Class",
+        "text": "It is a medium-acting glucocorticoid with both glucocorticoid and mineralocorticoid activity, though the latter is weaker than dexamethasone. Its 12-18 hour half-life supports once or twice-daily dosing. It is the most commonly prescribed corticosteroid in Australia for systemic use."
+      },
+      {
+        "label": "Pharmacology",
+        "text": "The drug acts as a ligand for the glucocorticoid receptor in the cytoplasm, translocating to the nucleus and altering gene transcription of anti-inflammatory genes (IL-10) and pro-inflammatory genes (TNF-α, IL-6). This leads to broad immunosuppression and anti-inflammatory effects through multiple downstream mechanisms."
+      },
+      {
+        "label": "Adverse Effects & Monitoring",
+        "text": "Long-term use causes osteoporosis (requiring DEXA scan baseline and 2-yearly), hyperglycemia, hypertension, weight gain, skin atrophy, and increased infection risk. Short-term high-dose effects include insomnia, agitation, and hyperglycemia. Abrupt cessation after prolonged use risks adrenal crisis due to HPA-axis suppression."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Once-daily dosing in the morning reduces HPA-axis suppression and insomnia compared to divided doses. The eTG recommends bone protection (calcium, vitamin D, and bisphosphonate) for prednisolone >7.5 mg daily ongoing. Doses should taper gradually (typically 2.5-5 mg reductions every 1-2 weeks) to allow adrenal recovery."
+      }
+    ],
+    "explanation": "Prednisolone is the most versatile glucocorticoid in Australian practice, balancing potency with manageable side-effect profile. Pharmacists must counsel on morning dosing, gradual tapering (never abrupt cessation), bone protection for long-term use, and infection risk. Regular monitoring of glucose, blood pressure, and bone health is essential for patients on chronic therapy."
+  },
+  {
+    "id": 67,
+    "answer": "Digoxin",
+    "aliases": ["Lanoxin", "cardiac glycoside", "inotrope"],
+    "category": "Cardiovascular",
+    "domain": "Cardiology",
+    "type": "mixed_profile",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Therapeutic Use",
+        "text": "This cardiac glycoside is used in two distinct clinical scenarios: heart failure with reduced ejection fraction (particularly in patients with concurrent atrial fibrillation for rate control) and symptomatic bradyarrhythmias unresponsive to other therapies. Its use has declined with ACE-I and beta-blockers but remains important in specific populations."
+      },
+      {
+        "label": "Drug Class",
+        "text": "It is a cardiac glycoside with dual mechanism: positive inotropic (increasing contractility) and negative chronotropic (slowing AV node conduction) effects. Its therapeutic window is narrow: serum concentrations of 0.5-2.0 mcg/L are therapeutic, but toxicity begins at 2.0-3.0 mcg/L with serious risk above 3.0 mcg/L."
+      },
+      {
+        "label": "Pharmacology",
+        "text": "Digoxin inhibits the Na+/K+ ATPase pump on cardiac myocytes, increasing intracellular calcium and enhancing contractility. Simultaneously, it inhibits SA and AV node conduction through parasympathomimetic effects (vagal stimulation). The drug is filtered by the kidneys with minimal metabolism, making renal function critical for dosing."
+      },
+      {
+        "label": "Adverse Effects & Monitoring",
+        "text": "Digoxin toxicity manifests as GI symptoms (nausea, vomiting), arrhythmias (premature beats, junctional rhythms, ventricular tachycardia), and neuropsychiatric effects (visual disturbances, confusion). Risk escalates with renal impairment (eGFR <30), hypokalaemia, hypercalcemia, and hypomagnesemia. Serum digoxin monitoring is essential: baseline, 1-2 weeks post-initiation, then 6-monthly."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Digoxin dosing requires reduction in elderly patients (>70 years) due to reduced renal clearance and increased sensitivity. Loading doses are rarely used now; maintenance therapy (250-500 mcg daily) is preferred. Pharmacists must ensure potassium and magnesium supplementation in diuretic-treated patients to prevent hypokalemia-induced toxicity."
+      }
+    ],
+    "explanation": "Digoxin requires meticulous dosing, monitoring, and electrolyte management despite declining use. Its narrow therapeutic window and renal dependence mandate careful patient selection and baseline/periodic digoxin level assessment. Pharmacists must educate patients on symptoms of toxicity, counsel on potassium-sparing diuretics as preferred agents (to maintain K+ >4.0 mmol/L), and verify renal function-based dosing."
+  },
+  {
+    "id": 68,
+    "answer": "Phenytoin",
+    "aliases": ["Dilantin", "hydantoin", "antiepileptic"],
+    "category": "Neurology",
+    "domain": "Epilepsy",
+    "type": "mixed_profile",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Therapeutic Use",
+        "text": "This hydantoin antiepileptic is primarily used for generalized tonic-clonic seizures and partial (focal) seizures. It has also been used off-label for neuropathic pain (trigeminal neuralgia) and cardiac arrhythmias. Its use in new-onset epilepsy has declined due to newer agents, but it remains relevant for refractory seizures and specific populations."
+      },
+      {
+        "label": "Drug Class",
+        "text": "It is a first-generation hydantoin antiepileptic with nonlinear (dose-dependent, Michaelis-Menten) pharmacokinetics. Its clearance saturates at therapeutic doses, meaning small dose increases can cause disproportionate serum level elevations and toxicity. Therapeutic range is 10-20 mcg/mL; levels above 20 mcg/mL cause overt toxicity."
+      },
+      {
+        "label": "Pharmacology",
+        "text": "The drug stabilizes neuronal membranes by enhancing sodium extrusion through Na+/K+ ATPase and increasing potassium conductance. It also limits high-frequency repetitive firing of neurons through voltage-dependent sodium channel blockade. Metabolism is hepatic via CYP2C9 and CYP2C19 with saturable kinetics—once saturation occurs, small dose increases cause large serum level rises."
+      },
+      {
+        "label": "Adverse Effects & Monitoring",
+        "text": "Common dose-related toxicities include diplopia, ataxia, and vertigo (at therapeutic levels). Chronic use causes gingival hyperplasia, hirsutism, coarsening of facial features, and peripheral neuropathy. Severe idiosyncratic reactions include DRESS syndrome (drug reaction with eosinophilia and systemic symptoms), Stevens-Johnson syndrome (SJS), and toxic epidermal necrolysis (TEN). HLA-B*1502 testing is recommended pre-initiation in East Asian populations."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Phenytoin is a potent inducer of CYP3A4, CYP2C9, and CYP2C19, causing numerous drug interactions. Baseline phenytoin level (10-20 mcg/mL) should be drawn at 1-2 weeks post-initiation; dosing is then adjusted in 25-50 mg increments weekly based on levels and seizure control. Because of nonlinear kinetics, pharmacokinetic consultation is invaluable for dose adjustment."
+      }
+    ],
+    "explanation": "Phenytoin's nonlinear pharmacokinetics make it challenging to dose and monitor compared to newer anticonvulsants. Pharmacists must understand that small dose increases can cause toxic jumps in serum levels, counsel on chronic adverse effects (gingival hyperplasia, hirsutism), and proactively screen for major drug interactions due to its potent CYP induction. Regular serum level monitoring (baseline, post-dose adjustment, then 6-12 monthly) is essential for safety."
+  },
+  {
+    "id": 69,
+    "answer": "Tacrolimus",
+    "aliases": ["Prograf", "calcineurin inhibitor", "immunosuppressant"],
+    "category": "Rheumatology",
+    "domain": "Immunology",
+    "type": "mixed_profile",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Therapeutic Use",
+        "text": "This calcineurin inhibitor is used in solid organ transplantation (renal, hepatic, cardiac) as a cornerstone immunosuppressive agent. It is also increasingly used in refractory autoimmune conditions (severe rheumatoid arthritis, lupus nephritis, refractory uveitis). In Australia, it is primarily dispensed in hospital-based transplant units with strict protocols."
+      },
+      {
+        "label": "Drug Class",
+        "text": "It is a macrolide calcineurin inhibitor that binds to FK506-binding protein (FKBP12), the complex then inhibiting calcineurin phosphatase. This prevents dephosphorylation and nuclear translocation of NFAT, blocking IL-2 transcription and T-cell activation. It is less nephrotoxic than cyclosporine but more diabetogenic."
+      },
+      {
+        "label": "Pharmacology",
+        "text": "Tacrolimus undergoes extensive first-pass hepatic metabolism by CYP3A4 and intestinal CYP3A4, resulting in high inter- and intra-individual variability in absorption (bioavailability 10-50%). This necessitates therapeutic drug monitoring (target whole-blood trough: 5-15 mcg/L post-transplant, 3-8 mcg/L maintenance). Modified-release formulations (extended-release) are increasingly used to improve consistency."
+      },
+      {
+        "label": "Adverse Effects & Monitoring",
+        "text": "Major toxicities include nephrotoxicity (dose-dependent, reversible at lower trough levels), neurotoxicity (tremor, headache, posterior reversible encephalopathy syndrome—PRES), hyperglycemia/new-onset diabetes (10-20% incidence), hypertension, and hyperlipidemia. Baseline renal function, glucose, lipids, and magnesium are essential; baseline HLA and CMV serology should also be documented."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Tacrolimus has a narrow therapeutic window and saturable metabolism—dose increases should be minimal (0.5-1 mg increments) with serum level rechecks 5-7 days post-change. Grapefruit juice and CYP3A4 inhibitors (azoles, macrolides) dramatically elevate levels. Food affects absorption inconsistently; patient counseling on consistent timing relative to food is essential for serum level stability."
+      }
+    ],
+    "explanation": "Tacrolimus demands rigorous therapeutic drug monitoring, baseline and periodic organ function testing, and meticulous attention to drug interactions due to CYP3A4 dependence. Pharmacists in transplant settings must ensure serum level appropriateness, verify baseline/periodic pathology, educate on consistent food intake timing, and screen for CYP3A4 inhibitors before dispensing. Non-adherence to monitoring is a major cause of graft loss and patient morbidity."
+  },
+  {
+    "id": 70,
+    "answer": "Sodium Valproate",
+    "aliases": ["Depakote", "valproic acid", "anticonvulsant"],
+    "category": "Neurology",
+    "domain": "Neuropsychiatry",
+    "type": "mixed_profile",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      {
+        "label": "Therapeutic Use",
+        "text": "This short-chain fatty acid is used for generalized and absence seizures, as well as for acute mania in bipolar disorder and migraine prophylaxis. It has broad psychiatric applications due to its GABA-potentiating properties. In women of childbearing age, its use is increasingly restricted due to major teratogenic risks."
+      },
+      {
+        "label": "Drug Class",
+        "text": "It is a broad-spectrum anticonvulsant with multiple mechanisms: GABA agonism (via inhibition of GABA transaminase), sodium channel blockade, and histone deacetylase inhibition. It is metabolized hepatically via beta-oxidation and glucuronidation, producing multiple active and inactive metabolites. Its half-life is 8-12 hours, supporting twice-daily dosing."
+      },
+      {
+        "label": "Pharmacology",
+        "text": "Valproate enhances GABA synthesis and inhibits GABA breakdown, increasing synaptic GABA concentration. It also directly opens GABA-A chloride channels. These combined effects raise seizure threshold. The drug's histone deacetylase inhibition contributes to mood-stabilizing properties and may enhance neuroplasticity, though mechanisms remain incompletely understood."
+      },
+      {
+        "label": "Adverse Effects & Monitoring",
+        "text": "Acute hepatotoxicity (particularly in children <2 years and those on polypharmacy) is rare but life-threatening. Pancreatitis occurs in 1 per 500 patients. Hair loss, weight gain, tremor, and thrombocytopenia are common. Hyperammonemia (with or without encephalopathy) develops in 10-20% of patients. Baseline LFTs, FBC, amylase, and ammonia (if symptomatic) are mandatory; monitoring continues 6-12 monthly."
+      },
+      {
+        "label": "Clinical Pearl",
+        "text": "Sodium valproate is absolutely contraindicated in pregnancy due to 1-2% risk of neural tube defects and 20-30% risk of developmental delay in exposed children. Women of childbearing potential should use highly effective contraception and folic acid 5 mg daily. If absolutely necessary, specialist pre-conception counseling, informed consent, and pregnancy surveillance are required. The UK and EU have recently restricted valproate use in women of childbearing potential."
+      }
+    ],
+    "explanation": "Sodium valproate's multiple adverse effects, drug interactions (displacement of other highly protein-bound drugs), and severe teratogenicity necessitate careful stewardship. Pharmacists must counsel on teratogenic risk, ensure baseline LFTs, amylase, FBC, and ammonia, and identify alternatives (lamotrigine, levetiracetam) where possible in women of childbearing age. Regular monitoring of liver function and ammonia levels is essential, particularly in children or those on polypharmacy."
+  }
+]

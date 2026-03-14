@@ -1,0 +1,1848 @@
+{
+  "puzzles": [
+    {
+      "answer": "Bromocriptine",
+      "aliases": [
+        "Parlodel",
+        "Cycloset",
+        "2-Bromo-12'b-dihydroergotaman-3',6',18-trione"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Cabergoline",
+          "Apomorphine",
+          "Pramipexole",
+          "Ropinirole",
+          "Rotigotine"
+        ],
+        "feedback": "Bromocriptine is the only dopamine agonist with ergot alkaloid structure, FDA-approved for type 2 diabetes as quick-release formulation, and possessing significant D1-receptor affinity alongside D2-activity; class-mates lack these combined features."
+      },
+      "category": "Neurological and Endocrine Drugs",
+      "domain": "Dopamine Agonists / Movement Disorders and Hormonal Regulation",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Used to manage hyperprolactinaemia, acromegaly symptoms, and Parkinson disease motor fluctuations. Also approved for glycaemic control in type 2 diabetes when added to existing antidiabetic therapy, targeting post-prandial glucose excursions."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Dopamine D2-receptor agonist with significant D1-receptor activity and alpha-adrenergic antagonism. Derived from ergot alkaloid structure, conferring both direct dopaminergic and vasoconstrictive properties alongside metabolic effects."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Among dopamine agonists, uniquely retains ergot alkaloid backbone with tripeptide lactam ring. This structure imparts dual D1/D2 activity and explains its metabolic effects on insulin secretion independent of traditional dopaminergic mechanisms."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Only dopamine agonist FDA-approved specifically for postprandial glucose control in type 2 diabetes using quick-release formulation administered within 2 hours of morning awakening. Metabolised extensively by CYP3A4 with significant first-pass hepatic degradation."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Quick-release formulation taken in the early morning window shows selective effect on post-meal glucose peaks without affecting fasting glucose. Brand name Cycloset (USA) and Parlodel distinguish it as the ergot-derived dopamine agonist with concurrent diabetes indication."
+        }
+      ],
+      "explanation": "Bromocriptine is the only dopamine agonist combining ergot alkaloid chemistry with dual D1/D2-receptor activity and a unique FDA indication for postprandial glycaemic control in type 2 diabetes via quick-release morning dosing. Its ergot-derived structure and metabolic effects differentiate it from non-ergot class-mates, while its multifaceted clinical applications across endocrinology and neurology define its mixed-profile identity.",
+      "confidence": 5,
+      "id": 41
+    },
+    {
+      "answer": "Acetylcysteine (inhaled)",
+      "aliases": [
+        "N-acetylcysteine inhalation",
+        "NAC inhalation",
+        "Fluimucil",
+        "Mucomyst",
+        "Parvolex (IV formulation, different route)",
+        "Acetylcysteine solution for inhalation"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Dornase alfa",
+          "Hypertonic saline",
+          "Bromhexine"
+        ],
+        "feedback": "Only acetylcysteine (inhaled) is a thiol-containing mucolytic that breaks disulfide bonds in mucoproteins via direct chemical modification, acts systemically after absorption, and is administered as a nebulised solution for viscid secretions in chronic respiratory disease—distinguishing it from enzymatic alternatives (dornase) and osmotic agents (hypertonic saline)."
+      },
+      "category": "Respiratory Drugs",
+      "domain": "Mixed Clinical/Pharmacological/Formulation",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Patient with cystic fibrosis or chronic bronchitis presents with thick, tenacious airway secretions causing airflow obstruction. A drug is administered via nebuliser to reduce mucus viscosity and improve mucociliary clearance. Multiple respiratory conditions benefit from this mechanism."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This agent contains a reactive thiol group (-SH) that directly cleaves disulfide bonds (S-S) linking glycoprotein molecules in mucus. The mechanism is chemical modification rather than enzymatic degradation or osmotic action, reducing sputum viscosity."
+        },
+        {
+          "label": "Key Feature",
+          "text": "After inhalation, the drug is absorbed from the respiratory tract and undergoes metabolism in the body. A key advantage is its dual action: local mucolytic effect in the airways and systemic effects as a free radical scavenger and glutathione precursor."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "The inhalation formulation is supplied as a solution (typically 10-20% concentration) that may produce an unpleasant odour resembling rotten eggs due to hydrogen sulphide released during preparation. This sensory characteristic is a recognised limitation of therapy."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the N-acetyl derivative of the amino acid cysteine, synthesised in 1960, and remains one of the few mucolytics approved for routine nebulised inhalation in chronic airway disease. Its chemical formula is C₅H₉NO₃S."
+        }
+      ],
+      "explanation": "Acetylcysteine (inhaled) is uniquely identified by its thiol-mediated disulfide bond cleavage mechanism, dual local-and-systemic action profile, characteristic sulfurous odour from hydrogen sulphide generation, and its status as the N-acetyl cysteine derivative approved for nebulised inhalation in viscid airway secretion management. Its chemical properties and historical development distinguish it from other mucolytic and airway-clearance agents.",
+      "confidence": 5,
+      "id": 42
+    },
+    {
+      "answer": "Lamotrigine",
+      "aliases": [
+        "Lamictal",
+        "Lamictal XR",
+        "Lamictal CD"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Carbamazepine",
+          "Oxcarbazepine",
+          "Phenytoin",
+          "Levetiracetam"
+        ],
+        "feedback": "Lamotrigine uniquely inhibits sodium channels AND blocks glutamate release while demonstrating teratogenic risk requiring slow titration and dose adjustment with oral contraceptives—features that distinguish it from structurally similar agents like carbamazepine or from levetiracetam which lacks these specific pharmacodynamic and teratogenic concerns."
+      },
+      "category": "Neurological Drugs",
+      "domain": "Antiepileptic Agents",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with recurrent seizures and comorbid bipolar disorder requires a medication that addresses both conditions. The drug is suitable for maintenance therapy in multiple seizure types and shows efficacy in mood stabilization."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent acts through dual mechanisms: inhibition of sodium channel inactivation to reduce neuronal firing, and inhibition of glutamate and aspartate release from presynaptic terminals."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug undergoes hepatic metabolism via glucuronidation—a pathway significantly induced by some aromatic antiepileptic agents but inhibited by valproate. Oral contraceptives containing ethinylestradiol reduce its plasma concentrations by approximately 50%."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "A characteristic feature is the requirement for slow titration (typically 25 mg daily, increasing by 25–50 mg every 1–2 weeks) to minimize the risk of serious cutaneous adverse reactions, particularly in pediatric populations."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This drug carries a pregnancy category warning for increased risk of orofacial clefts and other congenital anomalies when used during the first trimester, requiring careful risk–benefit assessment in women of childbearing potential."
+        }
+      ],
+      "explanation": "Lamotrigine is uniquely identified by its dual mechanism (sodium channel inhibition plus glutamate inhibition), distinctive metabolism via glucuronidation with sensitivity to enzyme inducers and inhibitors, mandatory slow titration protocol to prevent severe rashes, and documented teratogenic risk requiring pregnancy planning. These combined pharmacological and clinical characteristics distinguish it from other antiepileptic agents like levetiracetam (which lacks glutamate inhibition), carbamazepine (which lacks slow titration requirements and has different metabolic interactions), or phenytoin (which differs in mechanism and pregnancy risk profile).",
+      "confidence": 5,
+      "id": 43
+    },
+    {
+      "answer": "Glibenclamide",
+      "aliases": [
+        "Glyburide",
+        "Chlorpropamide",
+        "Daonil",
+        "Euglucon",
+        "Micronase",
+        "DiaBeta"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Gliclazide",
+          "Glimepiride",
+          "Glipizide"
+        ],
+        "feedback": "Glibenclamide is uniquely distinguished by its longer half-life (10 hours), stronger potency per milligram, higher risk of hypoglycaemia, significant biliary excretion, and withdrawal from several markets due to safety concerns—whereas gliclazide has moderate half-life with M1 metabolite activity, glimepiride shows dose-dependent kinetics with renal clearance, and glipizide has rapid onset with short half-life."
+      },
+      "category": "Endocrine drugs",
+      "domain": "Type 2 diabetes mellitus management",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with type 2 diabetes requires oral glucose-lowering therapy. The agent stimulates pancreatic beta cells to increase insulin secretion and is indicated for patients with residual beta cell function. It carries a notable risk of hypoglycaemic episodes, particularly in elderly individuals and those with renal or hepatic impairment."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This sulfonylurea binds to and closes ATP-sensitive potassium channels on pancreatic beta cells, depolarizing the membrane and triggering calcium influx. Its metabolites are predominantly eliminated via biliary excretion rather than renal clearance, making it potentially problematic in hepatic dysfunction."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Among its class, this agent demonstrates the longest elimination half-life (approximately 10 hours) and the highest intrinsic potency per unit dose. Its prolonged action increases accumulation risk with repeated dosing and extends the window for hypoglycaemic events post-administration."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Regulatory authorities in multiple countries, including the European Union and Canada, have restricted or withdrawn this agent from routine use due to cardiovascular safety concerns and excessive hypoglycaemia risk. However, it remains available in select markets under strict prescribing protocols and is considered obsolete in many developed healthcare systems."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This second-generation sulfonylurea is marketed internationally under the brand names Daonil, Euglucon, and Micronase. It was the predominant sulfonylurea in many nations during the 1980s–2000s before being superseded by newer agents with improved safety profiles and more predictable pharmacokinetics."
+        }
+      ],
+      "explanation": "Glibenclamide is the only sulfonylurea matching all five clues: its uniquely long half-life (10 hours) and high potency distinguish it from shorter-acting peers, its predominant biliary elimination contrasts with renal-cleared alternatives, and its regulatory withdrawal or restriction in major markets due to hypoglycaemia risk is a defining historical and safety characteristic absent in gliclazide, glimepiride, and glipizide.",
+      "confidence": 5,
+      "id": 44
+    },
+    {
+      "answer": "Vincristine",
+      "aliases": [
+        "vincristine sulfate",
+        "Oncovin",
+        "Vincasar",
+        "Leurocristine"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Vinblastine",
+          "Vinorelbine"
+        ],
+        "feedback": "Vinblastine causes significant myelosuppression and is contraindicated in intrathecal use; vinorelbine is a semisynthetic derivative with different neurotoxicity profile and dosing schedule. Vincristine's defining feature is dose-limiting peripheral neuropathy rather than bone marrow toxicity, and it is the only vinca alkaloid used intrathecally in standard protocols."
+      },
+      "category": "Anticancer drugs",
+      "domain": "Mitotic inhibitors / Vinca alkaloids",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A cytotoxic agent used in combination regimens for haematologic malignancies including acute lymphoblastic leukaemia, lymphomas, and multiple myeloma, as well as certain solid tumours. Often combined with other chemotherapy agents and corticosteroids in multimodal treatment protocols."
+        },
+        {
+          "label": "Key Feature",
+          "text": "A plant alkaloid derived from the Madagascar periwinkle that arrests cells in metaphase by disrupting microtubule assembly. Despite potent antiproliferative activity, bone marrow suppression is mild compared to other agents in its therapeutic class."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Metabolised extensively by hepatic CYP3A4 with a long tissue half-life enabling weekly or biweekly dosing. Exhibits minimal renal excretion and does not accumulate significantly in the bloodstream between doses."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "The dose-limiting toxicity is peripheral neuropathy (sensory and motor) rather than myelosuppression, manifesting as paresthesias, areflexia, and potential foot drop with cumulative exposure. Neurotoxicity risk increases substantially above 10–12 mg/m² total cumulative dose."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only vinca alkaloid routinely administered intrathecally in standard protocols (e.g., CNS prophylaxis in acute lymphoblastic leukaemia), a practice contraindicated for its structural analogues due to risk of fatal myeloencephalopathy."
+        }
+      ],
+      "explanation": "Vincristine is uniquely distinguished from other vinca alkaloids by its neurotoxicity-dominated toxicity profile rather than myelosuppression, and critically, by its accepted intrathecal use in leukaemia prophylaxis protocols. Its metabolism by CYP3A4 and weekly dosing schedule further differentiate it from related agents.",
+      "confidence": 5,
+      "id": 45
+    },
+    {
+      "answer": "Selinexor",
+      "aliases": [
+        "Xpovio",
+        "KPT-330"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Everolimus",
+          "Etoposide",
+          "Bleomycin"
+        ],
+        "feedback": "Selinexor uniquely causes severe thrombocytopenia via XPO1 inhibition with rapid platelet depletion within days of initiation, distinct from myelosuppression patterns of other oral anticancer agents; the combination of gastrointestinal toxicity, hyponatraemia, and acute thrombocytopenia requiring transfusion is pathognomonic for nuclear export inhibition."
+      },
+      "category": "Anticancer drugs",
+      "domain": "Adverse drug reactions in oncology",
+      "type": "adr_case",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 68-year-old patient with relapsed multiple myeloma begins oral anticancer therapy. Within 5 days, they develop severe fatigue, petechiae on lower extremities, and epistaxis. Concurrent nausea, vomiting, and diarrhoea occur. Blood pressure drops to 110/65 mmHg. No recent chemotherapy or transfusions documented."
+        },
+        {
+          "label": "Investigations",
+          "text": "Full blood count shows platelet count 18 × 10⁹/L (baseline 185 × 10⁹/L). Haemoglobin 9.2 g/dL, WBC 3.1 × 10⁹/L. Serum sodium 122 mEq/L (normal 136–145). Liver function and renal function tests unchanged from baseline."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Bone marrow examination shows adequate megakaryocytes with morphologically normal appearance, ruling out primary marrow failure. The thrombocytopenia appeared acutely (within 72–96 hours post-initiation) and is accompanied by selective hyponatraemia despite normal renal perfusion markers."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "This oral agent inhibits nuclear protein export machinery, preventing tumour suppressor and apoptosis regulator proteins from exiting the nucleus. It is used in relapsed/refractory haematologic malignancies and induces rapid platelet consumption independent of bone marrow suppression."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The drug is a selective inhibitor of chromosome region maintenance 1 (CRM1/XPO1). Thrombocytopenia, hyponatraemia from SIADH-like effect, and gastrointestinal toxicity form the signature adverse reaction triad, with platelet nadirs typically 3–5 days post-dose in treatment-naive patients."
+        }
+      ],
+      "explanation": "Selinexor is a selective XPO1 inhibitor causing a distinctive adverse reaction triad of acute thrombocytopenia (non-marrow mediated), hyponatraemia, and gastrointestinal toxicity that appears within days of initiation. This toxicity profile is unique among anticancer drugs and directly reflects its mechanism of disrupting nuclear-cytoplasmic transport, distinguishing it from conventional chemotherapy agents like etoposide or everolimus.",
+      "confidence": 5,
+      "id": 46
+    },
+    {
+      "answer": "Terbinafine (skin)",
+      "aliases": [
+        "Terbinafine",
+        "Lamisil",
+        "Lamisil AT",
+        "Terbinafin"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Griseofulvin",
+          "Fluconazole",
+          "Itraconazole"
+        ],
+        "feedback": "Griseofulvin requires prolonged dosing and food absorption; fluconazole/itraconazole are azoles with broad systemic action and different CYP interactions. Terbinafine is uniquely rapid, allylamine-based, and achieves high nail/skin concentration via lipophilic accumulation."
+      },
+      "category": "Anti-infectives",
+      "domain": "Dermatological mycology",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with confirmed nail fungal infection (onychomycosis) or dermatophyte skin infection requires systemic oral treatment. Multiple antifungal options exist depending on infection type, severity, and local resistance patterns."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This antifungal achieves exceptionally high concentrations in keratin-containing tissues (nails, hair, skin) and persists there long after treatment ends, enabling shorter dosing durations than many alternatives."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "It inhibits fungal squalene epoxidase, disrupting ergosterol synthesis. This mechanism differs from azole agents and makes it effective against dermatophytes resistant to other antifungals."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Typical treatment duration for nail infection is 6–12 weeks, substantially shorter than agents requiring 12+ months. It undergoes hepatic metabolism via CYP2D6 and CYP3A4, creating potential interactions with beta-blockers and antiarrhythmics."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This allylamine-class antifungal is the only oral agent in its structural family approved for dermatological use. Its lipophilic nature causes it to accumulate in adipose tissue, with detectable nail levels persisting 6+ months post-therapy."
+        }
+      ],
+      "explanation": "Terbinafine is a distinctly rapid-acting allylamine antifungal with unparalleled keratin tissue penetration and persistence, enabling shorter treatment courses for onychomycosis compared to azoles or griseofulvin. Its unique squalene epoxidase mechanism, CYP2D6 metabolism, and lipophilic accumulation profile differentiate it within systemic antifungals.",
+      "confidence": 5,
+      "id": 47
+    },
+    {
+      "answer": "Chlortalidone",
+      "aliases": [
+        "Hygroton",
+        "Thalitone",
+        "Computest"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Hydrochlorothiazide",
+          "Indapamide",
+          "Amiloride"
+        ],
+        "feedback": "Chlortalidone has the longest half-life (40-72 hours) among thiazide-like diuretics and causes the most potent hypokalemia and hyperuricemia interactions; hydrochlorothiazide has shorter half-life; indapamide has minimal potassium effects; amiloride is potassium-sparing."
+      },
+      "category": "cardiovascular drugs",
+      "domain": "diuretics and antihypertensives",
+      "type": "drug_interaction",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Scenario",
+          "text": "A 68-year-old patient with hypertension and atrial fibrillation is prescribed a potent diuretic for blood pressure control. After 3 weeks, serum potassium drops to 3.1 mmol/L and digoxin toxicity develops despite therapeutic digoxin levels. The diuretic's prolonged action complicates electrolyte management."
+        },
+        {
+          "label": "Co-prescribed Drugs",
+          "text": "Patient is on digoxin (for rate control), lisinopril (ACE inhibitor), and the causative thiazide-type agent. NSAIDs are occasionally used for arthralgia, and the patient takes a statin for dyslipidemia."
+        },
+        {
+          "label": "Interaction Effect",
+          "text": "Severe hypokalemia develops despite modest potassium losses expected from standard therapy. Digoxin's cardiotoxicity is potentiated by the profound electrolyte derangement. Concurrent NSAID use with the diuretic further reduces renal perfusion, worsening potassium and sodium depletion."
+        },
+        {
+          "label": "Mechanism Clue",
+          "text": "This agent is a thiazide-like benzisothiazole with exceptionally prolonged half-life (40-72 hours). It causes sustained sodium and potassium wasting via distal convoluted tubule inhibition. The extended duration produces cumulative electrolyte depletion and enhances digoxin binding to Na-K-ATPase, increasing arrhythmia risk."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Among thiazide-type diuretics, this benzisothiazole derivative is unmatched in plasma half-life and potency of hypokalemia induction. Its metabolite retains diuretic activity, and it causes more pronounced urate retention and glucose dysregulation than hydrochlorothiazide or indapamide, making it the culprit here."
+        }
+      ],
+      "explanation": "Chlortalidone is uniquely identified by its exceptionally long half-life (40-72 hours), benzisothiazole structure, and superior potency in causing hypokalemia and hyperuricemia compared to other thiazide-type diuretics. The prolonged action and cumulative electrolyte depletion precipitate digoxin toxicity, distinguishing it from shorter-acting alternatives like hydrochlorothiazide.",
+      "confidence": 5,
+      "id": 48
+    },
+    {
+      "answer": "Carvedilol",
+      "aliases": [
+        "Kredex",
+        "Dilatrend",
+        "Polatrocel",
+        "Eucardic"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Labetalol",
+          "Propranolol",
+          "Atenolol",
+          "Bisoprolol",
+          "Metoprolol",
+          "Nebivolol"
+        ],
+        "feedback": "Carvedilol is the only beta-blocker with combined non-selective beta-blockade AND alpha-1 blockade, making it uniquely effective for both hypertension and heart failure with vasodilatory properties that other beta-blockers lack."
+      },
+      "category": "Cardiovascular drugs",
+      "domain": "Beta-blockers and vasodilators",
+      "type": "drug_id",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with hypertension and reduced ejection fraction heart failure requires blood pressure control with additional cardioprotective benefits. Treatment should improve symptoms and reduce mortality risk in this dual pathology."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent combines adrenergic blockade with vasodilatory activity, providing both negative inotropic effects and peripheral vasodilation—a dual mechanism that distinguishes it from other agents in its class."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug blocks both beta-1 and beta-2 receptors non-selectively while simultaneously antagonising alpha-1 adrenergic receptors, producing additive blood pressure reduction through multiple mechanisms."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Metabolism occurs via CYP2D6 and CYP3A4 with significant hepatic metabolism. The drug undergoes stereoselective glucuronidation, and enantiomers show differing pharmacological potencies—an unusual pharmacokinetic profile."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only beta-blocker with demonstrated evidence of reducing mortality in systolic heart failure that also produces substantial vasodilation via non-selective beta and alpha-1 receptor antagonism simultaneously."
+        }
+      ],
+      "explanation": "Carvedilol is a third-generation beta-blocker with unique combined non-selective beta-blockade and alpha-1 blockade, making it distinctly valuable in heart failure and hypertension. Its vasodilatory properties via alpha-1 antagonism and complex stereoselective metabolism distinguish it from all other beta-blockers, which lack either the alpha-blocking activity or the heart failure mortality benefit evidence.",
+      "confidence": 5,
+      "id": 49
+    },
+    {
+      "answer": "Dimeticone",
+      "aliases": [
+        "Dimethicone",
+        "Polydimethylsiloxane",
+        "PDMS",
+        "Hedrin",
+        "Nyda",
+        "Jacutin"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Isopropyl Myristate",
+          "Benzyl Benzoate",
+          "Permethrin"
+        ],
+        "feedback": "Isopropyl myristate and benzyl benzoate are organic solvents requiring chemical toxicity consideration; permethrin is a neurotoxic insecticide. Only the silicone-based answer works via physical suffocation with negligible systemic absorption and no neurotoxic mechanism."
+      },
+      "category": "Dermatological drugs / Ectoparasiticides",
+      "domain": "Parasitic skin infestations",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A parent notices their child has persistent head lice despite recent treatment with an insecticide-based product. A non-toxic physical alternative is sought that works via a completely different mechanism. The treatment must be safe for young children and require repeated application over 7–14 days."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This agent operates through a physical rather than chemical mechanism, coating the exoskeleton and causing dehydration. It has no systemic absorption and no known interactions with cytochrome P450 enzymes or other drugs. Toxicological studies show negligible oral and dermal LD₅₀ values."
+        },
+        {
+          "label": "Key Feature",
+          "text": "The active ingredient is a high-molecular-weight polymer synthesized from silicon and oxygen. It remains on the skin and hair surface, never penetrating into systemic circulation. Formulations are typically 4–10% w/w in aqueous or alcoholic bases for topical application."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Unlike organic solvent-based treatments, this silicone compound is non-flammable, odourless, and hypoallergenic. European regulatory approval (particularly in the UK and Germany under specific brand names) emphasized its safety profile in children under 6 months. Resistance has never been documented despite decades of use."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The chemical backbone is a linear polydimethylsiloxane chain (Si–O–Si repeating units), distinct from all other ectoparasiticides. Original formulations (marketed from 1983 onwards in Europe) pioneered the 'physical mode of action' paradigm for pediculosis treatment, making it the archetypal non-neurotoxic alternative."
+        }
+      ],
+      "explanation": "Dimeticone is a silicone-based polymer that kills head lice and scabies mites through physical suffocation and dehydration rather than neurotoxic insecticide mechanisms. Its inert polydimethylsiloxane structure ensures negligible systemic absorption, no drug interactions, and zero resistance risk—uniquely distinguishing it from organic solvent and organophosphate alternatives within the ectoparasiticide class.",
+      "confidence": 5,
+      "id": 51
+    },
+    {
+      "answer": "Naratriptan",
+      "aliases": [
+        "Naramig",
+        "Amerge"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Sumatriptan",
+          "Eletriptan",
+          "Rizatriptan",
+          "Zolmitriptan"
+        ],
+        "feedback": "Naratriptan is uniquely distinguished by its longest half-life (6 hours), lowest potency at 5-HT1B/1D receptors relative to class-mates, and oral bioavailability profile that makes it specifically suited for migraines with prolonged duration rather than acute severe attacks, whereas faster-acting triptan alternatives like sumatriptan or rizatriptan are preferred for rapid symptom relief."
+      },
+      "category": "Neurological drugs",
+      "domain": "Migraine management",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with episodic migraine headache seeks acute treatment. The drug crosses the blood-brain barrier and acts on serotonin receptors to abort attacks by causing cranial vasoconstriction and inhibiting pain signal transmission through trigeminal pathways. Oral and parenteral formulations are available internationally."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This serotonin 1B/1D receptor agonist undergoes hepatic metabolism predominantly via CYP3A4, with minor CYP2D6 involvement. It demonstrates relatively modest receptor selectivity compared to structural analogs, and exhibits moderate oral bioavailability of approximately 70% due to partial first-pass metabolism."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Among its pharmacological class-mates, this agent possesses the longest plasma elimination half-life at approximately 6 hours, making it particularly suited for migraines with extended symptom duration. This pharmacokinetic profile distinguishes it from the shorter-acting alternatives available within the same therapeutic group."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "The nasal spray formulation delivers 20 mg per nostril and bypasses first-pass hepatic metabolism, achieving higher peak plasma concentrations than the oral tablet. This parenteral route was specifically developed to provide faster symptom relief while maintaining the class's characteristic mechanism."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "FDA approval was granted in 1997, marketed under brand name Amerge for oral tablets and Naramig for the intranasal formulation in European markets. The 2.5 mg tablet dose is uniquely positioned as the lowest initial dose within its therapeutic class, reflecting its lower potency profile."
+        }
+      ],
+      "explanation": "Naratriptan is identified by its distinctive combination of the longest half-life (6 hours) among triptan class-mates, lowest receptor potency relative to structural analogs, and dual formulation strategy emphasizing intranasal delivery. The 1997 FDA approval date, Amerge/Naramig brand names, and uniquely low starting dose of 2.5 mg oral tablets collectively distinguish it as the only member of its class matching all five clue criteria.",
+      "confidence": 5,
+      "id": 52
+    },
+    {
+      "answer": "Carbimazole",
+      "aliases": [
+        "Neo-Mercazole",
+        "carbazole",
+        "carbimazolum"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Propylthiouracil"
+        ],
+        "feedback": "Propylthiouracil also inhibits thyroid peroxidase but does NOT significantly interact with warfarin through protein displacement, making carbimazole the specific answer requiring recognition of its thiopropane metabolism and protein-binding displacement mechanism."
+      },
+      "category": "Endocrine drugs",
+      "domain": "Thyroid disorders",
+      "type": "drug_interaction",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Clinical Scenario",
+          "text": "A 52-year-old patient with Graves' disease has been stable on an anticoagulant for atrial fibrillation. After starting a new antithyroid agent, the INR suddenly rises to 4.5 despite stable anticoagulant dosing. No dietary changes or other medications were added. What drug initiated this interaction?"
+        },
+        {
+          "label": "Co-prescribed Drugs",
+          "text": "The patient is concurrently taking warfarin for stroke prevention and the newly initiated antithyroid medication. The warfarin dose has remained unchanged for 3 months prior to the recent INR elevation."
+        },
+        {
+          "label": "Interaction Effect",
+          "text": "The antithyroid agent displaces warfarin from plasma protein binding, increasing free warfarin concentration and anticoagulant effect. This displacement is a direct pharmacokinetic mechanism causing elevated INR within days of therapy initiation."
+        },
+        {
+          "label": "Mechanism Clue",
+          "text": "This thiopropane derivative undergoes hepatic metabolism and possesses high plasma protein-binding affinity, competing with warfarin for albumin binding sites. The resulting free fraction elevation explains the rapid INR potentiation without CYP450 inhibition."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Unlike its structural isomer propylthiouracil, this imidazole-based antithyroid agent produces a clinical consequence requiring warfarin dose reduction by approximately 20–30% upon co-initiation, documented in international drug interaction databases."
+        }
+      ],
+      "explanation": "Carbimazole is a prodrug metabolised to methimazole that uniquely causes warfarin displacement from plasma albumin binding, increasing anticoagulation effect. Propylthiouracil (the class-mate) does not exhibit this protein-binding interaction despite similar thyroid-inhibiting properties. This distinction makes carbimazole the specific answer identifiable by its protein-displacement mechanism.",
+      "confidence": 5,
+      "id": 53
+    },
+    {
+      "answer": "Tropicamide",
+      "aliases": [
+        "Mydriacyl",
+        "Tropicacaine",
+        "tropicamide ophthalmic solution"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Atropine",
+          "Cyclopentolate"
+        ],
+        "feedback": "Atropine and cyclopentolate cause longer-lasting mydriasis and cycloplegia unsuitable for diagnostic procedures; tropicamide's rapid onset (20-40 minutes) and shorter duration (4-6 hours) make it the standard mydriatic for routine eye examinations, and its weaker systemic absorption minimizes anticholinergic drug interactions in vulnerable patients."
+      },
+      "category": "eye drugs",
+      "domain": "ophthalmology",
+      "type": "drug_interaction",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Scenario",
+          "text": "A 72-year-old patient on multiple chronic medications presents for routine eye examination. During pupil dilation, the patient suddenly reports blurred vision, dry mouth, elevated heart rate, and confusion. The ophthalmic agent used is suspected of causing an anticholinergic interaction with systemic medications."
+        },
+        {
+          "label": "Co-prescribed Drugs",
+          "text": "The patient takes a selective serotonin reuptake inhibitor for depression and tricyclic antidepressant augmentation therapy. Both medications possess inherent anticholinergic properties that compound systemic absorption of the mydriatic agent."
+        },
+        {
+          "label": "Interaction Effect",
+          "text": "Additive anticholinergic effects manifest as acute confusion, severe xerostomia, tachycardia, and urinary retention. Elderly patients are particularly vulnerable due to blood-brain barrier permeability changes and reduced hepatic metabolism of accumulated anticholinergic burden."
+        },
+        {
+          "label": "Mechanism Clue",
+          "text": "The ophthalmic agent undergoes hepatic metabolism via esterases and CYP pathways. Unlike longer-acting alternatives in its class, systemic absorption occurs rapidly following topical application, allowing interaction with tricyclic substrates that inhibit metabolism."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This mydriatic has the shortest duration of action (4-6 hours) among cycloplegic agents used in routine eye examinations. Its rapid onset and offset profile, combined with moderate systemic bioavailability in elderly patients, distinguishes it as the agent most likely to cause acute anticholinergic toxicity when co-prescribed with serotonergic antidepressants."
+        }
+      ],
+      "explanation": "Tropicamide is a weak anticholinergic mydriatic with rapid systemic absorption following topical ocular application. In elderly patients on tricyclic antidepressants and SSRIs, tropicamide's moderate bioavailability and hepatic metabolism create genuine additive anticholinergic effects—a clinically recognized but often overlooked interaction. Its shorter duration distinguishes it from atropine and cyclopentolate, making it the primary agent implicated in acute anticholinergic toxicity during routine dilated eye examinations in polypharmacy patients.",
+      "confidence": 5,
+      "id": 54
+    },
+    {
+      "answer": "Irinotecan",
+      "aliases": [
+        "Camptotsar",
+        "Camptosar",
+        "CPT-11"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Topotecan"
+        ],
+        "feedback": "Topotecan causes similar myelosuppression but produces dose-limiting neutropenia rather than the characteristic delayed diarrhea and cholinergic effects that define this drug's toxicity profile."
+      },
+      "category": "Anticancer drugs",
+      "domain": "Oncology - Adverse Drug Reaction",
+      "type": "adr_case",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 62-year-old with metastatic colorectal cancer presents 5 days post-chemotherapy with severe watery diarrhea (8–10 bowel movements daily), abdominal cramping, and fatigue. Bowel symptoms began 24 hours after treatment administration and have progressively worsened despite supportive measures."
+        },
+        {
+          "label": "Investigations",
+          "text": "Full blood count shows white cell count 2.1 × 10⁹/L (previously 7.5), neutrophils 1.2 × 10⁹/L. Electrolytes reveal hyponatraemia (128 mmol/L) and hypokalaemia (3.1 mmol/L) from fluid losses. Stool cultures negative for bacterial and parasitic pathogens."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Acute cholinergic syndrome observed: miosis, hypersalivation, bronchospasm, bradycardia (HR 52), and muscle fasciculations. Atropine 0.5 mg IV rapidly resolves these symptoms, pointing to acute cholinergic toxicity occurring alongside myelosuppression and secretory diarrhea."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "The chemotherapy agent is a topoisomerase I inhibitor that undergoes extensive hepatic glucuronidation. Its active metabolite, SN-38, inhibits acetylcholinesterase and causes both acute cholinergic crisis (within hours) and delayed dose-limiting diarrhea (days 3–7 post-infusion)."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This camptothecin analogue's diarrhea is potentiated by UGT1A1 polymorphisms reducing glucuronidation capacity. Severe toxicity and acetylcholinesterase inhibition via SN-38 metabolite uniquely characterize this agent among topoisomerase I poisons used in colorectal cancer."
+        }
+      ],
+      "explanation": "Irinotecan is the only topoisomerase I inhibitor producing both acute cholinergic syndrome (via SN-38 acetylcholinesterase inhibition) and delayed severe diarrhea as signature toxicities. The combination of atropine responsiveness, UGT1A1-dependent metabolism, and distinctive SN-38 metabolite activity distinguishes it from topotecan, which causes dose-limiting neutropenia without cholinergic effects.",
+      "confidence": 5,
+      "id": 55
+    },
+    {
+      "answer": "Medroxyprogesterone",
+      "aliases": [
+        "Medroxyprogesterone acetate",
+        "MPA",
+        "Depo-Provera",
+        "Depo-Ralovera",
+        "Petogen",
+        "Provelle"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Levonorgestrel",
+          "Norethisterone",
+          "Dienogest",
+          "Etonogestrel",
+          "Drospirenone"
+        ],
+        "feedback": "Medroxyprogesterone is uniquely distinguished by its 12-13 week depot injection formulation with 150 mg dosing and dual contraceptive mechanism via progestin-only action, whereas other progestins are primarily used in oral formulations, intrauterine systems, or implants with different pharmacokinetic profiles."
+      },
+      "category": "Obstetric and gynaecological drugs",
+      "domain": "Contraception and endocrine therapy",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient requires contraception with reduced pill burden and minimal user-dependent timing. Treatment involves hormonal suppression of ovulation. This therapeutic approach applies across multiple reproductive hormone formulations with varying delivery routes and durations of action."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This progestin-based agent acts primarily through endometrial suppression and cervical mucus thickening rather than consistent ovulation inhibition. It provides extended protection with infrequent dosing intervals, making it suited for patients with adherence concerns or preference for minimal intervention frequency."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug is administered as a depot intramuscular injection formulation. It undergoes hepatic metabolism via conjugation rather than CYP enzyme pathways. The acetate ester derivative exhibits prolonged tissue retention and sustained-release kinetics over months."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Standard contraceptive dosing is 150 mg administered intramuscularly every 12-13 weeks. This specific interval and dose distinguish it from oral progestins and other injectable formulations. The prolonged duration enables quarterly dosing schedules in clinical practice."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The 150 mg intramuscular depot formulation dosed every 12-13 weeks combined with its unique property of suppressing ovulation in approximately 95% of cycles while maintaining minimal systemic endogenous hormone production makes this the only progestin with this exact pharmacokinetic and dosing profile."
+        }
+      ],
+      "explanation": "Medroxyprogesterone is uniquely identified by its 150 mg intramuscular depot injection administered every 12-13 weeks, distinguishing it from oral progestins and other injectable agents among progestin-based contraceptives. Its mechanism relies primarily on progestin-only action through endometrial and cervical effects, and it undergoes hepatic conjugation rather than CYP metabolism. This combination of dosing interval, administration route, and pharmacological profile is specific to medroxyprogesterone acetate within the progestin family.",
+      "confidence": 5,
+      "id": 56
+    },
+    {
+      "answer": "Edaravone",
+      "aliases": [
+        "MCI-186",
+        "Radicut",
+        "Edicavone"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Riluzole",
+          "Baclofen",
+          "Dantrolene",
+          "Tetrabenazine"
+        ],
+        "feedback": "Only edaravone is a free radical scavenger administered intravenously for acute ischemic stroke with hepatotoxicity as a documented adverse effect; class-mates work via different mechanisms (glutamate inhibition, GABA-B agonism, calcium channel inhibition, vesicular monoamine depletion) and lack this specific hepatic ADR profile."
+      },
+      "category": "Neurological drugs",
+      "domain": "Cerebrovascular disease and neuroprotection",
+      "type": "adr_case",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 62-year-old patient with acute ischaemic stroke receives intravenous neuroprotective therapy within the therapeutic window. After 3 days of treatment, they develop jaundice, dark urine, and right upper quadrant discomfort. Baseline liver function was normal."
+        },
+        {
+          "label": "Investigations",
+          "text": "Laboratory tests reveal elevated transaminases (ALT 580 U/L, AST 640 U/L), elevated bilirubin (4.2 mg/dL), and normal alkaline phosphatase. Prothrombin time is prolonged. Viral hepatitis and acetaminophen exposure are ruled out."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Hepatic imaging shows no biliary obstruction or cirrhotic changes. A temporal relationship exists between drug initiation and liver injury onset. The injury pattern is hepatocellular with rapid progression, suggesting direct hepatotoxicity rather than cholestasis or autoimmune mechanism."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "The administered agent is a free radical scavenger with potent antioxidant properties, delivered intravenously for acute neurological protection. It undergoes hepatic metabolism via conjugation pathways and is indicated specifically for acute ischaemic stroke within defined time windows."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This neuroprotective agent carries a documented risk of hepatotoxicity as an adverse reaction, reported in clinical trials at rates of 1–2%. Drug discontinuation results in gradual normalisation of liver enzymes within 1–2 weeks, confirming causality and distinguishing it from other acute stroke neuroprotective agents."
+        }
+      ],
+      "explanation": "Edaravone is a free radical scavenger exclusively used for acute ischaemic stroke neuroprotection. Hepatotoxicity is a recognised adverse effect documented in clinical trials, presenting as acute hepatocellular injury with elevated transaminases and bilirubin. Among neurological drugs in this class, only edaravone combines intravenous acute stroke indication with documented hepatic ADR risk; riluzole causes hepatotoxicity but is used chronically for ALS, not acute stroke, while baclofen, dantrolene, and tetrabenazine have different therapeutic indications and ADR profiles.",
+      "confidence": 5,
+      "id": 57
+    },
+    {
+      "answer": "Reboxetine",
+      "aliases": [
+        "Edronax",
+        "Vestra",
+        "Norebox"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Agomelatine",
+          "Mianserin",
+          "Mirtazapine",
+          "Moclobemide",
+          "Vortioxetine"
+        ],
+        "feedback": "Reboxetine is the only noradrenaline reuptake inhibitor (NRI) in this group; all others have different primary mechanisms (melatonergic agonism, mixed α2/5-HT antagonism, monoamine oxidase inhibition, or serotonin modulation), making the selective noradrenaline reuptake profile the definitive distinguisher."
+      },
+      "category": "Psychotropic drugs",
+      "domain": "Antidepressants",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with depressive disorder presents with prominent fatigue, low motivation, and psychomotor retardation. Treatment targets noradrenergic pathways to enhance arousal and drive without primary effects on serotonergic systems."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent selectively blocks the reuptake of noradrenaline at the presynaptic terminal, increasing synaptic noradrenaline concentration. It shows minimal activity at serotonin receptors or other monoamine systems."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Metabolism occurs via hepatic glucuronidation and oxidation, with minimal CYP450 involvement. The drug undergoes rapid hepatic clearance, resulting in a short half-life of approximately 2 hours, necessitating multiple daily dosing."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Unlike agents acting on multiple receptor systems, this drug exhibits high selectivity for the noradrenaline transporter over the serotonin transporter (ratio approximately 64:1). It lacks significant affinity for α1, β1, or α2 adrenergic receptors."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Among noradrenergic antidepressants, this is the most selective reuptake inhibitor; it is administered in divided daily doses (typically 4-10 mg twice daily) due to its very short elimination half-life and the need for sustained noradrenergic activity throughout the day."
+        }
+      ],
+      "explanation": "Reboxetine is a selective noradrenaline reuptake inhibitor (NRI) distinguished from other atypical antidepressants by its highly selective noradrenergic mechanism and notably short half-life requiring twice-daily dosing. Its glucuronidation-based metabolism with minimal CYP450 involvement and superior selectivity for the noradrenaline transporter over serotonin (64:1 ratio) uniquely identify it among its therapeutic class-mates.",
+      "confidence": 5,
+      "id": 58
+    },
+    {
+      "answer": "Docusate",
+      "aliases": [
+        "docusate sodium",
+        "docusate calcium",
+        "dioctyl sodium sulfosuccinate",
+        "Colace",
+        "Dulcosoft",
+        "Dioctyl"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Liquid Paraffin",
+          "Poloxamer"
+        ],
+        "feedback": "Docusate is the only stool softener among these three that acts as an anionic surfactant to reduce surface tension and increase water penetration into stool; liquid paraffin is a lubricant and poloxamer is a non-ionic surfactant with osmotic properties, making docusate distinct by its specific ionic mechanism and minimal systemic absorption via colonic metabolism."
+      },
+      "category": "Gastrointestinal drugs",
+      "domain": "Constipation management",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with opioid-induced constipation or post-operative bowel dysfunction requires relief without stimulating intestinal motility. The clinician selects an agent that softens stool consistency to ease defecation. Multiple drug classes can address constipation through different mechanisms."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent reduces stool hardness by altering the physical properties of faeces rather than promoting peristalsis or osmotic fluid retention. It works topically within the colon with minimal systemic effects, making it suitable for long-term use."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "An anionic surfactant that decreases surface tension at the stool-water interface, allowing water and lipids to penetrate and soften faecal material. Undergoes colonic metabolism and exhibits negligible systemic absorption even with prolonged administration."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Administered orally at typical doses of 100–240 mg daily, often in divided doses. Onset of action requires 1–3 days as the agent must accumulate and distribute throughout the colon. Available in both sodium and calcium salt formulations."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The only anionic surfactant stool softener in clinical use; its chemical name reflects a dioctyl sulfosuccinate structure. Often combined with stimulant laxatives in fixed-dose formulations to address multiple constipation mechanisms simultaneously."
+        }
+      ],
+      "explanation": "Docusate is a unique stool-softening agent distinguished by its anionic surfactant mechanism, which directly reduces surface tension to increase water penetration into stool rather than stimulating motility or drawing fluid osmotically. Its colonic metabolism, minimal systemic absorption, slow onset (1–3 days), and availability in sodium/calcium forms with the characteristic dioctyl sulfosuccinate structure definitively identify it from other laxative classes.",
+      "confidence": 5,
+      "id": 59
+    },
+    {
+      "answer": "Enzalutamide",
+      "aliases": [
+        "MDV3100",
+        "Xtandi"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Bicalutamide",
+          "Flutamide",
+          "Cyproterone",
+          "Apalutamide",
+          "Darolutamide"
+        ],
+        "feedback": "Only enzalutamide has significant blood-brain barrier penetration causing CNS seizure risk at therapeutic doses; other antiandrogens lack this toxicity profile, and apalutamide/darolutamide are newer with different safety profiles."
+      },
+      "category": "Anticancer drugs",
+      "domain": "Prostate cancer — androgen receptor antagonists",
+      "type": "adr_case",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 68-year-old man with metastatic castration-resistant prostate cancer reports a sudden unprovoked seizure after 8 weeks of treatment. He is on palliative chemotherapy, abiraterone, and a novel oral antiandrogen. No prior seizure history, normal renal and hepatic function. Head CT and metabolic panel unremarkable."
+        },
+        {
+          "label": "Investigations",
+          "text": "Serum electrolytes normal. Glucose 98 mg/dL. No drug interactions with concurrent medications identified via standard screening. EEG shows non-specific slowing without focal abnormalities. Brain MRI reveals no acute lesions, metastases, or structural abnormality."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Seizure threshold was significantly lowered despite absence of metabolic derangement, CNS infection, or structural pathology. Risk correlates with drug dose and duration of therapy, suggesting a direct neurotoxic mechanism rather than systemic toxicity."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "This antiandrogen receptor antagonist is a fourth-generation compound with unusually high lipophilicity and crosses the blood-brain barrier extensively. Cerebrospinal fluid concentrations reach therapeutically relevant levels, unlike earlier-generation competitors in its class."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Seizure is a known dose-limiting adverse effect listed in formal labelling, occurring in approximately 0.5–1% of patients. This neurotoxic liability distinguishes it from bicalutamide, flutamide, and the next-generation antiandrogens apalutamide and darolutamide."
+        }
+      ],
+      "explanation": "Enzalutamide is unique among antiandrogens for its substantial CNS penetration due to high lipophilicity, resulting in a clinically significant seizure risk (0.5–1% incidence) not observed with other class members. The absence of metabolic or structural explanations for seizure in this vignette, combined with the temporal correlation to a specific oral antiandrogen therapy, identifies enzalutamide as the causative agent.",
+      "confidence": 5,
+      "id": 60
+    },
+    {
+      "answer": "Ciclopirox",
+      "aliases": [
+        "ciclopirox olamine",
+        "Loprox",
+        "Penlac",
+        "Batrafen",
+        "Mycoster"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Amorolfine",
+          "Terbinafine",
+          "Tolnaftate"
+        ],
+        "feedback": "Ciclopirox is the only topical antifungal with both chelation of metal ions AND broad-spectrum activity against dermatophytes, yeasts, AND non-dermatophyte moulds that achieves significant systemic absorption through nail plate, enabling its unique FDA-approved nail lacquer formulation with 8% concentration for onychomycosis."
+      },
+      "category": "Dermatological drugs",
+      "domain": "Antifungal agents",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A topical agent addresses fungal skin and nail infections with activity against dermatophytes and yeasts. It is applied directly to affected areas. Patients with compromised immune systems are particular candidates for treatment. Nail infections present a specific challenge due to poor drug penetration."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This agent works by chelating divalent metal cations (iron and zinc) essential for fungal cytochrome P450 enzymes, disrupting cellular respiration and ergosterol biosynthesis. This dual mechanism distinguishes it pharmacologically from agents that target ergosterol synthesis alone."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Among topical antifungals, this drug demonstrates the broadest in vitro spectrum: activity against dermatophytes, Candida species, Malassezia, and critically, non-dermatophyte moulds (Scopulariopsis, Aspergillus, Fusarium). This polyvalent coverage is rare in its therapeutic class."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "The drug achieves approximately 0.4–1.6% systemic absorption through intact skin and significantly higher through damaged nail tissue. A specialized 8% nail lacquer formulation was developed leveraging this pharmacokinetic property, approved specifically for onychomycosis with cure rates around 12 weeks of use."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only topical antifungal approved as an over-the-counter nail lacquer in multiple countries (under the name referring to 'Penlac' or similar). It is supplied as a solution with solvent system including water, ethanol, and film-forming agents, applied to nail beds with a supplied brush applicator."
+        }
+      ],
+      "explanation": "Ciclopirox is uniquely identified by its metal-chelating mechanism, exceptionally broad spectrum including non-dermatophyte moulds, significant transdermal/transnail absorption enabling the 8% nail lacquer formulation, and regulatory approval as an OTC antifungal nail solution. Its polyvalent activity profile and specialized nail delivery system distinguish it from terbinafine (allylamine class, squalene epoxidase inhibitor), amorolfine (morpholine, narrow spectrum), and tolnaftate (thiazole, limited spectrum).",
+      "confidence": 5,
+      "id": 61
+    },
+    {
+      "answer": "Minoxidil (skin)",
+      "aliases": [
+        "Rogaine",
+        "Regaine",
+        "minoxidil topical",
+        "minoxidil solution"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Finasteride",
+          "Dutasteride",
+          "Topical tretinoin"
+        ],
+        "feedback": "Minoxidil is the only topical agent that functions as a potassium channel opener to stimulate hair growth through direct vasodilatory mechanism rather than hormonal inhibition or keratinocyte modulation, making it pharmacologically distinct from androgenetic alopecia treatments or other dermatological agents."
+      },
+      "category": "Dermatology / Cardiovascular agents with topical application",
+      "domain": "Hair loss management",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient presents with progressive hair loss affecting the scalp, seeking treatment to promote regrowth. The condition is non-scarring and reversible with intervention. Available management options include topical and systemic therapies targeting different pathophysiological mechanisms."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent is applied directly to affected scalp areas and has demonstrated efficacy in prolonging the anagen phase of the hair growth cycle. It must be applied twice daily for sustained benefit, with results typically visible after 4-6 months of continuous use."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The mechanism involves opening ATP-sensitive potassium channels in vascular smooth muscle, leading to vasodilation and increased blood flow to hair follicles. This direct cellular action on ion channels distinguishes it from hormonal or metabolic pathway inhibitors used in similar conditions."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Originally developed as an oral agent for severe hypertension, this drug was repurposed topically after patients experienced hypertrichosis as an adverse effect. The topical formulation achieves local effects without significant systemic absorption or cardiovascular effects at therapeutic doses."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Available as 2% and 5% topical solutions, this potassium channel opener is the only non-hormonal agent approved internationally for androgenetic alopecia with demonstrated efficacy in both male and female pattern hair loss, showing particular effectiveness at vertex and crown regions."
+        }
+      ],
+      "explanation": "Minoxidil is uniquely identified as a topical potassium channel opener with documented vasodilatory mechanism, originally developed as an oral antihypertensive, now repurposed for hair growth stimulation. Its pharmacological action on ATP-sensitive potassium channels distinguishes it from hormonal inhibitors (finasteride, dutasteride) and other dermatological agents, making it the only drug fitting all five clues.",
+      "confidence": 5,
+      "id": 62
+    },
+    {
+      "answer": "Pirfenidone",
+      "aliases": [
+        "Esbriet",
+        "Pirespa",
+        "Etuary",
+        "5-methyl-1-phenyl-2-(1H)-pyridone"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Caffeine"
+        ],
+        "feedback": "Both are small-molecule pyridone derivatives with anti-inflammatory properties, but only pirfenidone specifically targets pulmonary fibrosis via TGF-β pathway inhibition and demonstrates dose-dependent lung function decline reduction; caffeine lacks antifibrotic activity and clinical efficacy in idiopathic pulmonary fibrosis."
+      },
+      "category": "Respiratory drugs",
+      "domain": "Antifibrotic agents",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with progressive scarring of lung tissue presents with dyspnea and declining oxygen saturation. Management aims to slow disease progression rather than reverse fibrosis. Multiple agents from different chemical classes could address respiratory symptoms, but this condition requires targeted intervention beyond symptomatic relief."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent reduces the rate of decline in forced vital capacity in progressive interstitial lung disease. Its mechanism involves modulation of inflammatory pathways and suppression of myofibroblast activation, distinguishing it from simple bronchodilators or corticosteroids."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug inhibits transforming growth factor-beta (TGF-β) signaling, a central pathway in pulmonary fibrogenesis. It is a small-molecule pyridone derivative metabolized primarily by hepatic oxidation via CYP1A2 with minor involvement of CYP2C9 and CYP2C19."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Requires three-times-daily oral dosing due to short half-life (0.6-2.4 hours). Gastrointestinal side effects are dose-limiting, and photosensitivity reactions mandate strict sun protection counseling. The molecule's structural classification is critical for distinguishing it from mechanistically similar agents."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only small-molecule pyridone derivative approved as an oral antifibrotic agent for idiopathic pulmonary fibrosis, with distinctive orange-yellow discoloration of urine and skin at therapeutic doses due to its chemical structure and metabolism."
+        }
+      ],
+      "explanation": "Pirfenidone is a unique antifibrotic agent that specifically targets TGF-β-mediated pulmonary fibrogenesis through a mechanism distinct from its pyridone-class mate. Its clinical efficacy in slowing FVC decline, combined with hepatic metabolism via CYP1A2 and the characteristic photosensitivity and discoloration side effects, make it the only drug matching all five clues.",
+      "confidence": 5,
+      "id": 63
+    },
+    {
+      "answer": "Testosterone (men)",
+      "aliases": [
+        "Testosterone",
+        "Testosteronum",
+        "Sustanon",
+        "Nebido",
+        "Andriol",
+        "Testogel",
+        "Tostran",
+        "Axiron"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Nandrolone",
+          "Stanozolol",
+          "Oxandrolone",
+          "Trenbolone"
+        ],
+        "feedback": "While other androgens treat hypogonadism, only testosterone is the endogenous male hormone with physiological replacement as primary indication, aromatizable to estradiol, and with ester formulations spanning weeks-to-months dosing intervals."
+      },
+      "category": "Endocrine drugs",
+      "domain": "Androgen replacement and hormone therapy",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A male patient presents with fatigue, reduced libido, and low bone mineral density. Lab tests reveal deficient serum levels of the primary circulating hormone responsible for male sexual characteristics and anabolic effects. Hormone replacement therapy is initiated."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This C19 steroid is the endogenous hormone produced by testicular Leydig cells, regulated by the hypothalamic-pituitary axis via LH signaling. It acts as both a direct androgenic agent and a prohormone."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Peripheral conversion via 17β-HSD produces the active form; aromatization by CYP19A1 generates estradiol, contributing to bone health and cardiovascular effects. Binds to androgen receptor with high affinity in target tissues."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Available as multiple pharmaceutical formulations including esterified injectable depot preparations (esters conjugated at the 17β-position) with half-lives permitting dosing intervals from 1 week to 10 weeks, plus transdermal gels and buccal tablets."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only androgen where physiological replacement in hypogonadal men restores endogenous serum concentrations to the normal range (7–25 nmol/L), and its estrogenic metabolite directly suppresses LH via negative feedback on the pituitary."
+        }
+      ],
+      "explanation": "Testosterone is the primary endogenous male sex hormone synthesized in Leydig cells and regulated by the hypothalamic-pituitary-testicular axis. It is uniquely suited for hormone replacement therapy in hypogonadism because it is the physiological form, aromatizes to estradiol for bone protection, and is available in multiple ester formulations permitting personalized dosing intervals from weekly to 10-weekly administration.",
+      "confidence": 5,
+      "id": 64
+    },
+    {
+      "answer": "Salbutamol (obstetrics)",
+      "aliases": [
+        "Albuterol (obstetrics)",
+        "Ventolin (obstetrics context)",
+        "Asmol (obstetrics context)"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Terbutaline (obstetrics)",
+          "Ritodrine (obstetrics)"
+        ],
+        "feedback": "While terbutaline and ritodrine are also beta-2 agonists used for preterm labour, salbutamol is the most commonly administered intravenous agent for acute tocolysis with characteristic tremor and tachycardia side effects in this specific obstetric context."
+      },
+      "category": "Obstetric and gynaecological drugs",
+      "domain": "Maternal medicine — preterm labour management",
+      "type": "adr_case",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 32-week pregnant woman admitted with preterm labour is started on intravenous medication to arrest contractions. Within 30 minutes, she reports palpitations, tremor in her hands, and anxiety. Heart rate rises to 110 bpm. Vital signs otherwise stable."
+        },
+        {
+          "label": "Investigations",
+          "text": "Blood glucose measured at 7.2 mmol/L (normal fasting). Serum potassium 3.1 mmol/L (reference 3.5–5.0). ECG shows sinus tachycardia with normal intervals. Troponin negative. No signs of infection."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Hypokalemia develops without diuretic use or renal dysfunction. Symptoms resolve partially with reassurance and oral potassium supplementation but persist mildly while medication continues. Fine tremor becomes more pronounced with sustained infusion."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "The agent is a beta-2 selective adrenergic agonist administered intravenously for uterine relaxation. It shifts potassium intracellularly via sodium-potassium pump stimulation and increases hepatic glucose output, explaining the laboratory and clinical findings."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the most frequently used intravenous beta-2 agonist globally for acute tocolysis in preterm labour, distinguished by its rapid onset, short half-life, and characteristic tremor/anxiety adverse effect profile that improves once infusion rate is optimized or discontinued."
+        }
+      ],
+      "explanation": "Salbutamol administered intravenously for preterm labour management causes predictable beta-2 agonist adverse effects: tachycardia, tremor, anxiety, and hypokalemia through intracellular potassium shift. The combination of acute maternal symptoms, hypokalemia without other causes, and obstetric context identifies salbutamol as the causative agent.",
+      "confidence": 5,
+      "id": 65
+    },
+    {
+      "answer": "Anorectal products",
+      "aliases": [
+        "Rectal preparations",
+        "Hemorrhoidal treatments",
+        "Perianal formulations",
+        "Rectal suppositories and creams"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Glyceryl Trinitrate Rectal",
+          "Perianal Disorders treatments"
+        ],
+        "feedback": "While these address similar anatomical regions, anorectal products represent a broader category encompassing multiple therapeutic agents and formulations for localized rectal and perianal conditions, whereas glyceryl trinitrate is a specific vasodilator and perianal disorder treatments are disease-specific rather than formulation-category definitions."
+      },
+      "category": "Gastrointestinal drugs",
+      "domain": "Dermatological and mucosal preparations",
+      "type": "mixed_profile",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Patients present with localized discomfort, itching, or bleeding in the lower gastrointestinal tract. Symptoms are typically exacerbated by defecation and relieved by topical application. The condition affects a highly vascular, sensitive anatomical region prone to inflammation and tissue irritation."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Treatment employs a multi-agent approach combining astringents, local anesthetics, anti-inflammatory corticosteroids, and protective emollients. Formulations are designed for rapid localized absorption through intact or eroded mucosa, with minimal systemic distribution to reduce adverse effects."
+        },
+        {
+          "label": "Key Feature",
+          "text": "These preparations exist in multiple pharmaceutical forms: suppositories for internal application, creams and ointments for external use, and combination products. The formulation matrix typically includes petroleum-based or water-miscible bases to facilitate retention and prolonged mucosal contact."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Regulatory classification encompasses non-prescription or over-the-counter status in most jurisdictions, though some formulations contain low-dose corticosteroids requiring pharmacy supervision. International standards recognize these as topical preparations for symptomatic relief rather than curative agents for underlying pathology."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The term refers to an entire therapeutic product category rather than a single active pharmaceutical ingredient, encompassing compound formulations with proprietary blends of ingredients like bismuth subgallate, benzocaine, hydrocortisone, and live yeast cell derivatives in standardized dosage forms."
+        }
+      ],
+      "explanation": "Anorectal products represent a pharmaceutical category of multi-component topical formulations designed for symptomatic treatment of hemorrhoids and perianal disorders. Unlike single-entity drugs like glyceryl trinitrate rectal (a vasodilator) or condition-specific treatments, anorectal products are defined by their composite nature, formulation types, and regulatory positioning as self-care therapeutic aids combining astringents, local anesthetics, and anti-inflammatory agents.",
+      "confidence": 4,
+      "id": 66
+    },
+    {
+      "answer": "Atomoxetine",
+      "aliases": [
+        "Strattera",
+        "Tomoxetine"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Guanfacine"
+        ],
+        "feedback": "Guanfacine is an alpha-2 adrenergic agonist used in ADHD but lacks noradrenaline reuptake inhibition; atomoxetine's selective noradrenaline transporter blockade and absence of presynaptic alpha-2 activity are its defining pharmacological distinction."
+      },
+      "category": "Psychotropic drugs",
+      "domain": "Attention-deficit/hyperactivity disorder (ADHD) treatment",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with inattention and impulsivity requires non-stimulant pharmacotherapy. The drug is used across pediatric and adult populations for neurodevelopmental symptoms affecting concentration and executive function."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Unlike stimulant alternatives, this agent does not increase dopamine significantly in the reward pathways. It shows low abuse potential and is not a controlled substance in many jurisdictions."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The mechanism involves selective inhibition of the noradrenaline transporter (NET), increasing noradrenergic neurotransmission in prefrontal cortex and striatum without affecting serotonin or dopamine reuptake substantially."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Metabolism occurs primarily via CYP2D6 oxidation. Patients who are poor CYP2D6 metabolizers experience significantly elevated plasma concentrations and require dose adjustments, making pharmacogenetic testing relevant."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only selective noradrenaline reuptake inhibitor approved specifically for ADHD; it was the first non-stimulant to receive regulatory approval for this indication and remains structurally distinct from tricyclic antidepressants."
+        }
+      ],
+      "explanation": "Atomoxetine is a selective noradrenaline transporter inhibitor uniquely positioned as a non-stimulant ADHD medication with CYP2D6-dependent metabolism and clinically significant pharmacogenetic implications. Its specificity for NET (without dopamine enhancement) and regulatory history as the first approved non-stimulant ADHD agent differentiate it from all class-mates and alternatives.",
+      "confidence": 5,
+      "id": 67
+    },
+    {
+      "answer": "Adenosine",
+      "aliases": [
+        "Adenosine (INN)",
+        "Adenocard",
+        "Adeona",
+        "Adrekar"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Esmolol",
+          "Verapamil",
+          "Diltiazem"
+        ],
+        "feedback": "Adenosine is the only agent among cardiovascular drugs that acts as an endogenous nucleoside with ultrashort half-life (<10 seconds), causing transient AV nodal block through A1 receptor activation rather than beta-blockade or calcium channel inhibition, making it uniquely suited for acute SVT conversion."
+      },
+      "category": "Cardiovascular agents",
+      "domain": "Arrhythmia management",
+      "type": "drug_id",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient presents with sudden-onset palpitations and rapid heart rate. ECG shows a regular, narrow-complex tachycardia. An intravenous agent is needed for rapid diagnostic and therapeutic intervention."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This drug temporarily blocks conduction through the atrioventricular node. It causes a brief pause in heart rate, which can either terminate the arrhythmia or reveal the underlying rhythm."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "An endogenous nucleoside that activates A1 receptors on nodal tissue. Metabolism occurs via rapid cellular uptake and phosphorylation, with a half-life measured in seconds rather than minutes."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Administered as a rapid intravenous bolus, it must be given through a large-bore line with immediate saline flush. Effects are transient, lasting only 5-10 seconds, requiring careful timing during ECG monitoring."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only cardiovascular agent used for acute SVT that is an endogenous purine nucleoside, available commercially as Adenocard, with efficacy exceeding 90% for terminating atrioventricular reentrant tachycardia."
+        }
+      ],
+      "explanation": "Adenosine is uniquely positioned as the only endogenous nucleoside with ultrashort duration used for acute supraventricular tachycardia management. Its mechanism via A1 receptor activation, rapid cellular metabolism, and transient AV nodal blockade distinguish it from all class-mate antiarrhythmic agents, making it ideal for acute diagnostic and therapeutic use.",
+      "confidence": 5,
+      "id": 68
+    },
+    {
+      "answer": "Tretinoin (skin)",
+      "aliases": [
+        "all-trans retinoic acid",
+        "ATRA",
+        "Retin-A",
+        "Vesanoid",
+        "Renova"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "isotretinoin",
+          "adapalene",
+          "tazarotene"
+        ],
+        "feedback": "Isotretinoin is a systemic retinoid with different pharmacokinetics and drug interaction profile; adapalene and tazarotene are third-generation retinoids with reduced CYP450 interactions compared to the answer drug, making them safer with concurrent medications affecting hepatic metabolism."
+      },
+      "category": "Anticancer drugs",
+      "domain": "Topical/systemic dermatological agent",
+      "type": "drug_interaction",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Scenario",
+          "text": "A patient with severe photoaging and actinic damage is prescribed a topical agent for dermatological use. After 3 weeks, they experience increased photosensitivity despite using consistent sun protection. Their concurrent medications include an antifungal and an anticonvulsant, both hepatically metabolized."
+        },
+        {
+          "label": "Co-prescribed Drugs",
+          "text": "The patient is taking ketoconazole orally and phenytoin chronically. Both drugs interact with hepatic metabolism pathways. The dermatological agent being applied topically is known to undergo metabolism via multiple CYP450 enzymes."
+        },
+        {
+          "label": "Interaction Effect",
+          "text": "Systemic absorption of the topical agent increases significantly due to CYP-mediated metabolism inhibition. Plasma concentrations rise, amplifying photosensitivity and increasing risk of teratogenicity if the patient becomes pregnant."
+        },
+        {
+          "label": "Mechanism Clue",
+          "text": "Ketoconazole inhibits CYP3A4 (primary metabolizer), while phenytoin induces multiple CYP enzymes. The net effect depends on which interaction dominates. This vitamin A derivative is metabolized predominantly via CYP3A4 and CYP2C8, making it susceptible to this metabolic competition."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the first-generation natural retinoid approved topically for photoaging and acne; unlike newer synthetic retinoids, it shows potent CYP3A4 substrate dependence. It is FDA Category X in pregnancy, requiring strict contraception when systemic levels elevate due to drug interactions."
+        }
+      ],
+      "explanation": "Tretinoin (all-trans retinoic acid) is a topical retinoid that undergoes significant hepatic metabolism via CYP3A4 and CYP2C8. Co-prescription with ketoconazole (CYP3A4 inhibitor) dramatically increases systemic absorption and plasma concentrations, enhancing photosensitivity and teratogenic risk. This interaction is pharmacologically specific to first-generation natural retinoids and distinguishes tretinoin from modern synthetic alternatives.",
+      "confidence": 5,
+      "id": 69
+    },
+    {
+      "answer": "Simvastatin",
+      "aliases": [
+        "Zocor",
+        "Simlup",
+        "Simvacor",
+        "simvastatin (INN)"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Atorvastatin",
+          "Fluvastatin",
+          "Pravastatin",
+          "Rosuvastatin"
+        ],
+        "feedback": "All are statins reducing LDL-cholesterol via HMG-CoA reductase inhibition, but only simvastatin is a prodrug requiring hepatic activation and undergoes extensive CYP3A4 metabolism with significant food-drug interaction affecting bioavailability."
+      },
+      "category": "Cardiovascular drugs",
+      "domain": "Lipid-lowering agents",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with elevated LDL-cholesterol and history of myocardial infarction requires lipid management. The prescriber selects an agent that competitively inhibits HMG-CoA reductase, reducing hepatic cholesterol synthesis and upregulating LDL receptor expression on hepatocyte surfaces."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent is highly lipophilic, crosses the blood-brain barrier readily, and achieves excellent tissue penetration. It undergoes substantial first-pass hepatic metabolism, resulting in relatively low oral bioavailability despite high potency at therapeutic doses."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug is administered as an inactive lactone prodrug requiring hepatic hydrolysis to form the active open-chain hydroxy acid form. This bioconversion is essential for HMG-CoA reductase inhibitory activity at the site of action."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Metabolism is dominated by CYP3A4, making this agent susceptible to clinically significant interactions with CYP3A4 inhibitors. Food substantially increases bioavailability, necessitating specific administration timing recommendations to maintain consistent exposure."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only statin marketed as a powder formulation for oral suspension (80 mg/mL) in addition to tablets, and the FDA issued guidance restricting doses above 40 mg daily due to myopathy risk, distinguishing it from higher-dose alternatives in this therapeutic class."
+        }
+      ],
+      "explanation": "Simvastatin is uniquely identified as a lipophilic prodrug statin requiring CYP3A4-dependent hepatic activation, with pronounced food interactions and established dose-limiting myopathy concerns. While all statins inhibit HMG-CoA reductase, simvastatin's prodrug metabolism and available suspension formulation distinguish it from equipotent class-mates like atorvastatin and rosuvastatin.",
+      "confidence": 5,
+      "id": 70
+    },
+    {
+      "answer": "Telmisartan",
+      "aliases": [
+        "Micardis",
+        "Kinzal",
+        "Pritor",
+        "Atellica"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Candesartan",
+          "Irbesartan",
+          "Losartan",
+          "Olmesartan"
+        ],
+        "feedback": "All are angiotensin II receptor blockers used for hypertension, but only this agent has the longest half-life (24 hours), highest lipophilicity enabling potential metabolic benefits, and the unique property of partial peroxisome proliferator-activated receptor gamma (PPAR-γ) agonism."
+      },
+      "category": "Cardiovascular drugs",
+      "domain": "Antihypertensive agents",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with stage 2 hypertension and metabolic syndrome requires blood pressure control. The prescriber selects an angiotensin II receptor antagonist to reduce cardiovascular risk and improve renal protection."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent blocks the AT1 receptor on vascular smooth muscle and provides 24-hour antihypertensive coverage with once-daily dosing, allowing sustained blood pressure reduction throughout the day and night."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Among its class, this drug demonstrates the longest elimination half-life and is highly lipophilic, enabling excellent tissue penetration and sustained receptor antagonism. It undergoes minimal renal elimination."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "This agent uniquely exhibits partial agonist activity at the peroxisome proliferator-activated receptor gamma (PPAR-γ), conferring additional metabolic benefits including modest insulin sensitivity improvement and potential anti-inflammatory effects beyond blood pressure reduction."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This is the only angiotensin II receptor blocker in clinical use with measurable PPAR-γ activity, making it particularly suitable for hypertensive patients with concurrent insulin resistance or metabolic dysfunction."
+        }
+      ],
+      "explanation": "Telmisartan is uniquely distinguished from other angiotensin II receptor blockers by its exceptional lipophilicity, longest half-life (24 hours), and exclusive partial PPAR-γ agonist properties that confer metabolic benefits. Its lipophilic nature and PPAR-γ activity differentiate it from chemically similar agents like losartan, irbesartan, candesartan, and olmesartan.",
+      "confidence": 5,
+      "id": 71
+    },
+    {
+      "answer": "Diazepam",
+      "aliases": [
+        "Valium",
+        "Apozepam",
+        "Diazemuls",
+        "Stesolid"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Lorazepam",
+          "Alprazolam",
+          "Oxazepam",
+          "Temazepam"
+        ],
+        "feedback": "Diazepam's exceptionally long half-life (30-56 hours), active metabolites, lipophilicity enabling multiple formulations (oral, IV, rectal), and historical status as the prototypical benzodiazepine distinguish it from shorter-acting congeners and those without significant active metabolites."
+      },
+      "category": "Psychotropic drugs",
+      "domain": "Central nervous system anxiolytics and sedatives",
+      "type": "mixed_profile",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Used for acute anxiety relief, muscle relaxation, seizure management, and alcohol withdrawal syndrome. Can be administered orally, intravenously, intramuscularly, or rectally depending on clinical urgency and patient circumstance."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "A lipophilic compound that potentiates GABA-A receptor inhibitory effects. Hepatically metabolized via N-demethylation and glucuronidation, producing pharmacologically active metabolites including desmethyldiazepam that extend therapeutic duration."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Possesses one of the longest elimination half-lives in its class (30-56 hours), with active metabolites accumulating substantially with repeated dosing. Permits once-daily or less-frequent dosing compared to most pharmacologically similar agents."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Available in parenteral formulations (IV/IM) as both aqueous solution and lipid emulsion preparation (Diazemuls). The emulsion formulation was developed to reduce injection site pain and thrombophlebitis risk associated with earlier aqueous preparations."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "Developed in 1959 and approved for clinical use in 1963, becoming the prototypical benzodiazepine. Its widespread adoption and multiple formulation routes (oral tablets, rectal gel, injectable solutions) established the template for modern benzodiazepine therapy worldwide."
+        }
+      ],
+      "explanation": "Diazepam is uniquely distinguished by its exceptionally long half-life with clinically significant active metabolites, multiple pharmaceutical formulations including the lipid emulsion (Diazemuls), and its historical significance as the archetypal benzodiazepine introduced in the early 1960s. These combined pharmacological and developmental features differentiate it from structurally similar benzodiazepines that are either shorter-acting, lack active metabolites, or have more limited formulation options.",
+      "confidence": 5,
+      "id": 72
+    },
+    {
+      "answer": "Trimethoprim",
+      "aliases": [
+        "TMP",
+        "Proloprim",
+        "Monotrim",
+        "Triprim"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Metronidazole",
+          "Nitrofurantoin",
+          "Fosfomycin"
+        ],
+        "feedback": "Trimethoprim uniquely targets dihydrofolate reductase in bacteria, inhibits folic acid synthesis rather than nucleic acid directly, and has the specific property of selective bacterial enzyme inhibition with minimal mammalian DHFR impact at therapeutic doses—distinguishing it from other urinary agents."
+      },
+      "category": "Anti-infectives",
+      "domain": "Antimicrobial Pharmacology",
+      "type": "mixed_profile",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Used for uncomplicated urinary tract infections and Pneumocystis jirovecii pneumonia prophylaxis in immunocompromised patients. Often combined with another agent to broaden spectrum and prevent resistance development during acute treatment courses."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "Inhibits bacterial dihydrofolate reductase, disrupting the conversion of dihydrofolate to tetrahydrofolate and blocking bacterial folate-dependent one-carbon transfer reactions essential for nucleotide synthesis."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Demonstrates selective toxicity because mammalian dihydrofolate reductase has substantially lower affinity for this agent compared to bacterial enzyme, achieving therapeutic windows suitable for systemic use in infections."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "When used alone against Gram-negative organisms in urinary tract infections, resistance emerges rapidly through chromosomal mutations. Standard clinical practice historically involved pairing this agent with a sulfonamide to delay resistance and improve efficacy."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This agent is the sole folic acid pathway antagonist antimicrobial in clinical use that functions as a dihydrofolate reductase inhibitor rather than acting as a nucleotide antimetabolite or DNA intercalator, and remains available as monotherapy in many formulations."
+        }
+      ],
+      "explanation": "Trimethoprim is the only antimicrobial in its class category that directly inhibits bacterial dihydrofolate reductase to disrupt folic acid synthesis. Its unique selective toxicity profile, historical use in combination therapy for UTI resistance prevention, and monotherapy availability distinguish it from other agents in the anti-infective arsenal.",
+      "confidence": 5,
+      "id": 73
+    },
+    {
+      "answer": "Oxytocin",
+      "aliases": [
+        "Pitocin",
+        "Syntocinon",
+        "Orasthin"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Carbetocin",
+          "Ergometrine"
+        ],
+        "feedback": "Carbetocin causes less water retention and hyponatraemia risk; ergometrine causes sustained uterine contraction and vasoconstriction rather than water intoxication syndrome. Oxytocin's antidiuretic effect and hypotonic fluid absorption create the specific ADR pattern described."
+      },
+      "category": "Obstetric and gynaecological drugs",
+      "domain": "Adverse drug reaction identification",
+      "type": "adr_case",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 34-year-old woman receiving intravenous infusion for labour augmentation develops confusion, headache, and nausea 6 hours after treatment initiation. She has received 500 mL of hypotonic dextrose solution concurrently. Vital signs show bradycardia and hypertension."
+        },
+        {
+          "label": "Investigations",
+          "text": "Serum sodium is 118 mmol/L (reference 135–145). Plasma osmolality is reduced to 245 mOsm/kg. Urine sodium is elevated at 85 mmol/L with inappropriately concentrated urine (osmolality 620 mOsm/kg despite hyponatraemia)."
+        },
+        {
+          "label": "Key Finding",
+          "text": "The clinical and biochemical picture is consistent with syndrome of inappropriate antidiuretic hormone secretion (SIADH). The temporal relationship between infusion and symptom onset, combined with hypotonic fluid administration, points to a drug-induced mechanism rather than pathological SIADH."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "The causative agent is a posterior pituitary hormone used for uterine contraction during labour. It has intrinsic vasopressin-like antidiuretic properties, particularly at higher infusion rates, promoting free water reabsorption in collecting ducts."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This peptide hormone causes water intoxication when combined with excessive hypotonic fluid intake—a recognised ADR in obstetrics prevented by using isotonic saline as diluent and limiting infusion duration. Its structure contains 9 amino acids and is synthesised in the hypothalamus."
+        }
+      ],
+      "explanation": "Oxytocin causes water intoxication through its antidiuretic hormone (vasopressin)-like activity, leading to SIADH when large volumes of hypotonic fluid are co-administered during labour induction/augmentation. This ADR distinguishes it from ergometrine (which causes vasoconstriction and sustained contraction) and carbetocin (a longer-acting synthetic analogue with reduced antidiuretic effects). Prevention requires isotonic saline dilution and restricted fluid administration.",
+      "confidence": 5,
+      "id": 74
+    },
+    {
+      "answer": "Levetiracetam",
+      "aliases": [
+        "Keppra",
+        "Ezel",
+        "Kopodex",
+        "Keppra XR",
+        "eluzetide"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Lacosamide",
+          "Lamotrigine",
+          "Carbamazepine",
+          "Oxcarbazepine"
+        ],
+        "feedback": "Levetiracetam is uniquely associated with behavioural/mood changes and irritability as a frequent ADR unrelated to its seizure mechanism; other anticonvulsants cause different primary ADRs (ataxia, rash, hyponatremia, enzyme induction)."
+      },
+      "category": "Neurological drugs",
+      "domain": "Antiepileptic agents",
+      "type": "adr_case",
+      "difficulty": "easy",
+      "clues": [
+        {
+          "label": "Patient Presentation",
+          "text": "A 16-year-old with newly diagnosed focal seizures begins treatment. After two weeks, parents report increasing irritability, emotional lability, and aggressive outbursts during school. The adolescent denies suicidal ideation but admits feeling unusually hostile and impatient. Seizure control is excellent."
+        },
+        {
+          "label": "Investigations",
+          "text": "Serum electrolytes, liver function, and renal function are all normal. EEG shows good seizure suppression. Drug levels are therapeutic and within expected range. Psychiatric screening excludes primary mood disorder or underlying psychosis."
+        },
+        {
+          "label": "Key Finding",
+          "text": "Temporal relationship between drug initiation and behavioural changes is clear. Symptoms emerged within days of starting antiepileptic therapy and escalated over two weeks. No other medications or stressors were introduced during this period."
+        },
+        {
+          "label": "Drug Clue",
+          "text": "This agent has a unique pyrolidone ring structure distinct from other anticonvulsants. It does not inhibit hepatic enzymes and requires renal elimination. Behavioural and mood disturbances occur in 10–15% of patients independent of seizure control or plasma concentration."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The drug is marketed as Keppra and is the S-enantiomer of a pyrrolidone derivative. Mood and behavioural changes—including aggression, irritability, and personality shifts—are among its most characteristic and dose-independent adverse effects, often reversible upon dose reduction or discontinuation."
+        }
+      ],
+      "explanation": "Levetiracetam is uniquely recognised for behavioural and mood disturbances occurring in 10–15% of patients as an idiosyncratic, dose-independent adverse effect unrelated to seizure suppression or drug levels. This distinguishes it from structurally and mechanistically similar anticonvulsants, which typically cause neurological (ataxia, diplopia) or metabolic (hyponatremia) toxicity instead. The temporal relationship, excellent seizure control with normal investigations, and characteristic irritability–aggression profile make levetiracetam the clear answer.",
+      "confidence": 5,
+      "id": 75
+    },
+    {
+      "answer": "Infliximab",
+      "aliases": [
+        "Remicade",
+        "Remsima",
+        "Inflectra",
+        "Flixabi",
+        "TNF-alpha inhibitor monoclonal antibody"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Adalimumab",
+          "Golimumab",
+          "Certolizumab",
+          "Etanercept"
+        ],
+        "feedback": "Etanercept (fusion protein) lacks the chimeric monoclonal antibody structure required for significant immunogenicity and live vaccine contraindication; adalimumab, golimumab, and certolizumab do not carry the same acute infusion reaction risk or require pre-medication as consistently as the chimeric construct."
+      },
+      "category": "Immunomodulators / Anti-inflammatory agents",
+      "domain": "Drug Interactions",
+      "type": "drug_interaction",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Scenario",
+          "text": "A patient with rheumatoid arthritis initiates therapy for TNF suppression alongside methotrexate. Within 2 weeks, the patient develops fever, cough, and bilateral pulmonary infiltrates on imaging despite no prior tuberculosis history. Tuberculin skin test is negative."
+        },
+        {
+          "label": "Co-prescribed Drugs",
+          "text": "Methotrexate (for disease control), isoniazid (recent TB prophylaxis initiated per guidelines), and acetaminophen for comfort. The biologic agent is a chimeric monoclonal construct targeting TNF-alpha."
+        },
+        {
+          "label": "Interaction Effect",
+          "text": "Severe immunosuppression develops, permitting reactivation of latent mycobacterial infection despite prophylaxis. The patient progresses to disseminated tuberculosis with respiratory compromise within weeks despite standard anti-tuberculous therapy."
+        },
+        {
+          "label": "Mechanism Clue",
+          "text": "The monoclonal antibody construct exhibits superior TNF-alpha neutralization at tissue sites compared to receptor-binding biologics, creating profound local immunosuppression in lungs. Chimeric architecture enhances Fc-receptor interactions, amplifying immune cell depletion at infection foci."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This chimeric mouse-human monoclonal antibody is administered intravenously and carries the highest risk of tuberculosis reactivation among TNF inhibitors—up to 200-fold elevation. Acute infusion reactions requiring pre-medication differentiate it from purely soluble receptor constructs."
+        }
+      ],
+      "explanation": "Infliximab is a chimeric monoclonal antibody with superior TNF-alpha neutralization capacity and the highest tuberculosis reactivation risk among TNF inhibitors, making it uniquely vulnerable to severe TB despite prophylaxis when combined with methotrexate-induced immunosuppression. Its intravenous administration, requirement for pre-medication, and Fc-receptor-mediated immune depletion distinguish it from etanercept (fusion protein) and purely humanized alternatives.",
+      "confidence": 5,
+      "id": 76
+    },
+    {
+      "answer": "Pseudoephedrine",
+      "aliases": [
+        "Sudafed",
+        "Actifed",
+        "Drixoral",
+        "Elixir",
+        "d-pseudoephedrine"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Phenylephrine"
+        ],
+        "feedback": "Phenylephrine is a selective α1-adrenergic agonist with poor oral bioavailability and minimal CNS penetration, whereas the answer is a non-selective sympathomimetic with high oral bioavailability and significant CNS effects including insomnia and tachycardia."
+      },
+      "category": "Ear, Nose and Throat Drugs",
+      "domain": "Decongestants and Nasal Agents",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "Patient presents with nasal congestion, rhinorrhea, and sinus pressure during an upper respiratory infection. Treatment aims to reduce mucosal edema and restore nasal airflow. Multiple oral and topical agents could address this symptom complex."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This sympathomimetic amine acts as a non-selective adrenergic agonist, producing vasoconstriction of nasal blood vessels. Unlike purely selective agents, it activates both α and β-adrenergic receptors, contributing to its systemic effects beyond local nasal action."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug undergoes hepatic metabolism via CYP2D6 and shows high oral bioavailability (90%) with rapid onset within 30 minutes. Its long half-life of 9-16 hours enables twice-daily dosing, and it crosses the blood-brain barrier substantially, causing CNS stimulation."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "This agent exists as two stereoisomers, with the d-enantiomer being the therapeutically active form. It is subject to regulatory monitoring in many countries due to its potential precursor role in illicit drug synthesis, though legitimate use remains permitted."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "The d-enantiomer is significantly more potent than the l-enantiomer, and the pure active isomer maintains the same decongestant efficacy as the racemic mixture at half the dose, making it pharmacologically distinct from its structural class-mate phenylephrine."
+        }
+      ],
+      "explanation": "Pseudoephedrine is a non-selective sympathomimetic decongestant with high oral bioavailability and substantial CNS penetration, distinguishing it from selective α1-agonists like phenylephrine. The d-enantiomer's enhanced potency and regulatory status as a monitored precursor chemical provide definitive identification. Its systemic effects—including insomnia, tachycardia, and hypertension—reflect its non-selective adrenergic mechanism and CNS activity.",
+      "confidence": 5,
+      "id": 77
+    },
+    {
+      "answer": "Gliclazide",
+      "aliases": [
+        "Diamicron",
+        "Diamicron MR",
+        "Glidiab",
+        "Gliclazide MR"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Glibenclamide",
+          "Glimepiride",
+          "Glipizide"
+        ],
+        "feedback": "Gliclazide is the only second-generation sulfonylurea with both rapid-acting insulinotropic properties AND a modified-release formulation designed for once-daily dosing with cardiovascular safety emphasis in its development profile."
+      },
+      "category": "Endocrine drugs",
+      "domain": "Antidiabetic agents",
+      "type": "mixed_profile",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with type 2 diabetes mellitus requires oral glycaemic control with an agent that stimulates pancreatic insulin secretion. The drug is chosen for its rapid onset and short duration, allowing flexible meal-time dosing in some formulations."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "This agent binds to ATP-sensitive potassium channels on pancreatic beta cells, triggering membrane depolarisation and insulin release. It undergoes hepatic metabolism via oxidative pathways, with inactive metabolites excreted primarily through the kidneys."
+        },
+        {
+          "label": "Key Feature",
+          "text": "Unlike some structural analogues in its class, this drug exhibits selective action on beta-cell potassium channels with minimal extrapancreatic effects. A modified-release formulation was specifically developed to achieve once-daily dosing with sustained glycaemic control."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "The modified-release version (MR formulation) uses a matrix technology delivering the drug gradually over 24 hours. This was introduced clinically to improve convenience and potentially reduce hypoglycaemic episodes compared to shorter-acting preparations."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This second-generation sulfonylurea was synthesised in France in 1972 and is marketed internationally under the proprietary name Diamicron. The MR variant (introduced 1996) is specifically indicated for once-daily administration with meals."
+        }
+      ],
+      "explanation": "Gliclazide is a second-generation sulfonylurea distinguished by its availability in both short-acting and modified-release formulations, with the MR variant being a hallmark feature designed for once-daily dosing. The combination of beta-cell selectivity, French origin, and the specific Diamicron brand identity with MR formulation timing uniquely identifies this drug from other sulfonylureas.",
+      "confidence": 5,
+      "id": 78
+    },
+    {
+      "answer": "Phenylephrine (eye)",
+      "aliases": [
+        "phenylephrine ophthalmic",
+        "phenylephrine 2.5%",
+        "phenylephrine 10%",
+        "Mydfrin",
+        "Neo-Synephrine ophthalmic"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "tropicamide",
+          "cyclopentolate",
+          "homatropine"
+        ],
+        "feedback": "Phenylephrine is distinguished from mydriatic anticholinergics by its mechanism (alpha-1 agonism vs muscarinic antagonism) and lack of accommodation paralysis, making it uniquely useful for mydriasis without cycloplegia in diagnostic settings."
+      },
+      "category": "ear nose throat drugs",
+      "domain": "ophthalmology",
+      "type": "drug_id",
+      "difficulty": "hard",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient undergoing dilated fundus examination requires pupil enlargement to visualize the retina. The clinician selects an agent that will enlarge the pupil but permits the patient to maintain normal accommodation and reading ability. What class of agent fits this requirement?"
+        },
+        {
+          "label": "Key Feature",
+          "text": "This sympathomimetic amine acts selectively on alpha-1 adrenergic receptors in the iris dilator muscle, producing mydriasis without affecting lens accommodation or pupillary light reflex integrity during routine eye examinations."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "As a selective alpha-1 agonist, this drug undergoes minimal systemic absorption through nasal mucosa when applied topically to the eye due to its high polarity and rapid local metabolism by monoamine oxidase in ocular tissues."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Available in two ophthalmic formulations—a 2.5% solution for diagnostic mydriasis and a 10% solution for more rapid and pronounced dilation—this agent exhibits peak mydriatic effect within 30–60 minutes and duration of 3–5 hours."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This alpha-1 selective agent (unlike non-selective sympathomimetics) produces mydriasis without cycloplegia, allowing the accommodation reflex to remain intact, and is contraindicated in narrow-angle glaucoma due to angle-closure risk despite preserving pupillary light responses."
+        }
+      ],
+      "explanation": "Phenylephrine ophthalmic is a selective alpha-1 adrenergic agonist uniquely positioned for diagnostic mydriasis without accommodation paralysis, distinguishing it from anticholinergic mydriatics. Its dual-formulation availability (2.5% and 10%), rapid onset, short duration, and preserved light reflex combined with contraindication in narrow-angle glaucoma create a pharmacologically distinctive profile.",
+      "confidence": 5,
+      "id": 79
+    },
+    {
+      "answer": "Terbinafine",
+      "aliases": [
+        "Lamisil",
+        "Lamidil",
+        "amorolfine"
+      ],
+      "acceptable_alternatives": [],
+      "near_misses": {
+        "drugs": [
+          "Griseofulvin",
+          "Amphotericin B",
+          "Nystatin"
+        ],
+        "feedback": "Terbinafine is the only allylamine antifungal that irreversibly inhibits squalene epoxidase, has oral bioavailability, achieves excellent nail and skin concentrations via lipophilic distribution, and specifically accumulates in keratin-rich tissues—uniquely qualifying it for dermatophyte monotherapy."
+      },
+      "category": "Anti-infectives",
+      "domain": "Antifungal agents",
+      "type": "drug_id",
+      "difficulty": "medium",
+      "clues": [
+        {
+          "label": "Clinical Context",
+          "text": "A patient with chronic toenail infection caused by dermatophytes requires systemic treatment. Several antifungal options exist for fungal nail disease, including agents targeting different cellular mechanisms and administered via different routes."
+        },
+        {
+          "label": "Key Feature",
+          "text": "This agent is uniquely effective for onychomycosis because it accumulates in keratin, sebum, and stratum corneum at concentrations 100–300 times higher than serum levels, providing sustained activity even after discontinuation."
+        },
+        {
+          "label": "Pharmacology Clue",
+          "text": "The drug works by irreversibly inhibiting squalene epoxidase, blocking ergosterol synthesis early in the sterol pathway. This mechanism differs fundamentally from azoles and polyenes, making it fungicidal rather than fungistatic against dermatophytes."
+        },
+        {
+          "label": "Narrowing Detail",
+          "text": "Oral absorption is rapid and lipophilic; the drug undergoes extensive hepatic metabolism via CYP3A4 and CYP2C9 with a prolonged half-life of 12–16 hours, allowing once-daily dosing and accumulation in skin over weeks of therapy."
+        },
+        {
+          "label": "Identifying Detail",
+          "text": "This allylamine antifungal is the only agent in its class with oral formulation approved for monotherapy of onychomycosis, achieving mycological cure rates of 70–80% in 12 weeks and cure persistence beyond discontinuation due to nail reservoir kinetics."
+        }
+      ],
+      "explanation": "Terbinafine is the prototypical allylamine antifungal with a unique mechanism (squalene epoxidase inhibition), exceptional lipophilic distribution to keratin tissues, oral bioavailability with hepatic metabolism, and specific indication for dermatophyte nail infections. Its irreversible fungicidal action and accumulation in keratinized tissues distinguish it from azole fungistats and polyene antibiotics.",
+      "confidence": 5,
+      "id": 80
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-12T03:13:19.379Z",
+    "model": "claude-haiku-4-5",
+    "count": 39,
+    "errors": 1
+  }
+}

@@ -1,0 +1,4435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0d9488">
+  <title>Physiodle - Physiotherapy Puzzle Game</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦴</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f3ff;
+      color: #1f2937;
+      min-height: 100vh;
+      padding-bottom: env(safe-area-inset-bottom);
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: calc((100vw - 800px) / 2);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      left: 0;
+      background: linear-gradient(180deg, #7c3aed 0%, #8b5cf6 30%, #a78bfa 60%, #c4b5fd 100%);
+      opacity: 0.12;
+    }
+
+    body::after {
+      right: 0;
+      background: linear-gradient(180deg, #c4b5fd 0%, #a78bfa 30%, #8b5cf6 60%, #7c3aed 100%);
+      opacity: 0.12;
+    }
+
+    @media (min-width: 1200px) {
+      body::before, body::after {
+        width: calc((100vw - 800px) / 2);
+      }
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background: white;
+      border-bottom: 2px solid #ede9fe;
+      padding: 0.5rem max(1rem, env(safe-area-inset-left)) 0.5rem max(1rem, env(safe-area-inset-right));
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+    }
+
+    .logo-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #7c3aed;
+      white-space: nowrap;
+    }
+
+    .day-indicator {
+      font-size: 0.8rem;
+      color: #6b7280;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .header-btn {
+      background: #f0fdf4;
+      border: 1.5px solid #7c3aed;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: #7c3aed;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.6rem;
+      min-height: 32px;
+      border-radius: 0.375rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .header-btn:hover {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+    }
+
+    .header-btn.badge-holder::after {
+      content: attr(data-badge);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #f59e0b;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #7c3aed;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    /* ACCOUNT STATS */
+    .account-stat-card {
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+    }
+    .account-stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.2;
+    }
+    .account-stat-label {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.15rem;
+    }
+    .account-perf-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3rem 0;
+    }
+    .account-perf-label {
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+    .account-perf-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #111827;
+    }
+    .dist-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dist-label {
+      width: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .dist-bar {
+      height: 1.3rem;
+      border-radius: 0.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      min-width: 1.6rem;
+      transition: width 0.3s ease;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 1.5rem max(1rem, env(safe-area-inset-left)) 1.5rem max(1rem, env(safe-area-inset-right));
+      flex: 1;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* CARDS */
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card.clue-card {
+      min-height: 60px;
+      display: block;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      line-height: 1.5;
+    }
+
+    .card.clue-card.blurred {
+      background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+      color: transparent;
+      user-select: none;
+      filter: blur(8px);
+    }
+
+    .card.clue-card.revealed {
+      background: white;
+      color: #1f2937;
+      filter: blur(0);
+      border-left: 4px solid #7c3aed;
+      position: relative;
+    }
+
+    .card.clue-card.revealed.clue-wrong {
+      border-left: 4px solid #ef4444;
+      background: #fef2f2;
+    }
+
+    .card.clue-card.revealed.clue-correct {
+      border-left: 4px solid #8b5cf6;
+      background: #f0fdf4;
+    }
+
+    .clue-status-icon {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      font-size: 1.1rem;
+      line-height: 1;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .clue-icon-wrong {
+      color: #dc2626;
+      font-size: 1.3rem;
+    }
+
+    .clue-icon-correct {
+      color: #8b5cf6;
+      font-size: 1.2rem;
+    }
+
+    .clue-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7c3aed;
+      margin-bottom: 0.35rem;
+    }
+
+    .card.clue-card.clue-wrong .clue-label {
+      color: #dc2626;
+    }
+
+    .card.clue-card.clue-correct .clue-label {
+      color: #8b5cf6;
+    }
+
+    .clue-text {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* PUZZLE PROMPT */
+    .puzzle-prompt {
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #7c3aed;
+      padding: 8px 16px;
+      margin-bottom: 8px;
+      background: #f5f3ff;
+      border-radius: 8px;
+      border: 1px solid #e9e5ff;
+    }
+
+    /* UNIT TOGGLE */
+    .unit-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .unit-toggle-label {
+      font-size: 0.8rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .unit-toggle-btn {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 14px;
+      background: white;
+      color: #6b7280;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .unit-toggle-btn.active {
+      border-color: #7c3aed;
+      background: #f5f3ff;
+      color: #7c3aed;
+      font-weight: 600;
+    }
+    .unit-toggle-btn:hover {
+      border-color: #7c3aed;
+    }
+
+    /* WALKTHROUGH SECTION */
+    .walkthrough-section {
+      margin-top: 16px;
+      padding: 16px;
+      background: #f0fdf4;
+      border-radius: 10px;
+      border-left: 4px solid #22c55e;
+    }
+    .walkthrough-title {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #15803d;
+      margin-bottom: 8px;
+    }
+    .walkthrough-text {
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    /* GUESS INPUT */
+    .guess-section {
+      margin-bottom: 1rem;
+      position: sticky;
+      top: 52px; /* below header */
+      z-index: 50;
+      background: #f5f3ff;
+      padding: 0.75rem 0;
+    }
+
+    .guess-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+    }
+
+    .guess-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .guess-input {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      height: 100%;
+    }
+
+    .guess-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    }
+
+    .guess-input.disabled {
+      background: #f3f4f6;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    #submitBtn {
+      padding: 0.6rem 1.25rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
+    }
+
+    .autocomplete-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 2px solid #7c3aed;
+      border-top: none;
+      max-height: 200px;
+      overflow-y: auto;
+      border-radius: 0 0 0.5rem 0.5rem;
+      z-index: 60;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .autocomplete-dropdown.show {
+      display: block;
+    }
+
+    .autocomplete-item {
+      padding: 0.6rem 0.75rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .autocomplete-item:last-child {
+      border-bottom: none;
+    }
+
+    .autocomplete-item strong { color: #0d9488; font-weight: 700; }
+    .autocomplete-item:hover,
+    .autocomplete-item.selected {
+      background: #f0fdf4;
+      color: #7c3aed;
+    }
+
+    /* BUTTONS */
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #6d28d9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(13, 148, 136, 0.3);
+    }
+
+    .btn-primary:disabled {
+      background: #d1d5db;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #1f2937;
+      border: 2px solid #e5e7eb;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: #e5e7eb;
+      border-color: #7c3aed;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-ghost {
+      background: none;
+      color: #7c3aed;
+      padding: 0.5rem 1rem;
+      border: 1px solid #7c3aed;
+    }
+
+    .btn-ghost:hover {
+      background: #f0fdf4;
+    }
+
+    .btn-link {
+      background: none;
+      color: #7c3aed;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .btn-link:hover {
+      color: #6d28d9;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    /* GUESS HISTORY */
+    .guess-history {
+      margin-top: 0.5rem;
+    }
+
+    .guess-history:empty {
+      display: none;
+    }
+
+    .guess-history-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .guess-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 0.25rem 0.6rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .guess-item-x {
+      font-weight: 700;
+      margin-left: 0.15rem;
+      font-size: 0.7rem;
+    }
+
+    /* ANSWER SUMMARY (persists after popup close) */
+    .answer-summary {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      border: 2px solid #8b5cf6;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .answer-summary.lost {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border-color: #dc2626;
+    }
+
+    .answer-summary-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8b5cf6;
+      margin-bottom: 0.25rem;
+    }
+
+    .answer-summary.lost .answer-summary-label {
+      color: #dc2626;
+    }
+
+    .answer-summary-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 0.4rem;
+    }
+
+    .answer-summary-explanation {
+      font-size: 0.85rem;
+      color: #374151;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .answer-summary-explanation-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8b5cf6;
+      margin-bottom: 0.25rem;
+    }
+
+    .answer-summary.lost .answer-summary-explanation-label {
+      color: #dc2626;
+    }
+
+    /* RESULT OVERLAY */
+    .result-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .result-overlay.show {
+      display: flex;
+    }
+
+    .result-area {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      animation: resultPopIn 0.35s ease-out;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .result-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #9ca3af;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .result-close:hover {
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    @keyframes resultPopIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .result-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .result-title.win {
+      color: #8b5cf6;
+    }
+
+    .result-title.lose {
+      color: #dc2626;
+    }
+
+    .result-answer {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0d9488;
+      margin-bottom: 0.75rem;
+    }
+
+    .result-explanation {
+      background: #f0fdf4;
+      border-left: 3px solid #059669;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #374151;
+      text-align: left;
+    }
+
+    .result-explanation-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8b5cf6;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* MODALS */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1rem;
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .modal {
+      background: white;
+      border-radius: 0.75rem;
+      width: 100%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+      margin-top: 1rem;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: white;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #6b7280;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      color: #1f2937;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    #archiveModal .modal {
+      max-width: 420px;
+    }
+
+    #archiveModal .modal-body {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .modal-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid #e5e7eb;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-tab {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: #6b7280;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      font-size: 0.95rem;
+    }
+
+    .modal-tab.active {
+      color: #7c3aed;
+      border-bottom-color: #7c3aed;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* FORMS */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 0.95rem;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    }
+
+    .form-error {
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .form-hint {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* FRIEND/LEADERBOARD ITEMS */
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #f3f4f6;
+      gap: 0.5rem;
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-item-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+    }
+
+    .list-item-rank {
+      font-weight: 700;
+      color: #7c3aed;
+      min-width: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .list-item-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #7c3aed;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .list-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .list-item-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1f2937;
+      margin-bottom: 0.1rem;
+      word-break: break-word;
+    }
+
+    .list-item-stats {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .list-item-right {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .list-empty {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #6b7280;
+    }
+
+    /* LEADERBOARD CONTROLS (tabs + scope toggle) */
+    .lb-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lb-tabs {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .lb-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .lb-scope-toggle {
+      display: flex;
+      gap: 0;
+      border: 1.5px solid #0d9488;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lb-scope-btn {
+      padding: 0.25rem 0.8rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: white;
+      color: #7c3aed;
+      transition: all 0.15s;
+    }
+
+    .lb-scope-btn.active {
+      background: #7c3aed;
+      color: white;
+    }
+
+    /* Leaderboard pagination */
+    .lb-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 0 0.25rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .lb-page-btn {
+      background: none;
+      border: 1.5px solid #d1d5db;
+      border-radius: 0.375rem;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #374151;
+      transition: all 0.15s;
+    }
+
+    .lb-page-btn:hover:not(:disabled) {
+      border-color: #0d9488;
+      color: #0d9488;
+    }
+
+    .lb-page-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .lb-page-info {
+      font-size: 0.78rem;
+      color: #6b7280;
+      min-width: 6rem;
+      text-align: center;
+    }
+
+    /* Sortable column header */
+    .lb-col-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .lb-col-btn:hover { color: #7c3aed; }
+    .lb-col-btn.sort-active { color: #7c3aed; }
+
+    .lb-sort-arrow {
+      font-size: 0.6em;
+      line-height: 1;
+    }
+
+    /* LEADERBOARD TABLE LAYOUT */
+    .lb-header, .lb-row {
+      display: grid;
+      grid-template-columns: 2.2rem 1fr 3rem 3rem 3rem 3rem;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.4rem 0.5rem;
+    }
+
+    .lb-header {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .lb-row {
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 0.8rem;
+    }
+
+    .lb-row:last-child { border-bottom: none; }
+
+    .lb-you {
+      background: #f0f9ff;
+      border-left: 3px solid #7c3aed;
+    }
+
+    .lb-rank {
+      font-weight: 700;
+      color: #7c3aed;
+      font-size: 0.8rem;
+    }
+
+    .lb-name {
+      font-weight: 600;
+      color: #1f2937;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.85rem;
+    }
+
+    .lb-row.lb-gold .lb-name { color: #b8860b; }
+    .lb-row.lb-gold .lb-rank { color: #b8860b; }
+    .lb-row.lb-silver .lb-name { color: #6b7280; }
+    .lb-row.lb-silver .lb-rank { color: #6b7280; }
+    .lb-row.lb-bronze .lb-name { color: #a0522d; }
+    .lb-row.lb-bronze .lb-rank { color: #a0522d; }
+
+    .lb-name em {
+      font-weight: 400;
+      color: #6b7280;
+      font-style: normal;
+      font-size: 0.7rem;
+    }
+
+    .lb-stat {
+      text-align: center;
+      color: #4b5563;
+      font-size: 0.8rem;
+    }
+
+    .lb-pts {
+      font-weight: 700;
+      color: #7c3aed;
+    }
+
+    .lb-h-rank { text-align: left; }
+    .lb-h-name { text-align: left; }
+    .lb-h-stat { text-align: center; }
+
+    .lb-streak {
+      font-size: 0.65rem;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    /* ARCHIVE CALENDAR */
+    .archive-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .archive-nav-btn {
+      background: none;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #374151;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .archive-nav-btn:hover { background: #f3f4f6; }
+    .archive-nav-btn:disabled { opacity: 0.3; cursor: default; }
+
+    .archive-nav-month {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .archive-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .archive-weekday {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      padding: 0.25rem 0;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .cal-cell {
+      border-radius: 0.3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+      border: 2px solid transparent;
+      padding: 0.3rem 0;
+      min-height: 2.2rem;
+    }
+
+    .cal-cell:hover { border-color: #7c3aed; }
+    .cal-cell-empty { cursor: default; background: transparent; }
+    .cal-cell-empty:hover { border-color: transparent; }
+
+    .cal-cell-date {
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
+
+    .cal-cell-score {
+      font-size: 0.5rem;
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    /* Colour coding */
+    .cal-grey {
+      background: #f3f4f6;
+      color: #9ca3af;
+    }
+
+    .cal-green {
+      background: #ede9fe;
+      color: #065f46;
+    }
+    .cal-green .cal-cell-score { color: #8b5cf6; }
+
+    .cal-red {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .cal-red .cal-cell-score { color: #dc2626; }
+
+    .cal-dark-grey {
+      background: #d1d5db;
+      color: #374151;
+    }
+    .cal-dark-grey .cal-cell-score { color: #4b5563; }
+
+    .cal-future {
+      background: transparent;
+      color: #d1d5db;
+      cursor: default;
+    }
+    .cal-future:hover { border-color: transparent; }
+
+    .archive-legend {
+      display: flex;
+      gap: 0.3rem 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.4rem;
+      padding-top: 0.4rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .archive-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.62rem;
+      color: #6b7280;
+    }
+
+    .archive-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
+    /* AUTH PAGES */
+    .auth-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 2rem 1rem;
+    }
+
+    .auth-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .auth-subtitle {
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .auth-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #6b7280;
+    }
+
+    .auth-link button {
+      color: #7c3aed;
+      cursor: pointer;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      header {
+        padding: 0.4rem max(0.5rem, env(safe-area-inset-left));
+      }
+
+      .header-top {
+        gap: 0.25rem;
+      }
+
+      .header-left {
+        gap: 0.3rem;
+        min-width: 0;
+      }
+
+      .logo-icon {
+        font-size: 1.1rem;
+      }
+
+      .logo-text {
+        font-size: 1.1rem;
+      }
+
+      .day-indicator {
+        font-size: 0.65rem;
+        display: none; /* hide on very small — shown below logo instead */
+      }
+
+      .header-right {
+        gap: 0.25rem;
+      }
+
+      .header-btn {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.4rem;
+        min-height: 28px;
+        border-width: 1px;
+      }
+
+      .guess-section {
+        top: 42px; /* smaller header */
+        padding: 0.5rem 0;
+      }
+
+      .container {
+        padding: 0.5rem max(0.5rem, env(safe-area-inset-left)) 1rem max(0.5rem, env(safe-area-inset-right));
+      }
+
+      .card {
+        padding: 0.75rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .card.clue-card {
+        min-height: auto;
+      }
+
+      .clue-label {
+        font-size: 0.6rem;
+      }
+
+      .clue-text {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .clue-status-icon {
+        font-size: 0.9rem;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+
+      .guess-input {
+        font-size: 16px;
+        padding: 0.5rem 0.6rem;
+      }
+
+      #submitBtn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        min-height: 40px;
+      }
+
+      .btn {
+        min-height: 40px;
+      }
+
+      .autocomplete-dropdown {
+        max-height: 160px;
+      }
+
+      .autocomplete-item {
+        padding: 0.7rem 0.6rem;
+        font-size: 0.9rem;
+        min-height: 44px;
+      }
+
+      .modal-tabs {
+        gap: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .modal-tab {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+        flex: none;
+        min-width: fit-content;
+      }
+
+      .list-item-name {
+        font-size: 0.95rem;
+      }
+
+      .archive-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+      }
+
+      .cal-cell {
+        font-size: 0.6rem;
+      }
+
+      .cal-cell-date {
+        font-size: 0.65rem;
+      }
+
+      .cal-cell-score {
+        font-size: 0.45rem;
+      }
+
+      /* Compact leaderboard table for mobile */
+      .lb-controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+
+      .lb-tabs { flex: 1; }
+
+      .lb-header, .lb-row {
+        grid-template-columns: 1.8rem 1fr 2.5rem 2.5rem 2.5rem 2.5rem;
+        gap: 0.15rem;
+        padding: 0.3rem 0.4rem;
+      }
+
+      .lb-header { font-size: 0.55rem; }
+      .lb-row { font-size: 0.7rem; }
+      .lb-rank { font-size: 0.7rem; }
+      .lb-name { font-size: 0.75rem; }
+      .lb-stat { font-size: 0.7rem; }
+      .lb-scope-btn { font-size: 0.65rem; padding: 0.2rem 0.6rem; }
+
+      .result-area {
+        padding: 1.25rem;
+      }
+
+      .result-title {
+        font-size: 1.35rem;
+      }
+
+      .result-answer {
+        font-size: 1.1rem;
+      }
+
+      .result-explanation {
+        font-size: 0.9rem;
+      }
+
+      /* Hide green side panels on mobile */
+      body::before, body::after {
+        display: none;
+      }
+    }
+
+    /* Very small screens (iPhone SE etc) */
+    @media (max-width: 375px) {
+      .logo-text {
+        font-size: 1rem;
+      }
+
+      .header-btn {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.3rem;
+        min-height: 26px;
+      }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .card {
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .result-overlay.show {
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    /* UTILITY CLASSES */
+    .hidden {
+      display: none !important;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .highlight {
+      background: #fef08a;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    .emoji-grid {
+      font-size: 2rem;
+      font-family: system-ui, sans-serif;
+      letter-spacing: 0.25em;
+      word-break: break-all;
+      user-select: all;
+      line-height: 1.4;
+      padding: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(13, 148, 136, 0.3);
+      border-top: 2px solid #7c3aed;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 1rem;
+      right: 1rem;
+      background: #1f2937;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      z-index: 300;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    .toast.success {
+      background: #8b5cf6;
+    }
+
+    .toast.error {
+      background: #dc2626;
+    }
+
+    /* Mobile account stats tweaks */
+    @media (max-width: 480px) {
+      .account-stat-value { font-size: 1.15rem; }
+      .account-perf-label { font-size: 0.78rem; }
+      .account-perf-value { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="header-left">
+        <span class="logo-icon">💊</span>
+        <span class="logo-text">Pharmodle</span>
+        <span class="day-indicator" id="dayIndicator"></span>
+      </div>
+      <div class="header-right">
+        <button class="header-btn" id="leaderboardBtn">Leaderboard</button>
+        <button class="header-btn" id="archiveBtn">Archive</button>
+        <button class="header-btn" id="friendsBtn">Friends</button>
+        <button class="header-btn" id="accountBtn">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="page active" id="gamePage">
+    <div class="container">
+      <!-- PUZZLE PROMPT (tells player what to guess) -->
+      <div id="puzzlePrompt" class="puzzle-prompt" style="display:none;"></div>
+
+      <!-- UNIT TOGGLE -->
+      <div class="unit-toggle-row" id="unitToggleRow" style="display:none;">
+        <label class="unit-toggle-label">Units:</label>
+        <button class="unit-toggle-btn active" id="unitMetricBtn" onclick="setUnits('metric')">Metric</button>
+        <button class="unit-toggle-btn" id="unitImperialBtn" onclick="setUnits('imperial')">US/Imperial</button>
+      </div>
+
+      <!-- GUESS SECTION (top, always visible) -->
+      <div class="guess-section">
+        <div class="guess-row">
+          <div class="guess-wrapper">
+            <input
+              type="text"
+              class="guess-input"
+              id="guessInput"
+              placeholder="Type a drug name..."
+              autocomplete="off"
+            >
+            <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
+          </div>
+          <button class="btn btn-primary" id="submitBtn">Guess</button>
+        </div>
+        <!-- GUESS HISTORY (inline, compact) -->
+        <div class="guess-history" id="guessHistorySection">
+          <div class="guess-history-list" id="guessHistoryList"></div>
+        </div>
+      </div>
+
+      <!-- ANSWER SUMMARY (shown after game ends, persists) -->
+      <div class="answer-summary" id="answerSummary" style="display:none;">
+        <div class="answer-summary-label" id="answerSummaryLabel">Answer</div>
+        <div class="answer-summary-name" id="answerSummaryName"></div>
+        <div class="answer-summary-explanation" id="answerSummaryExplanation">
+          <div class="answer-summary-explanation-label">Clinical Insight</div>
+          <div id="answerSummaryExplanationText"></div>
+        </div>
+        <div class="walkthrough-section" id="answerSummaryWalkthrough" style="display:none;">
+          <div class="walkthrough-title">Understanding the Clues</div>
+          <div class="walkthrough-text" id="answerSummaryWalkthroughText"></div>
+        </div>
+      </div>
+
+      <!-- CLUES -->
+      <div id="cluesContainer"></div>
+
+      <!-- FEEDBACK FOOTER -->
+      <div style="margin-top: 2rem; text-align: center;" id="feedbackSection">
+        <button class="btn-link" id="feedbackToggle" style="font-size: 0.75rem; color: #9ca3af;">Leave feedback</button>
+        <div id="feedbackForm" style="display:none; margin-top: 0.5rem;">
+          <textarea id="feedbackText" placeholder="What do you think of Physiodle? Suggestions, bugs, anything..." style="width: 100%; padding: 0.5rem; border: 1.5px solid #e5e7eb; border-radius: 0.375rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; resize: vertical; min-height: 60px; max-height: 120px; background: white;"></textarea>
+          <button class="btn btn-primary btn-small" id="feedbackSubmitBtn" style="margin-top: 0.35rem; font-size: 0.75rem;">Send</button>
+        </div>
+        <div id="feedbackThanks" style="display:none;">
+          <p style="font-size: 0.75rem; color: #059669;">Thanks for your feedback!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULT POPUP OVERLAY -->
+  <div class="result-overlay" id="resultOverlay">
+    <div class="result-area" id="resultArea">
+      <button class="result-close" id="resultCloseBtn" title="Close">&times;</button>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-answer" id="resultAnswer"></div>
+      <div class="result-explanation" id="resultExplanation">
+        <div class="result-explanation-label">Clinical Insight</div>
+        <div id="resultExplanationText"></div>
+      </div>
+      <div class="result-buttons" id="resultButtonsLoggedIn">
+        <button class="btn btn-primary" id="shareBtn">Copy Result</button>
+        <button class="btn btn-secondary" id="archiveFromResultBtn">Browse Archive</button>
+      </div>
+      <!-- Login CTA for unauthenticated users — replaces buttons above -->
+      <div id="resultLoginCTA" style="display:none; margin-top: 0.5rem;">
+        <button class="btn btn-primary btn-full" id="resultLoginBtn" style="font-size: 1rem; padding: 0.85rem 1.5rem;">Sign In to Save Your Result</button>
+        <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #6b7280;">Create a free account to track stats and compete on leaderboards</p>
+      </div>
+      <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;">Check back tomorrow for the next Physiodle!</p>
+    </div>
+  </div>
+
+  <!-- LOGIN PROMPT OVERLAY (shown once to unauthenticated users) -->
+  <div class="result-overlay" id="loginPromptOverlay">
+    <div class="result-area" style="max-width: 400px;">
+      <button class="result-close" id="loginPromptClose" title="Close">&times;</button>
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🦴</div>
+      <div style="font-size: 1.4rem; font-weight: 700; color: #0d9488; margin-bottom: 0.5rem;">Welcome to Physiodle!</div>
+      <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">The daily physiotherapy diagnosis game. Create a free account to track your stats, compete on leaderboards, and add friends.</p>
+      <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="loginPromptSignup">Create Account</button>
+        <button class="btn btn-ghost" id="loginPromptLogin">Sign In</button>
+      </div>
+      <button class="btn btn-link" id="loginPromptSkip" style="margin-top: 0.75rem; font-size: 0.8rem; color: #9ca3af;">Play without an account</button>
+    </div>
+  </div>
+
+  <!-- INDEPENDENT login prompt script — runs even if main script errors -->
+  <script>
+  (function() {
+    try {
+      // Wait for page to be ready, then show login prompt if not logged in
+      function tryShowLoginPrompt() {
+        var token = localStorage.getItem('physiodle_token');
+        if (token) return; // logged in — don't show
+
+        var overlay = document.getElementById('loginPromptOverlay');
+        if (!overlay) return;
+        overlay.style.zIndex = '9999';
+        overlay.style.display = 'flex';
+        overlay.classList.add('show');
+      }
+
+      function dismissPrompt() {
+        var overlay = document.getElementById('loginPromptOverlay');
+        if (overlay) {
+          overlay.classList.remove('show');
+          overlay.style.display = 'none';
+        }
+      }
+
+      // Wire up buttons immediately (they exist in the DOM above)
+      var closeBtn = document.getElementById('loginPromptClose');
+      var skipBtn = document.getElementById('loginPromptSkip');
+      var signupBtn = document.getElementById('loginPromptSignup');
+      var loginBtn = document.getElementById('loginPromptLogin');
+      var overlayEl = document.getElementById('loginPromptOverlay');
+
+      if (closeBtn) closeBtn.addEventListener('click', dismissPrompt);
+      if (skipBtn) skipBtn.addEventListener('click', dismissPrompt);
+      if (signupBtn) signupBtn.addEventListener('click', function() {
+        dismissPrompt();
+        // Try to open signup modal if the main app function exists
+        if (typeof showModal === 'function') showModal('signupModal');
+      });
+      if (loginBtn) loginBtn.addEventListener('click', function() {
+        dismissPrompt();
+        if (typeof showModal === 'function') showModal('loginModal');
+      });
+      if (overlayEl) overlayEl.addEventListener('click', function(e) {
+        if (e.target === overlayEl) dismissPrompt();
+      });
+
+      // Show after a short delay to let page render
+      setTimeout(tryShowLoginPrompt, 750);
+    } catch (e) {
+      // Silently fail — this should never block anything
+    }
+  })();
+  </script>
+
+  <!-- AUTH PAGE -->
+  <div class="page" id="authPage">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1 class="auth-title">Welcome</h1>
+        <p class="auth-subtitle">Sign in to track your progress</p>
+        <form id="authForm">
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-input"
+              id="authUsername"
+              placeholder="Enter username"
+              autocomplete="username"
+              minlength="2"
+              maxlength="20"
+            >
+            <div class="form-hint">2-20 characters: letters, numbers, dots, hyphens, underscores</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              id="authPassword"
+              placeholder="Enter password"
+              autocomplete="current-password"
+              minlength="6"
+            >
+            <div class="form-hint">Minimum 6 characters</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span id="authSubmitText">Sign In</span>
+          </button>
+        </form>
+        <div class="auth-link">
+          <span id="authToggleText">Don't have an account?</span>
+          <button type="button" id="authToggleBtn">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL (shown from game page) -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Sign In</h2>
+        <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-input"
+              id="loginUsername"
+              placeholder="Enter username"
+              autocomplete="username"
+            >
+            <div class="form-error" id="loginUsernameError"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              id="loginPassword"
+              placeholder="Enter password"
+              autocomplete="current-password"
+            >
+            <div class="form-error" id="loginPasswordError"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+        </form>
+        <div class="auth-link">
+          <span>Don't have an account?</span>
+          <button type="button" onclick="showModal('signupModal'); closeModal('loginModal')">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Create Account</h2>
+        <button class="modal-close" onclick="closeModal('signupModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm">
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-input"
+              id="signupUsername"
+              placeholder="Choose username"
+              autocomplete="username"
+            >
+            <div class="form-hint">2-20 characters: letters, numbers, dots, hyphens, underscores</div>
+            <div class="form-error" id="signupUsernameError"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              id="signupPassword"
+              placeholder="Create password"
+              autocomplete="new-password"
+            >
+            <div class="form-hint">Minimum 6 characters</div>
+            <div class="form-error" id="signupPasswordError"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+        <div class="auth-link">
+          <span>Already have an account?</span>
+          <button type="button" onclick="showModal('loginModal'); closeModal('signupModal')">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div class="modal-overlay" id="accountModal">
+    <div class="modal" style="max-width: 440px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Your Profile</h2>
+        <button class="modal-close" onclick="closeModal('accountModal')">×</button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem;">
+        <!-- User header -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="user-avatar" id="accountAvatar" style="width: 56px; height: 56px; font-size: 1.4rem; flex-shrink: 0;"></div>
+          <div>
+            <div id="accountUsername" style="font-weight: 700; font-size: 1.2rem;"></div>
+            <div id="accountJoined" style="font-size: 0.8rem; color: #9ca3af;"></div>
+          </div>
+          <div id="accountRankBadge" style="margin-left: auto; text-align: center; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 0.5rem; padding: 0.35rem 0.65rem;">
+            <div id="accountRank" style="font-size: 1.1rem; font-weight: 800; color: #0d9488;">#-</div>
+            <div style="font-size: 0.65rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.03em;">Rank</div>
+          </div>
+        </div>
+
+        <!-- Top stats row -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
+          <div class="account-stat-card">
+            <div class="account-stat-value" id="accountPlayed">0</div>
+            <div class="account-stat-label">Played</div>
+          </div>
+          <div class="account-stat-card">
+            <div class="account-stat-value" id="accountWon">0</div>
+            <div class="account-stat-label">Won</div>
+          </div>
+          <div class="account-stat-card">
+            <div class="account-stat-value" style="color: #0d9488;" id="accountWinRate">0%</div>
+            <div class="account-stat-label">Win Rate</div>
+          </div>
+          <div class="account-stat-card">
+            <div class="account-stat-value" style="color: #0d9488;" id="accountTotalPts">0</div>
+            <div class="account-stat-label">Points</div>
+          </div>
+        </div>
+
+        <!-- Performance section -->
+        <div style="background: #f9fafb; border-radius: 0.5rem; padding: 0.85rem; margin-bottom: 1rem;">
+          <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6rem;">Performance</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <div class="account-perf-row">
+              <span class="account-perf-label">Avg Score</span>
+              <span class="account-perf-value" id="accountAvgScore">-</span>
+            </div>
+            <div class="account-perf-row">
+              <span class="account-perf-label">Best Score</span>
+              <span class="account-perf-value" id="accountBestScore">-</span>
+            </div>
+            <div class="account-perf-row">
+              <span class="account-perf-label">Current Streak</span>
+              <span class="account-perf-value" id="accountCurrentStreak">0</span>
+            </div>
+            <div class="account-perf-row">
+              <span class="account-perf-label">Best Streak</span>
+              <span class="account-perf-value" id="accountMaxStreak">0</span>
+            </div>
+            <div class="account-perf-row">
+              <span class="account-perf-label">Perfect Games</span>
+              <span class="account-perf-value" id="accountPerfect">0</span>
+            </div>
+            <div class="account-perf-row">
+              <span class="account-perf-label">Friends</span>
+              <span class="account-perf-value" id="accountFriends">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guess Distribution -->
+        <div style="background: #f9fafb; border-radius: 0.5rem; padding: 0.85rem; margin-bottom: 1rem;">
+          <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6rem;">Guess Distribution</div>
+          <div id="accountDistribution" style="display: flex; flex-direction: column; gap: 0.3rem;"></div>
+        </div>
+
+        <button class="btn btn-danger btn-full" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRIENDS MODAL -->
+  <div class="modal-overlay" id="friendsModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Friends</h2>
+        <button class="modal-close" onclick="closeModal('friendsModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button class="modal-tab active" data-tab="friendsList">Friends List</button>
+          <button class="modal-tab" data-tab="friendsRequests">Requests</button>
+          <button class="modal-tab" data-tab="friendsAdd">Add Friend</button>
+        </div>
+
+        <!-- Friends List -->
+        <div class="tab-content active" id="friendsList">
+          <div id="friendsListContent"></div>
+        </div>
+
+        <!-- Requests -->
+        <div class="tab-content" id="friendsRequests">
+          <div id="friendsRequestsContent"></div>
+        </div>
+
+        <!-- Add Friend -->
+        <div class="tab-content" id="friendsAdd">
+          <div class="form-group">
+            <label class="form-label">Enter their username</label>
+            <div style="display: flex; gap: 0.5rem;">
+              <input
+                type="text"
+                class="form-input"
+                id="addFriendInput"
+                placeholder="Username..."
+                style="flex: 1;"
+              >
+              <button class="btn btn-primary" id="addFriendBtn">Send Request</button>
+            </div>
+          </div>
+          <div id="addFriendResults"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADERBOARD MODAL -->
+  <div class="modal-overlay" id="leaderboardModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="lb-header-left">
+          <h2 class="modal-title">Leaderboard</h2>
+          <div class="lb-scope-toggle">
+            <button class="lb-scope-btn active" id="lbScopeFriends">Friends</button>
+            <button class="lb-scope-btn" id="lbScopeGlobal">Global</button>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeModal('leaderboardModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="lb-controls">
+          <div class="modal-tabs lb-tabs">
+            <button class="modal-tab active" data-tab="leaderboardWeekly">Weekly</button>
+            <button class="modal-tab" data-tab="leaderboardMonthly">Monthly</button>
+            <button class="modal-tab" data-tab="leaderboardYearly">Yearly</button>
+            <button class="modal-tab" data-tab="leaderboardAlltime">All-Time</button>
+          </div>
+        </div>
+
+        <div class="tab-content active" id="leaderboardWeekly"></div>
+        <div class="tab-content" id="leaderboardMonthly"></div>
+        <div class="tab-content" id="leaderboardYearly"></div>
+        <div class="tab-content" id="leaderboardAlltime"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARCHIVE MODAL -->
+  <div class="modal-overlay" id="archiveModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Archive</h2>
+        <button class="modal-close" onclick="closeModal('archiveModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="archive-nav">
+          <button class="archive-nav-btn" id="archivePrevMonth">&larr;</button>
+          <span class="archive-nav-month" id="archiveMonthLabel"></span>
+          <button class="archive-nav-btn" id="archiveNextMonth">&rarr;</button>
+        </div>
+        <div style="text-align:center;margin-bottom:0.4rem;">
+          <button class="btn btn-primary btn-small" id="archiveTodayBtn" style="font-size:0.7rem;padding:0.2rem 0.7rem;">Go to Today</button>
+        </div>
+        <div class="archive-weekdays">
+          <div class="archive-weekday">Mon</div>
+          <div class="archive-weekday">Tue</div>
+          <div class="archive-weekday">Wed</div>
+          <div class="archive-weekday">Thu</div>
+          <div class="archive-weekday">Fri</div>
+          <div class="archive-weekday">Sat</div>
+          <div class="archive-weekday">Sun</div>
+        </div>
+        <div class="archive-grid" id="archiveGrid"></div>
+        <div class="archive-legend">
+          <div class="archive-legend-item"><div class="archive-legend-dot" style="background:#ede9fe;"></div>Correct (on day)</div>
+          <div class="archive-legend-item"><div class="archive-legend-dot" style="background:#fee2e2;"></div>Wrong (on day)</div>
+          <div class="archive-legend-item"><div class="archive-legend-dot" style="background:#d1d5db;"></div>Done (archive)</div>
+          <div class="archive-legend-item"><div class="archive-legend-dot" style="background:#f3f4f6;"></div>Not attempted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================================================
+    // MATCHING ENGINE (copied exactly from original)
+    // ============================================================================
+
+    const EQUIVALENCE_GROUPS = [
+      // Generic/Brand name equivalences — Australian Approved Names
+      ["Paracetamol", "Acetaminophen", "Panadol", "Panamax", "APAP"],
+      ["Salbutamol", "Albuterol", "Ventolin", "Asmol"],
+      ["Atorvastatin", "Lipitor", "Liprimar"],
+      ["Rosuvastatin", "Crestor"],
+      ["Simvastatin", "Zocor", "Lipex"],
+      ["Omeprazole", "Losec", "Acimax"],
+      ["Esomeprazole", "Nexium"],
+      ["Pantoprazole", "Somac", "Protonix"],
+      ["Lansoprazole", "Zoton"],
+      ["Metformin", "Diabex", "Diaformin", "Glucophage"],
+      ["Gliclazide", "Diamicron"],
+      ["Empagliflozin", "Jardiance"],
+      ["Dapagliflozin", "Forxiga"],
+      ["Sitagliptin", "Januvia"],
+      ["Insulin Glargine", "Lantus", "Toujeo", "Semglee"],
+      ["Insulin Aspart", "NovoRapid", "Fiasp"],
+      ["Perindopril", "Coversyl"],
+      ["Ramipril", "Tritace", "Ramace"],
+      ["Enalapril", "Renitec"],
+      ["Lisinopril", "Prinivil", "Zestril"],
+      ["Irbesartan", "Avapro", "Karvea"],
+      ["Candesartan", "Atacand"],
+      ["Telmisartan", "Micardis"],
+      ["Valsartan", "Diovan"],
+      ["Losartan", "Cozaar"],
+      ["Amlodipine", "Norvasc"],
+      ["Nifedipine", "Adalat"],
+      ["Metoprolol", "Betaloc", "Minax"],
+      ["Atenolol", "Tenormin", "Noten"],
+      ["Bisoprolol", "Bicor"],
+      ["Carvedilol", "Dilatrend"],
+      ["Warfarin", "Coumadin", "Marevan"],
+      ["Apixaban", "Eliquis"],
+      ["Rivaroxaban", "Xarelto"],
+      ["Dabigatran", "Pradaxa"],
+      ["Clopidogrel", "Plavix", "Iscover"],
+      ["Enoxaparin", "Clexane"],
+      ["Amoxicillin", "Amoxil"],
+      ["Amoxicillin/Clavulanate", "Augmentin", "Amoxicillin-Clavulanic Acid"],
+      ["Cefalexin", "Cephalexin", "Keflex", "Ibilex"],
+      ["Flucloxacillin", "Flopen", "Staphylex"],
+      ["Doxycycline", "Doryx"],
+      ["Azithromycin", "Zithromax"],
+      ["Clarithromycin", "Klacid"],
+      ["Trimethoprim", "Alprim"],
+      ["Ciprofloxacin", "Ciloxan", "Cipro"],
+      ["Fluconazole", "Diflucan"],
+      ["Metronidazole", "Flagyl"],
+      ["Sertraline", "Zoloft"],
+      ["Fluoxetine", "Prozac", "Zactin", "Lovan"],
+      ["Escitalopram", "Lexapro", "Cipralex"],
+      ["Citalopram", "Cipramil"],
+      ["Venlafaxine", "Efexor", "Effexor"],
+      ["Desvenlafaxine", "Pristiq"],
+      ["Duloxetine", "Cymbalta"],
+      ["Mirtazapine", "Avanza", "Remeron"],
+      ["Amitriptyline", "Endep"],
+      ["Diazepam", "Valium", "Antenex"],
+      ["Temazepam", "Temaze", "Normison"],
+      ["Alprazolam", "Xanax", "Kalma"],
+      ["Quetiapine", "Seroquel"],
+      ["Olanzapine", "Zyprexa"],
+      ["Risperidone", "Risperdal"],
+      ["Aripiprazole", "Abilify"],
+      ["Lithium", "Lithium Carbonate", "Lithicarb", "Quilonum"],
+      ["Sodium Valproate", "Valproate", "Epilim", "Valproic Acid"],
+      ["Carbamazepine", "Tegretol"],
+      ["Phenytoin", "Dilantin"],
+      ["Levetiracetam", "Keppra"],
+      ["Lamotrigine", "Lamictal"],
+      ["Gabapentin", "Neurontin"],
+      ["Pregabalin", "Lyrica"],
+      ["Levothyroxine", "Oroxine", "Eutroxsig", "Eltroxin"],
+      ["Prednisolone", "Prednisone", "Solone", "Panafcortelone"],
+      ["Dexamethasone", "Dexmethsone"],
+      ["Budesonide", "Pulmicort", "Entocort"],
+      ["Fluticasone", "Flixotide", "Flixonase"],
+      ["Beclomethasone", "QVAR"],
+      ["Montelukast", "Singulair"],
+      ["Tiotropium", "Spiriva"],
+      ["Tamsulosin", "Flomaxtra"],
+      ["Finasteride", "Proscar", "Propecia"],
+      ["Oxycodone", "OxyContin", "Endone", "Targin"],
+      ["Tramadol", "Tramal", "Zydol"],
+      ["Morphine", "MS Contin", "Kapanol", "Sevredol"],
+      ["Fentanyl", "Durogesic", "Fentanyl Patch"],
+      ["Codeine", "Panadeine", "Panadeine Forte"],
+      ["Ibuprofen", "Nurofen", "Brufen"],
+      ["Diclofenac", "Voltaren"],
+      ["Naproxen", "Naprosyn", "Naprogesic"],
+      ["Celecoxib", "Celebrex"],
+      ["Meloxicam", "Mobic"],
+      ["Methotrexate", "Methoblastin"],
+      ["Hydroxychloroquine", "Plaquenil"],
+      ["Allopurinol", "Progout", "Zyloprim"],
+      ["Colchicine", "Colgout", "Lengout"],
+      ["Spironolactone", "Aldactone", "Spiractin"],
+      ["Furosemide", "Frusemide", "Lasix"],
+      ["Hydrochlorothiazide", "HCTZ", "Dithiazide"],
+      ["Indapamide", "Natrilix"],
+      ["Digoxin", "Lanoxin"],
+      ["Amiodarone", "Cordarone"],
+      ["Glyceryl Trinitrate", "GTN", "Nitrolingual", "Anginine"],
+      ["Isosorbide Mononitrate", "Imdur", "ISMN"],
+      ["Clozapine", "Clozaril", "Clopine"],
+      ["Tacrolimus", "Prograf"],
+      ["Mycophenolate", "CellCept", "Mycophenolate Mofetil"],
+      ["Adalimumab", "Humira"],
+      ["Infliximab", "Remicade"],
+      ["Rituximab", "MabThera"],
+      ["Nivolumab", "Opdivo"],
+      ["Vancomycin", "Vancocin"],
+      ["Gentamicin", "Garamycin"],
+    ];
+
+    // Parent terms: guessing the parent is accepted for ANY child answer
+    const PARENT_TERMS = {
+      "statin": ["atorvastatin", "rosuvastatin", "simvastatin", "pravastatin", "fluvastatin"],
+      "hmg-coa reductase inhibitor": ["atorvastatin", "rosuvastatin", "simvastatin", "pravastatin", "fluvastatin"],
+      "ace inhibitor": ["perindopril", "ramipril", "enalapril", "lisinopril", "captopril", "fosinopril", "quinapril", "trandolapril"],
+      "acei": ["perindopril", "ramipril", "enalapril", "lisinopril", "captopril"],
+      "arb": ["irbesartan", "candesartan", "telmisartan", "valsartan", "losartan", "olmesartan"],
+      "angiotensin receptor blocker": ["irbesartan", "candesartan", "telmisartan", "valsartan", "losartan", "olmesartan"],
+      "calcium channel blocker": ["amlodipine", "nifedipine", "felodipine", "lercanidipine", "diltiazem", "verapamil"],
+      "beta blocker": ["metoprolol", "atenolol", "bisoprolol", "carvedilol", "propranolol", "sotalol", "nebivolol"],
+      "beta-blocker": ["metoprolol", "atenolol", "bisoprolol", "carvedilol", "propranolol", "sotalol", "nebivolol"],
+      "ssri": ["sertraline", "fluoxetine", "escitalopram", "citalopram", "paroxetine", "fluvoxamine"],
+      "selective serotonin reuptake inhibitor": ["sertraline", "fluoxetine", "escitalopram", "citalopram", "paroxetine", "fluvoxamine"],
+      "snri": ["venlafaxine", "desvenlafaxine", "duloxetine"],
+      "benzodiazepine": ["diazepam", "temazepam", "alprazolam", "oxazepam", "nitrazepam", "clonazepam", "lorazepam"],
+      "proton pump inhibitor": ["omeprazole", "esomeprazole", "pantoprazole", "lansoprazole", "rabeprazole"],
+      "ppi": ["omeprazole", "esomeprazole", "pantoprazole", "lansoprazole", "rabeprazole"],
+      "nsaid": ["ibuprofen", "diclofenac", "naproxen", "celecoxib", "meloxicam", "piroxicam", "indomethacin", "ketoprofen"],
+      "non-steroidal anti-inflammatory": ["ibuprofen", "diclofenac", "naproxen", "celecoxib", "meloxicam", "piroxicam", "indomethacin"],
+      "opioid": ["oxycodone", "morphine", "fentanyl", "codeine", "tramadol", "buprenorphine", "hydromorphone", "tapentadol"],
+      "anticonvulsant": ["sodium valproate", "carbamazepine", "phenytoin", "levetiracetam", "lamotrigine", "topiramate"],
+      "antiepileptic": ["sodium valproate", "carbamazepine", "phenytoin", "levetiracetam", "lamotrigine", "topiramate"],
+      "thiazide": ["hydrochlorothiazide", "indapamide", "chlorthalidone"],
+      "thiazide diuretic": ["hydrochlorothiazide", "indapamide", "chlorthalidone"],
+      "loop diuretic": ["furosemide", "bumetanide", "ethacrynic acid"],
+      "doac": ["apixaban", "rivaroxaban", "dabigatran"],
+      "direct oral anticoagulant": ["apixaban", "rivaroxaban", "dabigatran"],
+      "noac": ["apixaban", "rivaroxaban", "dabigatran"],
+      "penicillin": ["amoxicillin", "amoxicillin/clavulanate", "flucloxacillin", "phenoxymethylpenicillin", "piperacillin"],
+      "macrolide": ["azithromycin", "clarithromycin", "erythromycin", "roxithromycin"],
+      "fluoroquinolone": ["ciprofloxacin", "norfloxacin", "moxifloxacin"],
+      "atypical antipsychotic": ["quetiapine", "olanzapine", "risperidone", "aripiprazole", "clozapine", "ziprasidone", "paliperidone"],
+      "sglt2 inhibitor": ["empagliflozin", "dapagliflozin", "canagliflozin"],
+      "dpp-4 inhibitor": ["sitagliptin", "saxagliptin", "linagliptin", "vildagliptin", "alogliptin"],
+      "gliptin": ["sitagliptin", "saxagliptin", "linagliptin", "vildagliptin", "alogliptin"],
+      "sulfonylurea": ["gliclazide", "glimepiride", "glipizide", "glibenclamide"],
+      "inhaled corticosteroid": ["budesonide", "fluticasone", "beclomethasone", "ciclesonide"],
+      "ics": ["budesonide", "fluticasone", "beclomethasone", "ciclesonide"],
+      "biologic": ["adalimumab", "infliximab", "rituximab", "nivolumab", "pembrolizumab", "etanercept", "tocilizumab"],
+    };
+
+    const _equivMap = {};
+    EQUIVALENCE_GROUPS.forEach(group => {
+      const lowerGroup = group.map(t => t.toLowerCase());
+      lowerGroup.forEach(term => {
+        if (!_equivMap[term]) _equivMap[term] = new Set();
+        lowerGroup.forEach(t => _equivMap[term].add(t));
+      });
+    });
+
+    const _parentMap = {};
+    const _childMap = {};
+    Object.entries(PARENT_TERMS).forEach(([parent, children]) => {
+      const lp = parent.toLowerCase();
+      _childMap[lp] = children.map(c => c.toLowerCase());
+      children.forEach(child => {
+        const lc = child.toLowerCase();
+        if (!_parentMap[lc]) _parentMap[lc] = new Set();
+        _parentMap[lc].add(lp);
+      });
+    });
+
+    // ── Abbreviation map: auto-generated from all condition names ──
+    // Maps abbreviations to the full condition names they represent
+    // e.g. "aclr" → Set(["acl reconstruction", "post-acl reconstruction"])
+    const _abbrMap = {};
+    function _buildAbbrMap() {
+      const allTerms = new Set();
+      EQUIVALENCE_GROUPS.forEach(group => group.forEach(t => allTerms.add(t)));
+      Object.keys(PARENT_TERMS).forEach(p => {
+        allTerms.add(p);
+        PARENT_TERMS[p].forEach(c => allTerms.add(c));
+      });
+      // Also add all autocomplete conditions
+      if (gameState.allConditions) gameState.allConditions.forEach(c => allTerms.add(c));
+
+      allTerms.forEach(term => {
+        const words = term.replace(/[''()-]/g, ' ').split(/\s+/).filter(w => w.length > 0);
+        if (words.length < 2) return; // Only multi-word terms get abbreviations
+
+        // Method 1: First letter of each word → "ACL Reconstruction" → "ACLR"
+        const abbr1 = words.map(w => w[0]).join('').toLowerCase();
+        if (abbr1.length >= 2) {
+          if (!_abbrMap[abbr1]) _abbrMap[abbr1] = new Set();
+          _abbrMap[abbr1].add(term.toLowerCase());
+        }
+
+        // Method 2: If a word is already an acronym (all caps, 2+ chars), keep it whole
+        // e.g. "ACL Reconstruction" → "aclr" and "Post ACL Reconstruction" → "paclr"
+        const hasAcronym = words.some(w => w === w.toUpperCase() && w.length >= 2 && /^[A-Z]+$/.test(w));
+        if (hasAcronym) {
+          const abbr2 = words.map(w => (w === w.toUpperCase() && w.length >= 2 && /^[A-Z]+$/.test(w)) ? w : w[0]).join('').toLowerCase();
+          if (abbr2.length >= 2 && abbr2 !== abbr1) {
+            if (!_abbrMap[abbr2]) _abbrMap[abbr2] = new Set();
+            _abbrMap[abbr2].add(term.toLowerCase());
+          }
+        }
+      });
+    }
+    // Build on page load after conditions are fetched (called in loadTodaysPuzzle)
+
+    const QUALIFIERS = /^(acute|chronic|bilateral|unilateral|left|right|mild|moderate|severe|primary|secondary|idiopathic|traumatic|non-traumatic|post-surgical|recurrent|degenerative|adolescent|juvenile|paediatric|pediatric|occupational|exercise-induced|sport-specific|congenital|acquired|partial|complete|high|low)\s+/gi;
+
+    function normalise(str) {
+      let s = str.toLowerCase().trim();
+      let prev = '';
+      while (prev !== s) {
+        prev = s;
+        s = s.replace(QUALIFIERS, '').trim();
+      }
+      return s;
+    }
+
+    /**
+     * THREE-TIER ANSWER SYSTEM
+     * Returns: 'correct' | 'acceptable' | 'near_miss' | 'incorrect'
+     *
+     * Tier 1 (correct): Exact match, alias, equivalence group, parent term, or substring
+     * Tier 2 (acceptable): Drug listed in puzzle's acceptable_alternatives array
+     * Tier 3 (near_miss): Drug listed in puzzle's near_misses.drugs array
+     * Tier 4 (incorrect): No match
+     */
+    function checkGuess(guess, puzzle) {
+      const g = guess.toLowerCase().trim();
+      const answer = puzzle.answer.toLowerCase();
+      const aliases = (puzzle.aliases || []).map(a => a.toLowerCase());
+      const allValid = [answer, ...aliases];
+
+      // --- TIER 1: Exact match (answer + aliases) ---
+      if (allValid.some(a => g === a)) return 'correct';
+
+      // Equivalence group match
+      for (const valid of allValid) {
+        const equivSet = _equivMap[valid];
+        if (equivSet && equivSet.has(g)) return 'correct';
+      }
+
+      // Parent term match (guessing drug class when answer is specific drug)
+      const guessChildren = _childMap[g];
+      if (guessChildren) {
+        for (const valid of allValid) {
+          if (guessChildren.includes(valid)) return 'correct';
+          const ansEquiv = _equivMap[valid];
+          if (ansEquiv) {
+            for (const eq of ansEquiv) {
+              if (guessChildren.includes(eq)) return 'correct';
+            }
+          }
+        }
+      }
+
+      // LAYER: Abbreviation matching — "ACLR" matches "ACL Reconstruction"
+      const abbrMatches = _abbrMap[g];
+      if (abbrMatches) {
+        for (const valid of allValid) {
+          if (abbrMatches.has(valid)) return 'correct';
+          // Also check equivalence groups of the abbreviation target
+          const equivSet = _equivMap[valid];
+          if (equivSet) {
+            for (const eq of equivSet) {
+              if (abbrMatches.has(eq)) return 'correct';
+            }
+          }
+        }
+      }
+      // Reverse: guess is full name, answer is abbreviation
+      for (const valid of allValid) {
+        const revAbbrMatches = _abbrMap[valid];
+        if (revAbbrMatches && revAbbrMatches.has(g)) return 'correct';
+      }
+
+      const GENERIC_TERMS = new Set([
+        'tablet', 'capsule', 'injection', 'cream', 'ointment', 'solution',
+        'suspension', 'inhaler', 'patch', 'drops', 'syrup', 'suppository',
+        'drug', 'medication', 'medicine', 'antibiotic', 'analgesic',
+      ]);
+
+      if (!GENERIC_TERMS.has(g)) {
+        if (g.length > answer.length && g.includes(answer) && answer.length > 5) {
+          return 'correct';
+        }
+        if (answer.includes(g) && g.length > 5 && g.length > answer.length * 0.5) {
+          return 'correct';
+        }
+      }
+
+      const gNorm = normalise(g);
+      const ansNorm = normalise(answer);
+      const aliasNorms = aliases.map(a => normalise(a));
+      const allNorms = [ansNorm, ...aliasNorms];
+
+      if (allNorms.some(a => gNorm === a)) return 'correct';
+
+      for (const norm of allNorms) {
+        const equivSet = _equivMap[norm];
+        if (equivSet && equivSet.has(gNorm)) return 'correct';
+      }
+
+      if (!GENERIC_TERMS.has(gNorm)) {
+        if (gNorm.length > ansNorm.length && gNorm.includes(ansNorm) && ansNorm.length > 5) {
+          return 'correct';
+        }
+        if (ansNorm.includes(gNorm) && gNorm.length > 5 && gNorm.length > ansNorm.length * 0.5) {
+          return 'correct';
+        }
+      }
+
+      // --- TIER 2: Acceptable alternatives ---
+      // These are drugs that fit ALL clues equally well (per-puzzle assessment)
+      const acceptableAlts = (puzzle.acceptable_alternatives || []).map(a => a.toLowerCase());
+      if (acceptableAlts.length > 0) {
+        // Direct match against acceptable alternatives
+        if (acceptableAlts.includes(g) || acceptableAlts.includes(gNorm)) return 'acceptable';
+        // Also check equivalence groups for acceptable alternatives
+        for (const alt of acceptableAlts) {
+          const equivSet = _equivMap[alt];
+          if (equivSet && (equivSet.has(g) || equivSet.has(gNorm))) return 'acceptable';
+        }
+      }
+
+      // --- TIER 3: Near misses ---
+      // Same class but distinguished by at least one specific clue detail
+      const nearMissDrugs = (puzzle.near_misses && puzzle.near_misses.drugs || []).map(d => d.toLowerCase());
+      if (nearMissDrugs.length > 0) {
+        if (nearMissDrugs.includes(g) || nearMissDrugs.includes(gNorm)) return 'near_miss';
+        // Check equivalence groups for near misses too
+        for (const nm of nearMissDrugs) {
+          const equivSet = _equivMap[nm];
+          if (equivSet && (equivSet.has(g) || equivSet.has(gNorm))) return 'near_miss';
+        }
+      }
+
+      return 'incorrect';
+    }
+
+    // ============================================================================
+    // STATE & GLOBALS
+    // ============================================================================
+
+    let gameState = {
+      currentDay: null,
+      puzzle: null,
+      guesses: [],
+      revealed: [false, false, false, false, false],
+      isCompleted: false,
+      userToken: localStorage.getItem('pharmodle_token'),
+      userId: localStorage.getItem('pharmodle_userId'),
+      username: localStorage.getItem('pharmodle_username'),
+      allConditions: [],
+    };
+
+    // ============================================================================
+    // API CALLS
+    // ============================================================================
+
+    async function apiCall(endpoint, options = {}) {
+      const url = `/api${endpoint}`;
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(gameState.userToken && { 'Authorization': `Bearer ${gameState.userToken}` }),
+        ...options.headers,
+      };
+
+      const response = await fetch(url, {
+        ...options,
+        headers,
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        // If we get 401, token is invalid — clear auth state
+        if (response.status === 401 && gameState.userToken) {
+          console.log('Got 401, clearing auth state');
+          gameState.userToken = null;
+          gameState.userId = null;
+          gameState.username = null;
+          localStorage.removeItem('pharmodle_token');
+          localStorage.removeItem('pharmodle_userId');
+          localStorage.removeItem('pharmodle_username');
+          updateAccountBtn();
+        }
+        let errorMsg;
+        try { errorMsg = JSON.parse(errorText).error; } catch (_) { errorMsg = errorText; }
+        throw new Error(errorMsg || `API error: ${response.status}`);
+      }
+
+      return response.json();
+    }
+
+    async function signup(username, password) {
+      const data = await apiCall('/auth/signup', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+      });
+      gameState.userToken = data.token;
+      gameState.userId = data.userId;
+      gameState.username = data.username;
+      localStorage.setItem('pharmodle_token', data.token);
+      localStorage.setItem('pharmodle_userId', data.userId);
+      localStorage.setItem('pharmodle_username', data.username);
+      return data;
+    }
+
+    async function login(username, password) {
+      const data = await apiCall('/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+      });
+      gameState.userToken = data.token;
+      gameState.userId = data.userId;
+      gameState.username = data.username;
+      localStorage.setItem('pharmodle_token', data.token);
+      localStorage.setItem('pharmodle_userId', data.userId);
+      localStorage.setItem('pharmodle_username', data.username);
+      return data;
+    }
+
+    async function logout() {
+      gameState.userToken = null;
+      gameState.userId = null;
+      gameState.username = null;
+      localStorage.removeItem('pharmodle_token');
+      localStorage.removeItem('pharmodle_userId');
+      localStorage.removeItem('pharmodle_username');
+      // Clear game completion data so logout truly resets state
+      localStorage.removeItem('pharmodle_lastDay');
+      localStorage.removeItem('pharmodle_lastResult');
+    }
+
+    async function getCurrentUser() {
+      if (!gameState.userToken) return null;
+      try {
+        return await apiCall('/auth/me');
+      } catch (e) {
+        console.log('Not authenticated');
+        return null;
+      }
+    }
+
+    // Get user's IANA timezone from browser (uses server clock, not device clock)
+    const USER_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Australia/Sydney';
+
+    async function getTodaysPuzzle() {
+      return await apiCall('/puzzle/today?tz=' + encodeURIComponent(USER_TZ));
+    }
+
+    async function getPuzzle(dayNumber) {
+      return await apiCall(`/puzzle/${dayNumber}?tz=` + encodeURIComponent(USER_TZ));
+    }
+
+    async function getConditions() {
+      const data = await apiCall('/puzzle/conditions');
+      return data.conditions || [];
+    }
+
+    async function submitPuzzle(dayNumber, won, score, guesses) {
+      return await apiCall('/puzzle/submit', {
+        method: 'POST',
+        body: JSON.stringify({ dayNumber, won, score, guesses }),
+      });
+    }
+
+    async function getFriends() {
+      if (!gameState.userToken) return { friends: [] };
+      return await apiCall('/friends');
+    }
+
+    async function getFriendRequests() {
+      if (!gameState.userToken) return { incoming: [], outgoing: [] };
+      return await apiCall('/friends/requests');
+    }
+
+    async function sendFriendRequest(username) {
+      return await apiCall('/friends/request', {
+        method: 'POST',
+        body: JSON.stringify({ username }),
+      });
+    }
+
+    async function acceptFriendRequest(id) {
+      return await apiCall(`/friends/accept/${id}`, { method: 'POST' });
+    }
+
+    async function rejectFriendRequest(id) {
+      return await apiCall(`/friends/reject/${id}`, { method: 'POST' });
+    }
+
+    async function removeFriend(userId) {
+      return await apiCall(`/friends/${userId}`, { method: 'DELETE' });
+    }
+
+    async function getLeaderboard(period, isGlobal = false) {
+      const suffix = isGlobal ? '?global=true' : '';
+      if (period === 'weekly')  return await apiCall(`/leaderboard/weekly${suffix}`);
+      if (period === 'monthly') return await apiCall(`/leaderboard/monthly${suffix}`);
+      if (period === 'yearly')  return await apiCall(`/leaderboard/yearly${suffix}`);
+      if (period === 'alltime') return await apiCall(`/leaderboard/alltime${suffix}`);
+    }
+
+    async function getPuzzleHistory(all = false) {
+      if (!gameState.userToken) return { total: 0, results: [] };
+      return await apiCall(`/puzzle/history/list${all ? '?all=true' : ''}`);
+    }
+
+    // ============================================================================
+    // UI HELPERS
+    // ============================================================================
+
+    function showModal(id) {
+      document.getElementById(id).classList.add('show');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
+
+    function closeAllModals() {
+      document.querySelectorAll('.modal-overlay.show').forEach(m => {
+        m.classList.remove('show');
+      });
+    }
+
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function getFirstLetter(text) {
+      return (text || '').charAt(0).toUpperCase();
+    }
+
+    // ============================================================================
+    // UNIT SYSTEM (Metric / Imperial toggle)
+    // ============================================================================
+
+    let currentUnitSystem = localStorage.getItem('pharmodle_units') || 'metric';
+
+    function setUnits(system) {
+      currentUnitSystem = system;
+      localStorage.setItem('pharmodle_units', system);
+      document.getElementById('unitMetricBtn').classList.toggle('active', system === 'metric');
+      document.getElementById('unitImperialBtn').classList.toggle('active', system === 'imperial');
+      renderClues(); // Re-render clues with new units
+    }
+
+    function applyUnitConversions(text) {
+      if (currentUnitSystem === 'metric') return text;
+
+      // Apply context-aware conversions for imperial/US units
+      const puzzle = gameState.puzzle;
+      if (!puzzle || !puzzle.unit_values || puzzle.unit_values.length === 0) return text;
+
+      let converted = text;
+      puzzle.unit_values.forEach(uv => {
+        if (converted.includes(uv.metric)) {
+          converted = converted.replace(uv.metric, uv.imperial);
+        }
+        // Also try the original form
+        if (uv.original && converted.includes(uv.original)) {
+          converted = converted.replace(uv.original, uv.imperial);
+        }
+      });
+      return converted;
+    }
+
+    function initUnitToggle() {
+      // Show toggle only if puzzle has unit values
+      const row = document.getElementById('unitToggleRow');
+      if (gameState.puzzle && gameState.puzzle.unit_values && gameState.puzzle.unit_values.length > 0) {
+        row.style.display = 'flex';
+      } else {
+        row.style.display = 'none';
+      }
+      // Restore saved preference
+      setUnits(currentUnitSystem);
+    }
+
+    // ============================================================================
+    // PUZZLE PROMPT (tells player what they're guessing)
+    // ============================================================================
+
+    function renderPuzzlePrompt() {
+      const el = document.getElementById('puzzlePrompt');
+      if (gameState.puzzle && gameState.puzzle.prompt) {
+        el.textContent = gameState.puzzle.prompt;
+        el.style.display = 'block';
+      } else {
+        // Default prompt based on type
+        const typePrompts = {
+          'drug_id': 'What drug is being described?',
+          'adr_case': 'Which drug is most likely causing these symptoms?',
+          'drug_interaction': 'Which drug is responsible for this interaction?',
+          'mixed_profile': 'What drug is being described?'
+        };
+        const type = gameState.puzzle && gameState.puzzle.type;
+        if (type && typePrompts[type]) {
+          el.textContent = typePrompts[type];
+          el.style.display = 'block';
+        } else {
+          el.textContent = 'What drug is being described?';
+          el.style.display = 'block';
+        }
+      }
+    }
+
+    // ============================================================================
+    // CLUES & GAME RENDERING
+    // ============================================================================
+
+    function renderClues() {
+      const container = document.getElementById('cluesContainer');
+      container.innerHTML = '';
+
+      if (!gameState.puzzle || !gameState.puzzle.clues) {
+        container.innerHTML = '<p style="text-align: center; color: #999;">Loading puzzle...</p>';
+        return;
+      }
+
+      gameState.puzzle.clues.forEach((clue, index) => {
+        const card = document.createElement('div');
+        card.className = 'card clue-card';
+
+        // Clues can be plain strings or {label, text} objects
+        const clueLabel = clue && clue.label ? clue.label : `Clue ${index + 1}`;
+        let clueText  = clue && clue.text  ? clue.text  : String(clue);
+
+        // Apply unit conversions if imperial selected
+        clueText = applyUnitConversions(clueText);
+
+        if (gameState.revealed[index]) {
+          card.classList.add('revealed');
+
+          // Determine clue color state
+          const clueState = gameState.clueStates ? gameState.clueStates[index] : null;
+          let statusIcon = '';
+
+          if (clueState === 'wrong') {
+            card.classList.add('clue-wrong');
+            statusIcon = '<span class="clue-status-icon clue-icon-wrong">&times;</span>';
+          } else if (clueState === 'correct') {
+            card.classList.add('clue-correct');
+            statusIcon = '<span class="clue-status-icon clue-icon-correct">&#10003;</span>';
+          }
+
+          card.innerHTML = `${statusIcon}<span class="clue-label">${clueLabel}</span><span class="clue-text">${clueText}</span>`;
+        } else {
+          card.classList.add('blurred');
+          card.innerHTML = `<span class="clue-label">${clueLabel}</span><span class="clue-text">${clueText}</span>`;
+          // Clues only reveal via game flow (wrong guesses), not by clicking
+          card.style.cursor = 'default';
+        }
+
+        container.appendChild(card);
+      });
+    }
+
+    function revealClue(index) {
+      gameState.revealed[index] = true;
+      renderClues();
+    }
+
+    function renderGuessHistory() {
+      const list = document.getElementById('guessHistoryList');
+      const section = document.getElementById('guessHistorySection');
+      list.innerHTML = '';
+
+      if (gameState.guesses.length === 0) {
+        section.style.display = 'none';
+        return;
+      }
+
+      section.style.display = 'block';
+      gameState.guesses.forEach(guess => {
+        const item = document.createElement('div');
+        item.className = 'guess-item';
+        item.innerHTML = `${guess}<span class="guess-item-x">×</span>`;
+        list.appendChild(item);
+      });
+    }
+
+    // ============================================================================
+    // AUTOCOMPLETE
+    // ============================================================================
+
+    function setupAutocomplete() {
+      const input = document.getElementById('guessInput');
+      const dropdown = document.getElementById('autocompleteDropdown');
+      let selectedIndex = -1;
+
+      // Event delegation on dropdown — mousedown fires BEFORE blur, preventing
+      // the race condition where blur closes the dropdown before click registers
+      dropdown.addEventListener('mousedown', (e) => {
+        e.preventDefault(); // Prevent input blur
+        const item = e.target.closest('.autocomplete-item');
+        if (item) {
+          input.value = item.getAttribute('data-value') || item.textContent;
+          dropdown.classList.remove('show');
+          selectedIndex = -1;
+          input.focus();
+        }
+      });
+
+      // Touch support — same fix for mobile
+      // Use touchend instead of touchstart for more reliable selection
+      dropdown.addEventListener('touchstart', (e) => {
+        // Prevent blur on any touch within dropdown
+        e.preventDefault();
+      }, { passive: false });
+
+      dropdown.addEventListener('touchend', (e) => {
+        const item = e.target.closest('.autocomplete-item');
+        if (item) {
+          e.preventDefault();
+          input.value = item.getAttribute('data-value') || item.textContent;
+          dropdown.classList.remove('show');
+          selectedIndex = -1;
+          input.focus();
+        }
+      });
+
+      input.addEventListener('input', (e) => {
+        const value = e.target.value.trim().toLowerCase();
+        selectedIndex = -1;
+
+        if (!value || value.length < 2) {
+          dropdown.classList.remove('show');
+          return;
+        }
+
+        // Split search into words for multi-word matching
+        const searchWords = value.split(/\s+/).filter(w => w.length > 0);
+
+        // Score each condition: higher = better match
+        const scored = gameState.allConditions
+          .map(c => {
+            const cl = c.toLowerCase();
+            // All search words must appear somewhere in the condition
+            const allMatch = searchWords.every(w => cl.includes(w));
+            if (!allMatch) return null;
+
+            let score = 0;
+            // Exact match
+            if (cl === value) score += 1000;
+            // Starts with the search string
+            if (cl.startsWith(value)) score += 100;
+            // Each word starts a word boundary in the condition
+            searchWords.forEach(w => {
+              if (cl.startsWith(w) || cl.includes(' ' + w) || cl.includes('-' + w)) score += 20;
+            });
+            // Shorter names rank higher (more specific)
+            score += Math.max(0, 60 - c.length);
+
+            return { name: c, score };
+          })
+          .filter(Boolean)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 12);
+
+        if (scored.length === 0) {
+          dropdown.classList.remove('show');
+          return;
+        }
+
+        // Highlight matching portions in results — uses character-level marking
+        // to avoid corrupting HTML tags when multiple search words overlap
+        dropdown.innerHTML = scored
+          .map((m, i) => {
+            const orig = m.name;
+            const highlights = new Array(orig.length).fill(false);
+            searchWords.forEach(w => {
+              const regex = new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+              let match;
+              while ((match = regex.exec(orig)) !== null) {
+                for (let j = match.index; j < match.index + match[0].length; j++) {
+                  highlights[j] = true;
+                }
+              }
+            });
+            let display = '';
+            let inH = false;
+            for (let j = 0; j < orig.length; j++) {
+              if (highlights[j] && !inH) { display += '<strong>'; inH = true; }
+              if (!highlights[j] && inH) { display += '</strong>'; inH = false; }
+              display += orig[j];
+            }
+            if (inH) display += '</strong>';
+            return `<div class="autocomplete-item" data-index="${i}" data-value="${m.name}">${display}</div>`;
+          })
+          .join('');
+
+        dropdown.classList.add('show');
+      });
+
+      // Keyboard navigation: arrows to move, Enter to select
+      input.addEventListener('keydown', (e) => {
+        if (!dropdown.classList.contains('show')) return;
+        const items = dropdown.querySelectorAll('.autocomplete-item');
+        if (items.length === 0) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+          items.forEach((it, i) => it.classList.toggle('selected', i === selectedIndex));
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          selectedIndex = Math.max(selectedIndex - 1, 0);
+          items.forEach((it, i) => it.classList.toggle('selected', i === selectedIndex));
+        } else if (e.key === 'Enter' && selectedIndex >= 0) {
+          e.preventDefault();
+          input.value = items[selectedIndex].getAttribute('data-value') || items[selectedIndex].textContent;
+          dropdown.classList.remove('show');
+          selectedIndex = -1;
+        }
+      });
+
+      input.addEventListener('blur', () => {
+        setTimeout(() => {
+          dropdown.classList.remove('show');
+          selectedIndex = -1;
+        }, 200);
+      });
+    }
+
+    // ============================================================================
+    // GUESS SUBMISSION
+    // ============================================================================
+
+    async function submitGuess() {
+      const input = document.getElementById('guessInput');
+      const guess = input.value.trim();
+
+      if (!guess) {
+        showToast('Please enter a condition name', 'error');
+        return;
+      }
+
+      if (!gameState.puzzle) {
+        showToast('No puzzle loaded', 'error');
+        return;
+      }
+
+      // Initialize clue states tracker if not present
+      if (!gameState.clueStates) {
+        gameState.clueStates = {};
+      }
+
+      // The current clue index the player is on (= number of wrong guesses so far)
+      const currentClueIndex = gameState.guesses.length;
+
+      // Check locally — three-tier system
+      const result = checkGuess(guess, gameState.puzzle);
+
+      if (result === 'correct' || result === 'acceptable') {
+        // Won — score = total guesses (lower is better: 1 = first try, 5 = last chance)
+        const score = gameState.guesses.length + 1;
+        gameState.isCompleted = true;
+        if (typeof trackEvent === 'function') trackEvent('game_complete', { won: true, score, dayNumber: gameState.currentDay, points: 6 - score });
+
+        // Mark the current clue as correct (the one they were guessing on)
+        gameState.clueStates[currentClueIndex] = 'correct';
+
+        // Reveal all remaining clues as green (correct)
+        for (let i = currentClueIndex + 1; i < gameState.puzzle.clues.length; i++) {
+          gameState.revealed[i] = true;
+          gameState.clueStates[i] = 'correct';
+        }
+        renderClues();
+
+        // Build result data, noting if it was an acceptable alternative
+        const resultData = {
+          answer: gameState.puzzle.answer,
+          explanation: gameState.puzzle.explanation || 'You got it right!',
+          wasAcceptable: result === 'acceptable',
+          guessedDrug: guess,
+        };
+
+        if (gameState.userToken) {
+          try {
+            const submitted = await submitPuzzle(
+              gameState.currentDay,
+              true,
+              score,
+              gameState.guesses
+            );
+            Object.assign(submitted, { wasAcceptable: resultData.wasAcceptable, guessedDrug: guess });
+            showResult(true, submitted);
+          } catch (e) {
+            console.error('Failed to submit:', e);
+            showResult(true, resultData);
+          }
+        } else {
+          showResult(true, resultData);
+        }
+      } else if (result === 'near_miss') {
+        // Near miss — right class, wrong drug. Counts as wrong guess but with educational feedback.
+        gameState.clueStates[currentClueIndex] = 'wrong';
+        gameState.guesses.push(guess);
+
+        const feedback = gameState.puzzle.near_misses && gameState.puzzle.near_misses.feedback
+          ? gameState.puzzle.near_misses.feedback
+          : 'Close! Right class, but not quite the right drug.';
+
+        if (gameState.guesses.length >= 5) {
+          // Lost
+          for (let i = 0; i < gameState.puzzle.clues.length; i++) {
+            gameState.revealed[i] = true;
+            if (!gameState.clueStates[i]) gameState.clueStates[i] = 'wrong';
+          }
+          renderClues();
+          gameState.isCompleted = true;
+
+          const resultData = {
+            answer: gameState.puzzle.answer,
+            explanation: gameState.puzzle.explanation || 'Better luck next time!',
+            nearMissFeedback: feedback,
+            lastGuessWasNearMiss: true,
+          };
+          if (gameState.userToken) {
+            try {
+              const submitted = await submitPuzzle(gameState.currentDay, false, 0, gameState.guesses);
+              Object.assign(submitted, { nearMissFeedback: feedback, lastGuessWasNearMiss: true });
+              showResult(false, submitted);
+            } catch (e) {
+              showResult(false, resultData);
+            }
+          } else {
+            showResult(false, resultData);
+          }
+        } else {
+          const nextClueIndex = gameState.guesses.length;
+          if (nextClueIndex < gameState.puzzle.clues.length) {
+            revealClue(nextClueIndex);
+          }
+          renderClues();
+          renderGuessHistory();
+          input.value = '';
+          showToast(`So close! ${feedback} ${5 - gameState.guesses.length} guesses left.`, 'error');
+        }
+      } else {
+        // Incorrect — mark the current clue as wrong (red)
+        gameState.clueStates[currentClueIndex] = 'wrong';
+        gameState.guesses.push(guess);
+
+        if (gameState.guesses.length >= 5) {
+          // Lost — reveal all clues but mark them as wrong
+          for (let i = 0; i < gameState.puzzle.clues.length; i++) {
+            gameState.revealed[i] = true;
+            if (!gameState.clueStates[i]) {
+              gameState.clueStates[i] = 'wrong';
+            }
+          }
+          renderClues();
+          gameState.isCompleted = true;
+          if (typeof trackEvent === 'function') trackEvent('game_complete', { won: false, score: 0, dayNumber: gameState.currentDay, points: 0 });
+
+          if (gameState.userToken) {
+            try {
+              const submitted = await submitPuzzle(
+                gameState.currentDay,
+                false,
+                0,
+                gameState.guesses
+              );
+              showResult(false, submitted);
+            } catch (e) {
+              console.error('Failed to submit:', e);
+              showResult(false, {
+                answer: gameState.puzzle.answer,
+                explanation: gameState.puzzle.explanation || 'Better luck next time!',
+              });
+            }
+          } else {
+            showResult(false, {
+              answer: gameState.puzzle.answer,
+              explanation: gameState.puzzle.explanation || 'Better luck next time!',
+            });
+          }
+        } else {
+          // Reveal the next clue
+          const nextClueIndex = gameState.guesses.length;
+          if (nextClueIndex < gameState.puzzle.clues.length) {
+            revealClue(nextClueIndex);
+          }
+          renderClues();
+          renderGuessHistory();
+          input.value = '';
+          showToast(`Incorrect. ${5 - gameState.guesses.length} guesses left.`, 'error');
+        }
+      }
+    }
+
+    function showResult(won, data) {
+      const area = document.getElementById('resultArea');
+      const title = document.getElementById('resultTitle');
+      const answer = document.getElementById('resultAnswer');
+      const explanation = document.getElementById('resultExplanation');
+
+      if (won) {
+        title.className = 'result-title win';
+        const guessCount = gameState.guesses.length + 1;
+        if (data.wasAcceptable) {
+          title.textContent = 'Correct!';
+        } else if (guessCount === 1) {
+          title.textContent = 'Incredible! First Try!';
+        } else if (guessCount <= 3) {
+          title.textContent = 'Well Done!';
+        } else {
+          title.textContent = 'You Got It!';
+        }
+      } else {
+        title.className = 'result-title lose';
+        title.textContent = 'Better Luck Tomorrow';
+      }
+
+      const answerText = data.answer || gameState.puzzle.answer;
+      let explanationText = data.explanation || gameState.puzzle.explanation || '';
+
+      // Add acceptable alternative context
+      if (data.wasAcceptable && data.guessedDrug) {
+        explanationText = `You guessed ${data.guessedDrug} — that's also correct! The target answer was ${answerText}. ${explanationText}`;
+      }
+      // Add near miss feedback on loss
+      if (data.nearMissFeedback && data.lastGuessWasNearMiss) {
+        explanationText = `${data.nearMissFeedback}\n\n${explanationText}`;
+      }
+
+      answer.textContent = answerText;
+      const explanationTextEl = document.getElementById('resultExplanationText');
+      if (explanationText) {
+        explanationTextEl.textContent = explanationText;
+        explanation.style.display = 'block';
+      } else {
+        explanation.style.display = 'none';
+      }
+
+      // Show walkthrough (post-game educational narrative)
+      const walkthroughText = gameState.puzzle.walkthrough || '';
+      const walkthroughEl = document.getElementById('resultWalkthrough');
+      const walkthroughTextEl = document.getElementById('resultWalkthroughText');
+      if (walkthroughText && walkthroughEl) {
+        walkthroughTextEl.textContent = walkthroughText;
+        walkthroughEl.style.display = 'block';
+      } else if (walkthroughEl) {
+        walkthroughEl.style.display = 'none';
+      }
+
+      document.getElementById('guessInput').disabled = true;
+      document.getElementById('submitBtn').disabled = true;
+
+      // Show the persistent answer summary block
+      showAnswerSummary(won, answerText, explanationText, walkthroughText);
+
+      // Save completion to localStorage (so it persists even without account)
+      saveLocalCompletion(gameState.currentDay, won, gameState.guesses);
+
+      // Show/hide login CTA in result popup
+      const loginCTA = document.getElementById('resultLoginCTA');
+      const loggedInBtns = document.getElementById('resultButtonsLoggedIn');
+      if (!gameState.userToken) {
+        loginCTA.style.display = 'block';
+        loggedInBtns.style.display = 'none';
+        // Save pending completion so it can be recorded when they sign in
+        const score = won ? (gameState.guesses.length + 1) : 0;
+        savePendingCompletion(gameState.currentDay, won, won ? score : 0, gameState.guesses);
+      } else {
+        loginCTA.style.display = 'none';
+        loggedInBtns.style.display = 'flex';
+      }
+
+      // Show as popup overlay
+      document.getElementById('resultOverlay').classList.add('show');
+    }
+
+    function showAnswerSummary(won, answerText, explanationText, walkthroughText) {
+      const summary = document.getElementById('answerSummary');
+      const label = document.getElementById('answerSummaryLabel');
+      const name = document.getElementById('answerSummaryName');
+      const desc = document.getElementById('answerSummaryExplanation');
+      const descText = document.getElementById('answerSummaryExplanationText');
+
+      summary.className = won ? 'answer-summary' : 'answer-summary lost';
+      label.textContent = won ? 'Correct Answer' : 'The Answer Was';
+      name.textContent = answerText;
+      if (explanationText) {
+        descText.textContent = explanationText;
+        desc.style.display = 'block';
+      } else {
+        desc.style.display = 'none';
+      }
+
+      // Show walkthrough narrative if available
+      const wEl = document.getElementById('answerSummaryWalkthrough');
+      const wText = document.getElementById('answerSummaryWalkthroughText');
+      if (walkthroughText && wEl) {
+        wText.textContent = walkthroughText;
+        wEl.style.display = 'block';
+      } else if (wEl) {
+        wEl.style.display = 'none';
+      }
+
+      summary.style.display = 'block';
+    }
+
+    function saveLocalCompletion(dayNumber, won, guesses) {
+      try {
+        localStorage.setItem('pharmodle_lastDay', dayNumber);
+        localStorage.setItem('pharmodle_lastResult', JSON.stringify({ won, guesses }));
+      } catch (e) { /* localStorage may be unavailable */ }
+    }
+
+    function getLocalCompletion(dayNumber) {
+      try {
+        const lastDay = parseInt(localStorage.getItem('pharmodle_lastDay'));
+        if (lastDay === dayNumber) {
+          return JSON.parse(localStorage.getItem('pharmodle_lastResult'));
+        }
+      } catch (e) { /* ignore */ }
+      return null;
+    }
+
+    function generateEmojiGrid() {
+      // Simple emoji grid: each row = clue state (blurred=⬜, revealed=🟩, then final result)
+      const rows = [];
+      rows.push(gameState.revealed.map(r => r ? '🟩' : '⬜').join(''));
+
+      // Add final state
+      if (gameState.isCompleted) {
+        rows.push(gameState.guesses.length < 5 ? '✅ Solved' : '❌ Failed');
+      }
+
+      return rows.join('\n');
+    }
+
+    // ============================================================================
+    // MODALS: FRIENDS
+    // ============================================================================
+
+    async function loadFriendsModal() {
+      if (!gameState.userToken) {
+        showToast('Please sign in to view friends', 'error');
+        return;
+      }
+
+      showModal('friendsModal');
+
+      // Load friends list
+      try {
+        const friendsData = await getFriends();
+        renderFriendsList(friendsData.friends || []);
+      } catch (e) {
+        console.error('Failed to load friends:', e);
+        document.getElementById('friendsListContent').innerHTML = '<p class="list-empty">Failed to load friends</p>';
+      }
+
+      // Load requests
+      try {
+        const requestsData = await getFriendRequests();
+        renderFriendRequests(requestsData);
+      } catch (e) {
+        console.error('Failed to load requests:', e);
+        document.getElementById('friendsRequestsContent').innerHTML = '<p class="list-empty">Failed to load requests</p>';
+      }
+    }
+
+    function renderFriendsList(friends) {
+      const content = document.getElementById('friendsListContent');
+
+      if (friends.length === 0) {
+        content.innerHTML = '<p class="list-empty">No friends yet. Add one in the "Add Friend" tab.</p>';
+        return;
+      }
+
+      content.innerHTML = friends
+        .map(friend => `
+          <div class="list-item">
+            <div class="list-item-left">
+              <div class="list-item-avatar">${getFirstLetter(friend.username)}</div>
+              <div class="list-item-info">
+                <div class="list-item-name">${friend.username}</div>
+                <div class="list-item-stats">Win Rate: ${friend.stats?.winRate || 0}% | Avg Score: ${friend.stats?.avgScore || 0}</div>
+              </div>
+            </div>
+            <div class="list-item-right">
+              <button class="btn btn-danger btn-small" onclick="handleRemoveFriend('${friend.userId}')">Remove</button>
+            </div>
+          </div>
+        `)
+        .join('');
+    }
+
+    function renderFriendRequests(data) {
+      const content = document.getElementById('friendsRequestsContent');
+      const incoming = data.incoming || [];
+      const outgoing = data.outgoing || [];
+
+      let html = '';
+
+      if (incoming.length > 0) {
+        html += '<div style="margin-bottom: 1.5rem;"><h3 style="margin-bottom: 0.75rem; font-weight: 600;">Incoming</h3>';
+        html += incoming
+          .map(req => `
+            <div class="list-item">
+              <div class="list-item-left">
+                <div class="list-item-avatar">${getFirstLetter(req.fromUsername)}</div>
+                <div class="list-item-info">
+                  <div class="list-item-name">${req.fromUsername}</div>
+                </div>
+              </div>
+              <div class="list-item-right">
+                <button class="btn btn-primary btn-small" onclick="handleAcceptFriendRequest('${req.id}')">Accept</button>
+                <button class="btn btn-secondary btn-small" onclick="handleRejectFriendRequest('${req.id}')">Reject</button>
+              </div>
+            </div>
+          `)
+          .join('');
+        html += '</div>';
+      }
+
+      if (outgoing.length > 0) {
+        html += '<div style="margin-bottom: 1.5rem;"><h3 style="margin-bottom: 0.75rem; font-weight: 600;">Outgoing</h3>';
+        html += outgoing
+          .map(req => `
+            <div class="list-item">
+              <div class="list-item-left">
+                <div class="list-item-avatar">${getFirstLetter(req.toUsername)}</div>
+                <div class="list-item-info">
+                  <div class="list-item-name">${req.toUsername}</div>
+                </div>
+              </div>
+              <div class="list-item-right">
+                <span style="color: #6b7280; font-size: 0.875rem;">Pending</span>
+              </div>
+            </div>
+          `)
+          .join('');
+        html += '</div>';
+      }
+
+      if (incoming.length === 0 && outgoing.length === 0) {
+        html = '<p class="list-empty">No friend requests</p>';
+      }
+
+      content.innerHTML = html;
+    }
+
+    async function handleRemoveFriend(userId) {
+      if (!confirm('Remove this friend?')) return;
+      try {
+        await removeFriend(userId);
+        showToast('Friend removed', 'success');
+        loadFriendsModal();
+      } catch (e) {
+        showToast('Failed to remove friend', 'error');
+      }
+    }
+
+    async function handleAcceptFriendRequest(id) {
+      try {
+        await acceptFriendRequest(id);
+        showToast('Request accepted', 'success');
+        loadFriendsModal();
+      } catch (e) {
+        showToast('Failed to accept request', 'error');
+      }
+    }
+
+    async function handleRejectFriendRequest(id) {
+      try {
+        await rejectFriendRequest(id);
+        showToast('Request rejected', 'success');
+        loadFriendsModal();
+      } catch (e) {
+        showToast('Failed to reject request', 'error');
+      }
+    }
+
+    async function handleSendFriendRequest(username) {
+      try {
+        const result = await sendFriendRequest(username);
+        showToast(result.message || 'Friend request sent!', 'success');
+        loadFriendsModal();
+      } catch (e) {
+        showToast(e.message || 'Failed to send request', 'error');
+      }
+    }
+
+    // ============================================================================
+    // MODALS: LEADERBOARD
+    // ============================================================================
+
+    // Leaderboard state
+    let lbCurrentPeriod = 'weekly';
+    let lbIsGlobal = false;
+    let lbSortKey = 'totalPoints';
+    let lbSortAsc = false; // false = descending (highest first)
+    let lbCurrentPage = 1;
+    const LB_PAGE_SIZE = 10;
+
+    async function loadLeaderboardModal() {
+      showModal('leaderboardModal');
+
+      // Default scope: friends if logged in, global otherwise
+      lbIsGlobal = !gameState.userToken;
+      lbCurrentPeriod = 'weekly';
+      lbSortKey = 'totalPoints';
+      lbSortAsc = false;
+      lbCurrentPage = 1;
+
+      const modal = document.getElementById('leaderboardModal');
+
+      // Set tab active state
+      const defaultTabId = 'leaderboardWeekly';
+      modal.querySelectorAll('.modal-tab').forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-tab') === defaultTabId);
+      });
+      modal.querySelectorAll('.tab-content').forEach(c => {
+        c.classList.toggle('active', c.id === defaultTabId);
+      });
+
+      // Sync scope toggle buttons
+      syncScopeToggle();
+
+      // Wire up scope toggle buttons
+      document.getElementById('lbScopeFriends').onclick = () => {
+        if (!gameState.userToken) { showToast('Sign in to view friend leaderboards', 'error'); return; }
+        lbIsGlobal = false;
+        lbCurrentPage = 1;
+        syncScopeToggle();
+        loadLeaderboardTab(lbCurrentPeriod);
+      };
+      document.getElementById('lbScopeGlobal').onclick = () => {
+        lbIsGlobal = true;
+        lbCurrentPage = 1;
+        syncScopeToggle();
+        loadLeaderboardTab(lbCurrentPeriod);
+      };
+
+      loadLeaderboardTab(lbCurrentPeriod);
+    }
+
+    function syncScopeToggle() {
+      document.getElementById('lbScopeFriends').classList.toggle('active', !lbIsGlobal);
+      document.getElementById('lbScopeGlobal').classList.toggle('active', lbIsGlobal);
+    }
+
+    async function loadLeaderboardTab(period) {
+      if (typeof trackEvent === 'function') trackEvent('leaderboard_view', period);
+      lbCurrentPeriod = period;
+      const contentId = `leaderboard${period.charAt(0).toUpperCase() + period.slice(1)}`;
+      const content = document.getElementById(contentId);
+
+      if (!lbIsGlobal && !gameState.userToken) {
+        content.innerHTML = '<p class="list-empty">Sign in to view friend leaderboards</p>';
+        return;
+      }
+
+      content.innerHTML = '<p class="list-empty" style="padding:1rem">Loading...</p>';
+
+      try {
+        const data = await getLeaderboard(period, lbIsGlobal);
+        const rawEntries = data.entries || [];
+
+        if (rawEntries.length === 0) {
+          content.innerHTML = `<p class="list-empty">No data yet${!lbIsGlobal ? ' — play some games or add friends!' : ''}</p>`;
+          return;
+        }
+
+        renderLeaderboardEntries(content, rawEntries);
+      } catch (e) {
+        console.error('Failed to load leaderboard:', e);
+        content.innerHTML = '<p class="list-empty">Failed to load data</p>';
+      }
+    }
+
+    function renderLeaderboardEntries(content, entries) {
+      // Sort entries client-side
+      const sorted = [...entries].sort((a, b) => {
+        let va = a[lbSortKey], vb = b[lbSortKey];
+        if (typeof va === 'string') va = va.toLowerCase();
+        if (typeof vb === 'string') vb = vb.toLowerCase();
+        if (va < vb) return lbSortAsc ? -1 : 1;
+        if (va > vb) return lbSortAsc ? 1 : -1;
+        return 0;
+      });
+
+      // Re-rank after sort (global rank, before pagination)
+      sorted.forEach((e, i) => { e._displayRank = i + 1; });
+
+      // Pagination
+      const totalPages = Math.max(1, Math.ceil(sorted.length / LB_PAGE_SIZE));
+      lbCurrentPage = Math.min(lbCurrentPage, totalPages);
+      const pageStart = (lbCurrentPage - 1) * LB_PAGE_SIZE;
+      const paginated = sorted.slice(pageStart, pageStart + LB_PAGE_SIZE);
+
+      const cols = [
+        { key: null,           label: '#',      cls: 'lb-h-rank'  },
+        { key: 'username',     label: 'Player', cls: 'lb-h-name'  },
+        { key: 'played',       label: 'Games',  cls: 'lb-h-stat'  },
+        { key: 'winRate',      label: 'Win%',   cls: 'lb-h-stat'  },
+        { key: 'avgPoints',    label: 'Avg',    cls: 'lb-h-stat'  },
+        { key: 'totalPoints',  label: 'Pts',    cls: 'lb-h-stat'  },
+      ];
+
+      const headerCells = cols.map(col => {
+        if (!col.key) return `<span class="${col.cls}">${col.label}</span>`;
+        const isActive = lbSortKey === col.key;
+        const arrow = isActive ? (lbSortAsc ? '▲' : '▼') : '⇅';
+        return `<span class="${col.cls}">
+          <button class="lb-col-btn${isActive ? ' sort-active' : ''}" data-sort="${col.key}">
+            ${col.label} <span class="lb-sort-arrow">${arrow}</span>
+          </button>
+        </span>`;
+      }).join('');
+
+      const rows = paginated.map(entry => {
+        const isCurrentUser = gameState.userId && entry.userId == gameState.userId;
+        const streakBadge = entry.streak >= 3 ? ` <span class="lb-streak" title="${entry.streak} day streak">🔥${entry.streak}</span>` : '';
+        const rankClass = entry._displayRank === 1 ? ' lb-gold' : entry._displayRank === 2 ? ' lb-silver' : entry._displayRank === 3 ? ' lb-bronze' : '';
+        return `<div class="lb-row${isCurrentUser ? ' lb-you' : ''}${rankClass}">
+          <span class="lb-rank">#${entry._displayRank}</span>
+          <span class="lb-name">${entry.username}${streakBadge}${isCurrentUser ? ' <em>(you)</em>' : ''}</span>
+          <span class="lb-stat">${entry.played}</span>
+          <span class="lb-stat">${entry.winRate}%</span>
+          <span class="lb-stat">${entry.avgPoints}</span>
+          <span class="lb-stat lb-pts">${entry.totalPoints}</span>
+        </div>`;
+      }).join('');
+
+      const paginationHtml = totalPages > 1 ? `
+        <div class="lb-pagination">
+          <button class="lb-page-btn" id="lbPrevBtn" ${lbCurrentPage <= 1 ? 'disabled' : ''}>‹ Prev</button>
+          <span class="lb-page-info">Page ${lbCurrentPage} of ${totalPages}</span>
+          <button class="lb-page-btn" id="lbNextBtn" ${lbCurrentPage >= totalPages ? 'disabled' : ''}>Next ›</button>
+        </div>` : '';
+
+      content.innerHTML = `<div class="lb-header">${headerCells}</div>${rows}${paginationHtml}`;
+
+      // Wire sort buttons — no API re-fetch, just re-render
+      content.querySelectorAll('.lb-col-btn[data-sort]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-sort');
+          if (lbSortKey === key) {
+            lbSortAsc = !lbSortAsc;
+          } else {
+            lbSortKey = key;
+            lbSortAsc = key === 'username';
+          }
+          lbCurrentPage = 1;
+          renderLeaderboardEntries(content, entries);
+        });
+      });
+
+      // Wire pagination buttons
+      const prevBtn = content.querySelector('#lbPrevBtn');
+      const nextBtn = content.querySelector('#lbNextBtn');
+      if (prevBtn) prevBtn.addEventListener('click', () => {
+        lbCurrentPage--;
+        renderLeaderboardEntries(content, entries);
+      });
+      if (nextBtn) nextBtn.addEventListener('click', () => {
+        lbCurrentPage++;
+        renderLeaderboardEntries(content, entries);
+      });
+    }
+
+    // ============================================================================
+    // MODALS: ARCHIVE
+    // ============================================================================
+
+    // Archive state
+    let archiveViewMonth = null; // { year, month } currently displayed
+    let archiveHistory = {};     // dayNumber -> { won, score, completedAt }
+
+    async function loadArchiveModal() {
+      showModal('archiveModal');
+
+      if (!gameState.todayDay && !gameState.currentDay) {
+        document.getElementById('archiveGrid').innerHTML = '<p class="list-empty">Loading...</p>';
+        return;
+      }
+
+      // Fetch all history (requires auth for colour coding)
+      archiveHistory = {};
+      if (gameState.userToken) {
+        try {
+          const history = await getPuzzleHistory(true);
+          (history.results || []).forEach(r => {
+            archiveHistory[r.dayNumber] = {
+              won: r.won,
+              score: r.score,
+              completedAt: r.completedAt,
+            };
+          });
+        } catch (e) {
+          console.error('Failed to load puzzle history for archive:', e);
+        }
+      }
+
+      // Default to current month
+      const now = new Date();
+      archiveViewMonth = { year: now.getFullYear(), month: now.getMonth() };
+
+      renderArchiveCalendar();
+
+      // Nav buttons
+      document.getElementById('archivePrevMonth').onclick = () => {
+        archiveViewMonth.month--;
+        if (archiveViewMonth.month < 0) { archiveViewMonth.month = 11; archiveViewMonth.year--; }
+        renderArchiveCalendar();
+      };
+      document.getElementById('archiveNextMonth').onclick = () => {
+        const now = new Date();
+        const nextMonth = archiveViewMonth.month + 1;
+        const nextYear = nextMonth > 11 ? archiveViewMonth.year + 1 : archiveViewMonth.year;
+        const normMonth = nextMonth > 11 ? 0 : nextMonth;
+        // Don't go past current month
+        if (nextYear > now.getFullYear() || (nextYear === now.getFullYear() && normMonth > now.getMonth())) return;
+        archiveViewMonth.month = normMonth;
+        archiveViewMonth.year = nextYear;
+        renderArchiveCalendar();
+      };
+
+      // "Go to Today" button — loads today's puzzle and closes archive
+      document.getElementById('archiveTodayBtn').onclick = async () => {
+        closeAllModals();
+        try {
+          const todayData = await getTodaysPuzzle();
+          gameState.currentDay = todayData.dayNumber;
+          gameState.puzzle = todayData.puzzle;
+          document.getElementById('resultOverlay').classList.remove('show');
+          document.getElementById('guessInput').value = '';
+          document.getElementById('answerSummary').style.display = 'none';
+
+          const completionData = todayData.completed;
+
+          if (completionData) {
+            gameState.isCompleted = true;
+            gameState.guesses = completionData.guesses || [];
+            gameState.revealed = [true, true, true, true, true];
+            gameState.clueStates = {};
+            const numWrong = gameState.guesses.length;
+            for (let i = 0; i < 5; i++) {
+              gameState.clueStates[i] = completionData.won ? (i < numWrong ? 'wrong' : 'correct') : 'wrong';
+            }
+            document.getElementById('guessInput').disabled = true;
+            document.getElementById('submitBtn').disabled = true;
+            renderClues();
+            renderGuessHistory();
+            const answerText = todayData.puzzle.answer;
+            const explanationText = todayData.puzzle.explanation || '';
+            const walkthroughText = todayData.puzzle.walkthrough || '';
+            showAnswerSummary(completionData.won, answerText, explanationText, walkthroughText);
+          } else {
+            gameState.isCompleted = false;
+            gameState.guesses = [];
+            gameState.clueStates = {};
+            gameState.revealed = [true, false, false, false, false];
+            document.getElementById('guessInput').disabled = false;
+            document.getElementById('submitBtn').disabled = false;
+            renderClues();
+            renderGuessHistory();
+          }
+
+          updateDayIndicator();
+          initUnitToggle();
+          renderPuzzlePrompt();
+        } catch (e) {
+          showToast('Failed to load today\'s puzzle', 'error');
+        }
+      };
+    }
+
+    function renderArchiveCalendar() {
+      const grid = document.getElementById('archiveGrid');
+      const label = document.getElementById('archiveMonthLabel');
+      const { year, month } = archiveViewMonth;
+      const now = new Date();
+
+      const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      label.textContent = `${monthNames[month]} ${year}`;
+
+      // Disable nav buttons appropriately
+      const launchDate = new Date(Date.UTC(2026, 2, 4));
+      const prevBtn = document.getElementById('archivePrevMonth');
+      const nextBtn = document.getElementById('archiveNextMonth');
+      prevBtn.disabled = (year === launchDate.getUTCFullYear() && month <= launchDate.getUTCMonth());
+      nextBtn.disabled = (year === now.getFullYear() && month >= now.getMonth());
+
+      // First day of month and number of days
+      const firstDay = new Date(year, month, 1);
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // Day of week for first day (0=Sun, convert to Mon=0)
+      let startDow = firstDay.getDay() - 1;
+      if (startDow < 0) startDow = 6; // Sunday -> 6
+
+      grid.innerHTML = '';
+
+      // Empty cells before first day
+      for (let i = 0; i < startDow; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'cal-cell cal-cell-empty';
+        grid.appendChild(empty);
+      }
+
+      // Calendar cells
+      for (let d = 1; d <= daysInMonth; d++) {
+        const cellDate = new Date(Date.UTC(year, month, d));
+        // Calculate day number for this date
+        const dayNumber = Math.floor((cellDate - launchDate) / 86400000) + 1;
+
+        const cell = document.createElement('div');
+
+        if (dayNumber < 1) {
+          // Before launch
+          cell.className = 'cal-cell cal-cell-empty';
+          cell.innerHTML = `<div class="cal-cell-date" style="color:#e5e7eb;">${d}</div>`;
+        } else if (dayNumber > (gameState.todayDay || gameState.currentDay)) {
+          // Future puzzle
+          cell.className = 'cal-cell cal-future';
+          cell.innerHTML = `<div class="cal-cell-date">${d}</div>`;
+        } else {
+          // Valid puzzle day
+          const result = archiveHistory[dayNumber];
+
+          if (result) {
+            // Determine if completed on release day or via archive
+            // Compare in AEST (UTC+10) since day numbers are AEST-based
+            let sameDay = false;
+            if (result.completedAt) {
+              const caStr = result.completedAt.endsWith('Z') ? result.completedAt : result.completedAt + 'Z';
+              const completedDate = new Date(caStr);
+              // Convert completed_at to AEST by adding 10 hours
+              const completedAEST = new Date(completedDate.getTime() + 10 * 3600000);
+              // Release date for this day number (AEST calendar date)
+              const releaseAEST = new Date(Date.UTC(2026, 2, 4 + (dayNumber - 1)));
+              sameDay = releaseAEST.getUTCFullYear() === completedAEST.getUTCFullYear()
+                && releaseAEST.getUTCMonth() === completedAEST.getUTCMonth()
+                && releaseAEST.getUTCDate() === completedAEST.getUTCDate();
+            }
+
+            if (sameDay && result.won) {
+              cell.className = 'cal-cell cal-green';
+            } else if (sameDay && !result.won) {
+              cell.className = 'cal-cell cal-red';
+            } else if (!sameDay && result.completedAt) {
+              cell.className = 'cal-cell cal-dark-grey';
+            } else {
+              // Completed but no timestamp — treat as on-day based on won
+              cell.className = result.won ? 'cal-cell cal-green' : 'cal-cell cal-red';
+            }
+
+            // Display points (6 - guessCount) instead of raw score
+            const pointsText = result.won ? (6 - result.score) + 'pt' : 'X';
+            cell.innerHTML = `<div class="cal-cell-date">${d}</div><div class="cal-cell-score">${pointsText}</div>`;
+          } else {
+            cell.className = 'cal-cell cal-grey';
+            cell.innerHTML = `<div class="cal-cell-date">${d}</div>`;
+          }
+
+          // Click handler to load puzzle
+          cell.addEventListener('click', () => loadArchivePuzzle(dayNumber));
+        }
+
+        grid.appendChild(cell);
+      }
+    }
+
+    async function loadArchivePuzzle(dayNumber) {
+      closeAllModals();
+      try {
+        const puzzleData = await getPuzzle(dayNumber);
+        gameState.currentDay = dayNumber;
+        gameState.puzzle = puzzleData.puzzle;
+        document.getElementById('resultOverlay').classList.remove('show');
+        document.getElementById('guessInput').value = '';
+        document.getElementById('answerSummary').style.display = 'none';
+
+        if (puzzleData.completed) {
+          gameState.isCompleted = true;
+          gameState.guesses = puzzleData.completed.guesses || [];
+          gameState.revealed = [true, true, true, true, true];
+          gameState.clueStates = {};
+          const numWrong = gameState.guesses.length;
+          for (let i = 0; i < 5; i++) {
+            gameState.clueStates[i] = puzzleData.completed.won ? (i < numWrong ? 'wrong' : 'correct') : 'wrong';
+          }
+          document.getElementById('guessInput').disabled = true;
+          document.getElementById('submitBtn').disabled = true;
+          renderClues();
+          renderGuessHistory();
+          showResult(puzzleData.completed.won, {
+            answer: puzzleData.puzzle.answer,
+            explanation: puzzleData.puzzle.explanation || '',
+          });
+        } else {
+          gameState.isCompleted = false;
+          gameState.guesses = [];
+          gameState.clueStates = {};
+          gameState.revealed = [true, false, false, false, false];
+          document.getElementById('guessInput').disabled = false;
+          document.getElementById('submitBtn').disabled = false;
+          renderClues();
+          renderGuessHistory();
+        }
+
+        updateDayIndicator();
+        initUnitToggle();
+        renderPuzzlePrompt();
+      } catch (e) {
+        showToast('Failed to load puzzle', 'error');
+      }
+    }
+
+    // ============================================================================
+    // MODALS: ACCOUNT
+    // ============================================================================
+
+    async function loadAccountModal() {
+      if (!gameState.userToken) {
+        showModal('loginModal');
+        return;
+      }
+
+      try {
+        const user = await getCurrentUser();
+        if (user) {
+          const s = user.stats || {};
+          document.getElementById('accountUsername').textContent = user.username;
+          document.getElementById('accountAvatar').textContent = getFirstLetter(user.username);
+
+          // Joined date
+          const joined = user.createdAt ? new Date(user.createdAt + 'Z') : null;
+          document.getElementById('accountJoined').textContent = joined
+            ? `Joined ${joined.toLocaleDateString('en-AU', { month: 'short', day: 'numeric', year: 'numeric' })}`
+            : '';
+
+          // Rank
+          document.getElementById('accountRank').textContent = s.leaderboardRank ? `#${s.leaderboardRank}` : '#-';
+
+          // Top stats
+          document.getElementById('accountPlayed').textContent = s.played || 0;
+          document.getElementById('accountWon').textContent = s.won || 0;
+          document.getElementById('accountWinRate').textContent = `${s.winRate || 0}%`;
+          document.getElementById('accountTotalPts').textContent = s.totalPoints || 0;
+
+          // Performance
+          document.getElementById('accountAvgScore').textContent = s.avgScore != null ? s.avgScore : '-';
+          document.getElementById('accountBestScore').textContent = s.bestScore != null ? `${s.bestScore}/5` : '-';
+          document.getElementById('accountCurrentStreak').textContent = s.currentStreak || 0;
+          document.getElementById('accountMaxStreak').textContent = s.maxStreak || 0;
+          document.getElementById('accountPerfect').textContent = s.perfectGames || 0;
+          document.getElementById('accountFriends').textContent = s.friendCount || 0;
+
+          // Guess distribution bar chart
+          const dist = s.distribution || {};
+          const maxVal = Math.max(1, ...Object.values(dist));
+          const distEl = document.getElementById('accountDistribution');
+          distEl.innerHTML = '';
+          const labels = [1, 2, 3, 4, 5, 'X'];
+          labels.forEach(label => {
+            const count = dist[label] || 0;
+            const pct = Math.max(8, (count / maxVal) * 100);
+            const isLoss = label === 'X';
+            const color = isLoss ? '#ef4444' : '#0d9488';
+            distEl.innerHTML += `
+              <div class="dist-row">
+                <span class="dist-label">${label}</span>
+                <div class="dist-bar" style="width: ${pct}%; background: ${color};">${count}</div>
+              </div>`;
+          });
+        }
+      } catch (e) {
+        console.error('Failed to load account:', e);
+      }
+
+      showModal('accountModal');
+    }
+
+    async function performLogout() {
+      if (!confirm('Are you sure you want to logout?')) return;
+      await logout();
+      closeAllModals();
+      location.reload();
+    }
+
+    // ============================================================================
+    // AUTH HANDLING
+    // ============================================================================
+
+    let isSignupMode = false;
+
+    function toggleAuthMode() {
+      isSignupMode = !isSignupMode;
+      const form = document.getElementById('authForm');
+      const title = form.closest('.auth-card').querySelector('.auth-title');
+      const subtitle = form.closest('.auth-card').querySelector('.auth-subtitle');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const toggleText = form.closest('.auth-card').querySelector('#authToggleText');
+      const toggleBtn = form.querySelector('#authToggleBtn');
+
+      if (isSignupMode) {
+        title.textContent = 'Create Account';
+        subtitle.textContent = 'Join Pharmodle';
+        submitBtn.querySelector('#authSubmitText').textContent = 'Sign Up';
+        toggleText.textContent = 'Already have an account?';
+        toggleBtn.textContent = 'Sign In';
+      } else {
+        title.textContent = 'Welcome';
+        subtitle.textContent = 'Sign in to track your progress';
+        submitBtn.querySelector('#authSubmitText').textContent = 'Sign In';
+        toggleText.textContent = "Don't have an account?";
+        toggleBtn.textContent = 'Sign Up';
+      }
+    }
+
+    // ============================================================================
+    // INITIALIZATION
+    // ============================================================================
+
+    function updateDayIndicator() {
+      const indicator = document.getElementById('dayIndicator');
+      if (gameState.currentDay) {
+        // Show today's date as the main display
+        const today = new Date();
+        const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+        indicator.textContent = today.toLocaleDateString('en-AU', options);
+      }
+    }
+
+    function updateAccountBtn() {
+      const btn = document.getElementById('accountBtn');
+      if (gameState.userToken && gameState.username) {
+        btn.textContent = gameState.username;
+      } else {
+        btn.textContent = 'Sign In';
+      }
+    }
+
+    async function initGame() {
+      try {
+        // Load conditions once
+        gameState.allConditions = await getConditions();
+        _buildAbbrMap(); // Build abbreviation map for answer matching
+
+        // Load today's puzzle
+        const todayData = await getTodaysPuzzle();
+        gameState.currentDay = todayData.dayNumber;
+        gameState.todayDay = todayData.dayNumber; // Never changes — used for archive limits
+        gameState.puzzle = todayData.puzzle;
+        gameState.clueStates = {};
+
+        // Only use SERVER-side completion (requires auth) — not localStorage
+        // localStorage was causing ghost completions after logout / in incognito
+        const completionData = todayData.completed;
+
+        if (completionData) {
+          // Already completed (server confirmed) — restore state
+          gameState.isCompleted = true;
+          gameState.guesses = completionData.guesses || [];
+          gameState.revealed = [true, true, true, true, true];
+
+          // Reconstruct clue states from history
+          const numWrong = gameState.guesses.length;
+          for (let i = 0; i < 5; i++) {
+            if (completionData.won) {
+              gameState.clueStates[i] = i < numWrong ? 'wrong' : 'correct';
+            } else {
+              gameState.clueStates[i] = 'wrong';
+            }
+          }
+
+          document.getElementById('guessInput').disabled = true;
+          document.getElementById('submitBtn').disabled = true;
+
+          // Show result and answer summary
+          renderClues();
+          renderGuessHistory();
+
+          const answerText = todayData.puzzle.answer;
+          const explanationText = todayData.puzzle.explanation || '';
+          const walkthroughText = todayData.puzzle.walkthrough || '';
+          showAnswerSummary(completionData.won, answerText, explanationText, walkthroughText);
+          // Don't auto-show popup on reload — just show the summary block
+        } else {
+          gameState.isCompleted = false;
+          // Reveal first clue by default
+          gameState.revealed = [true, false, false, false, false];
+          renderClues();
+          renderGuessHistory();
+        }
+
+        updateDayIndicator();
+        initUnitToggle();
+        renderPuzzlePrompt();
+        setupAutocomplete();
+
+        showPage('gamePage');
+      } catch (e) {
+        console.error('Failed to init game:', e);
+        showToast('Failed to load puzzle', 'error');
+      }
+    }
+
+    async function init() {
+      const token = localStorage.getItem('pharmodle_token');
+
+      if (token) {
+        gameState.userToken = token;
+        gameState.userId = localStorage.getItem('pharmodle_userId');
+        gameState.username = localStorage.getItem('pharmodle_username');
+
+        // Validate token — if expired or invalid, clear auth state
+        try {
+          const user = await getCurrentUser();
+          if (!user) {
+            console.log('Token invalid, clearing auth state');
+            gameState.userToken = null;
+            gameState.userId = null;
+            gameState.username = null;
+            localStorage.removeItem('pharmodle_token');
+            localStorage.removeItem('pharmodle_userId');
+            localStorage.removeItem('pharmodle_username');
+          }
+        } catch (e) {
+          console.log('Token validation failed, clearing auth state');
+          gameState.userToken = null;
+          gameState.userId = null;
+          gameState.username = null;
+          localStorage.removeItem('pharmodle_token');
+          localStorage.removeItem('pharmodle_userId');
+          localStorage.removeItem('pharmodle_username');
+        }
+      }
+
+      updateAccountBtn();
+      await initGame();
+      checkFeedbackState();
+
+      // After login, try to submit any completion done while logged out
+      if (gameState.userToken) {
+        await submitPendingCompletion();
+      } else {
+        // Show login prompt for unauthenticated users (small delay to ensure page is rendered)
+        setTimeout(() => showLoginPrompt(), 500);
+      }
+    }
+
+    // ============================================================================
+    // EVENT LISTENERS
+    // ============================================================================
+
+    document.getElementById('submitBtn').addEventListener('click', submitGuess);
+
+    document.getElementById('guessInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitGuess();
+      }
+    });
+
+    document.getElementById('shareBtn').addEventListener('click', () => {
+      const emoji = generateEmojiGrid();
+      navigator.clipboard.writeText(`Pharmodle\n\n${emoji}`).then(() => {
+        showToast('Copied to clipboard!', 'success');
+      });
+    });
+
+    // Close result popup — X button
+    document.getElementById('resultCloseBtn').addEventListener('click', () => {
+      document.getElementById('resultOverlay').classList.remove('show');
+    });
+
+    // Close result popup — click outside
+    document.getElementById('resultOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('resultOverlay')) {
+        document.getElementById('resultOverlay').classList.remove('show');
+      }
+    });
+
+    document.getElementById('archiveFromResultBtn').addEventListener('click', () => {
+      document.getElementById('resultOverlay').classList.remove('show');
+      loadArchiveModal();
+    });
+
+    document.getElementById('leaderboardBtn').addEventListener('click', loadLeaderboardModal);
+    document.getElementById('archiveBtn').addEventListener('click', loadArchiveModal);
+    document.getElementById('friendsBtn').addEventListener('click', loadFriendsModal);
+    document.getElementById('accountBtn').addEventListener('click', loadAccountModal);
+
+    // Auth form
+    document.getElementById('authForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('authUsername').value.trim();
+      const password = document.getElementById('authPassword').value;
+
+      if (!username || !password) {
+        showToast('Please fill in all fields', 'error');
+        return;
+      }
+
+      try {
+        if (isSignupMode) {
+          await signup(username, password);
+          showToast('Account created!', 'success');
+        } else {
+          await login(username, password);
+          showToast('Logged in!', 'success');
+        }
+        location.reload();
+      } catch (e) {
+        showToast(e.message || 'Auth failed', 'error');
+      }
+    });
+
+    document.getElementById('authToggleBtn').addEventListener('click', toggleAuthMode);
+
+    // Login modal
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const errorEl = document.getElementById('loginUsernameError');
+      errorEl.textContent = '';
+
+      if (!username || !password) {
+        errorEl.textContent = 'Please fill in all fields';
+        return;
+      }
+
+      try {
+        await login(username, password);
+        showToast('Logged in!', 'success');
+        closeModal('loginModal');
+        location.reload();
+      } catch (err) {
+        const msg = err.message || 'Login failed';
+        // Clean up the error message (remove "API error:" prefix if present)
+        errorEl.textContent = msg.replace(/^API error:\s*\d+\s*-?\s*/, '');
+      }
+    });
+
+    // Signup modal
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('signupUsername').value.trim();
+      const password = document.getElementById('signupPassword').value;
+      const errorEl = document.getElementById('signupUsernameError');
+      errorEl.textContent = '';
+
+      if (!username || !password) {
+        errorEl.textContent = 'Please fill in all fields';
+        return;
+      }
+
+      try {
+        await signup(username, password);
+        showToast('Account created!', 'success');
+        closeModal('signupModal');
+        location.reload();
+      } catch (err) {
+        const msg = err.message || 'Signup failed';
+        errorEl.textContent = msg.replace(/^API error:\s*\d+\s*-?\s*/, '');
+      }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', performLogout);
+
+    // Modal tabs
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const modal = tab.closest('.modal');
+        const tabName = tab.getAttribute('data-tab');
+
+        modal.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+        modal.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tabName).classList.add('active');
+
+        // Load leaderboard data on tab switch
+        if (tabName.startsWith('leaderboard')) {
+          const period = tabName.replace('leaderboard', '').toLowerCase();
+          lbCurrentPage = 1;
+          loadLeaderboardTab(period);
+        }
+      });
+    });
+
+    // Add friend
+    document.getElementById('addFriendBtn').addEventListener('click', async () => {
+      const input = document.getElementById('addFriendInput');
+      const username = input.value.trim();
+      if (!username) {
+        showToast('Please enter a username', 'error');
+        return;
+      }
+      await handleSendFriendRequest(username);
+      input.value = '';
+    });
+
+    document.getElementById('addFriendInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('addFriendBtn').click();
+      }
+    });
+
+    // Modal close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('show');
+        }
+      });
+    });
+
+    // ============================================================================
+    // FEEDBACK SYSTEM
+    // ============================================================================
+
+    document.getElementById('feedbackToggle').addEventListener('click', () => {
+      document.getElementById('feedbackToggle').style.display = 'none';
+      document.getElementById('feedbackForm').style.display = 'block';
+      document.getElementById('feedbackText').focus();
+    });
+
+    document.getElementById('feedbackSubmitBtn').addEventListener('click', async () => {
+      const text = document.getElementById('feedbackText').value.trim();
+      if (!text) { document.getElementById('feedbackText').focus(); return; }
+
+      try {
+        await fetch('/api/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(gameState.userToken && { 'Authorization': `Bearer ${gameState.userToken}` }),
+          },
+          body: JSON.stringify({
+            dayNumber: gameState.currentDay,
+            rating: 'comment',
+            comment: text,
+          }),
+        });
+      } catch (e) { /* ignore */ }
+
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('feedbackThanks').style.display = 'block';
+    });
+
+    function checkFeedbackState() { /* no-op for simple version */ }
+
+    // ============================================================================
+    // LOGIN PROMPT (for unauthenticated users)
+    // ============================================================================
+
+    // Login prompt is handled by independent script above the main script.
+    // This function is kept as a no-op so init() doesn't error.
+    function showLoginPrompt() {}
+
+    // Result popup login CTA
+    document.getElementById('resultLoginBtn').addEventListener('click', () => {
+      document.getElementById('resultOverlay').classList.remove('show');
+      showModal('signupModal');
+    });
+
+    // ============================================================================
+    // DEFERRED COMPLETION (play without account, record on login)
+    // ============================================================================
+
+    // Save pending completion to localStorage (overwritten each game)
+    function savePendingCompletion(dayNumber, won, score, guesses) {
+      try {
+        localStorage.setItem('physiodle_pendingCompletion', JSON.stringify({
+          dayNumber, won, score, guesses, savedAt: Date.now()
+        }));
+      } catch (e) { /* ignore */ }
+    }
+
+    // After login/signup, try to submit any pending completion
+    async function submitPendingCompletion() {
+      try {
+        const raw = localStorage.getItem('physiodle_pendingCompletion');
+        if (!raw || !gameState.userToken) return;
+        const pending = JSON.parse(raw);
+        // Only submit if it's today's puzzle (server will validate)
+        await submitPuzzle(pending.dayNumber, pending.won, pending.score, pending.guesses);
+        localStorage.removeItem('physiodle_pendingCompletion');
+        console.log('Pending completion submitted successfully');
+      } catch (e) {
+        // 409 = already submitted, which is fine
+        if (e.message && e.message.includes('already submitted')) {
+          localStorage.removeItem('physiodle_pendingCompletion');
+        }
+        console.log('Pending completion submit:', e.message);
+      }
+    }
+
+    // ============================================================================
+    // ANALYTICS TRACKING
+    // ============================================================================
+
+    // Generate or retrieve a persistent visitor ID
+    function getVisitorId() {
+      let vid = localStorage.getItem('physiodle_visitorId');
+      if (!vid) {
+        vid = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
+        localStorage.setItem('physiodle_visitorId', vid);
+      }
+      return vid;
+    }
+
+    // Fire-and-forget analytics calls
+    function trackPageView() {
+      try {
+        fetch('/api/analytics/pageview', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(gameState.userToken && { 'Authorization': 'Bearer ' + gameState.userToken }),
+          },
+          body: JSON.stringify({ visitorId: getVisitorId(), path: '/' }),
+        });
+      } catch (e) { /* ignore */ }
+    }
+
+    function trackEvent(eventType, eventData) {
+      try {
+        fetch('/api/analytics/event', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(gameState.userToken && { 'Authorization': 'Bearer ' + gameState.userToken }),
+          },
+          body: JSON.stringify({ visitorId: getVisitorId(), eventType, eventData }),
+        });
+      } catch (e) { /* ignore */ }
+    }
+
+    // Track page view on load
+    trackPageView();
+
+    // Initialize on load
+    init();
+  </script>
+</body>
+</html>

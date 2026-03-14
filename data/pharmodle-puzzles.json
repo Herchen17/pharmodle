@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "answer": "Metformin",
+    "aliases": ["Metformin Hydrochloride", "Diabex", "Diaformin"],
+    "category": "Endocrine",
+    "domain": "Oral Hypoglycaemics",
+    "type": "adr_case",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 68-year-old man with type 2 diabetes and chronic kidney disease (eGFR 35 mL/min) presents with severe nausea, vomiting, and abdominal discomfort." },
+      { "label": "Investigations", "text": "Arterial blood gas shows pH 7.25, HCO3 12 mmol/L. Serum lactate is markedly elevated at 8 mmol/L. Glucose is well controlled at 6.2 mmol/L." },
+      { "label": "Key Finding", "text": "Lactic acidosis confirmed. The patient had been on his regular diabetes medication despite worsening renal function." },
+      { "label": "Drug Clue", "text": "This is a first-line agent for type 2 diabetes that is contraindicated when eGFR falls below 30-45 mL/min depending on local guidelines." },
+      { "label": "Identifying Detail", "text": "The drug accumulates in renal failure and causes lactic acidosis, a rare but serious ADR. It should have been ceased months ago when renal function declined." }
+    ],
+    "explanation": "Metformin-associated lactic acidosis (MALA) is a classic and potentially fatal complication when metformin is used in renal impairment. The drug accumulates as it is renally excreted unchanged, increasing intracellular lactate production. Australian guidelines recommend ceasing metformin when eGFR <30 mL/min (caution 30-45). Pharmacists must verify renal function before dispensing."
+  },
+  {
+    "id": 2,
+    "answer": "Atorvastatin",
+    "aliases": ["Atorvastatin Calcium", "Lipitor", "Liprimar"],
+    "category": "Cardiovascular",
+    "domain": "HMG-CoA Reductase Inhibitors",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Cardiovascular system and lipid metabolism." },
+      { "label": "Class", "text": "HMG-CoA reductase inhibitor (statin) used for primary and secondary prevention of cardiovascular disease." },
+      { "label": "Mechanism", "text": "Competitively inhibits HMG-CoA reductase, the rate-limiting enzyme in cholesterol synthesis, reducing LDL cholesterol by 30-50%." },
+      { "label": "Adverse Effect", "text": "Can cause myalgia and myopathy, especially when combined with other lipophilic agents or in high-dose therapy." },
+      { "label": "Clinical Pearl", "text": "This is the most commonly prescribed statin in Australia, recommended as first-line for most patients due to evidence of cardiovascular benefit and good tolerability." }
+    ],
+    "explanation": "Atorvastatin is a potent, lipophilic statin with excellent cardiovascular outcome data and the most PBS listings in Australia. It's taken at night for optimal effect (since cholesterol synthesis peaks overnight). Pharmacists should counsel on muscle symptoms and advise adequate CoQ10 intake, though evidence for supplementation is debated."
+  },
+  {
+    "id": 3,
+    "answer": "Salbutamol",
+    "aliases": ["Albuterol", "Ventolin", "Asmol"],
+    "category": "Respiratory",
+    "domain": "Adrenergic Agonists",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Respiratory system — bronchial smooth muscle relaxation." },
+      { "label": "Class", "text": "Beta-2 adrenergic agonist; rapid-acting bronchodilator (RABA) for acute asthma and COPD." },
+      { "label": "Mechanism", "text": "Activates beta-2 receptors on airway smooth muscle, increasing cAMP and causing bronchial relaxation within minutes." },
+      { "label": "Adverse Effect", "text": "Tremor, tachycardia, and headache are common, especially with overuse. Tolerance can develop with continuous use." },
+      { "label": "Clinical Pearl", "text": "The most frequently prescribed reliever inhaler in Australia; use >2 days per week indicates poor asthma control and need for inhaled corticosteroid therapy." }
+    ],
+    "explanation": "Salbutamol is the Australian approved name for albuterol. As a short-acting beta-2 agonist, it provides rapid symptom relief but should not be relied upon for chronic control. Overuse is a red flag for poor asthma management. Pharmacists must counsel on proper inhaler technique and advise stepping up to controller therapy when reliever use increases."
+  },
+  {
+    "id": 4,
+    "answer": "Paracetamol",
+    "aliases": ["Acetaminophen", "Panadol", "Tylenol"],
+    "category": "Musculoskeletal",
+    "domain": "Analgesics",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 45-year-old woman with no medical history takes an unknown number of tablets over 3 days for severe tension headaches." },
+      { "label": "Investigations", "text": "Presents with jaundice, right upper quadrant pain, and significantly elevated transaminases (ALT 2500 U/L). INR is prolonged at 2.8." },
+      { "label": "Key Finding", "text": "Paracetamol level on arrival is subtherapeutic, but liver damage is evident. Hepatotoxicity from overdose is confirmed by the Rumack-Matthew nomogram." },
+      { "label": "Drug Clue", "text": "This common analgesic is safe at therapeutic doses (max 4g/day) but overdose causes hepatotoxicity via formation of a toxic metabolite NAPQI." },
+      { "label": "Identifying Detail", "text": "N-acetylcysteine (NAC) is the antidote if given within 8-10 hours. This drug's hepatotoxicity is the most common cause of acute liver failure in developed countries." }
+    ],
+    "explanation": "Paracetamol overdose causes hepatotoxicity when NAPQI (produced from CYP450 metabolism) exceeds the capacity of glutathione conjugation. Chronic alcoholics are at higher risk due to glutathione depletion. The Rumack-Matthew nomogram determines whether NAC should be given. Pharmacists must counsel on maximum daily doses and warn against concurrent use in combination products."
+  },
+  {
+    "id": 5,
+    "answer": "Fluoxetine",
+    "aliases": ["Fluoxetine Hydrochloride", "Prozac", "Zactin"],
+    "category": "Psychiatry",
+    "domain": "Selective Serotonin Reuptake Inhibitors",
+    "type": "drug_interaction",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 52-year-old man has been on a stable antidepressant for depression for 2 years with good symptom control." },
+      { "label": "Co-prescribed Drugs", "text": "His GP adds tramadol for chronic lower back pain after a disc herniation." },
+      { "label": "Interaction Mechanism", "text": "Both agents increase serotonergic tone. This SSRI is a potent CYP2D6 inhibitor, significantly elevating tramadol levels by reducing its metabolism." },
+      { "label": "Clinical Consequence", "text": "Within 3 days, the patient experiences confusion, agitation, muscle rigidity, hyperthermia, and hyperreflexia — classic serotonin syndrome." },
+      { "label": "Resolution", "text": "Tramadol is ceased immediately and supportive care provided. The offending SSRI should be reviewed; alternative analgesia (e.g., paracetamol, NSAIDs) is preferred with this drug." }
+    ],
+    "explanation": "Fluoxetine is a potent CYP2D6 inhibitor and has significant serotonergic activity. Combined with tramadol (which has SNRI activity and is metabolised by CYP2D6), the risk of serotonin syndrome is substantial. Pharmacists should screen for serotonergic combinations and counsel patients on warning signs: agitation, tremor, hyperthermia, and autonomic instability."
+  },
+  {
+    "id": 6,
+    "answer": "Lisinopril",
+    "aliases": ["Lisinopril Dihydrate", "Carace", "Lisodur"],
+    "category": "Cardiovascular",
+    "domain": "ACE Inhibitors",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 61-year-old woman with hypertension and heart failure has been on this medication for 8 months and reports a persistent dry cough." },
+      { "label": "Investigations", "text": "Chest X-ray is clear. Spirometry is normal. ACE and bradykinin levels are elevated." },
+      { "label": "Key Finding", "text": "The cough is medication-related; it's not a sign of worsening heart failure or infection." },
+      { "label": "Drug Clue", "text": "This ACE inhibitor prevents degradation of bradykinin, a potent inflammatory mediator, leading to a dry cough in ~10-20% of patients." },
+      { "label": "Identifying Detail", "text": "The cough resolves within weeks of switching to an ARB (which blocks the angiotensin II receptor without affecting bradykinin), or it can be managed by continuing the drug if cardiovascular benefit outweighs the symptom burden." }
+    ],
+    "explanation": "ACE inhibitor-induced cough is a classic adverse effect caused by bradykinin accumulation in the lungs. Lisinopril is a first-line agent for hypertension and heart failure with strong evidence of mortality benefit. When cough occurs, switching to an ARB (like losartan) is the standard approach. Pharmacists should reassure patients that cough indicates the drug is working and discuss options."
+  },
+  {
+    "id": 7,
+    "answer": "Omeprazole",
+    "aliases": ["Omeprazole Magnesium", "Losec", "Prilosec"],
+    "category": "Gastrointestinal",
+    "domain": "Proton Pump Inhibitors",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Gastrointestinal system — gastric acid secretion." },
+      { "label": "Class", "text": "Proton pump inhibitor (PPI) for acid suppression in GORD, peptic ulcer disease, and prevention of NSAID-induced ulcers." },
+      { "label": "Mechanism", "text": "Irreversibly inhibits the H+/K+-ATPase pump on parietal cells, blocking the final step of gastric acid secretion and raising intragastric pH." },
+      { "label": "Adverse Effect", "text": "Chronic use is associated with hypomagnesaemia, reduced calcium absorption, increased fracture risk, and vitamin B12 deficiency." },
+      { "label": "Clinical Pearl", "text": "This is the most commonly prescribed PPI in Australia. Long-term use should be reviewed regularly, and the lowest effective dose used for the shortest duration to minimise harm." }
+    ],
+    "explanation": "Omeprazole is a potent, irreversible proton pump inhibitor with excellent efficacy for acid suppression. However, long-term use carries risks of B12 deficiency, magnesium depletion, and osteoporosis. Australian guidelines recommend reviewing PPI need at least annually. Pharmacists should counsel on calcium and B12 supplementation for long-term users and advise spacing administration away from interacting drugs."
+  },
+  {
+    "id": 8,
+    "answer": "Warfarin",
+    "aliases": ["Warfarin Sodium", "Coumarin"],
+    "category": "Haematology",
+    "domain": "Anticoagulants",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 74-year-old man with atrial fibrillation has been stable on warfarin (INR 2-3) for 5 years." },
+      { "label": "Co-prescribed Drugs", "text": "His GP adds fluconazole 200 mg daily for oral candidiasis without reviewing drug interactions." },
+      { "label": "Interaction Mechanism", "text": "Fluconazole is a potent CYP2C9 inhibitor. Warfarin is metabolised by CYP2C9, so the antifungal dramatically increases warfarin concentration and effect." },
+      { "label": "Clinical Consequence", "text": "Over 10 days, the patient's INR rises to 8.5. He develops spontaneous bruising, haematuria, and haemarthrosis from over-anticoagulation." },
+      { "label": "Resolution", "text": "Warfarin dose is reduced immediately; INR is monitored daily until stable. This azole antifungal should be avoided; alternatives like nystatin suspension are preferred." }
+    ],
+    "explanation": "Warfarin is metabolised by CYP2C9, making it highly susceptible to interactions with enzyme inhibitors. Fluconazole dramatically increases warfarin effect and bleeding risk. Pharmacists must screen all new prescriptions for CYP2C9 inhibitors and counsel on bleeding signs. Regular INR monitoring is essential with any drug change."
+  },
+  {
+    "id": 9,
+    "answer": "Amoxicillin",
+    "aliases": ["Amoxicillin Trihydrate", "Amoxil", "Augmentin (with clavulanate)"],
+    "category": "Infectious Disease",
+    "domain": "Beta-Lactam Antibiotics",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Infectious disease — bacterial cell wall synthesis inhibition." },
+      { "label": "Class", "text": "Aminopenicillin; broad-spectrum beta-lactam antibiotic effective against gram-positive and some gram-negative bacteria." },
+      { "label": "Mechanism", "text": "Inhibits bacterial peptidoglycan cross-linking by binding penicillin-binding proteins, causing cell wall lysis." },
+      { "label": "Adverse Effect", "text": "Rash (often benign maculopapular exanthem) occurs in ~5-10% of patients. Allergic reactions and C. difficile-associated diarrhoea are notable risks." },
+      { "label": "Clinical Pearl", "text": "Widely used for otitis media, respiratory tract infections, and UTIs. Often combined with clavulanic acid (beta-lactamase inhibitor) to overcome resistance — this combination is called Augmentin in Australia." }
+    ],
+    "explanation": "Amoxicillin is a first-generation aminopenicillin with good oral bioavailability and broad-spectrum activity. It remains a first-line antibiotic for common infections despite emerging resistance. The amoxicillin rash (often seen with concurrent EBV infection) must be distinguished from true allergy. Pharmacists should counsel on completion of course and diarrhoea risk."
+  },
+  {
+    "id": 10,
+    "answer": "Methotrexate",
+    "aliases": ["Methotrexate Sodium", "Methoday"],
+    "category": "Oncology",
+    "domain": "Antimetabolites",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 58-year-old woman with rheumatoid arthritis on low-dose weekly therapy develops severe mouth ulcers, pancytopenia, and elevated transaminases." },
+      { "label": "Investigations", "text": "FBC shows WBC 2.2, Hb 9.0, platelets 80; liver enzymes are 3-5x upper limit of normal. Renal function is normal." },
+      { "label": "Key Finding", "text": "She had been taking daily folic acid but recently switched to a different brand that contains significantly less folic acid." },
+      { "label": "Drug Clue", "text": "This antimetabolite inhibits dihydrofolate reductase, reducing DNA synthesis. At low doses it's used for rheumatoid arthritis and autoimmune conditions." },
+      { "label": "Identifying Detail", "text": "Adequate folic acid supplementation (5 mg daily on non-dosing days) is critical to prevent bone marrow suppression and mucosal toxicity. Blood tests must be monitored 4-6 weekly, and NSAIDs should be avoided as they reduce renal clearance." }
+    ],
+    "explanation": "Methotrexate toxicity is a serious concern in RA patients, particularly when folic acid supplementation is inadequate. The drug accumulates in renal impairment (absolute contraindication in CKD). Regular FBC and LFT monitoring is mandatory. Pharmacists play a crucial role in ensuring folic acid adequacy and counselling on drug interactions (NSAIDs, sulphonamides, trimethoprim all increase toxicity)."
+  },
+  {
+    "id": 11,
+    "answer": "Losartan",
+    "aliases": ["Losartan Potassium", "Cozaar", "Cosart"],
+    "category": "Cardiovascular",
+    "domain": "Angiotensin II Receptor Blockers",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Cardiovascular system — renin-angiotensin-aldosterone system (RAAS) modulation." },
+      { "label": "Class", "text": "Angiotensin II receptor blocker (ARB); first-line agent for hypertension and renal protection in diabetes." },
+      { "label": "Mechanism", "text": "Selectively blocks AT1 receptors, preventing angiotensin II from causing vasoconstriction and aldosterone release." },
+      { "label": "Adverse Effect", "text": "Hyperkalaemia and worsening renal function can occur, especially when combined with ACE inhibitors or potassium-sparing diuretics." },
+      { "label": "Clinical Pearl", "text": "Unlike ACE inhibitors, this class does NOT cause dry cough (because bradykinin is not accumulated), making it an excellent alternative for ACE inhibitor intolerance. Excellent renal protective effects in diabetic nephropathy." }
+    ],
+    "explanation": "Losartan is a selective AT1 receptor antagonist with proven cardiovascular and renal protective effects. It lacks the dry cough associated with ACE inhibitors, making it preferred in those who develop cough. Requires monitoring of renal function and potassium, particularly in diabetes and CKD. Dual blockade (ACE inhibitor + ARB) is generally not recommended due to hyperkalaemia and renal dysfunction risk."
+  },
+  {
+    "id": 12,
+    "answer": "Fentanyl",
+    "aliases": ["Fentanyl Citrate", "Duragesic", "Instanyl"],
+    "category": "Neurology",
+    "domain": "Opioid Analgesics",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 67-year-old man with cancer pain was recently transitioned from oral morphine to a transdermal patch for better compliance." },
+      { "label": "Investigations", "text": "Within 48 hours, he develops severe confusion, pinpoint pupils, and respiratory depression (RR 8). Naloxone reverses the symptoms dramatically." },
+      { "label": "Key Finding", "text": "His wife reports he has mild renal impairment and takes regular paracetamol and an old cold remedy containing codeine." },
+      { "label": "Drug Clue", "text": "This potent synthetic opioid is 50-100x more potent than morphine. Transdermal patches take 12-24 hours to reach therapeutic levels; starting doses must account for opioid tolerance." },
+      { "label": "Identifying Detail", "text": "Overdose occurs easily if dosing is incorrect at initiation or if renal/hepatic impairment leads to accumulation. This drug is a major cause of opioid-related deaths in Australia. Naloxone should be prescribed alongside all opioids for overdose reversal." }
+    ],
+    "explanation": "Fentanyl's extreme potency (50-100x morphine) and lipophilicity make it ideal for chronic cancer pain but dangerous for opioid-naive patients or those with incorrect dosing. Transdermal absorption is complex and affected by temperature and body composition. Pharmacists must ensure previous opioid exposure is documented, counsel on proper patch application (no heating pads), and discuss naloxone availability for emergency use."
+  },
+  {
+    "id": 13,
+    "answer": "Prednisone",
+    "aliases": ["Prednisolone", "Solone"],
+    "category": "Immunology",
+    "domain": "Corticosteroids",
+    "type": "mixed_profile",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Therapeutic Use", "text": "Used for autoimmune conditions, inflammation, and as an immunosuppressant; short courses for acute exacerbations, longer-term use for chronic conditions like polymyalgia rheumatica." },
+      { "label": "Drug Class", "text": "Systemic glucocorticoid with potent anti-inflammatory and immunosuppressive properties." },
+      { "label": "Pharmacology", "text": "Binds glucocorticoid receptors in the cytoplasm, translocates to nucleus, and suppresses pro-inflammatory gene transcription. Rapidly absorbed orally with peak levels at 1-2 hours." },
+      { "label": "Adverse Effects & Monitoring", "text": "Long-term use causes osteoporosis (consider bone protection therapy), diabetes, hypertension, mood disturbance, and immunosuppression. Baseline DEXA scan and regular monitoring required." },
+      { "label": "Clinical Pearl", "text": "Should be used at the lowest effective dose for the shortest duration. Always include gastroprotection (PPI) if >7.5 mg daily long-term. Bone protection (calcium, vitamin D, bisphosphonate) is recommended for chronic use in postmenopausal women and older men." }
+    ],
+    "explanation": "Prednisone (the pro-drug of prednisolone) is highly effective for inflammation but carries substantial long-term adverse effects. Australians often use prednisolone liquid formulations for children. Pharmacists must counsel on gradual dose reduction (withdrawal risks), infection screening, and side effect monitoring. Proton pump inhibitors should accompany long-term therapy to prevent peptic ulcer disease."
+  },
+  {
+    "id": 14,
+    "answer": "Sertraline",
+    "aliases": ["Sertraline Hydrochloride", "Zoloft", "Ziprex"],
+    "category": "Psychiatry",
+    "domain": "Selective Serotonin Reuptake Inhibitors",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Central nervous system — mood regulation via serotonergic pathways." },
+      { "label": "Class", "text": "Selective serotonin reuptake inhibitor (SSRI); first-line antidepressant and anxiolytic agent." },
+      { "label": "Mechanism", "text": "Inhibits the serotonin transporter (5-HTT) on presynaptic neurons, increasing synaptic serotonin concentration over time." },
+      { "label": "Adverse Effect", "text": "Sexual dysfunction (delayed ejaculation, anorgasmia) occurs in ~20% of patients and is often dose-dependent; SIADH and hyponatraemia are less common but serious." },
+      { "label": "Clinical Pearl", "text": "This SSRI is commonly used for post-traumatic stress disorder, obsessive-compulsive disorder, and panic disorder in addition to depression. It has a lower drug interaction profile than fluoxetine and paroxetine, making it a preferred agent in polymedicated patients." }
+    ],
+    "explanation": "Sertraline is a well-tolerated, low-interaction SSRI with broad indications. It has minimal CYP450 enzyme inhibition, making it safer in combination therapy. Sexual dysfunction is common but often reversible with dose reduction or brief drug holidays. Australians know it by the brand name Zoloft. Pharmacists should counsel on gradual titration (start 50 mg), time to effect (2-4 weeks), and serotonin syndrome risk with other agents."
+  },
+  {
+    "id": 15,
+    "answer": "Clopidogrel",
+    "aliases": ["Clopidogrel Hydrogen Sulphate", "Plavix", "Iscover"],
+    "category": "Cardiovascular",
+    "domain": "Antiplatelet Agents",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 2,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 63-year-old man received a drug-eluting stent for acute coronary syndrome 3 months ago and is on dual antiplatelet therapy." },
+      { "label": "Co-prescribed Drugs", "text": "His GP prescribes omeprazole 20 mg daily for reflux symptoms without checking for interactions." },
+      { "label": "Interaction Mechanism", "text": "This antiplatelet agent is a pro-drug requiring activation by CYP2C19. Omeprazole is a potent CYP2C19 inhibitor, reducing conversion to active metabolite by ~50%." },
+      { "label": "Clinical Consequence", "text": "Six months later, he presents with acute stent thrombosis, recurrent chest pain, and ST-elevation MI — a feared complication of reduced antiplatelet effect." },
+      { "label": "Resolution", "text": "Omeprazole is ceased and replaced with an H2-receptor antagonist or a CYP2C19-sparing PPI (pantoprazole). This antiplatelet agent should never be combined with strong CYP2C19 inhibitors." }
+    ],
+    "explanation": "Clopidogrel is a thienopyridine that requires hepatic CYP2C19 activation to its active form. PPIs (especially omeprazole, lansoprazole) reduce its antiplatelet effect by 20-50%, increasing stent thrombosis risk. Australian guidelines recommend avoiding this combination post-PCI. Pharmacists must screen prescriptions and counsel patients not to discontinue this agent without medical advice (rebound thrombosis risk if stopped early)."
+  },
+  {
+    "id": 16,
+    "answer": "Allopurinol",
+    "aliases": ["Allopurinol Sodium", "Aluron"],
+    "category": "Musculoskeletal",
+    "domain": "Xanthine Oxidase Inhibitors",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 52-year-old man with recurrent gout is started on this urate-lowering therapy at 300 mg daily without prophylaxis." },
+      { "label": "Investigations", "text": "Within 2 weeks, he experiences a severe acute gout flare with polyarticular involvement, swelling, and intense pain." },
+      { "label": "Key Finding", "text": "His serum urate has dropped from 0.48 to 0.25 mmol/L. This rapid drop of uric acid has mobilised crystals from tissues." },
+      { "label": "Drug Clue", "text": "This xanthine oxidase inhibitor reduces uric acid production. Rapid lowering of uric acid can paradoxically precipitate gout flares." },
+      { "label": "Identifying Detail", "text": "Colchicine or an NSAID prophylaxis must be started 1-2 weeks BEFORE initiating this drug and continued for at least 3-6 months to prevent crystal mobilisation and acute flares." }
+    ],
+    "explanation": "Allopurinol is the standard urate-lowering therapy, but the treatment paradox (acute flares with initiation) is poorly understood by many prescribers. Prophylaxis with NSAIDs (indomethacin) or colchicine is essential before starting allopurinol. Dose should be titrated slowly (50 mg weekly) until target serum urate is achieved. Pharmacists must counsel on this counter-intuitive risk and ensure prophylaxis is dispensed with initiation."
+  },
+  {
+    "id": 17,
+    "answer": "Insulin Glargine",
+    "aliases": ["Insulin Glargine", "Lantus", "Optisulin"],
+    "category": "Endocrine",
+    "domain": "Basal Insulins",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Endocrine system — glucose homeostasis." },
+      { "label": "Class", "text": "Long-acting insulin analogue; basal insulin for type 1 and type 2 diabetes providing 24-hour coverage." },
+      { "label": "Mechanism", "text": "Modified insulin molecule with amino acid substitutions that reduce fibrillation and slow absorption, providing relatively peakless coverage over 24 hours." },
+      { "label": "Adverse Effect", "text": "Hypoglycaemia is the main risk, particularly at night with long-acting formulations. Weight gain and lipohypertrophy (fat lump formation at injection sites) can occur." },
+      { "label": "Clinical Pearl", "text": "Given once daily, usually at bedtime, and should be injected subcutaneously into the abdomen, thigh, or arm. Must be used with a basal-bolus regimen in type 1 diabetes; in type 2 diabetes, may be used alone or with oral agents. Cannot be mixed with other insulins in the same syringe." }
+    ],
+    "explanation": "Insulin glargine is a long-acting insulin with a relatively flat profile, reducing hypoglycaemia risk compared to older insulins like NPH. It's supplied as a prefilled pen (FlexPen) or vial in Australia. Regular site rotation prevents lipohypertrophy and ensures consistent absorption. Pharmacists must counsel on storage (2-8°C unopened; once opened, use within 28 days), hypoglycaemia recognition, and foot care for diabetic complications prevention."
+  },
+  {
+    "id": 18,
+    "answer": "Chlorpromazine",
+    "aliases": ["Chlorpromazine Hydrochloride", "Largactil"],
+    "category": "Psychiatry",
+    "domain": "First-Generation Antipsychotics",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 34-year-old man with schizophrenia has been on this antipsychotic for 15 years with good symptom control but now presents with involuntary tongue protrusion and orofacial dyskinesias." },
+      { "label": "Investigations", "text": "Neurological examination confirms tardive dyskinesia. MRI is normal. He has no recent medication changes." },
+      { "label": "Key Finding", "text": "This movement disorder is irreversible and has likely developed over his years of antipsychotic exposure." },
+      { "label": "Drug Clue", "text": "This first-generation (typical) antipsychotic has high dopamine D2 receptor blockade in the basal ganglia, causing extrapyramidal side effects and tardive dyskinesia." },
+      { "label": "Identifying Detail", "text": "First-generation antipsychotics like this are rarely used as first-line now due to extrapyramidal side effect burden. Long-term users require regular monitoring (abnormal involuntary movement scale), and switching to second-generation agents may be considered if there are intolerable side effects, though tardive dyskinesia may worsen." }
+    ],
+    "explanation": "Chlorpromazine is a first-generation antipsychotic with high D2 dopamine antagonism, causing substantial extrapyramidal side effects (acute dystonia, akathisia, parkinsonism) and tardive dyskinesia (involuntary movements) with long-term use. Modern practice favours second-generation antipsychotics with lower extrapyramidal burden. Pharmacists must counsel long-term users on movement disorder monitoring and discuss options for switching if side effects become problematic."
+  },
+  {
+    "id": 19,
+    "answer": "Apixaban",
+    "aliases": ["Apixaban", "Eliquat"],
+    "category": "Haematology",
+    "domain": "Factor Xa Inhibitors",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Coagulation cascade — prevention of thrombosis." },
+      { "label": "Class", "text": "Direct oral anticoagulant (DOAC); selective factor Xa inhibitor used for atrial fibrillation, VTE treatment and prevention." },
+      { "label": "Mechanism", "text": "Directly and selectively inhibits factor Xa, a key enzyme in the intrinsic and extrinsic coagulation pathways, preventing thrombin generation." },
+      { "label": "Adverse Effect", "text": "Bleeding risk increases with renal impairment, age >75, or concurrent antiplatelet agents. Unlike warfarin, no INR monitoring required." },
+      { "label": "Clinical Pearl", "text": "This DOAC has the lowest protein binding and drug interaction potential of the factor Xa inhibitors, making it preferred in polymedicated patients. Given twice daily (5 mg morning and evening for most indications), with dose reduction for age >75, weight <60 kg, or creatinine >133 mcmol/L." }
+    ],
+    "explanation": "Apixaban is a selective factor Xa inhibitor with excellent efficacy and safety for stroke prevention in AF and VTE management. Its twice-daily dosing and minimal food/drug interactions make it convenient. No routine anticoagulation monitoring is required. Pharmacists should counsel on consistent timing, missed dose procedures, and bleeding precautions. Clarification of dose (5 mg vs 2.5 mg) is critical to avoid errors."
+  },
+  {
+    "id": 20,
+    "answer": "Inhaled Budesonide",
+    "aliases": ["Budesonide", "Pulmicort", "Budair"],
+    "category": "Respiratory",
+    "domain": "Inhaled Corticosteroids",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Respiratory system — chronic asthma and COPD inflammation." },
+      { "label": "Class", "text": "Inhaled corticosteroid (ICS); controller therapy for persistent asthma and COPD." },
+      { "label": "Mechanism", "text": "Binds glucocorticoid receptors on airway epithelial and immune cells, suppressing inflammatory cytokines and reducing airway hyperresponsiveness." },
+      { "label": "Adverse Effect", "text": "Oropharyngeal candidiasis ('thrush') occurs in ~5-10% of patients. Dysphonia and throat irritation can also occur. High-dose long-term use may affect bone density." },
+      { "label": "Clinical Pearl", "text": "This ICS has excellent lung deposition and minimal systemic absorption due to high first-pass hepatic metabolism. Patient must rinse mouth after use to prevent oral candidiasis. Often combined with long-acting beta-agonists (LABA) in asthma (combination inhalers) but ICS should never be used without a RABA reliever available." }
+    ],
+    "explanation": "Budesonide is a potent ICS with rapid onset and good lung bioavailability. Inhalation technique is critical for therapeutic benefit. Rinsing the mouth after use reduces candidiasis risk substantially. In Australia, budesonide is available as a dry powder inhaler (Turbuhaler) and as a nebuliser suspension. Pharmacists must demonstrate proper inhaler technique and counsel on spacer use in children."
+  },
+  {
+    "id": 21,
+    "answer": "Ibuprofen",
+    "aliases": ["Ibuprofen", "Nurofen", "Brufen"],
+    "category": "Musculoskeletal",
+    "domain": "Non-Steroidal Anti-Inflammatory Drugs",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 68-year-old man with osteoarthritis has been using this over-the-counter NSAID regularly (1200 mg daily) for 6 months. He now presents with severe oedema in both legs and dyspnoea on exertion." },
+      { "label": "Investigations", "text": "Echocardiography shows reduced ejection fraction (40%). BNP is elevated. Creatinine has risen from 95 to 145 mcmol/L over 6 months." },
+      { "label": "Key Finding", "text": "NSAID-induced renal dysfunction has led to fluid retention and decompensated heart failure. His blood pressure is 160/95 mmHg." },
+      { "label": "Drug Clue", "text": "NSAIDs inhibit renal prostaglandin synthesis, reducing glomerular filtration and causing salt and fluid retention — especially problematic in older adults and those with underlying renal disease." },
+      { "label": "Identifying Detail", "text": "NSAIDs should be avoided in patients >65 years, those with CKD or heart failure, and those on ACE inhibitors or diuretics due to 'triple whammy' interaction increasing AKI risk. Low-dose short-duration use is safer; paracetamol is often preferable in older adults." }
+    ],
+    "explanation": "Ibuprofen and other NSAIDs inhibit renal prostaglandins, reducing glomerular filtration rate and promoting sodium/fluid retention. Older adults are particularly vulnerable to NSAID-induced nephropathy and heart failure. The 'triple whammy' (NSAID + ACE inhibitor + diuretic) significantly increases acute kidney injury risk. Pharmacists must counsel older patients to avoid NSAIDs and recommend paracetamol or topical NSAIDs as alternatives."
+  },
+  {
+    "id": 22,
+    "answer": "Levothyroxine",
+    "aliases": ["Levothyroxine Sodium", "Oroxine", "Synthroid"],
+    "category": "Endocrine",
+    "domain": "Thyroid Hormones",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Endocrine system — thyroid hormone replacement." },
+      { "label": "Class", "text": "Synthetic L-thyroxine (T4) for hypothyroidism replacement; sole definitive treatment for primary hypothyroidism." },
+      { "label": "Mechanism", "text": "Exogenous T4 is converted peripherally to active T3 by deiodinases, suppressing TSH via negative feedback and restoring euthyroid state." },
+      { "label": "Adverse Effect", "text": "Over-replacement causes iatrogenic thyrotoxicosis, increasing risk of atrial fibrillation, osteoporosis, and cardiovascular morbidity, especially in elderly patients." },
+      { "label": "Clinical Pearl", "text": "Must be taken on an empty stomach 30-60 minutes before breakfast to maximise absorption. Many drugs (calcium, iron supplements, PPIs, antacids) interfere with absorption, so spacing doses is critical. TSH monitoring is required 6-8 weeks after initiation or dose change to achieve target levels (typically 0.5-2.5 mIU/L)." }
+    ],
+    "explanation": "Levothyroxine is the standard thyroid hormone replacement, with excellent oral bioavailability and long half-life (7 days) allowing once-daily dosing. Australians know it by brand names like Oroxine. Absorption is significantly impaired by concurrent iron, calcium, and PPI use. Pharmacists must counsel on timing of administration, spacing from interfering agents, and the importance of TSH-directed dose titration for symptom management and long-term safety."
+  },
+  {
+    "id": 23,
+    "answer": "Clarithromycin",
+    "aliases": ["Clarithromycin", "Klacid"],
+    "category": "Infectious Disease",
+    "domain": "Macrolide Antibiotics",
+    "type": "drug_interaction",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 72-year-old woman with stable angina is on atorvastatin and diltiazem for rate control in atrial fibrillation." },
+      { "label": "Co-prescribed Drugs", "text": "She develops a respiratory tract infection and her GP prescribes this macrolide antibiotic 500 mg twice daily for 7 days." },
+      { "label": "Interaction Mechanism", "text": "This macrolide is a potent CYP3A4 inhibitor. Both atorvastatin and diltiazem are CYP3A4 substrates, leading to significantly elevated drug levels." },
+      { "label": "Clinical Consequence", "text": "Within 3 days, she develops severe muscle pain and stiffness (statin myopathy). Her heart rate drops to 45 bpm and blood pressure falls to 100/60 mmHg (diltiazem toxicity)." },
+      { "label": "Resolution", "text": "The antibiotic is ceased and replaced with amoxicillin, a non-interacting alternative. Statin and calcium channel blocker doses are reduced. Muscle symptoms resolve within a week." }
+    ],
+    "explanation": "Clarithromycin is a potent CYP3A4 inhibitor, increasing levels of many drugs including statins, calcium channel blockers, and triazolam. It's contraindicated with certain agents (e.g., cisapride, terfenadine). Pharmacists must screen for interactions before dispensing and recommend alternatives like azithromycin or amoxicillin where possible. Drug interaction databases are essential for prescribing with macrolides."
+  },
+  {
+    "id": 24,
+    "answer": "Phenytoin",
+    "aliases": ["Phenytoin Sodium", "Dilantin", "Epanutin"],
+    "category": "Neurology",
+    "domain": "Anticonvulsants",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 35-year-old man with generalised tonic-clonic seizures has been on this anticonvulsant for 8 years with good seizure control. Over the past 6 months, his wife notices cognitive slowing, poor coordination, and nystagmus." },
+      { "label": "Investigations", "text": "Phenytoin level is 35 mcg/mL (therapeutic range 10-20 mcg/mL). Liver function tests are normal. Renal function is normal." },
+      { "label": "Key Finding", "text": "Chronic phenytoin toxicity is causing cerebellar and CNS effects. The patient's seizure frequency has not increased, suggesting toxicity rather than disease progression." },
+      { "label": "Drug Clue", "text": "This first-generation anticonvulsant has a narrow therapeutic window and non-linear (saturation) kinetics at higher serum levels, making toxicity risk substantial." },
+      { "label": "Identifying Detail", "text": "The dose must be reduced by ~10%, with recheck of levels in 1-2 weeks. Chronic use causes other concerns: gingival hyperplasia, hirsutism, coarse facial features, and osteomalacia (vitamin D deficiency). Second-generation anticonvulsants (e.g., levetiracetam) are now preferred due to better safety profiles." }
+    ],
+    "explanation": "Phenytoin's non-linear kinetics mean small dose increases can cause disproportionate serum level increases and toxicity. It induces many CYP450 enzymes, reducing effectiveness of OCPs, warfarin, and glucocorticoids. Chronic use causes multiple cosmetic and metabolic side effects (hirsutism, acne, gingival hyperplasia, osteomalacia). Pharmacists must counsel on therapeutic drug monitoring and recommend baseline DEXA scans for long-term users."
+  },
+  {
+    "id": 25,
+    "answer": "Diclofenac",
+    "aliases": ["Diclofenac Sodium", "Voltaren", "Veltam"],
+    "category": "Musculoskeletal",
+    "domain": "Non-Steroidal Anti-Inflammatory Drugs",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Pain and inflammation — musculoskeletal conditions and acute pain management." },
+      { "label": "Class", "text": "NSAID with relatively greater selectivity for COX-1 over COX-2; potent analgesic and anti-inflammatory agent." },
+      { "label": "Mechanism", "text": "Inhibits both COX-1 and COX-2, suppressing prostaglandin synthesis and reducing pain and inflammation." },
+      { "label": "Adverse Effect", "text": "Gastric ulceration and GI bleeding are more common than with other NSAIDs due to COX-1 selectivity. Increases cardiovascular events (MI, stroke) with long-term use, particularly in older adults." },
+      { "label": "Clinical Pearl", "text": "Now restricted in many countries due to cardiovascular and GI risks. In Australia, use should be short-term only. Available as oral tablets, rectal suppositories (often used postoperatively), and topical formulation (gel/cream). Topical application avoids systemic exposure and GI toxicity." }
+    ],
+    "explanation": "Diclofenac is a potent NSAID with greater GI and cardiovascular toxicity compared to other NSAIDs like ibuprofen. Its use is increasingly restricted due to these risks. Topical diclofenac (Voltaren gel) is preferred when possible, providing local effect with minimal systemic absorption. Always co-prescribe a PPI if oral diclofenac is required, and avoid in patients with significant cardiovascular or GI risk factors."
+  },
+  {
+    "id": 26,
+    "answer": "Tamsulosin",
+    "aliases": ["Tamsulosin Hydrochloride", "Flomax", "Amdoprostate"],
+    "category": "Renal",
+    "domain": "Alpha-1 Selective Antagonists",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Urinary system — benign prostatic hyperplasia (BPH) management." },
+      { "label": "Class", "text": "Alpha-1A selective adrenergic antagonist; first-line pharmacotherapy for lower urinary tract symptoms (LUTS) in men with BPH." },
+      { "label": "Mechanism", "text": "Selectively blocks alpha-1A receptors on prostatic and bladder neck smooth muscle, reducing urethral resistance and improving urine flow without significantly lowering blood pressure." },
+      { "label": "Adverse Effect", "text": "Retrograde ejaculation occurs in ~10-15% of men and is often irreversible even after drug cessation. Dizziness and asthenia (weakness) can occur, particularly with rapid dose escalation." },
+      { "label": "Clinical Pearl", "text": "Must be taken 30 minutes after the same meal each day for consistent absorption. This alpha blocker is relatively selective for urological effects, sparing blood pressure (unlike older non-selective agents like doxazosin)." }
+    ],
+    "explanation": "Tamsulosin is a uroselective alpha-1A antagonist, providing symptomatic relief of LUTS in BPH without causing significant blood pressure reduction. Its selectivity for urological alpha-1A receptors versus cardiovascular alpha-1B receptors distinguishes it from older agents. Retrograde ejaculation is the most common adverse effect. Pharmacists should counsel on consistent timing and meal administration, and advise discussion of sexual side effects with the prescriber."
+  },
+  {
+    "id": 27,
+    "answer": "Amitriptyline",
+    "aliases": ["Amitriptyline Hydrochloride", "Tryptanol", "Elavil"],
+    "category": "Neurology",
+    "domain": "Tricyclic Antidepressants",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 54-year-old woman with neuropathic pain from diabetes has been on this tricyclic antidepressant 75 mg nightly for 3 months, but now reports urinary retention, confusion, and severe constipation." },
+      { "label": "Investigations", "text": "Post-void residual bladder volume is 300 mL (normal <50 mL). She has bowel obstruction clinically but CT is normal. Anticholinergic toxidrome is evident on examination." },
+      { "label": "Key Finding", "text": "Anticholinergic side effects from this drug are cumulative and problematic in older adults." },
+      { "label": "Drug Clue", "text": "This tricyclic antidepressant has potent anticholinergic properties blocking M1 muscarinic receptors, causing urinary retention, constipation, and cognitive effects." },
+      { "label": "Identifying Detail", "text": "Dose should be reduced by 25-50% or switched to an alternative with lower anticholinergic burden (e.g., duloxetine, which is also effective for neuropathic pain). Preventive bowel care (stool softeners, increased fluids) should be prescribed routinely with tricyclics." }
+    ],
+    "explanation": "Amitriptyline's anticholinergic effects make it problematic in older adults, especially those with baseline urinary or bowel symptoms. Despite this, it remains effective for neuropathic pain at lower doses (10-75 mg nightly) than required for depression. Pharmacists must counsel on constipation prevention and advise reporting urinary symptoms. Duloxetine is increasingly preferred for diabetic neuropathy due to better tolerability."
+  },
+  {
+    "id": 28,
+    "answer": "Rifampicin",
+    "aliases": ["Rifampicin", "Rifampicin", "Rimactane"],
+    "category": "Infectious Disease",
+    "domain": "Antimycobacterial Agents",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 42-year-old woman with newly diagnosed TB is started on standard TB therapy including this rifamycin." },
+      { "label": "Co-prescribed Drugs", "text": "She has been on oral contraceptive (OCP) for 15 years with excellent contraceptive control. No dose changes are made." },
+      { "label": "Interaction Mechanism", "text": "This potent CYP3A4, CYP2C9, and CYP2C8 inducer dramatically increases metabolism of OCP ethinylestradiol, reducing plasma levels by up to 70%." },
+      { "label": "Clinical Consequence", "text": "Within 8 weeks of starting TB therapy, she becomes pregnant despite taking her OCP reliably. The interaction with her contraceptive method had not been identified." },
+      { "label": "Resolution", "text": "Alternative contraception (barrier, IUD, or higher-dose OCP: 50+ mcg ethinylestradiol) must be used during and for 4 weeks after completing TB treatment. This antibiotic is a potent enzyme inducer affecting many drugs." }
+    ],
+    "explanation": "Rifampicin is one of the most potent CYP450 inducers, affecting OCPs, warfarin, corticosteroids, and many other drugs. It's essential for TB therapy but requires careful drug interaction screening. Pharmacists must counsel TB patients on contraceptive failure risk and recommend barrier methods or parenteral contraception. The antibiotic may discolour body fluids (urine, tears, sweat) orange-red, which is harmless but important to explain."
+  },
+  {
+    "id": 29,
+    "answer": "Amlodipine",
+    "aliases": ["Amlodipine Besylate", "Norvasc", "Istin"],
+    "category": "Cardiovascular",
+    "domain": "Calcium Channel Blockers",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Cardiovascular system — arterial vasodilation for hypertension and angina." },
+      { "label": "Class", "text": "Dihydropyridine calcium channel blocker; long-acting agent suitable for once-daily dosing." },
+      { "label": "Mechanism", "text": "Blocks L-type calcium channels on vascular smooth muscle and cardiac myocytes, causing vasodilation and reducing blood pressure and myocardial contractility." },
+      { "label": "Adverse Effect", "text": "Peripheral oedema occurs in ~10% of patients, particularly in lower extremities. Flushing, headache, and tachycardia can occur, especially with rapid-release formulations." },
+      { "label": "Clinical Pearl", "text": "This is the most commonly prescribed dihydropyridine in Australia due to its long half-life (30-50 hours), once-daily dosing, and low incidence of adverse effects compared to earlier agents. The peripheral oedema is vasodilatory (worsens with leg elevation and improves with elevation) and does not respond to diuretics." }
+    ],
+    "explanation": "Amlodipine is a long-acting dihydropyridine with excellent tolerability and cardiovascular benefit. Peripheral oedema is a common but harmless side effect that often improves with continued use or dose adjustment. The drug is metabolised by CYP3A4, making it susceptible to interactions with inducers and inhibitors. Pharmacists should counsel on leg elevation for oedema management and advise that diuretics are ineffective."
+  },
+  {
+    "id": 30,
+    "answer": "Doxycycline",
+    "aliases": ["Doxycycline Hyclate", "Doxycycline Monohydrate", "Vibramycin"],
+    "category": "Infectious Disease",
+    "domain": "Tetracycline Antibiotics",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 26-year-old woman takes this tetracycline antibiotic 100 mg twice daily for atypical pneumonia from Mycoplasma. After 3 days, she develops severe oesophageal pain and dysphagia." },
+      { "label": "Investigations", "text": "Endoscopy reveals severe oesophageal ulceration. She admits to taking her medication with minimal water at bedtime." },
+      { "label": "Key Finding", "text": "The antibiotic has caused direct chemical injury to her oesophageal mucosa due to inadequate fluid intake." },
+      { "label": "Drug Clue", "text": "This tetracycline antibiotic has a basic pH and can cause caustic oesophageal injury if not dissolved in adequate water. It must be taken upright, 30 minutes before bed or food." },
+      { "label": "Identifying Detail", "text": "Must be taken with a full glass of water in an upright position to prevent oesophageal ulceration. Other adverse effects include photosensitivity (sunburn risk), vaginal candidiasis, and teeth discolouration in children." }
+    ],
+    "explanation": "Doxycycline can cause pill esophagitis if not taken with adequate water and remaining upright. This is entirely preventable with proper counselling. The antibiotic causes phototoxicity (sun exposure increases risk), vaginal candidiasis (due to disruption of normal flora), and teeth discolouration in children (absolute contraindication under age 8). Pharmacists must emphasise water intake and upright positioning."
+  },
+  {
+    "id": 31,
+    "answer": "Simvastatin",
+    "aliases": ["Simvastatin", "Zocor", "Simvastatin"],
+    "category": "Cardiovascular",
+    "domain": "HMG-CoA Reductase Inhibitors",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 65-year-old man with hyperlipidaemia and hypertension is on this statin 40 mg nightly for cardiovascular prevention." },
+      { "label": "Co-prescribed Drugs", "text": "He develops atrial fibrillation and his cardiologist adds verapamil 120 mg three times daily (non-dihydropyridine CCB for rate control)." },
+      { "label": "Interaction Mechanism", "text": "Verapamil is a potent CYP3A4 inhibitor. This lipophilic statin is a CYP3A4 substrate, so verapamil dramatically increases statin levels." },
+      { "label": "Clinical Consequence", "text": "Within 2 weeks, he develops severe myalgia, myoglobinuria, and acute kidney injury — classic statin-induced myopathy from toxic drug accumulation." },
+      { "label": "Resolution", "text": "Verapamil is ceased (alternative: use diltiazem or beta-blocker) or the statin dose is reduced to 10-20 mg. This interaction is well-documented and should be screened routinely." }
+    ],
+    "explanation": "Simvastatin is highly lipophilic and CYP3A4-dependent, making it particularly susceptible to interactions with CYP3A4 inhibitors like verapamil, clarithromycin, and itraconazole. Myopathy risk increases substantially. Atorvastatin and rosuvastatin are less affected by CYP3A4 inhibition and are preferred alternatives. Pharmacists must screen statin interactions and recommend dose reduction or drug switching."
+  },
+  {
+    "id": 32,
+    "answer": "Gabapentin",
+    "aliases": ["Gabapentin", "Neurontin", "Gralise"],
+    "category": "Neurology",
+    "domain": "Anticonvulsants",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Neuropathic pain and seizure disorders — central nervous system." },
+      { "label": "Class", "text": "Anticonvulsant and anxiolytic agent; first-line therapy for neuropathic pain (postherpetic neuralgia, diabetic neuropathy)." },
+      { "label": "Mechanism", "text": "Structural analogue of GABA but does not directly activate GABA receptors or affect GABA reuptake. Instead, it increases GABA synthesis via upregulation of GAD (glutamate decarboxylase)." },
+      { "label": "Adverse Effect", "text": "Dizziness, somnolence, and ataxia are common, especially at initiation. Peripheral oedema and weight gain can occur. Like other anticonvulsants, increased suicide risk noted in some studies." },
+      { "label": "Clinical Pearl", "text": "Requires dose titration starting at 300 mg daily (divided doses) up to 1800-3600 mg daily. Must be renally dose-adjusted (creatinine clearance <60 mL/min requires reduction). Absorption is dose-dependent and non-linear, with saturation at higher doses; spacing meals may improve absorption." }
+    ],
+    "explanation": "Gabapentin is a popular first-line agent for neuropathic pain with good efficacy and tolerability. Despite structural similarity to GABA, it works via upregulating GABA synthesis. Renal excretion necessitates dose adjustment in CKD. Pharmacists must counsel on gradual titration, dizziness prevention (especially driving), and the non-linear dosing (higher doses don't always provide proportionally more benefit)."
+  },
+  {
+    "id": 33,
+    "answer": "Valproate",
+    "aliases": ["Sodium Valproate", "Depakote", "Valpro"],
+    "category": "Neurology",
+    "domain": "Anticonvulsants",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 28-year-old woman with bipolar disorder has been on this mood stabiliser for 2 years and is currently seeking pregnancy advice." },
+      { "label": "Investigations", "text": "She is counselled that this drug is associated with significant birth defects: neural tube defects (5-10x risk), developmental delay, autism spectrum features, and cleft palate." },
+      { "label": "Key Finding", "text": "She conceives unexpectedly while on monotherapy. Prenatal screening at 12 weeks reveals a neural tube defect (spina bifida)." },
+      { "label": "Drug Clue", "text": "This anticonvulsant is a known teratogen, especially in the first trimester, causing developmental abnormalities in ~20-30% of exposed pregnancies." },
+      { "label": "Identifying Detail", "text": "Should be avoided in women of childbearing potential unless absolutely necessary and alternative agents are ineffective. If absolutely required, high-dose folic acid (5 mg daily) should be commenced pre-conception and throughout pregnancy, though this does not eliminate the risk. Effective contraception counselling is essential." }
+    ],
+    "explanation": "Valproate is a potent teratogen with extensive evidence of fetal harm including neural tube defects, developmental delay, and autism spectrum features. Its use in women of childbearing age is now restricted in most countries, including Australia. Effective contraception must be ensured if the drug is necessary. Pharmacists have a critical role in screening contraceptive adequacy and discussing pregnancy risks before dispensing."
+  },
+  {
+    "id": 34,
+    "answer": "Hydrochlorothiazide",
+    "aliases": ["Hydrochlorothiazide", "HCTZ", "Esidrix"],
+    "category": "Cardiovascular",
+    "domain": "Thiazide Diuretics",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Cardiovascular system — blood pressure reduction." },
+      { "label": "Class", "text": "Thiazide diuretic; first-line agent for hypertension, often combined with ACE inhibitors or ARBs." },
+      { "label": "Mechanism", "text": "Inhibits the sodium-chloride cotransporter (NCC) in the distal convoluted tubule, promoting natriuresis and reducing intracellular calcium in vascular smooth muscle, causing vasodilation." },
+      { "label": "Adverse Effect", "text": "Hypokalaemia, hyperglycaemia, and hyperuricaemia are common with chronic use. Metabolic alkalosis can occur due to hydrogen ion loss." },
+      { "label": "Clinical Pearl", "text": "Typically dosed at 12.5-25 mg daily. At higher doses (>25 mg), adverse effects increase substantially without proportional BP reduction. Often combined in fixed-dose combinations (e.g., with atenolol, enalapril) to improve compliance." }
+    ],
+    "explanation": "Hydrochlorothiazide is an inexpensive, effective first-line antihypertensive with proven cardiovascular benefit. However, dose-dependent metabolic adverse effects (hypokalaemia, hyperglycaemia) limit use of higher doses. Low-dose monotherapy (12.5 mg) is recommended. Concurrent potassium supplementation or combination with potassium-sparing agents (ACE inhibitors, ARBs) is often necessary. Pharmacists should monitor for hypokalaemia and counsel on potential gout exacerbation."
+  },
+  {
+    "id": 35,
+    "answer": "Citalopram",
+    "aliases": ["Citalopram Hydrobromide", "Cipramil"],
+    "category": "Psychiatry",
+    "domain": "Selective Serotonin Reuptake Inhibitors",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 71-year-old man with depression has been on this SSRI 40 mg daily for 8 weeks. He presents with severe dizziness, syncope, and a syncope-related fall with head injury." },
+      { "label": "Investigations", "text": "ECG shows QTc prolongation at 480 ms (normal <450 ms in men). Heart rate is 52 bpm." },
+      { "label": "Key Finding", "text": "This SSRI causes dose-dependent QTc prolongation and bradycardia, particularly in older adults." },
+      { "label": "Drug Clue", "text": "At doses >40 mg daily in older adults, this SSRI causes QTc prolongation, increasing the risk of Torsades de Pointes, a life-threatening arrhythmia." },
+      { "label": "Identifying Detail", "text": "FDA and other regulatory bodies restrict this SSRI to maximum 20 mg daily in adults >60 years and 40 mg in younger adults due to QTc risk. Baseline ECG is recommended in older patients or those with cardiac risk. If used, ECG should be repeated 1-2 weeks after initiation." }
+    ],
+    "explanation": "Citalopram has a black box warning for QTc prolongation and arrhythmia risk, particularly in older adults at higher doses. Pharmacists must ensure age-appropriate dosing (≤20 mg daily for age >60 years) and screen for QTc-prolonging drugs, electrolyte abnormalities (hypokalaemia, hypomagnesaemia), and baseline bradycardia. This drug has generally been superseded by safer SSRIs like sertraline."
+  },
+  {
+    "id": 36,
+    "answer": "Insulin Aspart",
+    "aliases": ["Insulin Aspart", "NovoLog", "NovoMix"],
+    "category": "Endocrine",
+    "domain": "Rapid-Acting Insulins",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "System", "text": "Endocrine system — glucose homeostasis in type 1 and type 2 diabetes." },
+      { "label": "Class", "text": "Rapid-acting insulin analogue; mealtime (prandial) insulin for postprandial glucose control." },
+      { "label": "Mechanism", "text": "Modified insulin molecule with amino acid substitution (lysine ↔ aspartic acid) at positions 28-29 of the B chain, reducing dimerisation and accelerating absorption compared to human insulin." },
+      { "label": "Adverse Effect", "text": "Hypoglycaemia is the primary risk, particularly with meal skipping. Lipohypertrophy (fat lump formation) at injection sites can occur with repeated use." },
+      { "label": "Clinical Pearl", "text": "Takes effect within 10-20 minutes of injection (vs. 30-60 minutes for human insulin), allowing closer timing to meals. Used as part of basal-bolus regimens in type 1 diabetes; must be injected subcutaneously 0 minutes before meals. Available as prefilled pens (FlexPen) and in cartridges." }
+    ],
+    "explanation": "Insulin aspart is a rapid-acting analogue allowing flexible meal-related dosing. Its quick onset permits injection immediately before, during, or even after meals. Pharmacists must counsel on hypoglycaemia recognition and management (fast-acting carbohydrates), injection technique, and site rotation to prevent lipohypertrophy. Must always be available with a long-acting basal insulin for type 1 diabetes."
+  },
+  {
+    "id": 37,
+    "answer": "Carbamazepine",
+    "aliases": ["Carbamazepine", "Tegretol", "Carbatol"],
+    "category": "Neurology",
+    "domain": "Anticonvulsants",
+    "type": "drug_interaction",
+    "difficulty": "hard",
+    "variant": 2,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 45-year-old woman with bipolar disorder is on this anticonvulsant mood stabiliser along with oral contraceptive for reliable contraception." },
+      { "label": "Co-prescribed Drugs", "text": "Over 6 months, she notices breakthrough spotting and, after 8 months, discovers she is pregnant despite taking her OCP reliably." },
+      { "label": "Interaction Mechanism", "text": "This anticonvulsant is a potent CYP3A4 inducer, increasing metabolism of ethinylestradiol and reducing OCP levels by ~50%, abolishing contraceptive effect." },
+      { "label": "Clinical Consequence", "text": "Unintended pregnancy occurs due to inadequate contraceptive efficacy, complicated by the fact that this drug is itself a teratogen." },
+      { "label": "Resolution", "text": "Alternative contraception must be used (barrier methods, copper IUD, or high-dose OCP ≥50 mcg ethinylestradiol). Switching to an alternative mood stabilizer (lithium, valproate) with lower interaction potential is ideal." }
+    ],
+    "explanation": "Carbamazepine is a potent CYP3A4 inducer and also an independent teratogen, creating a double contraceptive liability problem. It increases metabolism of many drugs including OCPs, warfarin, corticosteroids, and statins. Pharmacists must screen prescriptions carefully and counsel women of childbearing age on contraceptive failure risk and alternative agents. Pre-conception counselling is essential."
+  },
+  {
+    "id": 38,
+    "answer": "Nitrazepam",
+    "aliases": ["Nitrazepam", "Mogadon"],
+    "category": "Psychiatry",
+    "domain": "Benzodiazepines",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 72-year-old man with insomnia has been on this benzodiazepine 5 mg nightly for 15 years without dose escalation or review." },
+      { "label": "Investigations", "text": "His daughter reports increasing cognitive decline over the past year, increased falls (3 in the past 4 months), and daytime somnolence. Cognitive screening shows mild impairment." },
+      { "label": "Key Finding", "text": "Long-term benzodiazepine use in older adults is associated with cognitive decline, falls, and fractures. This risk increases with longer half-life agents and duration of use." },
+      { "label": "Drug Clue", "text": "This long-acting benzodiazepine accumulates substantially in older adults due to reduced hepatic metabolism and increased body fat, causing cognitive impairment and fall risk." },
+      { "label": "Identifying Detail", "text": "Australian guidelines (RACGP) recommend against benzodiazepine use in older adults (age >65 years) due to delirium, fall, and fracture risks. If already established, slow tapering over weeks to months is recommended. Safer alternatives (CBT-I, melatonin for short-term use) should be trialled." }
+    ],
+    "explanation": "Nitrazepam is a long-acting benzodiazepine with particularly poor pharmacokinetics in older adults, causing accumulation and substantial cognitive/fall risks. Long-term benzodiazepine use in older adults is now considered inappropriate and should be phased out. Pharmacists play a crucial role in identifying patients on long-term benzodiazepines and discussing tapering plans with GPs."
+  },
+  {
+    "id": 39,
+    "answer": "Dabigatran",
+    "aliases": ["Dabigatran Etexilate", "Pradaxa"],
+    "category": "Haematology",
+    "domain": "Direct Thrombin Inhibitors",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Coagulation cascade — stroke prevention and VTE treatment." },
+      { "label": "Class", "text": "Direct thrombin inhibitor (DOAC); selective factor IIa inhibitor for AF and VTE indications." },
+      { "label": "Mechanism", "text": "Directly and reversibly inhibits both free and clot-bound thrombin (factor IIa), blocking the final step of the coagulation cascade." },
+      { "label": "Adverse Effect", "text": "Dyspepsia occurs in ~10% of patients due to the tartaric acid core. Major bleeding risk similar to warfarin, though reversal with idarucizumab (monoclonal antibody) is specific and rapid." },
+      { "label": "Clinical Pearl", "text": "Must be taken twice daily (110 mg or 150 mg depending on age/weight criteria); higher dose (150 mg BD) is standard for most AF patients. Requires capsule integrity (cannot be opened or crushed); dyspepsia can be reduced by taking with food. Specific reversal agent (idarucizumab) available for bleeding." }
+    ],
+    "explanation": "Dabigatran is a direct thrombin inhibitor with rapid onset and offset, allowing flexible dosing timing. Dyspepsia is common and may limit tolerability. The availability of idarucizumab is an advantage over other DOACs for urgent reversal. Pharmacists must counsel on twice-daily dosing consistency, capsule integrity (swallow whole), and food-related dyspepsia management. Renal monitoring is important (renally dose-adjusted)."
+  },
+  {
+    "id": 40,
+    "answer": "Metoclopramide",
+    "aliases": ["Metoclopramide Hydrochloride", "Maxolon", "Gastromax"],
+    "category": "Gastrointestinal",
+    "domain": "Antiemetics & Prokinetic Agents",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 38-year-old woman with GORD has used this prokinetic regularly (10 mg three times daily) for 18 months to relieve nausea and improve gastric emptying." },
+      { "label": "Investigations", "text": "She develops involuntary grimacing, orofacial dyskinesias, and repetitive jaw movements — classic tardive dyskinesia features." },
+      { "label": "Key Finding", "text": "Metoclopramide-induced tardive dyskinesia is now recognised as a significant risk with long-term use, particularly in older adults and those on higher doses." },
+      { "label": "Drug Clue", "text": "This dopamine antagonist antiemetic increases gastric contractions and lower oesophageal sphincter pressure via D2 receptor blockade in the brain. CNS dopamine blockade carries tardive dyskinesia risk." },
+      { "label": "Identifying Detail", "text": "Should be used for short-term only (no more than 3 months continuous use). Regulatory warnings recommend limiting duration to <3 months due to tardive dyskinesia risk, especially in older adults. Alternatives (domperidone, which has minimal CNS penetration) are preferred for long-term use." }
+    ],
+    "explanation": "Metoclopramide's dopamine antagonism provides antiemetic and prokinetic effects but carries tardive dyskinesia risk, particularly with long-term use. Australian regulatory agencies now recommend duration restriction to 3 months maximum. Domperidone is a preferred long-term alternative due to its quaternary ammonium structure preventing CNS access. Pharmacists must counsel on duration limits and counsel patients to report abnormal movements."
+  },
+  {
+    "id": 41,
+    "answer": "Ezetimibe",
+    "aliases": ["Ezetimibe", "Ezetrol", "Zetia"],
+    "category": "Cardiovascular",
+    "domain": "Cholesterol Absorption Inhibitors",
+    "type": "drug_id",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Cardiovascular system — lipid metabolism and cholesterol reduction." },
+      { "label": "Class", "text": "Selective cholesterol absorption inhibitor; adjunctive agent to statins for LDL cholesterol lowering." },
+      { "label": "Mechanism", "text": "Inhibits NPC1L1 transporter on intestinal epithelial cells, blocking dietary and biliary cholesterol reabsorption and increasing faecal cholesterol excretion." },
+      { "label": "Adverse Effect", "text": "Generally well-tolerated. Myalgia can occur, particularly when combined with statins. Hepatic impairment increases risk of drug accumulation." },
+      { "label": "Clinical Pearl", "text": "Added to statin therapy in patients with inadequate LDL response or statin intolerance. Modest LDL reduction (~20%) when added to statins. Often combined in a fixed-dose tablet with statin (e.g., Inegy with simvastatin, Vytorin with atorvastatin)." }
+    ],
+    "explanation": "Ezetimibe targets intestinal cholesterol absorption, complementing statin's mechanism (cholesterol synthesis inhibition). The combination provides additional LDL reduction (~35-45% compared to statin alone). Ezetimibe is well-tolerated with minimal drug interactions. Pharmacists should counsel on consistent timing (once daily) and note that it's an adjunctive agent for patients not achieving LDL targets on statin monotherapy."
+  },
+  {
+    "id": 42,
+    "answer": "Lithium Carbonate",
+    "aliases": ["Lithium Carbonate", "Lithicarb", "Quilonum"],
+    "category": "Psychiatry",
+    "domain": "Mood Stabilizers",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 58-year-old man with bipolar disorder on this mood stabilizer for 12 years presents with polyuria (8-10 litres/day), polydipsia, and severe hyperglycaemia (glucose 15 mmol/L)." },
+      { "label": "Investigations", "text": "Serum osmolality is elevated at 305 mOsm/kg. Urine osmolality is paradoxically low at 150 mOsm/kg despite polyuria — indicating nephrogenic diabetes insipidus." },
+      { "label": "Key Finding", "text": "Chronic lithium use has caused nephrogenic diabetes insipidus via lithium accumulation in the kidney, blocking ADH-mediated aquaporin-2 water channels." },
+      { "label": "Drug Clue", "text": "This mood stabilizer has a very narrow therapeutic window (0.6-1.2 mmol/L) and accumulates in the kidney, causing irreversible nephrogenic diabetes insipidus in ~15-40% of long-term users." },
+      { "label": "Identifying Detail", "text": "Monitoring 6-monthly of renal function and serum lithium levels is mandatory. Adequate fluid intake (2-3 L daily) during therapy is essential. Thiazide diuretics worsen lithium toxicity by reducing clearance (paradoxically, amiloride can be used to treat lithium-induced diabetes insipidus). Regular baseline DEXA scans for osteoporosis screening are recommended." }
+    ],
+    "explanation": "Lithium's narrow therapeutic window and renal accumulation pose significant long-term risks, including nephrogenic diabetes insipidus and chronic kidney disease. Therapeutic drug monitoring is mandatory (target 0.6-1.2 mmol/L). Dehydration substantially increases toxicity risk. Pharmacists must counsel on consistent salt and fluid intake, regular monitoring, and the importance of baseline renal assessment. Alternative mood stabilizers should be considered if nephrogenic diabetes insipidus develops."
+  },
+  {
+    "id": 43,
+    "answer": "Aciclovir",
+    "aliases": ["Aciclovir", "Zovirax", "Aciclofir"],
+    "category": "Infectious Disease",
+    "domain": "Antiviral Agents",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 72-year-old man with herpes zoster is prescribed this antiviral 800 mg five times daily for 7 days. He becomes confused, disoriented, and develops tremors on day 3." },
+      { "label": "Investigations", "text": "Serum creatinine has risen from baseline 85 to 145 mcmol/L. CSF shows mild lymphocytosis. He is noted to be dehydrated." },
+      { "label": "Key Finding", "text": "Aciclovir nephrotoxicity from crystalline nephropathy, combined with dehydration, has led to AKI and subsequent encephalopathy." },
+      { "label": "Drug Clue", "text": "This antiviral is renally excreted unchanged and can precipitate in renal tubules (crystalline nephropathy) if not administered properly, especially in older adults or those with CKD." },
+      { "label": "Identifying Detail", "text": "Must be given as slow IV infusion (minimum 1 hour) in adequate fluid. High-dose therapy requires careful monitoring of renal function. Adequate hydration before and after infusion is critical. In CKD, doses must be reduced based on creatinine clearance." }
+    ],
+    "explanation": "Aciclovir's renally excreted form can precipitate in tubules, causing crystalline nephropathy and AKI if not properly hydrated. Older adults and those with CKD are at higher risk. IV aciclovir must be administered slowly (over ≥1 hour) with adequate hydration. Pharmacists must emphasise the importance of slow infusion and pre-infusion hydration, and check renal function before dispensing high-dose therapy."
+  },
+  {
+    "id": 44,
+    "answer": "Pioglitazone",
+    "aliases": ["Pioglitazone Hydrochloride", "Actos"],
+    "category": "Endocrine",
+    "domain": "Thiazolidinediones",
+    "type": "adr_case",
+    "difficulty": "medium",
+    "variant": 2,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 64-year-old woman with type 2 diabetes on this thiazolidinedione for 3 years presents with worsening dyspnoea and lower limb oedema." },
+      { "label": "Investigations", "text": "Echocardiography reveals no evidence of left ventricular systolic dysfunction, but signs of right heart failure are present. She has gained 6 kg in weight." },
+      { "label": "Key Finding", "text": "Thiazolidinedione-induced fluid retention and peripheral oedema have precipitated right heart failure." },
+      { "label": "Drug Clue", "text": "This thiazolidinedione activates PPARγ receptors in adipose tissue and kidneys, promoting sodium and fluid retention. It increases fracture risk in women and causes significant weight gain." },
+      { "label": "Identifying Detail", "text": "Contraindicated in heart failure and should be used cautiously in older patients due to fracture risk and fluid retention. Pioglitazone may be preferred over rosiglitazone due to cardiovascular safety data, but both carry fluid retention risks. Requires baseline LFTs and 6-monthly monitoring." }
+    ],
+    "explanation": "Pioglitazone causes weight gain and sodium/fluid retention via PPARγ activation in adipose and renal tissues. It's contraindicated in heart failure and requires caution in older women (fracture risk). LFT monitoring is necessary to detect hepatotoxicity. The drug provides insulin sensitivity benefits but substantial tolerability issues limit its use. Pharmacists must counsel on fluid retention signs and review discontinuation if signs of cardiac decompensation develop."
+  },
+  {
+    "id": 45,
+    "answer": "Sodium Polystyrene Sulphonate",
+    "aliases": ["Sodium Polystyrene Sulphonate", "Resonium A", "Kayexalate"],
+    "category": "Renal",
+    "domain": "Potassium Binders",
+    "type": "drug_id",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Renal system — management of hyperkalaemia in chronic kidney disease." },
+      { "label": "Class", "text": "Polystyrene sulphonate cation-exchange resin; used for chronic potassium management in CKD." },
+      { "label": "Mechanism", "text": "Exchanges sodium for potassium in the colon, binding potassium in the resin matrix and promoting intestinal excretion." },
+      { "label": "Adverse Effect", "text": "Sodium overload can occur, worsening hypertension and heart failure. Constipation is common (may require sorbitol co-administration). Rare but serious: gastrointestinal necrosis, especially in post-operative patients." },
+      { "label": "Clinical Pearl", "text": "Onset is slow (6-24 hours); ineffective for acute life-threatening hyperkalaemia (use calcium gluconate, insulin-glucose, salbutamol instead). Use is declining due to modest efficacy and sodium load concerns; newer potassium binders (patiromer, sodium zirconium cyclosilicate) are increasingly preferred." }
+    ],
+    "explanation": "Sodium polystyrene sulphonate is a non-absorbable resin that exchanges sodium for potassium in the colon. Its slow onset (6-24 hours) makes it unsuitable for acute hyperkalaemia. Sodium overload is a significant concern in heart failure and hypertension. Modern alternatives with better tolerability and efficacy are increasingly preferred. Pharmacists should counsel on slow onset and need for concurrent bowel management."
+  },
+  {
+    "id": 46,
+    "answer": "Nifedipine",
+    "aliases": ["Nifedipine", "Adalat", "Nimotop"],
+    "category": "Cardiovascular",
+    "domain": "Calcium Channel Blockers",
+    "type": "mixed_profile",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Therapeutic Use", "text": "Hypertension, angina, Raynaud's syndrome, and as acute therapy for severe hypertension (immediate-release formulation)." },
+      { "label": "Drug Class", "text": "Dihydropyridine calcium channel blocker; short-acting (immediate-release) and long-acting (extended-release) formulations available." },
+      { "label": "Pharmacology", "text": "Blocks L-type calcium channels; immediate-release formulation has rapid onset (15-30 minutes) making it useful for hypertensive urgency; extended-release formulation provides 24-hour coverage." },
+      { "label": "Adverse Effects & Monitoring", "text": "Flushing, headache, and tachycardia are common with immediate-release forms due to reflex sympathetic activation. Peripheral oedema occurs in ~10%. Gingival hyperplasia reported. Avoid sudden withdrawal due to rebound hypertension." },
+      { "label": "Clinical Pearl", "text": "Immediate-release sublingual nifedipine was historically used for hypertensive emergency but is now avoided due to unpredictable absorption and risk of stroke. Extended-release formulation (Adalat XL) is the preferred formulation for chronic hypertension management." }
+    ],
+    "explanation": "Nifedipine is available in immediate-release (short-acting) and extended-release formulations with very different clinical profiles. Immediate-release sublingual formulations should be avoided for acute BP management due to unpredictability. Extended-release formulations are preferred for chronic hypertension. Pharmacists must ensure prescriptions specify the correct formulation to prevent medication errors with serious consequences."
+  },
+  {
+    "id": 47,
+    "answer": "Spironolactone",
+    "aliases": ["Spironolactone", "Aldactone", "Spiractin"],
+    "category": "Cardiovascular",
+    "domain": "Potassium-Sparing Diuretics",
+    "type": "drug_interaction",
+    "difficulty": "medium",
+    "variant": 1,
+    "clues": [
+      { "label": "Clinical Scenario", "text": "A 56-year-old man with hypertension and heart failure is on lisinopril and this mineralocorticoid receptor antagonist for symptom relief and renal protection." },
+      { "label": "Co-prescribed Drugs", "text": "His renal function begins to decline (eGFR now 38 mL/min), and he starts taking potassium supplements and a multi-vitamin containing potassium." },
+      { "label": "Interaction Mechanism", "text": "This potassium-sparing diuretic reduces urinary potassium excretion, and combined with ACE inhibitor (which reduces aldosterone) and potassium supplementation, creates a 'perfect storm' for dangerous hyperkalaemia." },
+      { "label": "Clinical Consequence", "text": "Serum potassium rises to 6.8 mmol/L. He develops cardiac arrhythmias and peaked T waves on ECG — signs of life-threatening hyperkalaemia." },
+      { "label": "Resolution", "text": "Potassium supplements are ceased immediately. The spironolactone dose is reduced or ceased. This drug requires close monitoring of serum potassium and renal function when combined with ACE inhibitors/ARBs, especially in CKD." }
+    ],
+    "explanation": "Spironolactone's potassium-sparing effect, while beneficial in heart failure, creates significant hyperkalaemia risk when combined with ACE inhibitors/ARBs (especially in CKD). Serum potassium and renal function must be monitored closely (baseline, 1-2 weeks, and 3-6 monthly). Concurrent potassium supplementation should generally be avoided. Pharmacists must screen for this high-risk combination."
+  },
+  {
+    "id": 48,
+    "answer": "Famotidine",
+    "aliases": ["Famotidine", "Pepcid", "Mylanta"],
+    "category": "Gastrointestinal",
+    "domain": "H2-Receptor Antagonists",
+    "type": "drug_id",
+    "difficulty": "easy",
+    "variant": 1,
+    "clues": [
+      { "label": "System", "text": "Gastrointestinal system — gastric acid suppression." },
+      { "label": "Class", "text": "H2-receptor antagonist; effective for peptic ulcer disease, GORD, and prevention of stress ulcers in critically ill patients." },
+      { "label": "Mechanism", "text": "Competitively blocks H2 receptors on gastric parietal cells, reducing histamine-mediated acid secretion by ~50%." },
+      { "label": "Adverse Effect", "text": "Generally well-tolerated with few adverse effects. Rare CNS effects (confusion, dizziness) reported in older patients and those with CKD. Minimal drug interactions compared to PPIs." },
+      { "label": "Clinical Pearl", "text": "Less potent acid suppression than proton pump inhibitors (~50% reduction vs. 80-90% with PPIs) but excellent tolerability and safety profile. Minimal drug interactions and no requirement for dose adjustment in mild-moderate CKD. Often used as an alternative to PPIs in patients concerned about long-term side effects." }
+    ],
+    "explanation": "Famotidine is an H2-receptor antagonist with good efficacy and minimal side effects, making it a reasonable alternative to PPIs. It provides adequate acid suppression for most GORD patients and peptic ulcer disease. Unlike PPIs, it causes minimal nutrient malabsorption and has few drug interactions. Pharmacists should counsel on timing (bedtime dosing provides better overnight protection) and note that it takes 1-2 hours for effect."
+  },
+  {
+    "id": 49,
+    "answer": "Rosiglitazone",
+    "aliases": ["Rosiglitazone Maleate", "Avandia"],
+    "category": "Endocrine",
+    "domain": "Thiazolidinediones",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 61-year-old man with type 2 diabetes on this thiazolidinedione for 4 years presents with acute dyspnoea and chest pain." },
+      { "label": "Investigations", "text": "Troponin is positive (0.08 ng/mL, normal <0.03). Coronary angiography reveals significant coronary atherosclerosis. He develops acute myocardial infarction." },
+      { "label": "Key Finding", "text": "Thiazolidinediones have been associated with cardiovascular events (MI, stroke) in meta-analyses, particularly rosiglitazone, leading to restricted use and black box warnings." },
+      { "label": "Drug Clue", "text": "This thiazolidinedione activates PPARγ receptors, improving insulin sensitivity but paradoxically increasing cardiovascular events, possibly through adverse effects on vascular endothelium and lipid metabolism." },
+      { "label": "Identifying Detail", "text": "Rosiglitazone is now restricted (Restricted Access Program in Australia) due to cardiovascular event risk. It should generally be avoided in favour of pioglitazone or newer agents (SGLT2 inhibitors, GLP-1 agonists) with proven cardiovascular safety or benefit." }
+    ],
+    "explanation": "Rosiglitazone's association with myocardial infarction and stroke has led to restricted use globally, including Australia (Restricted Access Program). Pioglitazone is considered safer based on cardiovascular outcome data, though both thiazolidinediones carry fluid retention and fracture risks. Modern agents like SGLT2 inhibitors and GLP-1 agonists are preferred due to proven cardiovascular and renal benefits. Pharmacists should identify rosiglitazone prescriptions and discuss safer alternatives with prescribers."
+  },
+  {
+    "id": 50,
+    "answer": "Minocycline",
+    "aliases": ["Minocycline Hydrochloride", "Minomycin", "Minocin"],
+    "category": "Infectious Disease",
+    "domain": "Tetracycline Antibiotics",
+    "type": "adr_case",
+    "difficulty": "hard",
+    "variant": 1,
+    "clues": [
+      { "label": "Patient Presentation", "text": "A 34-year-old woman with acne has been on this tetracycline antibiotic 100 mg daily for 8 months. She now presents with blue-grey discolouration of her skin, particularly in sun-exposed areas, and complains of joint pain and stiffness." },
+      { "label": "Investigations", "text": "Serum ANA is positive (1:640). ESR is elevated at 35 mm/hr. Complement levels (C3, C4) are reduced. Clinical presentation is consistent with lupus-like syndrome." },
+      { "label": "Key Finding", "text": "Minocycline-induced lupus erythematosus (MILE) is a well-recognised adverse effect with long-term use, characterised by autoimmune phenomena and blue-grey pigmentation deposition." },
+      { "label": "Drug Clue", "text": "This tetracycline has lipophilic properties leading to accumulation in skin and organs. Long-term use (>6 months) is associated with minocycline-induced lupus with features mimicking systemic lupus erythematosus." },
+      { "label": "Identifying Detail", "text": "Should be limited to 3-6 months use for acne; if longer duration needed, switching to doxycycline or isotretinoin is recommended. The lupus-like syndrome usually resolves within weeks to months of drug cessation, though blue-grey pigmentation can be permanent. Photosensitivity is common; sun protection counselling is essential." }
+    ],
+    "explanation": "Minocycline is associated with a distinctive lupus-like syndrome (positive ANA, arthralgia, complement reduction) and blue-grey pigmentation with prolonged use. While structurally similar to doxycycline, minocycline has higher lipophilicity leading to tissue accumulation and greater toxicity risk. Use should be limited to 3-6 months for acne. Pharmacists must counsel on duration limits and recommend doxycycline as a safer alternative for longer-term use."
+  }
+]

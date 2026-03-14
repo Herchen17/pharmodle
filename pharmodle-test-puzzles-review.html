@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmodle Puzzles Review — 40 Puzzles (International)</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f3ff; color: #1f2937; padding: 2rem; }
+h1 { color: #7c3aed; margin-bottom: 0.5rem; }
+.subtitle { color: #6b7280; margin-bottom: 2rem; }
+.stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-card { background: white; padding: 1rem; border-radius: 10px; border: 1px solid #ede9fe; min-width: 150px; }
+.stat-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; }
+.stat-value { font-size: 1.5rem; font-weight: 700; color: #7c3aed; }
+.filters { margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.filter-btn { padding: 0.4rem 0.8rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.85rem; }
+.filter-btn.active { background: #7c3aed; color: white; border-color: #7c3aed; }
+.puzzle-card { background: white; border-radius: 12px; border: 1px solid #ede9fe; margin-bottom: 1.5rem; overflow: hidden; }
+.puzzle-header { padding: 1rem 1.5rem; background: #f5f3ff; border-bottom: 1px solid #ede9fe; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.puzzle-title { font-weight: 700; color: #7c3aed; font-size: 1.1rem; }
+.puzzle-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.badge { padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+.badge-type { background: #dbeafe; color: #1e40af; }
+.badge-diff-easy { background: #dcfce7; color: #166534; }
+.badge-diff-medium { background: #fef9c3; color: #854d0e; }
+.badge-diff-hard { background: #fee2e2; color: #991b1b; }
+.badge-cat { background: #f3e8ff; color: #6b21a8; }
+.puzzle-body { padding: 1.5rem; }
+.clue { margin-bottom: 0.75rem; }
+.clue-label { font-weight: 600; color: #7c3aed; font-size: 0.85rem; }
+.clue-text { color: #374151; line-height: 1.6; }
+.section-label { font-weight: 700; font-size: 0.85rem; color: #6b7280; margin: 1rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.aliases { color: #059669; }
+.alternatives { color: #d97706; }
+.near-misses { color: #dc2626; }
+.explanation { color: #374151; font-style: italic; line-height: 1.6; }
+.walkthrough { color: #15803d; background: #f0fdf4; padding: 0.75rem; border-radius: 8px; border-left: 3px solid #22c55e; line-height: 1.6; margin-top: 0.5rem; }
+.prompt-text { color: #7c3aed; font-weight: 500; margin-bottom: 0.5rem; font-style: italic; }
+.unit-values { margin-top: 0.5rem; }
+.unit-value { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin: 0.15rem; }
+</style>
+</head>
+<body>
+<h1>Pharmodle Puzzle Review</h1>
+<p class="subtitle">40 puzzles — International Edition — Generated 2026-03-12</p>
+
+<div class="stats">
+  <div class="stat-card"><div class="stat-label">Total</div><div class="stat-value">40</div></div>
+  <div class="stat-card"><div class="stat-label">drug id</div><div class="stat-value">17</div></div><div class="stat-card"><div class="stat-label">drug interaction</div><div class="stat-value">6</div></div><div class="stat-card"><div class="stat-label">mixed profile</div><div class="stat-value">10</div></div><div class="stat-card"><div class="stat-label">adr case</div><div class="stat-value">7</div></div>
+  <div class="stat-card"><div class="stat-label">easy</div><div class="stat-value">16</div></div><div class="stat-card"><div class="stat-label">medium</div><div class="stat-value">10</div></div><div class="stat-card"><div class="stat-label">hard</div><div class="stat-value">14</div></div>
+  <div class="stat-card"><div class="stat-label">Categories</div><div class="stat-value">20</div></div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterPuzzles('all')">All</button>
+  <button class="filter-btn" onclick="filterPuzzles('type','drug_id')">drug id</button><button class="filter-btn" onclick="filterPuzzles('type','drug_interaction')">drug interaction</button><button class="filter-btn" onclick="filterPuzzles('type','mixed_profile')">mixed profile</button><button class="filter-btn" onclick="filterPuzzles('type','adr_case')">adr case</button>
+  <button class="filter-btn" onclick="filterPuzzles('diff','easy')">easy</button><button class="filter-btn" onclick="filterPuzzles('diff','medium')">medium</button><button class="filter-btn" onclick="filterPuzzles('diff','hard')">hard</button>
+</div>
+
+<div id="puzzles">
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#1 — Metformin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Endocrine</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This oral medication is the recommended initial pharmacotherapy for a common metabolic condition affecting over one million internationals, typically initiated alongside lifestyle modifications at diagnosis.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Unlike most other agents for this condition, this drug does not stimulate insulin secretion and carries negligible risk of hypoglycaemia when used alone. It is also associated with modest weight loss rather than weight gain.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">Its primary mechanism involves reducing hepatic glucose output by activating AMP-activated protein kinase (AMPK). It also improves peripheral insulin sensitivity in skeletal muscle.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">A rare but serious adverse effect is lactic acidosis, particularly in patients with renal impairment, sepsis, or conditions causing tissue hypoxia. It must be withheld before iodinated contrast procedures.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This biguanide was derived from the French lilac plant (Galega officinalis) and is typically initiated at 500 mg once daily with food, titrated to a maximum of 1 g twice daily. GI side effects are minimised with the extended-release formulation.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Diabex, Diaformin, Glucophage</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Gliclazide, Glipizide, Glibenclamide — Sulfonylureas stimulate insulin secretion and can cause hypoglycaemia — unlike this drug, which works by reducing hepatic glucose production and does not cause hypoglycaemia as monotherapy.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Metformin is the only biguanide in clinical use. It is the cornerstone of type 2 diabetes management worldwide, uniquely distinguished by its AMPK-mediated reduction of hepatic gluconeogenesis, weight neutrality, and the characteristic risk of lactic acidosis in renal impairment.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Metformin is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Metformin is the only biguanide in clinical use. It is the cornerstone of type 2 diabetes management worldwide, uniquely distinguished by its AMPK-mediated reduction of hepatic gluconeogenesis, weight neutrality, and the characteristic risk of lactic acidosis in renal impairment.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#2 — Warfarin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Haematology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">A 72-year-old man on long-term anticoagulation for atrial fibrillation presents with extensive bruising and a nosebleed lasting 45 minutes. His routine blood test shows a significantly supratherapeutic result on a test he has done fortnightly.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">He was recently prescribed fluconazole for oral thrush and has been taking regular paracetamol for back pain. He also reports drinking cranberry juice daily for a urinary tract concern.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">His INR has risen from a therapeutic 2.5 to a dangerously elevated 8.1. This degree of over-anticoagulation places him at high risk of major haemorrhage including intracranial bleeding.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">Fluconazole is a potent inhibitor of CYP2C9, the primary enzyme responsible for metabolising the more active S-enantiomer of this drug. Both paracetamol and cranberry juice can independently potentiate its effect.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This vitamin K antagonist has a narrow therapeutic index with a target INR of 2–3 for most indications. Its effect can be reversed with vitamin K (phytomenadione) or, in emergencies, with prothrombinex-VF (a prothrombin complex concentrate).</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Coumadin, Marevan</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Apixaban, Rivaroxaban, Dabigatran — DOACs do not require routine INR monitoring and have fewer drug-food interactions — this drug uniquely requires regular INR monitoring and is affected by dietary vitamin K intake.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Warfarin is the only oral vitamin K antagonist routinely used internationally. Its metabolism via CYP2C9 (S-warfarin) and CYP3A4 (R-warfarin) makes it susceptible to numerous drug interactions. The combination of fluconazole, paracetamol, and cranberry juice is a classic multi-hit interaction scenario.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Warfarin as the responsible agent. Warfarin is the only oral vitamin K antagonist routinely used internationally. Its metabolism via CYP2C9 (S-warfarin) and CYP3A4 (R-warfarin) makes it susceptible to numerous drug interactions. The combination of fluconazole, paracetamol, and cranberry juice is a classic multi-hit interaction scenario.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#3 — Salbutamol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Respiratory</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This inhaled medication is found in virtually every emergency department, ambulance, and household medicine cabinet internationally. It is the standard reliever medication for episodic breathlessness in obstructive airway diseases.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It acts as a selective agonist at beta-2 adrenoceptors on bronchial smooth muscle, causing relaxation via increased intracellular cyclic AMP. Onset of action is within 5 minutes, with duration of 4–6 hours.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">In acute severe presentations, it can be delivered via nebuliser at doses of 5 mg repeated every 20 minutes, or continuously. Intravenous administration is reserved for life-threatening cases unresponsive to inhaled therapy.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Common adverse effects include fine tremor, tachycardia, and hypokalaemia at high doses. Overuse of this reliever (more than 3 days per week) indicates poorly controlled disease requiring a step-up in preventer therapy.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Available internationally in a distinctive blue pressurised metered-dose inhaler delivering 100 micrograms per actuation, this short-acting beta-2 agonist is also used to manage hyperkalaemia by driving potassium intracellularly via beta-2 receptor stimulation.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Ventolin, Asmol, Airomir</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Terbutaline</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Salmeterol, Formoterol, Eformoterol — Long-acting beta-2 agonists (LABAs) are used for maintenance therapy and must never be used as monotherapy without an inhaled corticosteroid — unlike this drug, which is the standard reliever with rapid onset within minutes.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Salbutamol is Australia's most widely used short-acting beta-2 agonist (SABA), identifiable by its blue inhaler, rapid onset, and dual use in both asthma relief and hyperkalaemia management. Terbutaline is an acceptable alternative as another SABA with similar properties.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Salbutamol was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Salbutamol is Australia's most widely used short-acting beta-2 agonist (SABA), identifiable by its blue inhaler, rapid onset, and dual use in both asthma relief and hyperkalaemia management. Terbutaline is an acceptable alternative as another SABA with similar properties.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#4 — Methotrexate</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Immunology/Rheumatology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 58-year-old woman with a chronic inflammatory joint disease presents with painful oral ulcers, fatigue, and increasing breathlessness over two weeks. She also reports an unusual dry cough that has worsened despite antibiotics.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Full blood count reveals pancytopenia with a haemoglobin of 82 g/L, WCC of 1.8, and platelets of 65. Her MCV is elevated at 108 fL. Chest X-ray shows bilateral interstitial infiltrates. Liver function tests show mildly elevated transaminases.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">The combination of megaloblastic pancytopenia, stomatitis, and pneumonitis in a patient on immunosuppressive therapy is characteristic of toxicity from a folate antagonist. Her renal function has recently declined, reducing drug clearance.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">She takes this medication once weekly — a critical dosing detail, as accidental daily dosing is a recognised cause of fatal toxicity. She was not taking the recommended supplemental vitamin to reduce haematological side effects.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This dihydrofolate reductase inhibitor is dosed weekly (not daily) for autoimmune conditions, with folic acid 5 mg supplementation recommended on non-dosing days. Folinic acid (calcium folinate) is the specific rescue agent for acute toxicity.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Methoblastin, Trexject</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Azathioprine, Leflunomide, Sulfasalazine — Other DMARDs do not act as folate antagonists and are not associated with the specific toxicity pattern of mucositis, pancytopenia, and megaloblastic anaemia reversible with folinic acid rescue.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Methotrexate is uniquely identified by its once-weekly dosing in rheumatological conditions, its mechanism as a dihydrofolate reductase inhibitor causing folate-deficiency toxicity (pancytopenia, mucositis, pneumonitis), and the use of folinic acid rescue. Accidental daily dosing is a well-known medication safety issue.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Methotrexate as the culprit. Methotrexate is uniquely identified by its once-weekly dosing in rheumatological conditions, its mechanism as a dihydrofolate reductase inhibitor causing folate-deficiency toxicity (pancytopenia, mucositis, pneumonitis), and the use of folinic acid rescue. Accidental daily dosing is a well-known medication safety issue.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#5 — Lithium</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Psychiatry</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 34-year-old man with bipolar I disorder presents with coarse tremor, nausea, vomiting, and confusion. He reports excessive thirst and polyuria that has been present for months, but his acute symptoms began two days ago after starting a new medication for hypertension.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Serum levels of his psychiatric medication are 2.1 mmol/L (therapeutic range 0.6–0.8 mmol/L for maintenance). Renal function shows elevated creatinine. Urine osmolality is low despite clinical dehydration. TSH is elevated at 8.2 mU/L.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">The toxicity was precipitated by the recent addition of an ACE inhibitor, which reduced renal clearance of this monovalent cation. Chronic use has caused nephrogenic diabetes insipidus and hypothyroidism — both well-recognised long-term effects.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This mood stabiliser is primarily excreted unchanged by the kidneys, where it is handled like sodium in the proximal tubule. Any drug or condition that reduces sodium reabsorption or GFR will increase its serum concentration and risk of toxicity.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This alkali metal, atomic number 3, has the narrowest therapeutic index of any psychiatric medication. Monitoring requires regular serum trough levels, thyroid function, and renal function. Toxicity causes a characteristic coarse tremor progressing to seizures and coma.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Lithicarb, Quilonum SR</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Sodium valproate, Carbamazepine, Lamotrigine — Other mood stabilisers do not cause nephrogenic diabetes insipidus or require monitoring of serum drug levels with the same narrow therapeutic range of 0.6–0.8 mmol/L for maintenance.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Lithium is uniquely identified as an alkali metal element (atomic number 3) used as a mood stabiliser, with its characteristic narrow therapeutic index (0.6–0.8 mmol/L), renal handling as a monovalent cation, and the triad of long-term effects: nephrogenic diabetes insipidus, hypothyroidism, and chronic kidney disease.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Lithium as the culprit. Lithium is uniquely identified as an alkali metal element (atomic number 3) used as a mood stabiliser, with its characteristic narrow therapeutic index (0.6–0.8 mmol/L), renal handling as a monovalent cation, and the triad of long-term effects: nephrogenic diabetes insipidus, hypothyroidism, and chronic kidney disease.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">2.1 mmol/L → 2.1 mEq/L</span> <span class="unit-value">0.6–0.8 mmol/L → 0.6–0.8 mEq/L</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#6 — Digoxin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Cardiovascular</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">An 81-year-old woman with heart failure and atrial fibrillation presents with nausea, visual disturbances described as 'yellow-green halos around lights,' and a heart rate of 38 bpm. ECG shows a slow ventricular rate with occasional ectopics and a characteristic 'reverse tick' ST depression pattern.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">Her medications include frusemide 40 mg daily, amiodarone (recently commenced), and she has been taking an over-the-counter antacid containing aluminium hydroxide. She was also given clarithromycin last week for a chest infection.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">Her serum drug level is 3.8 nmol/L (therapeutic range 1.0–2.6 nmol/L). Potassium is low at 2.9 mmol/L from frusemide, which dramatically increases sensitivity to this drug's toxic effects even at therapeutic levels.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">Amiodarone increases this drug's serum concentration by inhibiting P-glycoprotein and reducing renal clearance — the dose should be halved when amiodarone is started. Clarithromycin further increases levels by reducing gut metabolism and P-glycoprotein transport.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This cardiac glycoside, derived from the foxglove plant (Digitalis lanata), inhibits the Na+/K+ ATPase pump. Its specific antidote is antibody fragments (Digibind/DigiFab) that bind and neutralise the drug, indicated for life-threatening toxicity including ventricular arrhythmias.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Lanoxin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Verapamil, Diltiazem, Ivabradine — Other rate-control agents do not inhibit the sodium-potassium ATPase pump and are not associated with the classic toxicity pattern of visual disturbances and bidirectional ventricular tachycardia reversed with a specific antibody fragment.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Digoxin is the only cardiac glycoside in routine clinical use, uniquely identified by its Na+/K+ ATPase inhibition, foxglove plant origin, characteristic toxicity (visual disturbances, bradycardia, 'reverse tick' ECG), and the specific antidote digoxin-specific antibody fragments.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Digoxin as the responsible agent. Digoxin is the only cardiac glycoside in routine clinical use, uniquely identified by its Na+/K+ ATPase inhibition, foxglove plant origin, characteristic toxicity (visual disturbances, bradycardia, 'reverse tick' ECG), and the specific antidote digoxin-specific antibody fragments.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">2.9 mmol/L → 2.9 mEq/L</span> <span class="unit-value">3.8 nmol/L → 3.0 ng/mL</span> <span class="unit-value">1.0–2.6 nmol/L → 0.8–2.0 ng/mL</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#7 — Morphine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Analgesics</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication remains the gold-standard strong analgesic for severe acute pain, including post-operative pain and acute myocardial infarction. It is also widely used in palliative care for cancer-related pain and dyspnoea management.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It acts primarily at mu-opioid receptors in the central nervous system. It is the reference compound against which all other opioids are compared for equianalgesic dosing — its oral bioavailability is approximately 30%, hence IV doses are roughly one-third of oral doses.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It undergoes hepatic glucuronidation to two metabolites: an active metabolite (6-glucuronide) that is more potent than the parent compound and an inactive metabolite (3-glucuronide). Both are renally excreted.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Accumulation of the active 6-glucuronide metabolite in renal impairment can cause prolonged respiratory depression and sedation, making dose reduction or alternative opioid selection essential in patients with reduced GFR.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Derived from the opium poppy (Papaver somniferum), this is the prototypical opioid analgesic first isolated by Friedrich Sertürner in 1804. It is available in immediate-release oral solution, sustained-release capsules and tablets, and injectable formulations internationally.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">MS Contin, Kapanol, Ordine, MS Mono</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Oxycodone, Hydromorphone, Fentanyl — Other strong opioids do not share this drug's unique active metabolite (morphine-6-glucuronide) that accumulates in renal impairment, nor is it the reference standard against which all other opioid potencies are compared.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Morphine is the prototypical and reference opioid analgesic, uniquely identified by its active morphine-6-glucuronide metabolite, its role as the equianalgesic reference standard, its origin from the opium poppy, and its historical significance as the first alkaloid isolated from a plant.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Morphine is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Morphine is the prototypical and reference opioid analgesic, uniquely identified by its active morphine-6-glucuronide metabolite, its role as the equianalgesic reference standard, its origin from the opium poppy, and its historical significance as the first alkaloid isolated from a plant.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#8 — Amoxicillin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This is one of the most frequently prescribed antibiotics internationallyn general practice, used empirically for common community-acquired infections of the upper and lower respiratory tract, urinary tract, and skin.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It is an aminopenicillin with a broader spectrum than the original penicillins, covering many Gram-positive organisms plus some Gram-negatives including Haemophilus influenzae and Escherichia coli. It does not cover beta-lactamase producing staphylococci.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">Its oral bioavailability is approximately 80% — significantly higher than ampicillin (~40%) — making it the preferred oral aminopenicillin. It is primarily renally excreted and requires dose adjustment in severe renal impairment.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">When combined with clavulanic acid, its spectrum extends to beta-lactamase producing organisms. The combination is marketed internationally under a well-known brand name and is a mainstay of empirical therapy for animal bites and diabetic foot infections.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Characteristically causes a non-allergic maculopapular rash in patients with infectious mononucleosis (EBV infection) — this is not a true penicillin allergy. Available as capsules (250 mg, 500 mg), oral suspension, and in combination with clavulanic acid (as Augmentin).</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Amoxil, Alphamox</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Ampicillin</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Phenoxymethylpenicillin, Flucloxacillin, Dicloxacillin — Other penicillins have narrower spectra — phenoxymethylpenicillin lacks Gram-negative cover, and flucloxacillin/dicloxacillin are anti-staphylococcal but lack the broad aminopenicillin spectrum including Haemophilus and Enterococcus.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Amoxicillin is uniquely identified among the aminopenicillins by its superior oral bioavailability over ampicillin, the characteristic mononucleosis rash, and its combination with clavulanic acid (Augmentin). Ampicillin is an acceptable alternative as the other aminopenicillin with an essentially identical spectrum.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Amoxicillin is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Amoxicillin is uniquely identified among the aminopenicillins by its superior oral bioavailability over ampicillin, the characteristic mononucleosis rash, and its combination with clavulanic acid (Augmentin). Ampicillin is an acceptable alternative as the other aminopenicillin with an essentially identical spectrum.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#9 — Prednisolone</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Immunology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This is the most commonly prescribed oral corticosteroid internationally, used in short courses ('burst and taper') for acute exacerbations of asthma and COPD, and in longer courses for autoimmune conditions, transplant immunosuppression, and inflammatory bowel disease.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It has approximately 4 times the anti-inflammatory potency of hydrocortisone but with less mineralocorticoid activity. Its biological half-life is 12–36 hours, classifying it as an intermediate-acting corticosteroid.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Long-term use carries the well-known adverse effect profile of Cushing syndrome, osteoporosis, adrenal suppression, hyperglycaemia, immunosuppression, and avascular necrosis. Patients on prolonged courses should receive calcium, vitamin D, and often a bisphosphonate.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">internationally, this is preferentially prescribed over its pro-drug form because it does not require hepatic activation, making it suitable for patients with liver disease. Standard dosing for acute asthma exacerbations is 37.5–50 mg daily for 5–7 days.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This active corticosteroid is distinguished from its pro-drug (which requires hepatic conversion by 11-beta-hydroxysteroid dehydrogenase) and is available as 1 mg, 5 mg, and 25 mg tablets, as well as an oral liquid formulation widely used in paediatric dosing.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Solone, Panafcortelone, Redipred</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Prednisone</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Dexamethasone, Methylprednisolone, Hydrocortisone — Dexamethasone is 7× more potent with a much longer duration, methylprednisolone is the IV formulation of choice, and hydrocortisone has significant mineralocorticoid activity — this drug is the standard oral intermediate-potency corticosteroid.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Prednisolone is the standard intermediate-acting oral corticosteroid internationally, distinguished from prednisone (its pro-drug requiring hepatic activation) and from more potent agents like dexamethasone. Prednisone is an acceptable alternative as its pro-drug with essentially identical clinical effects.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Prednisolone was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Prednisolone is the standard intermediate-acting oral corticosteroid internationally, distinguished from prednisone (its pro-drug requiring hepatic activation) and from more potent agents like dexamethasone. Prednisone is an acceptable alternative as its pro-drug with essentially identical clinical effects.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#10 — Clozapine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Psychiatry</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 29-year-old man with schizophrenia who failed adequate trials of two different antipsychotics presents to ED with fever of 39.2°C, sore throat, and malaise three weeks after starting a new antipsychotic reserved for treatment-resistant disease.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Urgent full blood count reveals a neutrophil count of 0.3 × 10⁹/L (severe neutropenia). C-reactive protein is markedly elevated. Blood cultures are drawn. His fasting glucose is also elevated at 14 mmol/L, a new finding.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">This potentially fatal agranulocytosis occurs in approximately 1–2% of patients, with highest risk in the first 18 weeks of treatment. Mandatory regular blood monitoring of neutrophil counts is required throughout treatment.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This atypical antipsychotic is the only agent with demonstrated efficacy in treatment-resistant schizophrenia. It has high affinity for D4, 5-HT2A, muscarinic, and histaminic receptors. Tobacco smoking induces its metabolism via CYP1A2.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Registered monitoring programs require weekly neutrophil counts for the first 18 weeks, then four-weekly thereafter. Other characteristic adverse effects include metabolic syndrome, myocarditis (especially in the first month), constipation progressing to ileus, and excessive salivation particularly at night.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Clozaril, Clopine, CloSyn</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Olanzapine, Quetiapine, Risperidone — Other atypical antipsychotics do not require mandatory blood monitoring for neutrophil counts and are not restricted to treatment-resistant disease. This drug is the only antipsychotic proven effective in treatment-resistant schizophrenia.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Clozapine is the only antipsychotic with proven efficacy in treatment-resistant schizophrenia and the only one requiring mandatory haematological monitoring for agranulocytosis. Its unique adverse effect profile including myocarditis, nocturnal hypersalivation, and severe constipation distinguishes it from all other antipsychotics.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Clozapine as the culprit. Clozapine is the only antipsychotic with proven efficacy in treatment-resistant schizophrenia and the only one requiring mandatory haematological monitoring for agranulocytosis. Its unique adverse effect profile including myocarditis, nocturnal hypersalivation, and severe constipation distinguishes it from all other antipsychotics.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">39.2°C → 102.6°F</span> <span class="unit-value">14 mmol/L → 252 mg/dL</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#11 — Carbamazepine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Neurology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">A 42-year-old woman with epilepsy well-controlled for years presents with breakthrough seizures. She was recently started on the combined oral contraceptive pill for menorrhagia, but her neurologist notes her antiepileptic serum levels have not changed.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">She takes an antiepileptic known to be a potent enzyme inducer, along with ethinylestradiol/levonorgestrel (OCP) started 6 weeks ago. She also recently completed a course of erythromycin for a skin infection.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">The breakthrough seizures are actually not from reduced antiepileptic levels. Instead, this drug has rendered the OCP ineffective through enzyme induction, causing withdrawal bleeding misinterpreted as menorrhagia. The erythromycin transiently increased her antiepileptic levels, causing diplopia.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">This drug is one of the most potent inducers of CYP3A4, CYP2C9, and CYP1A2, reducing efficacy of oral contraceptives, anticoagulants, and many other drugs. Uniquely, it also induces its own metabolism (autoinduction), requiring dose escalation in the first 3–4 weeks of therapy.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This dibenzazepine derivative is the preferred agent for focal (partial) seizures and trigeminal neuralgia. Its major idiosyncratic risk is Stevens-Johnson syndrome/toxic epidermal necrolysis, strongly associated with HLA-B*15:02 allele, which should be tested before initiation in patients of South-East Asian ancestry.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Tegretol, Teril</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Oxcarbazepine, Phenytoin, Sodium valproate — Oxcarbazepine is structurally related but does not exhibit autoinduction of its own metabolism. Phenytoin has zero-order kinetics but different enzyme induction profile. This drug is unique in its autoinduction phenomenon requiring dose increases in the first weeks.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Carbamazepine is uniquely identified by its autoinduction of CYP enzymes, first-line use in trigeminal neuralgia, dibenzazepine structure, and the HLA-B*15:02 pharmacogenomic association with SJS/TEN. No other antiepileptic exhibits autoinduction of its own metabolism.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Carbamazepine as the responsible agent. Carbamazepine is uniquely identified by its autoinduction of CYP enzymes, first-line use in trigeminal neuralgia, dibenzazepine structure, and the HLA-B*15:02 pharmacogenomic association with SJS/TEN. No other antiepileptic exhibits autoinduction of its own metabolism.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#12 — Flucloxacillin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 55-year-old man presents with jaundice, dark urine, and right upper quadrant pain six weeks after completing a two-week course of an antibiotic for a skin and soft tissue infection (cellulitis). He has no history of liver disease or alcohol excess.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Liver function tests show a cholestatic pattern: ALP 480 U/L (markedly elevated), GGT 320 U/L, bilirubin 85 μmol/L, with ALT only mildly elevated at 95 U/L. Hepatitis serology and autoimmune markers are negative. Ultrasound shows no biliary obstruction.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">This delayed cholestatic hepatitis is a well-recognised idiosyncratic reaction to a commonly prescribed penicillin. It characteristically occurs 1–6 weeks after completing the course, can persist for weeks to months, and is more common in patients over 55 years and those treated for longer than 14 days.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This narrow-spectrum penicillin is the standard oral agent for methicillin-sensitive Staphylococcus aureus (MSSA) infections internationally, including cellulitis, impetigo, and skin abscesses. It must be taken on an empty stomach (30 minutes before food) for adequate absorption.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This isoxazolyl penicillin is beta-lactamase resistant, giving it specific anti-staphylococcal activity. The characteristic delayed cholestatic hepatotoxicity distinguishes it from other penicillins and is associated with HLA-B*57:01. Available as 250 mg and 500 mg capsules, and IV formulation.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Flopen, Staphylex</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Dicloxacillin</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Cephalexin, Amoxicillin — Cephalexin covers similar organisms but is a cephalosporin, not an isoxazolyl penicillin. Amoxicillin lacks anti-staphylococcal activity against beta-lactamase producers. This drug is the standard oral anti-staphylococcal penicillin internationally.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Flucloxacillin is the standard oral anti-staphylococcal penicillin internationally, uniquely identified by its delayed cholestatic hepatotoxicity (1–6 weeks post-treatment), isoxazolyl penicillin structure, beta-lactamase stability, and empty-stomach dosing requirement. Dicloxacillin is an acceptable alternative as another isoxazolyl penicillin.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Flucloxacillin as the culprit. Flucloxacillin is the standard oral anti-staphylococcal penicillin internationally, uniquely identified by its delayed cholestatic hepatotoxicity (1–6 weeks post-treatment), isoxazolyl penicillin structure, beta-lactamase stability, and empty-stomach dosing requirement. Dicloxacillin is an acceptable alternative as another isoxazolyl penicillin.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">85 μmol/L → 5.0 mg/dL</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#13 — Paracetamol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Analgesics</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This is the most used analgesic and antipyretic internationally, recommended as initial therapy for mild to moderate pain across all age groups. It is available without prescription and is considered safe in pregnancy and breastfeeding at recommended doses.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">Despite decades of use, its precise mechanism of action remains incompletely understood. It is thought to act centrally, possibly through inhibition of COX-3 or the endocannabinoid system, with minimal peripheral anti-inflammatory effect.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">In overdose, it is the leading cause of acute liver failure internationally. Toxicity occurs when hepatic glutathione stores are depleted, allowing the reactive metabolite NAPQI (produced via CYP2E1) to cause hepatocellular necrosis.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">The specific antidote is N-acetylcysteine (NAC), which replenishes glutathione stores. Treatment is guided by the modified Rumack-Matthew nomogram plotting serum drug concentration against time since ingestion.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Maximum recommended dose in adults is 4 g per day (1 g every 4–6 hours), reduced to 2–3 g daily in patients under 50 kg, with hepatic impairment, or chronic alcohol use. It is the active metabolite of phenacetin, which was withdrawn due to nephrotoxicity.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Acetaminophen, Panadol, Panamax, Dymadon</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Ibuprofen, Aspirin — NSAIDs have anti-inflammatory properties and inhibit COX peripherally — this drug has minimal anti-inflammatory activity and its toxicity uniquely involves hepatic glutathione depletion with N-acetylcysteine as the specific antidote.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Paracetamol (acetaminophen) is uniquely identified by its NAPQI toxicity pathway, N-acetylcysteine antidote, Rumack-Matthew nomogram, and its history as the active metabolite of the withdrawn drug phenacetin. No other analgesic shares this specific toxicology profile.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Paracetamol was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Paracetamol (acetaminophen) is uniquely identified by its NAPQI toxicity pathway, N-acetylcysteine antidote, Rumack-Matthew nomogram, and its history as the active metabolite of the withdrawn drug phenacetin. No other analgesic shares this specific toxicology profile.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">50 kg → 110 lb</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#14 — Gentamicin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This injectable antibiotic is a workhorse of hospital medicine, frequently combined with a penicillin or cephalosporin for empirical treatment of severe sepsis, intra-abdominal infections, and infective endocarditis internationallyn hospitals.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It exhibits concentration-dependent bactericidal activity against aerobic Gram-negative bacilli and has synergistic activity with beta-lactams against Gram-positive organisms including Enterococcus. It has no activity against anaerobes.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It binds irreversibly to the 30S ribosomal subunit, inhibiting bacterial protein synthesis. It demonstrates a post-antibiotic effect, allowing once-daily (extended interval) dosing in many indications despite a short half-life of 2–3 hours.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Its two major dose-limiting toxicities are nephrotoxicity (reversible, related to trough concentrations) and ototoxicity (often irreversible, related to cumulative dose). Therapeutic drug monitoring of trough levels is mandatory, targeting <1 mg/L for once-daily dosing.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This aminoglycoside, originally derived from Micromonospora purpurea, is the standard member of its class for empirical sepsis cover internationally. Once-daily dosing (4–7 mg/kg) has largely replaced traditional 8-hourly dosing, except in endocarditis where divided doses with synergistic penicillin are standard.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Genoptic</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Tobramycin, Amikacin — Other aminoglycosides share similar toxicity but tobramycin is preferred for Pseudomonas (especially in CF) and amikacin is reserved for resistant organisms. This drug is the most commonly used aminoglycoside for empirical Gram-negative sepsis cover internationally.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Gentamicin is the most commonly used aminoglycoside internationallyn hospitals, distinguished from tobramycin (preferred for Pseudomonas/CF) and amikacin (reserved for resistant organisms) by its role as the standard empirical Gram-negative sepsis agent and its derivation from Micromonospora (hence the '-micin' spelling rather than '-mycin').</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Gentamicin is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Gentamicin is the most commonly used aminoglycoside internationallyn hospitals, distinguished from tobramycin (preferred for Pseudomonas/CF) and amikacin (reserved for resistant organisms) by its role as the standard empirical Gram-negative sepsis agent and its derivation from Micromonospora (hence the '-micin' spelling rather than '-mycin').</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#15 — Spironolactone</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Cardiovascular</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication has dual roles in medicine: it is a cornerstone of neurohormonal blockade in heart failure with reduced ejection fraction, and it is used off-label by dermatologists and endocrinologists for a completely different indication related to its hormonal side effects.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It acts as a competitive antagonist at the mineralocorticoid (aldosterone) receptor in the distal tubule, promoting sodium excretion while retaining potassium. It is a weak diuretic on its own, primarily valued for its neurohormonal modulation in heart failure.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">The most clinically significant adverse effect is hyperkalaemia, particularly when combined with ACE inhibitors, ARBs, or potassium supplements. Regular monitoring of serum potassium and renal function is essential, especially when initiating or up-titrating the dose.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Unlike its more selective counterpart in the same class, this drug has significant anti-androgenic activity — blocking testosterone and dihydrotestosterone receptors. This causes gynaecomastia and breast tenderness in men, but makes it therapeutically useful for hirsutism in women.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">The RALES trial demonstrated a 30% mortality reduction in severe heart failure (NYHA III-IV). Its anti-androgenic effects distinguish it from eplerenone and make it a treatment option for female pattern hair loss, hormonal acne, and hirsutism in polycystic ovary syndrome.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Aldactone, Spiractin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Eplerenone — Eplerenone is a more selective mineralocorticoid antagonist without anti-androgenic effects — it does not cause gynaecomastia or menstrual irregularities. This drug's anti-androgenic properties are what distinguish it, allowing off-label use for hirsutism and acne.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Spironolactone is uniquely identified by its dual role: mineralocorticoid receptor antagonist in heart failure (RALES trial) and anti-androgen for dermatological/endocrine conditions. Its anti-androgenic side effects (gynaecomastia) distinguish it from the more selective eplerenone.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Spironolactone was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Spironolactone is uniquely identified by its dual role: mineralocorticoid receptor antagonist in heart failure (RALES trial) and anti-androgen for dermatological/endocrine conditions. Its anti-androgenic side effects (gynaecomastia) distinguish it from the more selective eplerenone.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#16 — Doxycycline</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This versatile antibiotic is used for an unusually broad range of infections including tick-borne diseases, sexually transmitted infections (chlamydia, non-gonococcal urethritis), severe acne vulgaris, malaria prophylaxis, and respiratory infections caused by atypical organisms.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It inhibits bacterial protein synthesis by binding to the 30S ribosomal subunit. Unlike older members of its class, its absorption is only mildly affected by food (though dairy and antacids containing divalent/trivalent cations still reduce absorption through chelation).</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It has excellent oral bioavailability (>90%) and a long half-life of 16–18 hours, allowing once-to-twice daily dosing. Uniquely among tetracyclines, it is primarily eliminated via the GI tract and does not accumulate in renal failure, making it safe in renal impairment.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">A well-known adverse effect is photosensitivity — patients must be counselled to avoid excessive sun exposure and use high-SPF sunscreen. It also causes oesophageal ulceration if taken without adequate water or in a recumbent position.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the most commonly prescribed tetracycline internationally. For chlamydia, the standard course is 100 mg twice daily for 7 days. For malaria prophylaxis, 100 mg daily is started 1–2 days before travel. It is contraindicated in pregnancy and children under 8 years due to permanent teeth discolouration.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Doryx, Doxy</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Minocycline, Tetracycline — Minocycline causes vestibular side effects and blue-grey skin discolouration. Tetracycline requires four-times-daily dosing and has poorer oral bioavailability. This drug is preferred for its once-to-twice daily dosing, good bioavailability, and safety in renal impairment.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Doxycycline is the most commonly used tetracycline, uniquely distinguished by its excellent bioavailability, renal safety (non-renal elimination), photosensitivity risk, and breadth of use spanning STIs, acne, tick-borne diseases, and malaria prophylaxis.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Doxycycline is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Doxycycline is the most commonly used tetracycline, uniquely distinguished by its excellent bioavailability, renal safety (non-renal elimination), photosensitivity risk, and breadth of use spanning STIs, acne, tick-borne diseases, and malaria prophylaxis.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#17 — Tramadol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Analgesics</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">A 48-year-old woman taking long-term medication for chronic lower back pain presents with agitation, myoclonus, diaphoresis, tremor, and hyperreflexia. Her temperature is 38.8°C. She recently had her antidepressant dose increased.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">Her regular medications include an analgesic for back pain and venlafaxine (recently increased from 150 mg to 225 mg daily). She also took two extra doses of her analgesic yesterday for a pain flare, exceeding her usual dose.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">The clinical picture is consistent with serotonin syndrome (toxicity), precipitated by the combination of increased serotonergic antidepressant dosing and an analgesic that also has serotonergic properties. This is a potentially life-threatening interaction.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">This analgesic has a unique dual mechanism: weak mu-opioid receptor agonism combined with inhibition of serotonin and noradrenaline reuptake. The serotonergic component creates a real risk of serotonin syndrome when combined with SSRIs, SNRIs, or MAOIs.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This centrally-acting analgesic also lowers the seizure threshold and is metabolised by CYP2D6 to its more active O-desmethyl metabolite. It was up-scheduled to S8 (controlled drug) internationally in 2020 due to concerns about dependence and fatal toxicity in combination with other serotonergic drugs.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Tramal, Zydol</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Codeine, Tapentadol — Codeine is a weaker opioid prodrug (requires CYP2D6 to morphine) without serotonergic activity. Tapentadol has noradrenaline reuptake inhibition but lacks serotonergic activity. This drug uniquely combines weak mu-opioid agonism with serotonin and noradrenaline reuptake inhibition.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Tramadol is uniquely identified by its dual mechanism (weak mu-opioid agonism + serotonin/noradrenaline reuptake inhibition), the specific risk of serotonin syndrome, seizure threshold lowering, CYP2D6 metabolism, and its 2020 up-scheduling to S8 internationally.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Tramadol as the responsible agent. Tramadol is uniquely identified by its dual mechanism (weak mu-opioid agonism + serotonin/noradrenaline reuptake inhibition), the specific risk of serotonin syndrome, seizure threshold lowering, CYP2D6 metabolism, and its 2020 up-scheduling to S8 internationally.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">38.8°C → 101.8°F</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#18 — Azathioprine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Immunology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 37-year-old woman with Crohn's disease starts a new steroid-sparing immunosuppressant. Within two weeks, she develops severe nausea, vomiting, and diarrhoea. Blood tests reveal a rapidly falling white cell count and platelet count.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Full blood count shows WCC 1.2 × 10⁹/L (neutrophils 0.4), platelets 42 × 10⁹/L, and haemoglobin 98 g/L. Liver enzymes are elevated. A pharmacogenomic test that should have been performed before starting the drug reveals she has an absent enzyme activity phenotype.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">She has deficient thiopurine S-methyltransferase (TPMT) activity. Without this enzyme, toxic thiopurine metabolites accumulate, causing severe myelosuppression. Approximately 1 in 300 individuals are homozygous for TPMT deficiency.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This purine analogue pro-drug is converted to mercaptopurine, then to active thioguanine nucleotides that inhibit purine synthesis and suppress lymphocyte proliferation. TPMT genotyping or phenotyping is recommended before starting treatment.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the most widely used conventional immunosuppressant for steroid-sparing therapy in autoimmune hepatitis, inflammatory bowel disease, SLE, and organ transplant maintenance. Its interaction with allopurinol (xanthine oxidase inhibitor) is a classic — the dose must be reduced by 75% if co-prescribed.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Imuran, Azapin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Mycophenolate, Mercaptopurine — Mycophenolate inhibits de novo purine synthesis (IMPDH) without TPMT pharmacogenomics. Mercaptopurine is the active metabolite of this drug — closely related but primarily used in leukaemia, not autoimmune disease. This drug is the standard first-line steroid-sparing immunosuppressant.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Azathioprine is uniquely identified by its TPMT pharmacogenomic requirement, pro-drug conversion to mercaptopurine, the critical allopurinol interaction (75% dose reduction), and its widespread use as first-line steroid-sparing immunosuppression across multiple autoimmune conditions.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Azathioprine as the culprit. Azathioprine is uniquely identified by its TPMT pharmacogenomic requirement, pro-drug conversion to mercaptopurine, the critical allopurinol interaction (75% dose reduction), and its widespread use as first-line steroid-sparing immunosuppression across multiple autoimmune conditions.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#19 — Ondansetron</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Gastrointestinal</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This antiemetic is one of the most prescribed medications in hospitals and emergency departments, used for nausea and vomiting from multiple causes including post-operative, chemotherapy-induced, and gastroenteritis-related in both adults and children.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It acts as a selective antagonist at 5-hydroxytryptamine type 3 (5-HT3) receptors, located both peripherally on vagal nerve terminals in the GI tract and centrally in the chemoreceptor trigger zone. It does not cause the extrapyramidal side effects seen with dopamine antagonist antiemetics.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It can be administered orally, sublingually (wafer formulation), IV, or IM. It is metabolised by multiple CYP enzymes including CYP3A4 and CYP1A2. Its half-life is approximately 3–4 hours, and it is generally well tolerated with headache being the most common side effect.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">An important safety concern is dose-dependent QT prolongation, which prompted regulatory agencies to reduce the maximum single IV dose to 16 mg. It is also associated with constipation, which can be significant in patients already predisposed (e.g., post-operative, opioid use).</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the most commonly prescribed setron-class antiemetic internationally, available as 4 mg and 8 mg tablets, wafers (orally disintegrating), and injection. For chemotherapy, it is often combined with dexamethasone and an NK1 receptor antagonist (aprepitant) in a triple antiemetic regimen.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Zofran, Ondaz</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Granisetron, Tropisetron, Palonosetron — Other 5-HT3 antagonists have similar mechanisms but are less commonly used first-line. Palonosetron has a much longer half-life (40 hours). This drug is by far the most commonly prescribed member of the class internationally.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Ondansetron is the most widely used 5-HT3 receptor antagonist internationally, distinguished from other setrons by its ubiquity in clinical practice, multiple formulations including the distinctive wafer, and its role in standard triple antiemetic protocols for chemotherapy.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Ondansetron is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Ondansetron is the most widely used 5-HT3 receptor antagonist internationally, distinguished from other setrons by its ubiquity in clinical practice, multiple formulations including the distinctive wafer, and its role in standard triple antiemetic protocols for chemotherapy.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#20 — Propranolol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Cardiovascular</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This beta-blocker has an unusually diverse range of indications spanning cardiology, neurology, endocrinology, gastroenterology, and psychiatry. Its uses include hypertension, essential tremor, migraine prophylaxis, thyrotoxicosis symptom control, and performance anxiety.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is a non-selective beta-adrenoceptor antagonist, blocking both beta-1 (cardiac) and beta-2 (bronchial, vascular, metabolic) receptors. It is highly lipophilic, crossing the blood-brain barrier extensively, which accounts for its CNS effects including vivid dreams and fatigue.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Its non-selectivity means it can precipitate bronchospasm in patients with asthma or COPD and mask the adrenergic symptoms of hypoglycaemia in diabetic patients. It is absolutely contraindicated in asthma regardless of severity.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">In gastroenterology, it is used for primary and secondary prophylaxis of variceal bleeding in portal hypertension, where it reduces portal pressure by decreasing cardiac output (beta-1) and causing splanchnic vasoconstriction (beta-2 blockade, removing vasodilatory tone).</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This was the first clinically useful beta-blocker, developed by Sir James Black (who also developed cimetidine). It undergoes extensive first-pass hepatic metabolism, resulting in variable oral bioavailability of approximately 25%. Available in 10 mg, 40 mg, and 160 mg (sustained-release) formulations.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Inderal, Deralin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Atenolol, Metoprolol, Bisoprolol — Atenolol, metoprolol, and bisoprolol are cardioselective (beta-1 selective) agents without the same breadth of non-cardiac indications. This drug is non-selective (beta-1 and beta-2), giving it unique applications in tremor, migraine, portal hypertension, and thyrotoxicosis.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Propranolol is uniquely identified as the first beta-blocker (Sir James Black), its non-selective beta blockade giving it the broadest indication range of any beta-blocker, portal hypertension use via splanchnic vasoconstriction, and high lipophilicity with extensive CNS penetration.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Propranolol was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Propranolol is uniquely identified as the first beta-blocker (Sir James Black), its non-selective beta blockade giving it the broadest indication range of any beta-blocker, portal hypertension use via splanchnic vasoconstriction, and high lipophilicity with extensive CNS penetration.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#21 — Colchicine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Rheumatology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This ancient medication, derived from a plant source, is used for acute attacks and prophylaxis of a crystal arthropathy that commonly affects the first metatarsophalangeal joint. It is also used off-label for pericarditis and familial Mediterranean fever.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It binds to tubulin and inhibits microtubule polymerisation, disrupting the cytoskeleton of inflammatory cells. This impairs neutrophil chemotaxis, adhesion, and the inflammasome activation that drives the inflammatory response to monosodium urate crystals.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It has an extremely narrow therapeutic index — the difference between therapeutic and toxic doses is small. GI toxicity (nausea, vomiting, diarrhoea) is the most common dose-limiting adverse effect and traditionally serves as a signal to stop dosing.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Modern dosing for acute flares uses a low-dose regimen (500 micrograms two to three times daily) rather than the historical high-dose protocol which caused severe GI toxicity. It is also used at low dose during initiation of urate-lowering therapy to prevent flare-up.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Derived from the autumn crocus (Colchicum autumnale), this alkaloid has been used for gout for over 2,000 years. In overdose, it causes multi-organ failure with a characteristic delayed onset — patients may appear well initially before developing irreversible bone marrow suppression and cardiovascular collapse 24–72 hours later.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Colgout, Lengout</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Allopurinol, Febuxostat, Probenecid — Urate-lowering therapies (allopurinol, febuxostat) prevent gout flares long-term but do not treat acute attacks. This drug is unique in treating acute gout through its anti-inflammatory mechanism of tubulin disruption rather than reducing urate levels.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Colchicine is uniquely identified by its tubulin-binding mechanism, derivation from the autumn crocus, use in acute gout (not urate-lowering), extremely narrow therapeutic index, and the characteristic delayed multi-organ failure pattern in overdose.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Colchicine was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Colchicine is uniquely identified by its tubulin-binding mechanism, derivation from the autumn crocus, use in acute gout (not urate-lowering), extremely narrow therapeutic index, and the characteristic delayed multi-organ failure pattern in overdose.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#22 — Phenytoin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Neurology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">A 65-year-old man on a long-term antiepileptic presents with nystagmus, ataxia, slurred speech, and confusion. His neurologist had recently increased his daily dose by only 50 mg, yet his serum drug level has risen dramatically from 60 to 120 μmol/L.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">He also takes sodium valproate (which inhibits this drug's metabolism), amiodarone, and omeprazole. He was recently started on trimethoprim-sulfamethoxazole for a urinary tract infection.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">The disproportionate rise in serum levels from a small dose increase is explained by this drug's saturable metabolism — it follows zero-order (Michaelis-Menten) kinetics at therapeutic doses, meaning small dose changes can cause exponential increases in plasma concentration.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">It is a potent inducer of CYP3A4, CYP2C9, and CYP2C19. Paradoxically, its own metabolism (primarily via CYP2C9 and CYP2C19) is saturable, creating the dangerous situation where enzyme inhibitors like valproate, omeprazole, and trimethoprim push levels into the toxic range unpredictably.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This hydantoin anticonvulsant requires therapeutic drug monitoring with a narrow target range of 40–80 μmol/L (10–20 mg/L). Chronic use causes gingival hyperplasia, hirsutism, coarsening of facial features, folate-deficiency megaloblastic anaemia, and osteomalacia through vitamin D metabolism disruption.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Dilantin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Carbamazepine, Sodium valproate, Levetiracetam — Carbamazepine exhibits autoinduction but follows first-order kinetics. Sodium valproate has different enzyme inhibition profile. This drug is unique in following zero-order (saturable) kinetics at therapeutic doses, where small dose increases cause disproportionate rises in serum levels.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Phenytoin is the only commonly used drug with clinically significant zero-order (saturable) kinetics at therapeutic doses. Combined with its narrow therapeutic index, potent enzyme induction, and characteristic chronic toxicity (gingival hyperplasia, hirsutism, coarsened facies), it is unmistakable.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Phenytoin as the responsible agent. Phenytoin is the only commonly used drug with clinically significant zero-order (saturable) kinetics at therapeutic doses. Combined with its narrow therapeutic index, potent enzyme induction, and characteristic chronic toxicity (gingival hyperplasia, hirsutism, coarsened facies), it is unmistakable.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">60–120 μmol/L → 15–30 mg/L</span> <span class="unit-value">40–80 μmol/L → 10–20 mg/L</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#23 — Dantrolene</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Neurology/Anaesthetics</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication serves two distinct clinical roles: chronic management of spasticity in upper motor neurone conditions (spinal cord injury, MS, cerebral palsy), and emergency treatment of a rare but life-threatening perioperative complication.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Unlike other muscle relaxants that act centrally, this drug acts directly on skeletal muscle fibres. It has no effect on cardiac or smooth muscle at therapeutic doses, and no central sedating properties related to its primary mechanism.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It interferes with excitation-contraction coupling by inhibiting calcium release from the sarcoplasmic reticulum. This reduces the force of muscle contraction without affecting neuromuscular transmission — distinguishing it from neuromuscular blocking agents.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">The perioperative emergency it treats is triggered by volatile anaesthetic agents (eg sevoflurane, desflurane) or succinylcholine in genetically susceptible individuals carrying mutations in the ryanodine receptor (RYR1) gene. It presents with rapidly rising temperature, muscle rigidity, and metabolic acidosis.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the specific antidote for malignant hyperthermia — administered as IV boluses of 2.5 mg/kg repeated every 10–15 minutes until symptoms resolve (up to 10 mg/kg or more). It must be reconstituted with sterile water only and is available as a 20 mg powder for injection.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Dantrium</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Baclofen, Diazepam, Tizanidine — Other skeletal muscle relaxants act centrally (GABA mechanisms) — they do not treat malignant hyperthermia. This drug is unique in acting directly on skeletal muscle by blocking calcium release from the sarcoplasmic reticulum via the ryanodine receptor.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Dantrolene is the only drug that acts directly on skeletal muscle sarcoplasmic reticulum calcium release, making it the unique and specific treatment for malignant hyperthermia. No other muscle relaxant or anaesthetic reversal agent can substitute for it in this emergency.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Dantrolene is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Dantrolene is the only drug that acts directly on skeletal muscle sarcoplasmic reticulum calcium release, making it the unique and specific treatment for malignant hyperthermia. No other muscle relaxant or anaesthetic reversal agent can substitute for it in this emergency.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#24 — Leflunomide</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Rheumatology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 52-year-old woman with rheumatoid arthritis being treated with a disease-modifying agent develops numbness and tingling in her feet bilaterally, spreading to her ankles over several months. She also reports new-onset hypertension and hair thinning.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Nerve conduction studies confirm a sensorimotor peripheral neuropathy. Liver function tests show ALT 3.2 times the upper limit of normal. Her blood pressure is 155/95 mmHg, up from 125/80 at baseline. FBC is normal.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">Peripheral neuropathy, hepatotoxicity, and hypertension are all recognised adverse effects of this DMARD. The neuropathy may not fully reverse on discontinuation. Hepatotoxicity risk increases when combined with other hepatotoxic drugs, particularly methotrexate.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This drug inhibits pyrimidine synthesis by blocking dihydro-orotate dehydrogenase in rapidly dividing lymphocytes. Its active metabolite (teriflunomide) has an extremely long half-life of 2–4 weeks due to enterohepatic recirculation, meaning adverse effects persist long after stopping.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Due to its ultra-long half-life, a cholestyramine washout procedure (8 g three times daily for 11 days) is required to accelerate elimination in cases of toxicity, planned pregnancy, or switching to another immunosuppressant. Monthly LFT monitoring is mandatory for the first 6 months.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Arava</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Methotrexate, Sulfasalazine, Hydroxychloroquine — Methotrexate is a folate antagonist, not a pyrimidine synthesis inhibitor. This drug is unique among DMARDs for its extremely long half-life requiring a cholestyramine washout procedure and its mechanism of inhibiting dihydro-orotate dehydrogenase.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Leflunomide is uniquely identified among DMARDs by its mechanism (dihydro-orotate dehydrogenase inhibition), ultra-long active metabolite half-life (2–4 weeks), and the requirement for cholestyramine washout. No other DMARD requires an active elimination procedure.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Leflunomide as the culprit. Leflunomide is uniquely identified among DMARDs by its mechanism (dihydro-orotate dehydrogenase inhibition), ultra-long active metabolite half-life (2–4 weeks), and the requirement for cholestyramine washout. No other DMARD requires an active elimination procedure.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_interaction" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#25 — Rifampicin</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug interaction</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is responsible for this interaction?</div>
+    <div class="clue"><span class="clue-label">Clinical Scenario:</span> <span class="clue-text">A 35-year-old man being treated for pulmonary tuberculosis with standard quadruple therapy presents for routine review. He reports that his oral contraceptive-using partner has become pregnant unexpectedly, and his own transplant rejection markers have worsened despite stable immunosuppression dosing.</span></div><div class="clue"><span class="clue-label">Co-prescribed Drugs:</span> <span class="clue-text">His anti-tuberculosis regimen includes four drugs. His partner takes ethinylestradiol/levonorgestrel. He takes tacrolimus for a previous renal transplant. His trough tacrolimus levels have dropped from 8 to 2 ng/mL since starting TB treatment.</span></div><div class="clue"><span class="clue-label">Interaction Effect:</span> <span class="clue-text">One of his TB drugs is the most potent inducer of drug-metabolising enzymes in clinical practice, capable of reducing serum concentrations of co-administered drugs by up to 95%. It has rendered both his partner's OCP and his own tacrolimus ineffective.</span></div><div class="clue"><span class="clue-label">Mechanism Clue:</span> <span class="clue-text">This drug activates the pregnane X receptor (PXR), massively upregulating CYP3A4, CYP2C9, CYP2C19, CYP1A2, and P-glycoprotein expression. It affects virtually every drug metabolised by these pathways, including antiretrovirals, immunosuppressants, oral contraceptives, and vitamin K antagonists.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This rifamycin antibiotic inhibits bacterial DNA-dependent RNA polymerase. Patients should be warned that all body fluids — tears, urine, sweat, saliva — will turn orange-red, and soft contact lenses will be permanently stained. It is a cornerstone of the standard 6-month TB regimen.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Rifampin, Rifadin, Rimycin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Rifabutin, Isoniazid, Pyrazinamide — Rifabutin is a less potent enzyme inducer used when rifampicin interactions are prohibitive. Isoniazid and pyrazinamide are TB drugs without the characteristic orange discolouration and pan-CYP induction profile. This drug is the most potent CYP inducer in clinical use.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Rifampicin is the most potent enzyme inducer in clinical medicine, uniquely identified by its PXR-mediated pan-CYP induction, orange-red body fluid discolouration, RNA polymerase inhibition, and essential role in TB therapy. No other drug has such a broad and powerful enzyme-inducing effect.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Drug interactions are among the most clinically important puzzles to solve. This scenario described a patient whose clinical deterioration could be traced to a pharmacokinetic or pharmacodynamic interaction between their medications. The mechanism of the interaction — and the specific clinical consequences — pointed to Rifampicin as the responsible agent. Rifampicin is the most potent enzyme inducer in clinical medicine, uniquely identified by its PXR-mediated pan-CYP induction, orange-red body fluid discolouration, RNA polymerase inhibition, and essential role in TB therapy. No other drug has such a broad and powerful enzyme-inducing effect.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="adr_case" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#26 — Amiodarone</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">adr case</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Cardiovascular</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">Which drug is most likely causing these symptoms?</div>
+    <div class="clue"><span class="clue-label">Patient Presentation:</span> <span class="clue-text">A 68-year-old man on long-term antiarrhythmic therapy for atrial fibrillation presents with progressive exertional dyspnoea and dry cough over three months. He also reports increased sensitivity to sunlight with blue-grey discolouration of sun-exposed skin, and visual halos around lights at night.</span></div><div class="clue"><span class="clue-label">Investigations:</span> <span class="clue-text">Chest X-ray shows bilateral interstitial infiltrates. Pulmonary function tests reveal a restrictive pattern with reduced DLCO. Slit-lamp examination reveals bilateral corneal microdeposits. Thyroid function shows a suppressed TSH with elevated free T4.</span></div><div class="clue"><span class="clue-label">Key Finding:</span> <span class="clue-text">The triad of pulmonary fibrosis, thyroid dysfunction, and corneal microdeposits is pathognomonic of toxicity from a highly lipophilic antiarrhythmic that accumulates in tissues with an elimination half-life of 40–55 days. Adverse effects may persist for months after drug cessation.</span></div><div class="clue"><span class="clue-label">Drug Clue:</span> <span class="clue-text">This drug exhibits properties of all four Vaughan-Williams antiarrhythmic classes (sodium, potassium, and calcium channel blockade plus beta-blockade). It contains approximately 37% iodine by weight, which directly affects thyroid hormone synthesis and can cause both hypothyroidism and hyperthyroidism.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Monitoring requirements include 6-monthly thyroid function tests, annual chest X-ray and pulmonary function tests, liver function tests, and baseline ophthalmological examination. Corneal microdeposits occur in nearly all patients but rarely affect vision. The blue-grey skin discolouration is due to lipofuscin-like deposits.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Cordarone</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Sotalol, Flecainide, Dronedarone — Sotalol is class III but also a beta-blocker without the iodine content. Dronedarone was designed to avoid thyroid and pulmonary toxicity but is less effective. This drug is unique in containing iodine (37% by weight), causing both hypo- and hyperthyroidism, and having an extraordinarily long half-life.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Amiodarone is uniquely identified by its iodine content (37%), pan-Vaughan-Williams class activity, extraordinarily long half-life (40–55 days), and the characteristic multi-organ toxicity profile: pulmonary fibrosis, thyroid dysfunction (hypo/hyper), corneal microdeposits, hepatotoxicity, peripheral neuropathy, and photosensitive skin discolouration.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">This case required connecting a clinical presentation to its drug cause — a critical skill in pharmacovigilance. The patient's symptoms and investigation results pointed toward a drug-related adverse effect, and the specific pattern of findings narrowed the differential. Recognizing the characteristic toxicity profile and the clinical context in which this drug is prescribed confirmed Amiodarone as the culprit. Amiodarone is uniquely identified by its iodine content (37%), pan-Vaughan-Williams class activity, extraordinarily long half-life (40–55 days), and the characteristic multi-organ toxicity profile: pulmonary fibrosis, thyroid dysfunction (hypo/hyper), corneal microdeposits, hepatotoxicity, peripheral neuropathy, and photosensitive skin discolouration.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#27 — Naloxone</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Antidotes</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This emergency medication is carried by paramedics, stocked in all emergency departments, and increasingly available through community pharmacy take-home programs for people at risk of opioid-related harm. It reverses the life-threatening effects of opioid overdose.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It acts as a competitive antagonist at mu, kappa, and delta opioid receptors, rapidly displacing opioid agonists from their binding sites. It has no agonist activity and produces no clinical effects in the absence of opioids.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">Onset of action is 1–2 minutes when given intravenously, but its duration of action (30–90 minutes) is shorter than most opioid agonists. This means patients may re-narcotise as this drug wears off, necessitating repeated doses or an infusion for longer-acting opioids.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">In opioid-dependent patients, administration can precipitate acute withdrawal syndrome including agitation, vomiting, diarrhoea, piloerection, and hypertension. Dose titration (starting with 100–200 micrograms IV) rather than large boluses is recommended to restore adequate ventilation without precipitating severe withdrawal.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Now available internationally as a take-home intranasal spray (1.8 mg per device) for bystander administration in suspected opioid overdose, dispensed without prescription. The parenteral formulation (400 micrograms/mL) can be given IV, IM, or subcutaneously. It does not reverse respiratory depression caused by benzodiazepines or other non-opioid sedatives.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Narcan, Nyxoid</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Naltrexone, Nalmefene — Naltrexone is a long-acting oral opioid antagonist used for maintenance therapy in opioid and alcohol dependence. This drug is the emergency parenteral opioid antagonist with rapid onset (1–2 minutes IV) but short duration (30–90 minutes) requiring repeat dosing.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Naloxone is the specific emergency opioid antagonist, uniquely identified by its rapid IV onset (1–2 minutes), short duration requiring repeat dosing, competitive mu-receptor antagonism, take-home intranasal formulation, and its inability to affect non-opioid CNS depression.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Naloxone is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Naloxone is the specific emergency opioid antagonist, uniquely identified by its rapid IV onset (1–2 minutes), short duration requiring repeat dosing, competitive mu-receptor antagonism, take-home intranasal formulation, and its inability to affect non-opioid CNS depression.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#28 — Hydroxychloroquine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Rheumatology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication is a cornerstone of treatment for two major autoimmune diseases — used virtually universally in systemic lupus erythematosus and as one of the conventional DMARDs for rheumatoid arthritis. It has anti-inflammatory, immunomodulatory, and antithrombotic properties.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">Originally developed as an antimalarial, its immunomodulatory effects are thought to involve inhibition of toll-like receptor signalling, interference with antigen processing by raising lysosomal pH, and suppression of pro-inflammatory cytokines. It has an extremely long half-life of 40–50 days.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">In SLE, it reduces disease flares, improves survival, reduces thrombotic events, and lowers lipid levels. It is one of the few DMARDs considered safe in pregnancy and is often continued throughout pregnancy in lupus patients to prevent flare.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">The most feared long-term adverse effect is irreversible retinal toxicity (bull's eye maculopathy) related to cumulative dose. Risk increases significantly after 5 years of use or a cumulative dose exceeding 1,000 grams. Maximum daily dose should not exceed 5 mg/kg actual body weight.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Baseline and annual ophthalmological screening (including OCT and visual field testing) is recommended after 5 years of use (or sooner if additional risk factors such as renal impairment). During the COVID-19 pandemic, this drug received controversial attention as a proposed antiviral, ultimately shown to be ineffective for this purpose.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Plaquenil</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Chloroquine, Sulfasalazine — Chloroquine has similar mechanisms but higher retinal toxicity risk and narrower therapeutic index. Sulfasalazine is a DMARD without antimalarial properties or retinal toxicity. This drug is the preferred antimalarial DMARD with mandatory retinal screening.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Hydroxychloroquine is uniquely identified by its dual role as antimalarial and cornerstone DMARD for SLE, the specific retinal toxicity (bull's eye maculopathy) requiring ophthalmological screening, pregnancy safety in autoimmune disease, and its 40–50 day half-life.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Hydroxychloroquine was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Hydroxychloroquine is uniquely identified by its dual role as antimalarial and cornerstone DMARD for SLE, the specific retinal toxicity (bull's eye maculopathy) requiring ophthalmological screening, pregnancy safety in autoimmune disease, and its 40–50 day half-life.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#29 — Sotalol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Cardiovascular</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication is used for treatment and prevention of both supraventricular and ventricular tachyarrhythmias, including atrial fibrillation rhythm control and prevention of recurrent ventricular tachycardia. It is often considered when a simpler rate-control agent with antiarrhythmic properties is needed.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">This drug has a unique dual mechanism: it combines the properties of two different Vaughan-Williams antiarrhythmic classes in a single molecule. The beta-blocking component is non-selective, while the other component prolongs the action potential duration by blocking the delayed rectifier potassium current.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Its most clinically significant adverse effect is QT prolongation leading to torsades de pointes, a polymorphic ventricular tachycardia that can be fatal. This proarrhythmic risk is dose-dependent and related to the class III (potassium channel blocking) component.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">It is renally cleared and requires dose adjustment in renal impairment — accumulation in renal failure increases the risk of QT prolongation and torsades. Initiation or dose escalation should ideally occur in hospital with continuous ECG monitoring for the first 48–72 hours.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the only beta-blocker that also has class III antiarrhythmic properties. Both the d- and l-isomers block potassium channels (class III), but only the l-isomer has beta-blocking activity. Hypokalaemia and hypomagnesaemia dramatically increase the risk of torsades de pointes and must be corrected before initiation.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Sotacor, Sotahexal</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Amiodarone, Bisoprolol, Flecainide — Amiodarone has all four Vaughan-Williams class properties and contains iodine. Bisoprolol is a pure beta-1 selective blocker without antiarrhythmic class III activity. This drug is unique in combining non-selective beta-blockade with potassium channel blockade (class III) in a single molecule.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Sotalol is the only beta-blocker with intrinsic class III antiarrhythmic activity, uniquely combining non-selective beta-blockade (class II) with potassium channel blockade (class III). Its stereoisomer pharmacology, renal clearance, and specific proarrhythmic risk (torsades) make it unmistakable.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Sotalol was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Sotalol is the only beta-blocker with intrinsic class III antiarrhythmic activity, uniquely combining non-selective beta-blockade (class II) with potassium channel blockade (class III). Its stereoisomer pharmacology, renal clearance, and specific proarrhythmic risk (torsades) make it unmistakable.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#30 — Misoprostol</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Obstetrics/Gastroenterology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This synthetic prostaglandin analogue has dual therapeutic roles in two completely different medical specialties — it was originally developed for one indication but is now more widely used for another, reflecting the diverse physiological effects of prostaglandins.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is a synthetic analogue of prostaglandin E1 (PGE1). At the gastric level, it inhibits acid secretion and promotes mucosal cytoprotection through increased bicarbonate and mucus secretion and enhanced mucosal blood flow. At the uterine level, it stimulates myometrial contractions.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Originally developed to prevent NSAID-induced gastric ulceration, it is now more often used in obstetrics for cervical ripening, induction of labour, and medical management of miscarriage. It can be administered orally, sublingually, vaginally, or rectally.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">In obstetrics, it is used for medical termination of pregnancy in combination with mifepristone (a progesterone receptor antagonist). It is also used for postpartum haemorrhage management when oxytocin alone is insufficient, administered rectally at doses of 800–1000 micrograms.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This PGE1 analogue is absolutely contraindicated in pregnancy when used for its gastric indication, as it can cause uterine contractions and miscarriage. It is available in 200 microgram tablets and in fixed combination with diclofenac (as Arthrotec) for patients requiring NSAID therapy with gastroprotection.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Cytotec</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Omeprazole, Ranitidine, Sucralfate — PPIs and H2 blockers reduce acid secretion but have no uterotonic properties. Sucralfate is a mucosal protectant. This drug is unique as a prostaglandin analogue that both protects gastric mucosa and stimulates uterine contractions.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Misoprostol is the only synthetic PGE1 analogue in clinical use with dual gastric and uterine applications. Its unique combination of gastroprotection and uterotonic effects, plus the paradox of being both contraindicated in pregnancy (gastric use) and used therapeutically in pregnancy (obstetric use), makes it unmistakable.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Misoprostol was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Misoprostol is the only synthetic PGE1 analogue in clinical use with dual gastric and uterine applications. Its unique combination of gastroprotection and uterotonic effects, plus the paradox of being both contraindicated in pregnancy (gastric use) and used therapeutically in pregnancy (obstetric use), makes it unmistakable.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#31 — Apixaban</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Haematology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This oral anticoagulant has largely replaced older vitamin K antagonist therapy for non-valvular atrial fibrillation and treatment of venous thromboembolism, offering a more predictable pharmacokinetic profile without routine blood monitoring.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It directly and selectively inhibits factor Xa, a key enzyme in the coagulation cascade at the convergence of intrinsic and extrinsic pathways. Unlike older anticoagulants, it has a rapid onset of action (3–4 hours) and does not require bridging with parenteral anticoagulation.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is partially metabolised by CYP3A4 and is a substrate of P-glycoprotein, but does not significantly induce or inhibit these pathways. It has dual elimination — approximately 25% renal and 75% via hepatic and intestinal metabolism, making it suitable for moderate renal impairment.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">In the ARISTOTLE trial, it demonstrated superiority over the traditional vitamin K antagonist for AF with lower rates of major bleeding and lower all-cause mortality. Its dual elimination pathway gives it an advantage in patients with renal impairment compared to renally-cleared alternatives.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Dosed at 5 mg twice daily for AF (reduced to 2.5 mg twice daily if ≥2 of: age ≥80, weight ≤60 kg, creatinine ≥133 μmol/L). The specific reversal agent for factor Xa inhibitors is andexanet alfa, though this has limited availability internationally.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Eliquis</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Rivaroxaban</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Dabigatran, Warfarin, Enoxaparin — Dabigatran is a direct thrombin inhibitor (not factor Xa). Warfarin is a vitamin K antagonist requiring INR monitoring. Enoxaparin is injectable. This drug and rivaroxaban are both oral direct factor Xa inhibitors — rivaroxaban is acceptable as clues do not distinguish between them.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Apixaban is identified by the ARISTOTLE trial, its twice-daily dosing, dual elimination pathway, and specific dose reduction criteria. Rivaroxaban is an acceptable alternative as another oral factor Xa inhibitor, though it has once-daily dosing (ROCKET-AF trial) and more renal elimination.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Apixaban is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Apixaban is identified by the ARISTOTLE trial, its twice-daily dosing, dual elimination pathway, and specific dose reduction criteria. Rivaroxaban is an acceptable alternative as another oral factor Xa inhibitor, though it has once-daily dosing (ROCKET-AF trial) and more renal elimination.</div>
+    <div class="section-label">Unit Conversions</div><div class="unit-values"><span class="unit-value">133 μmol/L → 1.5 mg/dL</span> <span class="unit-value">60 kg → 132 lb</span></div>
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#32 — Venlafaxine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Psychiatry</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This antidepressant is commonly used for major depressive disorder, generalised anxiety disorder, social anxiety disorder, and panic disorder. It is also used off-label for neuropathic pain and migraine prophylaxis, particularly when comorbid depression is present.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It has a dose-dependent mechanism: at lower doses (75 mg), it primarily inhibits serotonin reuptake, while at higher doses (≥150 mg) it additionally inhibits noradrenaline reuptake. This dual action emerges progressively with dose escalation.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is metabolised by CYP2D6 to an active metabolite (O-desmethyl derivative), which itself is available as a separate antidepressant product. Poor CYP2D6 metabolisers may have higher parent drug levels and more noradrenergic side effects.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">It has a notably severe discontinuation syndrome compared to other antidepressants, characterised by 'brain zaps' (electric shock-like sensations), dizziness, irritability, nausea, and vivid dreams. This is attributed to its relatively short half-life (5 hours for parent compound) requiring slow tapering over weeks.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Available in extended-release capsules (XR formulation) which are preferred for once-daily dosing and reduced nausea. Dose-dependent hypertension is a characteristic adverse effect requiring blood pressure monitoring, particularly at doses ≥225 mg daily. Maximum dose is 375 mg daily.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Efexor, Efexor-XR</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Desvenlafaxine, Duloxetine — Desvenlafaxine is the active metabolite with less dose-dependent noradrenergic effect. Duloxetine is another SNRI but with stronger evidence for neuropathic pain and different side effect profile. This drug is unique in its dose-dependent dual mechanism and characteristic discontinuation syndrome.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Venlafaxine is uniquely identified among SNRIs by its dose-dependent dual mechanism (serotonin at low dose, adding noradrenaline at higher doses), the particularly severe discontinuation syndrome with 'brain zaps,' dose-dependent hypertension, and conversion to desvenlafaxine via CYP2D6.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Venlafaxine is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Venlafaxine is uniquely identified among SNRIs by its dose-dependent dual mechanism (serotonin at low dose, adding noradrenaline at higher doses), the particularly severe discontinuation syndrome with 'brain zaps,' dose-dependent hypertension, and conversion to desvenlafaxine via CYP2D6.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#33 — Insulin glargine</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Endocrine</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This injectable medication is the most commonly prescribed basal insulin internationally, used in both type 1 and type 2 diabetes to provide a steady background insulin level over 24 hours, mimicking the physiological basal insulin secretion of the pancreas.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Unlike older intermediate-acting insulins that have a pronounced peak, this analogue provides a relatively flat, peakless pharmacokinetic profile over approximately 24 hours. This reduces the risk of nocturnal hypoglycaemia compared to NPH (isophane) insulin.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is produced by recombinant DNA technology with modifications to the insulin molecule: substitution of asparagine with glycine at position A21 and addition of two arginine residues at the C-terminus of the B chain. These changes shift the isoelectric point, causing microprecipitation at physiological pH after subcutaneous injection.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">The microprecipitation mechanism provides a depot effect — the drug slowly dissolves from subcutaneous microcrystals, creating prolonged absorption. It must not be mixed with other insulins in the same syringe as this disrupts the precipitation mechanism.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Available as 100 units/mL (in a standard pen device) and as a concentrated 300 units/mL formulation (in a different pen) that provides an even longer duration of action. It is injected once daily at the same time each day, with dose titrated to fasting blood glucose targets.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Lantus, Toujeo, Semglee, Optisulin</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Insulin detemir</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Insulin aspart, Insulin lispro, Insulin neutral — Rapid-acting insulins (aspart, lispro) are prandial insulins given before meals. Neutral insulin is intermediate-acting. This drug is a long-acting basal insulin analogue with a flat 24-hour profile and no pronounced peak.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Insulin glargine is the most widely used basal insulin analogue, uniquely identified by its microprecipitation mechanism at physiological pH, 24-hour peakless profile, and availability in both 100 U/mL and 300 U/mL concentrations. Insulin detemir is an acceptable alternative as another long-acting basal analogue.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Insulin glargine is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Insulin glargine is the most widely used basal insulin analogue, uniquely identified by its microprecipitation mechanism at physiological pH, 24-hour peakless profile, and availability in both 100 U/mL and 300 U/mL concentrations. Insulin detemir is an acceptable alternative as another long-acting basal analogue.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#34 — Omeprazole</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Gastroenterology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This acid-suppressing medication belongs to one of the most prescribed drug classes globally, used for gastro-oesophageal reflux disease, peptic ulcer disease, Helicobacter pylori eradication (as part of triple therapy), and prevention of NSAID-induced gastropathy.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It irreversibly inhibits the hydrogen-potassium ATPase enzyme system (the 'proton pump') on the luminal surface of gastric parietal cells, suppressing both basal and stimulated acid secretion by up to 95%. New pump molecules must be synthesised to restore acid output.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is a prodrug activated in the acidic environment of the parietal cell canaliculus, where it forms a sulphenamide that covalently binds to cysteine residues on the proton pump. Peak acid suppression occurs after 3–5 days of daily dosing as more pumps are inhibited.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Long-term use has been associated with several concerns: hypomagnesaemia, increased fracture risk, vitamin B12 deficiency, Clostridioides difficile infection, and possible chronic kidney disease. international guidelines recommend using the lowest effective dose for the shortest duration.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This was the first proton pump inhibitor marketed and remains widely available. It is predominantly metabolised by CYP2C19, with poor metabolisers having significantly higher drug exposure. It interacts with clopidogrel by inhibiting CYP2C19-mediated activation, though the clinical significance is debated.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Losec, Acimax, Maxor, Probitor</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">Esomeprazole, Lansoprazole, Pantoprazole</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Ranitidine, Famotidine — H2 receptor antagonists reduce acid secretion by a different mechanism (histamine pathway) and are less potent acid suppressants. All proton pump inhibitors share the same mechanism of irreversible H+/K+ ATPase inhibition — the clues do not sufficiently distinguish between individual PPIs.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Omeprazole was the first PPI marketed and is the prototypical member of the class. However, all PPIs share the same irreversible proton pump inhibition mechanism and similar clinical profiles, so esomeprazole, lansoprazole, pantoprazole, and rabeprazole are all acceptable alternatives as the clues describe class-wide properties.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Omeprazole is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Omeprazole was the first PPI marketed and is the prototypical member of the class. However, all PPIs share the same irreversible proton pump inhibition mechanism and similar clinical profiles, so esomeprazole, lansoprazole, pantoprazole, and rabeprazole are all acceptable alternatives as the clues describe class-wide properties.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="easy">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#35 — Adrenaline</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-easy">easy</span>
+      <span class="badge badge-cat">Emergency Medicine</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This catecholamine is arguably the most important drug in emergency medicine, serving as the essential treatment for a life-threatening hypersensitivity reaction, as well as being central to cardiac arrest resuscitation algorithms worldwide.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It acts on alpha-1, beta-1, and beta-2 adrenoceptors, providing vasoconstriction (alpha-1, reversing hypotension and reducing mucosal oedema), increased cardiac output (beta-1), and bronchodilation (beta-2) — addressing all the pathophysiological derangements of the condition it treats.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is rapidly metabolised by catechol-O-methyltransferase (COMT) and monoamine oxidase (MAO), giving it an extremely short duration of action. This necessitates intramuscular administration into the mid-outer thigh (vastus lateralis) for rapid absorption in the emergency setting.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">For its primary emergency indication, the intramuscular dose is 0.01 mg/kg (maximum 0.5 mg in adults) of a 1:1000 (1 mg/mL) concentration. This can be repeated every 5 minutes if inadequate response. The intravenous route uses a 1:10,000 (0.1 mg/mL) dilution and is reserved for refractory or peri-arrest situations.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Available as auto-injector devices for patient self-administration in anaphylaxis. In cardiac arrest, it is given as 1 mg IV every 3–5 minutes. It is produced endogenously by the adrenal medulla and was first isolated by Jokichi Takamine in 1901.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Epinephrine, EpiPen, Anapen</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Noradrenaline, Isoprenaline — Noradrenaline primarily acts on alpha receptors with minimal beta-2 activity and is not used for anaphylaxis. Isoprenaline is a pure beta agonist. This drug is the only first-line treatment for anaphylaxis due to its combined alpha-1 (vasoconstriction) and beta-1/beta-2 (bronchodilation, cardiac output) effects.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Adrenaline (epinephrine) is the only catecholamine with combined alpha and beta activity used as first-line anaphylaxis treatment, uniquely identified by its auto-injector formulation, IM dosing at 1:1000 concentration, cardiac arrest role at 1 mg IV, and its status as an endogenous adrenal medullary hormone.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Adrenaline is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Adrenaline (epinephrine) is the only catecholamine with combined alpha and beta activity used as first-line anaphylaxis treatment, uniquely identified by its auto-injector formulation, IM dosing at 1:1000 concentration, cardiac arrest role at 1 mg IV, and its status as an endogenous adrenal medullary hormone.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="medium">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#36 — Tranexamic acid</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-medium">medium</span>
+      <span class="badge badge-cat">Haematology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This haemostatic medication is used across multiple specialties: trauma surgery (for haemorrhage control), orthopaedic surgery (to reduce perioperative blood loss), gynaecology (for heavy menstrual bleeding), and dentistry (as a mouthwash for post-extraction bleeding in anticoagulated patients).</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It works as an antifibrinolytic by competitively inhibiting the activation of plasminogen to plasmin, thereby stabilising fibrin clots and reducing pathological fibrinolysis. It does not promote new clot formation — it prevents the premature breakdown of existing clots.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is a synthetic lysine analogue that binds to the lysine-binding sites on plasminogen, preventing it from binding to fibrin. It is primarily renally excreted with a half-life of approximately 2 hours, requiring dose adjustment in renal impairment.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">The landmark CRASH-2 trial demonstrated that early administration (within 3 hours of injury) in major trauma significantly reduces death due to bleeding. It is now standard of care internationallyn major trauma protocols and is included on the WHO List of Essential Medicines.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">For major trauma, the protocol is 1 g IV over 10 minutes followed by 1 g over 8 hours, commenced within 3 hours of injury. For heavy menstrual bleeding, oral dosing is 1–1.5 g three times daily during menses. Also available as a 5% mouthwash for oral procedures.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Cyklokapron, TXA</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Aminocaproic acid — Aminocaproic acid is another antifibrinolytic but is rarely used internationally and has lower potency. This drug is the standard antifibrinolytic used in trauma, surgery, and menorrhagia throughout international hospitals.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Tranexamic acid is the standard antifibrinolytic internationallyn practice, uniquely identified by the CRASH-2 trial evidence in trauma, its lysine analogue mechanism inhibiting plasminogen activation, and its versatile use across trauma, surgery, menorrhagia, and dental procedures.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Tranexamic acid is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Tranexamic acid is the standard antifibrinolytic internationallyn practice, uniquely identified by the CRASH-2 trial evidence in trauma, its lysine analogue mechanism inhibiting plasminogen activation, and its versatile use across trauma, surgery, menorrhagia, and dental procedures.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#37 — Mirabegron</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Genitourinary</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication is prescribed for urgency, urinary frequency, and urge incontinence associated with a common lower urinary tract condition. It offers an alternative mechanism of action to the traditional drug class used for this condition, which many patients discontinue due to intolerable side effects.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It was the first drug in its class — acting on a different receptor system entirely from the established antimuscarinic agents. Because it does not block muscarinic receptors, it avoids the anticholinergic burden of dry mouth, constipation, blurred vision, and cognitive impairment.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It acts as a selective agonist at beta-3 adrenoceptors located on the detrusor smooth muscle of the bladder. Activation of these receptors causes detrusor relaxation during the storage phase, increasing bladder capacity and reducing urgency episodes.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">It is metabolised by CYP3A4 and CYP2D6 and is a moderate inhibitor of CYP2D6. Caution is required when co-prescribing with drugs that have a narrow therapeutic index and are metabolised by CYP2D6 (e.g., metoprolol, flecainide). Dose adjustment is required in renal and hepatic impairment.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">This is the only beta-3 adrenoceptor agonist available for overactive bladder internationally, dosed at 25–50 mg once daily. Hypertension is a unique adverse effect (related to beta-3 agonism) requiring blood pressure monitoring. It should not be used in patients with severe uncontrolled hypertension.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Betmiga</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Oxybutynin, Solifenacin, Darifenacin — Antimuscarinic agents (oxybutynin, solifenacin) treat the same condition but via muscarinic receptor blockade, causing anticholinergic side effects (dry mouth, constipation, cognitive impairment). This drug acts via a completely different receptor class — beta-3 adrenoceptors.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Mirabegron is the only beta-3 adrenoceptor agonist approved for overactive bladder, uniquely identified by its non-anticholinergic mechanism, the specific hypertension risk from beta-3 agonism, and its CYP2D6 inhibition.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Mirabegron is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Mirabegron is the only beta-3 adrenoceptor agonist approved for overactive bladder, uniquely identified by its non-anticholinergic mechanism, the specific hypertension risk from beta-3 agonism, and its CYP2D6 inhibition.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="mixed_profile" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#38 — Dapsone</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">mixed profile</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Dermatology/Anti-infectives</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This medication has an unusual dual identity — it is both an essential component of multidrug therapy for a chronic mycobacterial infection and the drug of choice for a blistering skin condition associated with coeliac disease.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is a sulfone antibiotic that inhibits dihydropteroate synthase (part of the folate synthesis pathway) in susceptible organisms. Its anti-inflammatory mechanism in skin disease is less well understood but involves inhibition of neutrophil myeloperoxidase and suppression of neutrophil-mediated tissue damage.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">The most important adverse effect is dose-related haemolysis, which occurs to some degree in all patients but is dramatically worse in those with glucose-6-phosphate dehydrogenase (G6PD) deficiency. G6PD testing is mandatory before initiation.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">It can also cause methaemoglobinaemia (dose-related) and a rare but serious hypersensitivity syndrome presenting with fever, rash, hepatitis, and lymphadenopathy typically 2–6 weeks after starting treatment. Regular FBC and liver function monitoring is required.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">For the mycobacterial infection, it is combined with rifampicin and clofazimine in the WHO-recommended multidrug regimen. For the blistering skin condition (dermatitis herpetiformis), it produces rapid improvement in pruritus within 24–48 hours, serving as both diagnostic confirmation and treatment.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Dapsone tablets</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Sulfasalazine, Trimethoprim — Sulfasalazine contains sulfapyridine (not a sulfone) and is used for IBD/RA. Trimethoprim acts on different folate pathway step. This drug is a sulfone antibiotic unique in its dual use for leprosy and dermatitis herpetiformis, with characteristic haemolytic toxicity in G6PD deficiency.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Dapsone is uniquely identified by its sulfone structure, dual role in leprosy (with rifampicin/clofazimine) and dermatitis herpetiformis, mandatory G6PD testing, dose-related haemolysis and methaemoglobinaemia, and the characteristic rapid response in dermatitis herpetiformis that serves as diagnostic confirmation.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Dapsone was identifiable through a combination of clinical, pharmacological, and sometimes historical knowledge. The breadth of clues — spanning therapeutic use, mechanism, and unique characteristics — required integrating knowledge across multiple domains. Dapsone is uniquely identified by its sulfone structure, dual role in leprosy (with rifampicin/clofazimine) and dermatitis herpetiformis, mandatory G6PD testing, dose-related haemolysis and methaemoglobinaemia, and the characteristic rapid response in dermatitis herpetiformis that serves as diagnostic confirmation.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#39 — Tacrolimus</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Immunology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This immunosuppressant is the backbone of modern solid organ transplant rejection prophylaxis, used in kidney, liver, heart, and lung transplantation. It is also used for severe atopic dermatitis (topical formulation) and refractory autoimmune conditions.</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">It inhibits calcineurin, a phosphatase enzyme required for T-cell activation, by forming a complex with an intracellular immunophilin. This blocks the nuclear translocation of nuclear factor of activated T-cells (NFAT) and suppresses interleukin-2 transcription.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is primarily metabolised by CYP3A4 and is a substrate of P-glycoprotein, leading to numerous drug interactions. It has a narrow therapeutic index requiring regular therapeutic drug monitoring of whole-blood trough concentrations, with targets varying by organ transplanted and time post-transplant.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Key adverse effects include nephrotoxicity (both acute and chronic), new-onset diabetes mellitus after transplantation (NODAT), neurotoxicity (tremor, headache, posterior reversible encephalopathy syndrome), hyperkalaemia, and hypomagnesaemia. Alopecia distinguishes it from its older counterpart in the same class.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Originally isolated from the soil fungus Streptomyces tsukubaensis in Tsukuba, Japan, this macrolide lactone binds to FK-binding protein 12 (FKBP-12) — distinguishing it from the other calcineurin inhibitor which binds cyclophilin. It is approximately 100 times more potent than its predecessor.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Prograf, Advagraf, Envarsus</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Ciclosporin — Ciclosporin also inhibits calcineurin but binds cyclophilin (not FKBP-12), has different side effects (gingival hyperplasia, hirsutism vs hair loss, diabetes), and different drug monitoring targets. This drug binds FKBP-12 and is the more commonly used calcineurin inhibitor in modern transplant protocols.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Tacrolimus is distinguished from ciclosporin by its FKBP-12 binding (vs cyclophilin), its association with diabetes and alopecia (vs gingival hyperplasia and hirsutism), 100-fold greater potency, and its origin from Streptomyces tsukubaensis. It is now the dominant calcineurin inhibitor in transplant medicine.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Tacrolimus is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Tacrolimus is distinguished from ciclosporin by its FKBP-12 binding (vs cyclophilin), its association with diabetes and alopecia (vs gingival hyperplasia and hirsutism), 100-fold greater potency, and its origin from Streptomyces tsukubaensis. It is now the dominant calcineurin inhibitor in transplant medicine.</div>
+    
+  </div>
+</div>
+<div class="puzzle-card" data-type="drug_id" data-diff="hard">
+  <div class="puzzle-header">
+    <span class="puzzle-title">#40 — Imiquimod</span>
+    <div class="puzzle-meta">
+      <span class="badge badge-type">drug id</span>
+      <span class="badge badge-diff-hard">hard</span>
+      <span class="badge badge-cat">Dermatology</span>
+    </div>
+  </div>
+  <div class="puzzle-body">
+    <div class="prompt-text">What drug is being described?</div>
+    <div class="clue"><span class="clue-label">Clinical Context:</span> <span class="clue-text">This topical cream is used for several skin conditions including superficial basal cell carcinomas (when surgery is not appropriate), actinic (solar) keratoses, and external genital and perianal warts (condylomata acuminata).</span></div><div class="clue"><span class="clue-label">Key Feature:</span> <span class="clue-text">Unlike other topical treatments for skin cancers that directly kill cells, this drug works by stimulating the patient's own immune system to attack abnormal cells. It has no direct antiviral or antitumour activity.</span></div><div class="clue"><span class="clue-label">Pharmacology Clue:</span> <span class="clue-text">It is an immune response modifier that activates toll-like receptor 7 (TLR7) on dendritic cells and macrophages, stimulating production of interferon-alpha, tumour necrosis factor, and other pro-inflammatory cytokines that mount a localised immune response against the target lesion.</span></div><div class="clue"><span class="clue-label">Narrowing Detail:</span> <span class="clue-text">Application causes a characteristic local inflammatory reaction — erythema, erosion, crusting, and sometimes flu-like symptoms. This reaction is expected and indicates the immune response is working. Patients should be counselled that the treated area will look worse before it looks better.</span></div><div class="clue"><span class="clue-label">Identifying Detail:</span> <span class="clue-text">Applied as a 5% cream three times per week (for genital warts) or five times per week (for superficial BCC) for several weeks. It must be washed off after 6–10 hours. It is not suitable for internal warts, invasive BCC, or immunosuppressed patients. The expected inflammatory response distinguishes it from simple topical treatments.</span></div>
+
+    <div class="section-label">Aliases</div>
+    <div class="aliases">Aldara</div>
+
+    <div class="section-label">Acceptable Alternatives</div>
+    <div class="alternatives">None</div>
+
+    <div class="section-label">Near Misses</div>
+    <div class="near-misses">Fluorouracil, Diclofenac gel, Ingenol mebutate — Fluorouracil is an antimetabolite, diclofenac gel is an NSAID for actinic keratoses, and ingenol mebutate was withdrawn. This drug is unique in its immune-modulating mechanism via toll-like receptor 7 activation for skin lesions.</div>
+
+    <div class="section-label">Explanation</div>
+    <div class="explanation">Imiquimod is the only topical TLR7 agonist in clinical use, uniquely identified by its immune-modulating mechanism (rather than direct cytotoxicity), the expected inflammatory skin reaction, and its dual indications across both viral (genital warts) and neoplastic (BCC, actinic keratoses) skin conditions.</div>
+
+    <div class="section-label">Post-Game Walkthrough</div><div class="walkthrough">Imiquimod is a fascinating drug to identify through progressive reasoning. Starting from its broad therapeutic area, the key was recognizing the specific features that set it apart from similar agents. The pharmacological mechanism narrowed the field considerably, and the distinctive clinical details — particularly the identifying characteristics mentioned in the final clues — made it unmistakable. Imiquimod is the only topical TLR7 agonist in clinical use, uniquely identified by its immune-modulating mechanism (rather than direct cytotoxicity), the expected inflammatory skin reaction, and its dual indications across both viral (genital warts) and neoplastic (BCC, actinic keratoses) skin conditions.</div>
+    
+  </div>
+</div>
+</div>
+
+<script>
+function filterPuzzles(filterType, value) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.puzzle-card').forEach(card => {
+    if (filterType === 'all') { card.style.display = 'block'; return; }
+    if (filterType === 'type') { card.style.display = card.dataset.type === value ? 'block' : 'none'; }
+    if (filterType === 'diff') { card.style.display = card.dataset.diff === value ? 'block' : 'none'; }
+  });
+}
+</script>
+</body>
+</html>

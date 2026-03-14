@@ -1,0 +1,2110 @@
+{
+  "Antihistamines": [
+    "Less Sedating Antihistamines",
+    "Sedating Antihistamines"
+  ],
+  "Less Sedating Antihistamines": [
+    "Bilastine",
+    "Cetirizine",
+    "Desloratadine",
+    "Fexofenadine",
+    "Loratadine"
+  ],
+  "Sedating Antihistamines": [
+    "Cyclizine",
+    "Cyproheptadine",
+    "Dexchlorpheniramine",
+    "Diphenhydramine",
+    "Doxylamine",
+    "Promethazine"
+  ],
+  "Drugs Local Anaesthesia": [
+    "Local Anaesthesia",
+    "Local Anaesthetics"
+  ],
+  "Local Anaesthetics": [
+    "Bupivacaine",
+    "Cocaine",
+    "Lidocaine Adrenaline",
+    "Lidocaine Anaesthesia",
+    "Lidocaine Prilocaine",
+    "Prilocaine",
+    "Ropivacaine",
+    "Tetracaine Skin"
+  ],
+  "General Anaesthetics": [
+    "General Anaesthesia",
+    "Inhaled Anaesthetics",
+    "Iv General Anaesthetics"
+  ],
+  "Inhaled Anaesthetics": [
+    "Methoxyflurane",
+    "Nitrous Oxide"
+  ],
+  "Iv General Anaesthetics": [
+    "Ketamine",
+    "Midazolam Anaesthesia",
+    "Propofol",
+    "Thiopental"
+  ],
+  "Neuromuscular Blockers": [
+    "Depolarising Neuromuscular Blockers",
+    "Non Depolarising Neuromuscular Blockers"
+  ],
+  "Non Depolarising Neuromuscular Blockers": [
+    "Atracurium",
+    "Cisatracurium",
+    "Mivacurium",
+    "Rocuronium",
+    "Vecuronium"
+  ],
+  "Other Agents Anaesthesia": [
+    "Alpha2 Imidazoline Agonists",
+    "Anticholinergics Anaesthesia",
+    "Drugs Reversing Neuromuscular Blockade",
+    "Opioids Anaesthesia"
+  ],
+  "Alpha2 Imidazoline Agonists": [
+    "Clonidine Anaesthesia",
+    "Dexmedetomidine"
+  ],
+  "Anticholinergics Anaesthesia": [
+    "Atropine",
+    "Glycopyrronium Anaesthesia"
+  ],
+  "Opioids Anaesthesia": [
+    "Alfentanil",
+    "Remifentanil"
+  ],
+  "Drugs Pain Relief": [
+    "Acute Pain",
+    "Back Pain",
+    "Chronic Pain",
+    "Non Opioid Analgesics",
+    "Opioid Analgesics",
+    "Pain"
+  ],
+  "Non Opioid Analgesics": [
+    "Aspirin Analgesic",
+    "Paracetamol",
+    "Paracetamol Ibuprofen"
+  ],
+  "Opioid Analgesics": [
+    "Aspirin Codeine",
+    "Buprenorphine",
+    "Codeine",
+    "Fentanyl",
+    "Hydromorphone",
+    "Ibuprofen Codeine",
+    "Methadone",
+    "Morphine",
+    "Oxycodone",
+    "Oxycodone Naloxone",
+    "Paracetamol Codeine",
+    "Pethidine",
+    "Tapentadol",
+    "Tramadol",
+    "Tramadol Paracetamol"
+  ],
+  "Anthelmintics": [
+    "Benzimidazoles",
+    "Other Anthelmintics",
+    "Worm Infections"
+  ],
+  "Benzimidazoles": [
+    "Albendazole",
+    "Mebendazole"
+  ],
+  "Other Anthelmintics": [
+    "Ivermectin",
+    "Praziquantel",
+    "Pyrantel"
+  ],
+  "Antibacterials": [
+    "Aminoglycosides",
+    "Antimycobacterials",
+    "Carbapenems",
+    "Cephalosporins",
+    "Glycopeptides",
+    "Lincosamides",
+    "Macrolides",
+    "Other Antibacterials",
+    "Penicillins",
+    "Quinolones",
+    "Rifamycins",
+    "Tetracyclines"
+  ],
+  "Aminoglycosides": [
+    "Amikacin",
+    "Gentamicin",
+    "Tobramycin"
+  ],
+  "Antimycobacterials": [
+    "Capreomycin",
+    "Clofazimine",
+    "Cycloserine",
+    "Dapsone",
+    "Ethambutol",
+    "Isoniazid",
+    "Pyrazinamide",
+    "Streptomycin"
+  ],
+  "Carbapenems": [
+    "Ertapenem",
+    "Imipenem",
+    "Meropenem"
+  ],
+  "Cephalosporins": [
+    "Cefaclor",
+    "Cefalexin",
+    "Cefazolin",
+    "Cefepime",
+    "Cefotaxime",
+    "Cefoxitin",
+    "Ceftaroline",
+    "Ceftazidime",
+    "Ceftazidime Avibactam",
+    "Ceftolozane Tazobactam",
+    "Ceftriaxone",
+    "Cefuroxime"
+  ],
+  "Glycopeptides": [
+    "Teicoplanin",
+    "Vancomycin"
+  ],
+  "Lincosamides": [
+    "Clindamycin",
+    "Lincomycin"
+  ],
+  "Macrolides": [
+    "Azithromycin",
+    "Clarithromycin",
+    "Erythromycin",
+    "Roxithromycin"
+  ],
+  "Other Antibacterials": [
+    "Aztreonam",
+    "Colistin",
+    "Daptomycin",
+    "Fidaxomicin",
+    "Fosfomycin",
+    "Linezolid",
+    "Methenamine Hippurate",
+    "Metronidazole",
+    "Nitrofurantoin",
+    "Sodium Fusidate",
+    "Sulfadiazine",
+    "Tigecycline",
+    "Trimethoprim",
+    "Trimethoprim Sulfamethoxazole"
+  ],
+  "Penicillins": [
+    "Amoxicillin",
+    "Amoxicillin Clavulanic Acid",
+    "Ampicillin",
+    "Benzathine Benzylpenicillin",
+    "Benzylpenicillin",
+    "Dicloxacillin",
+    "Flucloxacillin",
+    "Phenoxymethylpenicillin",
+    "Piperacillin Tazobactam"
+  ],
+  "Quinolones": [
+    "Ciprofloxacin",
+    "Moxifloxacin",
+    "Norfloxacin"
+  ],
+  "Rifamycins": [
+    "Rifabutin",
+    "Rifampicin",
+    "Rifaximin"
+  ],
+  "Tetracyclines": [
+    "Doxycycline",
+    "Minocycline",
+    "Tetracycline"
+  ],
+  "Antifungals": [
+    "Azoles",
+    "Echinocandins",
+    "Other Antifungals"
+  ],
+  "Azoles": [
+    "Fluconazole",
+    "Isavuconazole",
+    "Itraconazole",
+    "Ketoconazole",
+    "Miconazole",
+    "Posaconazole",
+    "Voriconazole"
+  ],
+  "Echinocandins": [
+    "Anidulafungin",
+    "Caspofungin",
+    "Micafungin"
+  ],
+  "Other Antifungals": [
+    "Amphotericin B",
+    "Flucytosine",
+    "Griseofulvin",
+    "Nystatin",
+    "Pentamidine",
+    "Terbinafine"
+  ],
+  "Antiprotozoals": [
+    "Antimalarials",
+    "Other Antiprotozoals"
+  ],
+  "Antimalarials": [
+    "Artemether Lumefantrine",
+    "Artesunate",
+    "Atovaquone Proguanil",
+    "Chloroquine",
+    "Mefloquine",
+    "Primaquine",
+    "Quinine",
+    "Tafenoquine"
+  ],
+  "Other Antiprotozoals": [
+    "Atovaquone",
+    "Paromomycin",
+    "Pyrimethamine"
+  ],
+  "Antiretrovirals": [
+    "Hiv Infection",
+    "Hiv Protease Inhibitors",
+    "Integrase Inhibitors",
+    "Non Nucleoside Reverse Transcriptase Inhibitors",
+    "Nucleoside Reverse Transcriptase Inhibitors",
+    "Other Antiretrovirals"
+  ],
+  "Hiv Protease Inhibitors": [
+    "Atazanavir",
+    "Atazanavir Cobicistat",
+    "Darunavir",
+    "Darunavir Cobicistat",
+    "Darunavir Cobicistat Emtricitabine Tenofovir Alafenamide",
+    "Lopinavir Ritonavir",
+    "Ritonavir"
+  ],
+  "Integrase Inhibitors": [
+    "Bictegravir Emtricitabine Tenofovir Alafenamide",
+    "Cabotegravir",
+    "Cabotegravir Rilpivirine",
+    "Dolutegravir",
+    "Dolutegravir Abacavir Lamivudine",
+    "Dolutegravir Lamivudine",
+    "Dolutegravir Rilpivirine",
+    "Raltegravir"
+  ],
+  "Non Nucleoside Reverse Transcriptase Inhibitors": [
+    "Etravirine",
+    "Nevirapine",
+    "Rilpivirine"
+  ],
+  "Nucleoside Reverse Transcriptase Inhibitors": [
+    "Abacavir",
+    "Abacavir Lamivudine",
+    "Emtricitabine Rilpivirine Tenofovir Alafenamide",
+    "Emtricitabine Tenofovir Alafenamide",
+    "Lamivudine",
+    "Lamivudine Zidovudine",
+    "Zidovudine"
+  ],
+  "Other Antiretrovirals": [
+    "Fostemsavir",
+    "Maraviroc",
+    "Tenofovir",
+    "Tenofovir Alafenamide Emtricitabine Elvitegravir Cobicistat",
+    "Tenofovir Disoproxil Emtricitabine",
+    "Tenofovir Disoproxil Emtricitabine Efavirenz"
+  ],
+  "Antivirals Hepatitis B": [
+    "Adefovir",
+    "Entecavir",
+    "Hepatitis B",
+    "Peginterferon Alfa2a"
+  ],
+  "Antivirals Hepatitis C": [
+    "Glecaprevir Pibrentasvir",
+    "Hepatitis C",
+    "Sofosbuvir Velpatasvir",
+    "Sofosbuvir Velpatasvir Voxilaprevir"
+  ],
+  "Antivirals": [
+    "Guanine Analogues",
+    "Neuraminidase Inhibitors",
+    "Other Antivirals"
+  ],
+  "Guanine Analogues": [
+    "Aciclovir",
+    "Famciclovir",
+    "Ganciclovir",
+    "Valaciclovir",
+    "Valganciclovir"
+  ],
+  "Neuraminidase Inhibitors": [
+    "Oseltamivir",
+    "Peramivir",
+    "Zanamivir"
+  ],
+  "Other Antivirals": [
+    "Cidofovir",
+    "Foscarnet",
+    "Maribavir",
+    "Molnupiravir",
+    "Nirmatrelvir Ritonavir",
+    "Nirsevimab",
+    "Palivizumab",
+    "Remdesivir"
+  ],
+  "Tables": [
+    "Bacterial Meningitis Table",
+    "Community Acquired S Aureus Table",
+    "Endocarditis Prophylaxis Table",
+    "Fungal Susceptibility Table",
+    "Gastrointestinal Infections Table",
+    "Genital Infections Table",
+    "Melioidosis Table",
+    "Respiratory Infections Table",
+    "Skin Soft Tissue Infections Table",
+    "Susceptibility Aminoglycosides Carbapenems Glycopeptides Lincosamides Table",
+    "Susceptibility Cephalosporins Table",
+    "Susceptibility Macrolides Quinolones Rifamycins Table",
+    "Susceptibility Penicillins Table",
+    "Susceptibility Tetracyclines Other Table",
+    "Urinary Infections Table",
+    "Haemopoietic Stem Cell Transplantation Table",
+    "Oral Anticoagulants Table",
+    "Inhalers Table",
+    "Concentrated Electrolytes Table",
+    "Infusion Solutions Table",
+    "Oral Electrolytes Table",
+    "Parenteral Anticoagulants Table"
+  ],
+  "Alkylating Agents": [
+    "Bendamustine",
+    "Busulfan",
+    "Carmustine",
+    "Chlorambucil",
+    "Cyclophosphamide",
+    "Dacarbazine",
+    "Ifosfamide",
+    "Lomustine",
+    "Melphalan",
+    "Procarbazine",
+    "Temozolomide",
+    "Thiotepa"
+  ],
+  "Anthracyclines": [
+    "Daunorubicin",
+    "Daunorubicin Cytarabine",
+    "Doxorubicin",
+    "Epirubicin",
+    "Idarubicin",
+    "Mitozantrone"
+  ],
+  "Antibody Drug Conjugates": [
+    "Brentuximab Vedotin",
+    "Enfortumab Vedotin",
+    "Gemtuzumab Ozogamicin",
+    "Inotuzumab Ozogamicin",
+    "Sacituzumab Govitecan",
+    "Trastuzumab Deruxtecan",
+    "Trastuzumab Emtansine"
+  ],
+  "Anticancer Antibodies": [
+    "Alemtuzumab Oncology",
+    "Amivantamab",
+    "Atezolizumab",
+    "Avelumab",
+    "Bevacizumab",
+    "Blinatumomab",
+    "Cemiplimab",
+    "Cetuximab",
+    "Daratumumab",
+    "Dostarlimab",
+    "Durvalumab",
+    "Elotuzumab",
+    "Epcoritamab",
+    "Ipilimumab",
+    "Nivolumab",
+    "Nivolumab Relatlimab",
+    "Obinutuzumab",
+    "Panitumumab",
+    "Pembrolizumab",
+    "Pertuzumab",
+    "Rituximab",
+    "Siltuximab",
+    "Tislelizumab",
+    "Trastuzumab"
+  ],
+  "Antimetabolites": [
+    "Azacitidine",
+    "Capecitabine",
+    "Cladribine",
+    "Clofarabine",
+    "Cytarabine",
+    "Decitabine Cedazuridine",
+    "Fludarabine",
+    "Fluorouracil",
+    "Gemcitabine",
+    "Hydroxycarbamide",
+    "Mercaptopurine",
+    "Methotrexate Oncology",
+    "Pemetrexed",
+    "Raltitrexed",
+    "Tioguanine",
+    "Trifluridine Tipiracil"
+  ],
+  "Drugs Used With Anticancer Drugs": [
+    "G Csfs",
+    "Other Drugs Used With Anticancer Drugs"
+  ],
+  "G Csfs": [
+    "Filgrastim",
+    "Lipegfilgrastim",
+    "Pegfilgrastim"
+  ],
+  "Other Drugs Used With Anticancer Drugs": [
+    "Calcium Folinate",
+    "Mesna",
+    "Palifermin",
+    "Plerixafor",
+    "Rasburicase"
+  ],
+  "Hormonal Anticancer Drugs": [
+    "Anti Androgens",
+    "Aromatase Inhibitors",
+    "Gonadotrophin Releasing Hormone Agonists Oncology",
+    "Other Hormonal Anticancer Drugs",
+    "Selective Estrogen Receptor Modulators"
+  ],
+  "Anti Androgens": [
+    "Apalutamide",
+    "Bicalutamide",
+    "Cyproterone",
+    "Darolutamide",
+    "Enzalutamide",
+    "Flutamide"
+  ],
+  "Aromatase Inhibitors": [
+    "Anastrozole",
+    "Exemestane",
+    "Letrozole"
+  ],
+  "Gonadotrophin Releasing Hormone Agonists Oncology": [
+    "Goserelin Oncology",
+    "Leuprorelin Oncology",
+    "Triptorelin Oncology"
+  ],
+  "Other Hormonal Anticancer Drugs": [
+    "Abiraterone",
+    "Abiraterone Methylprednisolone",
+    "Degarelix",
+    "Fulvestrant"
+  ],
+  "Selective Estrogen Receptor Modulators": [
+    "Tamoxifen",
+    "Toremifene"
+  ],
+  "Kinase Inhibitors": [
+    "Abemaciclib",
+    "Acalabrutinib",
+    "Afatinib",
+    "Alectinib",
+    "Asciminib",
+    "Axitinib",
+    "Binimetinib",
+    "Brigatinib",
+    "Cabozantinib",
+    "Ceritinib",
+    "Cobimetinib",
+    "Crizotinib",
+    "Dabrafenib",
+    "Dasatinib",
+    "Encorafenib",
+    "Entrectinib",
+    "Erlotinib",
+    "Gefitinib",
+    "Gilteritinib",
+    "Ibrutinib",
+    "Idelalisib",
+    "Imatinib",
+    "Lapatinib",
+    "Larotrectinib",
+    "Lenvatinib",
+    "Lorlatinib",
+    "Midostaurin",
+    "Nilotinib",
+    "Nintedanib",
+    "Osimertinib",
+    "Palbociclib",
+    "Pazopanib",
+    "Ponatinib",
+    "Regorafenib",
+    "Ribociclib",
+    "Ripretinib",
+    "Ruxolitinib",
+    "Selpercatinib",
+    "Selumetinib",
+    "Sorafenib",
+    "Sunitinib",
+    "Tepotinib",
+    "Trametinib",
+    "Vemurafenib",
+    "Zanubrutinib"
+  ],
+  "Other Anticancer Drugs": [
+    "Anagrelide",
+    "Arsenic Trioxide",
+    "Bcg",
+    "Bleomycin",
+    "Dactinomycin",
+    "Eribulin",
+    "Etoposide",
+    "Everolimus Oncology",
+    "Mitomycin",
+    "Niraparib",
+    "Olaparib",
+    "Pegaspargase",
+    "Romidepsin",
+    "Selinexor",
+    "Sonidegib",
+    "Talazoparib",
+    "Tebentafusp",
+    "Trabectedin",
+    "Tretinoin Oncology",
+    "Venetoclax",
+    "Vismodegib",
+    "Vorinostat"
+  ],
+  "Platinum Compounds": [
+    "Carboplatin",
+    "Cisplatin",
+    "Oxaliplatin"
+  ],
+  "Proteasome Inhibitors": [
+    "Bortezomib",
+    "Carfilzomib"
+  ],
+  "Taxanes": [
+    "Cabazitaxel",
+    "Docetaxel",
+    "Paclitaxel"
+  ],
+  "Thalidomide Analogues": [
+    "Lenalidomide",
+    "Pomalidomide",
+    "Thalidomide"
+  ],
+  "Topoisomerase I Inhibitors": [
+    "Irinotecan",
+    "Topotecan"
+  ],
+  "Vinca Alkaloids": [
+    "Vinblastine",
+    "Vincristine",
+    "Vinorelbine"
+  ],
+  "Antidotes": [
+    "Atropine Antidote",
+    "Glucagon Antidote",
+    "Naloxone",
+    "Acetylcysteine",
+    "Calcium Gluconate",
+    "Digoxin Specific Antibody",
+    "Ethanol",
+    "Flumazenil",
+    "Fullers Earth",
+    "Pralidoxime",
+    "Pyridoxine",
+    "Thiamine"
+  ],
+  "Anticoagulants": [
+    "Acute Coronary Syndromes",
+    "Direct Thrombin Inhibitors",
+    "Factor Xa Inhibitors",
+    "Heparins",
+    "Other Anticoagulants",
+    "Prevention Venous Thromboembolism",
+    "Stroke Tia",
+    "Treatment Venous Thromboembolism"
+  ],
+  "Other Antiplatelet Drugs": [
+    "Aspirin Antiplatelet",
+    "Dipyridamole"
+  ],
+  "Drugs Anaemias": [
+    "Erythropoietin Agonists",
+    "Other Drugs Anaemias"
+  ],
+  "Other Drugs Anaemias": [
+    "Folic Acid",
+    "Iron",
+    "Iron Deficiency Anaemia",
+    "Vitamin B12"
+  ],
+  "Drugs Electrolyte Imbalance": [
+    "Phosphate Binders",
+    "Drugs Potassium Imbalance",
+    "Other Drugs Electrolyte Imbalance"
+  ],
+  "Other Drugs Affecting Haemostasis": [
+    "Tranexamic Acid",
+    "Vitamin K"
+  ],
+  "Antihypertensives": [
+    "Ace Inhibitors",
+    "Beta Blockers",
+    "Calcium Channel Blockers",
+    "Hypertension",
+    "Other Antihypertensives",
+    "Sartans",
+    "Thiazide Related Diuretics"
+  ],
+  "Ace Inhibitors": [
+    "Captopril",
+    "Enalapril",
+    "Enalapril Hydrochlorothiazide",
+    "Lisinopril",
+    "Perindopril",
+    "Perindopril Amlodipine",
+    "Perindopril Indapamide",
+    "Ramipril",
+    "Ramipril Felodipine",
+    "Trandolapril"
+  ],
+  "Beta Blockers": [
+    "Atenolol",
+    "Bisoprolol",
+    "Carvedilol",
+    "Labetalol",
+    "Metoprolol",
+    "Nebivolol",
+    "Propranolol"
+  ],
+  "Calcium Channel Blockers": [
+    "Amlodipine",
+    "Amlodipine Atorvastatin",
+    "Amlodipine Valsartan",
+    "Amlodipine Valsartan Hydrochlorothiazide",
+    "Clevidipine",
+    "Diltiazem",
+    "Felodipine",
+    "Lercanidipine",
+    "Lercanidipine Enalapril",
+    "Nifedipine",
+    "Nimodipine",
+    "Trandolapril Verapamil",
+    "Verapamil"
+  ],
+  "Other Antihypertensives": [
+    "Clonidine Cardiovascular",
+    "Diazoxide",
+    "Hydralazine",
+    "Methyldopa",
+    "Minoxidil",
+    "Moxonidine",
+    "Prazosin",
+    "Sodium Nitroprusside"
+  ],
+  "Sartans": [
+    "Candesartan",
+    "Candesartan Hydrochlorothiazide",
+    "Irbesartan",
+    "Irbesartan Hydrochlorothiazide",
+    "Losartan",
+    "Olmesartan",
+    "Olmesartan Amlodipine",
+    "Olmesartan Amlodipine Hydrochlorothiazide",
+    "Olmesartan Hydrochlorothiazide",
+    "Telmisartan",
+    "Telmisartan Amlodipine",
+    "Telmisartan Hydrochlorothiazide",
+    "Valsartan",
+    "Valsartan Hydrochlorothiazide"
+  ],
+  "Thiazide Related Diuretics": [
+    "Amiloride Hydrochlorothiazide",
+    "Chlortalidone",
+    "Hydrochlorothiazide",
+    "Indapamide"
+  ],
+  "Drugs Angina": [
+    "Angina",
+    "Nitrates",
+    "Other Antianginal Drugs"
+  ],
+  "Nitrates": [
+    "Glyceryl Trinitrate",
+    "Isosorbide Dinitrate",
+    "Isosorbide Mononitrate"
+  ],
+  "Other Antianginal Drugs": [
+    "Ivabradine",
+    "Nicorandil",
+    "Perhexiline"
+  ],
+  "Drugs Arrhythmias": [
+    "Antiarrhythmics",
+    "Arrhythmias",
+    "Bradyarrhythmias",
+    "Tachyarrhythmias"
+  ],
+  "Antiarrhythmics": [
+    "Adenosine",
+    "Amiodarone",
+    "Digoxin",
+    "Disopyramide",
+    "Esmolol",
+    "Flecainide",
+    "Isoprenaline",
+    "Lidocaine Cardiovascular",
+    "Sotalol"
+  ],
+  "Drugs Dyslipidaemia": [
+    "Dyslipidaemia",
+    "Fibrates",
+    "Other Drugs Dyslipidaemia",
+    "Statins"
+  ],
+  "Fibrates": [
+    "Fenofibrate",
+    "Gemfibrozil"
+  ],
+  "Other Drugs Dyslipidaemia": [
+    "Colestyramine",
+    "Evolocumab",
+    "Ezetimibe",
+    "Ezetimibe Atorvastatin",
+    "Ezetimibe Simvastatin",
+    "Icosapent Ethyl",
+    "Inclisiran",
+    "Nicotinic Acid"
+  ],
+  "Statins": [
+    "Atorvastatin",
+    "Fluvastatin",
+    "Pravastatin",
+    "Rosuvastatin",
+    "Simvastatin"
+  ],
+  "Drugs Heart Failure": [
+    "Heart Failure",
+    "Loop Diuretics",
+    "Mineralocorticoid Receptor Antagonists",
+    "Other Drugs Heart Failure",
+    "Sympathomimetics Cardiovascular"
+  ],
+  "Loop Diuretics": [
+    "Bumetanide",
+    "Furosemide"
+  ],
+  "Mineralocorticoid Receptor Antagonists": [
+    "Eplerenone",
+    "Finerenone",
+    "Spironolactone"
+  ],
+  "Other Drugs Heart Failure": [
+    "Milrinone",
+    "Sacubitril Valsartan",
+    "Vericiguat"
+  ],
+  "Sympathomimetics Cardiovascular": [
+    "Adrenaline Cardiovascular",
+    "Dobutamine",
+    "Dopamine",
+    "Metaraminol",
+    "Noradrenaline"
+  ],
+  "Drugs Orthostatic Hypotension": [
+    "Midodrine",
+    "Orthostatic Hypotension"
+  ],
+  "Drugs Other Cardiovascular Disorders": [
+    "Mavacamten",
+    "Pentoxifylline",
+    "Tafamidis"
+  ],
+  "Drugs Pulmonary Hypertension": [
+    "Endothelin Antagonists",
+    "Other Drugs Pulmonary Hypertension",
+    "Phosphodiesterase 5 Inhibitors Cardiovascular",
+    "Prostacyclins",
+    "Pulmonary Arterial Hypertension"
+  ],
+  "Endothelin Antagonists": [
+    "Ambrisentan",
+    "Bosentan",
+    "Macitentan"
+  ],
+  "Phosphodiesterase 5 Inhibitors Cardiovascular": [
+    "Sildenafil Cardiovascular",
+    "Tadalafil Cardiovascular"
+  ],
+  "Prostacyclins": [
+    "Epoprostenol",
+    "Iloprost",
+    "Selexipag"
+  ],
+  "Drugs Acne": [
+    "Acne",
+    "Other Drugs Acne",
+    "Retinoids Oral",
+    "Retinoids Skin"
+  ],
+  "Other Drugs Acne": [
+    "Azelaic Acid",
+    "Benzoyl Peroxide",
+    "Clascoterone",
+    "Clindamycin Benzoyl Peroxide"
+  ],
+  "Retinoids Oral": [
+    "Acitretin",
+    "Isotretinoin"
+  ],
+  "Retinoids Skin": [
+    "Adapalene",
+    "Adapalene Benzoyl Peroxide",
+    "Clindamycin Tretinoin",
+    "Tretinoin Skin",
+    "Trifarotene"
+  ],
+  "Drugs Actinic Keratoses": [
+    "Aminolevulinic Acid",
+    "Diclofenac Skin",
+    "Fluorouracil Salicylic Acid",
+    "Fluorouracil Skin",
+    "Methyl Aminolevulinate"
+  ],
+  "Drugs Alopecia": [
+    "Androgenetic Alopecia",
+    "Finasteride Dermatology",
+    "Minoxidil Skin"
+  ],
+  "Drugs Eczema": [
+    "Corticosteroids Skin",
+    "Eczema",
+    "Other Drugs Eczema",
+    "Tars"
+  ],
+  "Corticosteroids Skin": [
+    "Betamethasone Skin",
+    "Clobetasol",
+    "Clobetasone",
+    "Desonide",
+    "Hydrocortisone Skin",
+    "Methylprednisolone Skin",
+    "Mometasone Skin",
+    "Triamcinolone Skin"
+  ],
+  "Other Drugs Eczema": [
+    "Crisaborole",
+    "Moisturisers",
+    "Pimecrolimus",
+    "Tacrolimus Skin"
+  ],
+  "Tars": [
+    "Coal Tar",
+    "Ichthammol",
+    "Wood Tars"
+  ],
+  "Drugs Psoriasis": [
+    "Immunosuppressants Dermatology",
+    "Other Drugs Psoriasis",
+    "Psoriasis"
+  ],
+  "Immunosuppressants Dermatology": [
+    "Apremilast",
+    "Bimekizumab",
+    "Deucravacitinib",
+    "Guselkumab",
+    "Ixekizumab",
+    "Risankizumab",
+    "Secukinumab",
+    "Spesolimab",
+    "Tildrakizumab",
+    "Ustekinumab"
+  ],
+  "Other Drugs Psoriasis": [
+    "Calcipotriol Betamethasone",
+    "Dithranol",
+    "Methoxsalen",
+    "Salicylic Acid"
+  ],
+  "Drugs Rosacea": [
+    "Brimonidine Skin",
+    "Ivermectin Skin",
+    "Metronidazole Skin",
+    "Rosacea"
+  ],
+  "Drugs Skin Infections": [
+    "Antibacterials Skin",
+    "Antivirals Skin",
+    "Azoles Skin",
+    "Cutaneous Candidiasis",
+    "Nail Infections",
+    "Other Antifungals Skin",
+    "Tinea"
+  ],
+  "Antibacterials Skin": [
+    "Clindamycin Skin",
+    "Mupirocin Skin",
+    "Silver Sulfadiazine",
+    "Sodium Fusidate Skin"
+  ],
+  "Antivirals Skin": [
+    "Aciclovir Skin",
+    "Idoxuridine Lidocaine"
+  ],
+  "Azoles Skin": [
+    "Bifonazole",
+    "Bifonazole Urea",
+    "Clotrimazole Skin",
+    "Econazole",
+    "Hydrocortisone Clotrimazole",
+    "Hydrocortisone Miconazole",
+    "Ketoconazole Skin",
+    "Miconazole Skin"
+  ],
+  "Other Antifungals Skin": [
+    "Amorolfine",
+    "Ciclopirox",
+    "Terbinafine Skin",
+    "Tolnaftate"
+  ],
+  "Drugs Warts": [
+    "Imiquimod",
+    "Podophyllotoxin",
+    "Podophyllum Resin",
+    "Warts"
+  ],
+  "Scabicides Pediculicides": [
+    "Benzyl Alcohol",
+    "Benzyl Benzoate",
+    "Crotamiton",
+    "Dimeticone",
+    "Head Lice",
+    "Isopropyl Myristate",
+    "Permethrin",
+    "Pubic Lice",
+    "Pyrethrins Piperonyl Butoxide",
+    "Scabies"
+  ],
+  "Drugs Ear Infections": [
+    "Antibacterials Ear",
+    "Antiseptics",
+    "Corticosteroids Anti Infectives",
+    "Otitis Externa",
+    "Otitis Media"
+  ],
+  "Antibacterials Ear": [
+    "Ciprofloxacin Ear",
+    "Framycetin Ear"
+  ],
+  "Antiseptics": [
+    "Acetic Acid",
+    "Ethanol Ear"
+  ],
+  "Corticosteroids Anti Infectives": [
+    "Dexamethasone Framycetin Gramicidin",
+    "Flumetasone Clioquinol",
+    "Hydrocortisone Ciprofloxacin",
+    "Triamcinolone Neomycin Nystatin Gramicidin"
+  ],
+  "Drugs Ear Wax": [
+    "Cerumenolytics",
+    "Ear Wax"
+  ],
+  "Cerumenolytics": [
+    "Carbamide Peroxide",
+    "Docusate Ear",
+    "Sodium Bicarbonate Ear"
+  ],
+  "Drugs Rhinitis Sinusitis": [
+    "Antihistamines Intranasal",
+    "Corticosteroids Intranasal",
+    "Intranasal Decongestants",
+    "Oral Decongestants",
+    "Rhinitis",
+    "Rhinosinusitis"
+  ],
+  "Antihistamines Intranasal": [
+    "Azelastine Fluticasone",
+    "Azelastine Intranasal",
+    "Levocabastine Intranasal",
+    "Olopatadine Mometasone"
+  ],
+  "Corticosteroids Intranasal": [
+    "Beclometasone Intranasal",
+    "Budesonide Intranasal",
+    "Ciclesonide Intranasal",
+    "Fluticasone Intranasal",
+    "Mometasone Intranasal"
+  ],
+  "Intranasal Decongestants": [
+    "Ephedrine Intranasal",
+    "Oxymetazoline",
+    "Phenylephrine Intranasal",
+    "Tramazoline",
+    "Xylometazoline"
+  ],
+  "Oral Decongestants": [
+    "Phenylephrine",
+    "Pseudoephedrine"
+  ],
+  "Drugs Vestibular Disorders": [
+    "Betahistine",
+    "Cinnarizine Dimenhydrinate",
+    "Tinnitus",
+    "Vertigo"
+  ],
+  "Corticosteroids Endocrine": [
+    "Cortisone",
+    "Fludrocortisone",
+    "Hydrocortisone Endocrine"
+  ],
+  "Drugs Affecting Bone": [
+    "Bisphosphonates",
+    "Osteoporosis",
+    "Other Drugs Affecting Bone",
+    "Vitamin D"
+  ],
+  "Bisphosphonates": [
+    "Alendronate",
+    "Ibandronic Acid",
+    "Pamidronate",
+    "Risedronate",
+    "Zoledronic Acid"
+  ],
+  "Other Drugs Affecting Bone": [
+    "Calcitonin Salmon",
+    "Calcium",
+    "Cinacalcet",
+    "Denosumab",
+    "Raloxifene",
+    "Romosozumab",
+    "Teriparatide"
+  ],
+  "Vitamin D": [
+    "Calcitriol",
+    "Colecalciferol"
+  ],
+  "Drugs Diabetes": [
+    "Dipeptidyl Peptidase 4 Inhibitors",
+    "Drugs Hypoglycaemia",
+    "Glucagon Like Peptide 1 Analogues",
+    "Other Drugs Diabetes",
+    "Sodium Glucose Co Transporter 2 Inhibitors",
+    "Sulfonylureas",
+    "Type 2 Diabetes"
+  ],
+  "Dipeptidyl Peptidase 4 Inhibitors": [
+    "Alogliptin",
+    "Alogliptin Metformin",
+    "Linagliptin",
+    "Linagliptin Metformin",
+    "Saxagliptin",
+    "Saxagliptin Dapagliflozin",
+    "Saxagliptin Metformin",
+    "Sitagliptin",
+    "Sitagliptin Metformin",
+    "Vildagliptin",
+    "Vildagliptin Metformin"
+  ],
+  "Drugs Hypoglycaemia": [
+    "Glucagon Endocrine",
+    "Hypoglycaemia"
+  ],
+  "Glucagon Like Peptide 1 Analogues": [
+    "Dulaglutide",
+    "Liraglutide",
+    "Semaglutide"
+  ],
+  "Other Drugs Diabetes": [
+    "Acarbose",
+    "Insulins",
+    "Metformin",
+    "Metformin Glibenclamide",
+    "Pioglitazone",
+    "Tirzepatide"
+  ],
+  "Sodium Glucose Co Transporter 2 Inhibitors": [
+    "Dapagliflozin",
+    "Dapagliflozin Metformin",
+    "Dapagliflozin Sitagliptin",
+    "Empagliflozin",
+    "Empagliflozin Linagliptin",
+    "Empagliflozin Metformin"
+  ],
+  "Sulfonylureas": [
+    "Glibenclamide",
+    "Gliclazide",
+    "Glimepiride",
+    "Glipizide"
+  ],
+  "Drugs Infertility": [
+    "Gonadotrophin Releasing Hormone Agonists Endocrine",
+    "Infertility",
+    "Other Drugs Infertility"
+  ],
+  "Gonadotrophin Releasing Hormone Agonists Endocrine": [
+    "Goserelin Endocrine",
+    "Leuprorelin Endocrine",
+    "Nafarelin",
+    "Triptorelin Endocrine"
+  ],
+  "Drugs Other Endocrine Disorders": [
+    "Androgens",
+    "Antidiuretic Hormone Agonists Antagonists",
+    "Growth Hormone",
+    "Nonselective Alpha Blockers",
+    "Somatostatin Analogues"
+  ],
+  "Androgens": [
+    "Testosterone",
+    "Testosterone Women"
+  ],
+  "Antidiuretic Hormone Agonists Antagonists": [
+    "Argipressin",
+    "Demeclocycline",
+    "Desmopressin Endocrine",
+    "Terlipressin"
+  ],
+  "Growth Hormone": [
+    "Somatrogon",
+    "Somatropin"
+  ],
+  "Nonselective Alpha Blockers": [
+    "Phenoxybenzamine",
+    "Phentolamine"
+  ],
+  "Somatostatin Analogues": [
+    "Lanreotide",
+    "Octreotide"
+  ],
+  "Drugs Thyroid Disorders": [
+    "Antithyroid Drugs",
+    "Hyperthyroidism",
+    "Hypothyroidism",
+    "Other Drugs Thyroid Disorders",
+    "Thyroid Hormones"
+  ],
+  "Antithyroid Drugs": [
+    "Carbimazole",
+    "Propylthiouracil"
+  ],
+  "Thyroid Hormones": [
+    "Levothyroxine",
+    "Liothyronine"
+  ],
+  "Drugs Allergic Inflammatory Eye Conditions": [
+    "Allergic Conjunctivitis",
+    "Antihistamines Eye",
+    "Corticosteroids Eye",
+    "Mast Cell Stabilisers",
+    "Nsaids Eye",
+    "Vasoconstrictors Eye"
+  ],
+  "Antihistamines Eye": [
+    "Azelastine Eye",
+    "Ketotifen",
+    "Levocabastine Eye",
+    "Olopatadine"
+  ],
+  "Corticosteroids Eye": [
+    "Dexamethasone Eye",
+    "Fluorometholone",
+    "Hydrocortisone Eye",
+    "Prednisolone Eye",
+    "Prednisolone Phenylephrine"
+  ],
+  "Mast Cell Stabilisers": [
+    "Cromoglycate",
+    "Lodoxamide"
+  ],
+  "Nsaids Eye": [
+    "Ketorolac Eye",
+    "Nepafenac"
+  ],
+  "Vasoconstrictors Eye": [
+    "Naphazoline",
+    "Naphazoline Antazoline",
+    "Naphazoline Pheniramine",
+    "Tetryzoline"
+  ],
+  "Drugs Dry Eyes": [
+    "Ciclosporin Eye",
+    "Dry Eye Syndrome",
+    "Ocular Lubricants"
+  ],
+  "Drugs Eye Examinations": [
+    "Anticholinergics Eye",
+    "Local Anaesthetics Eye",
+    "Mydriasis Cycloplegia",
+    "Other Drugs Mydriasis"
+  ],
+  "Anticholinergics Eye": [
+    "Atropine Eye",
+    "Cyclopentolate",
+    "Tropicamide"
+  ],
+  "Local Anaesthetics Eye": [
+    "Oxybuprocaine",
+    "Proxymetacaine",
+    "Tetracaine Eye"
+  ],
+  "Drugs Eye Infections": [
+    "Aminoglycosides Eye",
+    "Antivirals Eye",
+    "Eye Infections",
+    "Other Antibacterials Eye",
+    "Quinolones Eye"
+  ],
+  "Aminoglycosides Eye": [
+    "Framycetin Eye",
+    "Gentamicin Eye",
+    "Tobramycin Eye"
+  ],
+  "Quinolones Eye": [
+    "Ciprofloxacin Eye",
+    "Ofloxacin Eye"
+  ],
+  "Drugs Glaucoma": [
+    "Alpha2 Agonists",
+    "Carbonic Anhydrase Inhibitors",
+    "Glaucomas",
+    "Other Drugs Glaucoma",
+    "Prostaglandin Analogues Eye"
+  ],
+  "Alpha2 Agonists": [
+    "Apraclonidine",
+    "Brimonidine Eye",
+    "Brimonidine Timolol"
+  ],
+  "Carbonic Anhydrase Inhibitors": [
+    "Brinzolamide",
+    "Brinzolamide Brimonidine",
+    "Brinzolamide Timolol",
+    "Dorzolamide",
+    "Dorzolamide Timolol"
+  ],
+  "Other Drugs Glaucoma": [
+    "Acetazolamide",
+    "Mannitol",
+    "Pilocarpine",
+    "Timolol"
+  ],
+  "Prostaglandin Analogues Eye": [
+    "Bimatoprost",
+    "Bimatoprost Timolol",
+    "Latanoprost",
+    "Latanoprost Timolol",
+    "Travoprost",
+    "Travoprost Timolol"
+  ],
+  "Antiemetics": [
+    "Dopamine Antagonists",
+    "Ht3 Antagonists",
+    "Nausea Vomiting",
+    "Other Drugs Nausea Vomiting",
+    "Substance P Antagonists"
+  ],
+  "Dopamine Antagonists": [
+    "Domperidone",
+    "Droperidol Gastrointestinal",
+    "Metoclopramide",
+    "Metoclopramide Paracetamol",
+    "Prochlorperazine"
+  ],
+  "Ht3 Antagonists": [
+    "Granisetron",
+    "Ondansetron",
+    "Palonosetron",
+    "Tropisetron"
+  ],
+  "Substance P Antagonists": [
+    "Aprepitant",
+    "Fosaprepitant",
+    "Fosnetupitant Palonosetron",
+    "Netupitant Palonosetron"
+  ],
+  "Drugs Affecting Gastrointestinal Motility": [
+    "Cisapride",
+    "Hyoscine Butylbromide",
+    "Mebeverine",
+    "Peppermint Oil"
+  ],
+  "Drugs Diarrhoea": [
+    "Diarrhoea",
+    "Opioid Antidiarrhoeals",
+    "Other Drugs Diarrhoea"
+  ],
+  "Opioid Antidiarrhoeals": [
+    "Diphenoxylate",
+    "Loperamide"
+  ],
+  "Drugs Dyspepsia Reflux Peptic Ulcers": [
+    "Antacids",
+    "Dyspepsia",
+    "Gastro Oesophageal Reflux Disease",
+    "H2 Antagonists",
+    "Other Drugs Ulcers",
+    "Peptic Ulcer Disease",
+    "Proton Pump Inhibitors"
+  ],
+  "Antacids": [
+    "Aluminium Hydroxide Gastrointestinal",
+    "Combination Antacids"
+  ],
+  "H2 Antagonists": [
+    "Famotidine",
+    "Nizatidine",
+    "Ranitidine"
+  ],
+  "Other Drugs Ulcers": [
+    "Bismuth Subcitrate",
+    "Misoprostol Gastrointestinal",
+    "Sucralfate"
+  ],
+  "Proton Pump Inhibitors": [
+    "Esomeprazole",
+    "Lansoprazole",
+    "Omeprazole",
+    "Pantoprazole",
+    "Rabeprazole"
+  ],
+  "Drugs Inflammatory Bowel Disease": [
+    "Aminosalicylates",
+    "Corticosteroids Gastrointestinal",
+    "Crohns Disease",
+    "Other Drugs Inflammatory Bowel Disease",
+    "Ulcerative Colitis"
+  ],
+  "Aminosalicylates": [
+    "Mesalazine",
+    "Olsalazine",
+    "Sulfasalazine"
+  ],
+  "Corticosteroids Gastrointestinal": [
+    "Budesonide",
+    "Prednisolone Rectal"
+  ],
+  "Other Drugs Inflammatory Bowel Disease": [
+    "Etrasimod",
+    "Vedolizumab"
+  ],
+  "Drugs Perianal Disorders": [
+    "Anorectal Products",
+    "Glyceryl Trinitrate Rectal",
+    "Perianal Disorders"
+  ],
+  "Laxatives": [
+    "Constipation",
+    "Osmotic Laxatives",
+    "Other Laxatives",
+    "Stimulant Laxatives",
+    "Stool Softeners"
+  ],
+  "Osmotic Laxatives": [
+    "Glycerol",
+    "Lactulose",
+    "Macrogol Laxatives",
+    "Saline Laxatives",
+    "Sorbitol"
+  ],
+  "Other Laxatives": [
+    "Bulk Forming Laxatives",
+    "Methylnaltrexone",
+    "Prucalopride"
+  ],
+  "Stimulant Laxatives": [
+    "Bisacodyl",
+    "Senna",
+    "Sodium Picosulfate"
+  ],
+  "Stool Softeners": [
+    "Docusate",
+    "Liquid Paraffin",
+    "Poloxamer"
+  ],
+  "Other Gastrointestinal Drugs": [
+    "Obeticholic Acid",
+    "Orlistat",
+    "Pancreatic Enzymes",
+    "Ursodeoxycholic Acid"
+  ],
+  "Drugs Benign Prostatic Hyperplasia Prostatitis": [
+    "Prostatitis",
+    "Alpha Reductase Inhibitors",
+    "Benign Prostatic Hyperplasia",
+    "Selective Alpha Blockers"
+  ],
+  "Drugs Sexual Dysfunction": [
+    "Phosphodiesterase 5 Inhibitors Genitourinary",
+    "Erectile Dysfunction",
+    "Other Drugs Sexual Dysfunction"
+  ],
+  "Anticholinergics Genitourinary": [
+    "Darifenacin",
+    "Oxybutynin",
+    "Propantheline",
+    "Solifenacin",
+    "Tolterodine"
+  ],
+  "Drugs Urinary Incontinence": [
+    "Urinary Incontinence",
+    "Anticholinergics Genitourinary",
+    "Nocturnal Enuresis",
+    "Other Drugs Urinary Incontinence"
+  ],
+  "Calcineurin Inhibitors": [
+    "Ciclosporin",
+    "Tacrolimus"
+  ],
+  "Corticosteroids": [
+    "Dexamethasone",
+    "Prednisolone Prednisone",
+    "Betamethasone",
+    "Hydrocortisone",
+    "Methylprednisolone",
+    "Triamcinolone"
+  ],
+  "Xanthine Oxidase Inhibitors": [
+    "Allopurinol",
+    "Febuxostat"
+  ],
+  "Janus Kinase Inhibitors": [
+    "Baricitinib",
+    "Tofacitinib",
+    "Upadacitinib"
+  ],
+  "Nsaids": [
+    "Diclofenac",
+    "Celecoxib",
+    "Etoricoxib",
+    "Ibuprofen",
+    "Indometacin",
+    "Ketorolac",
+    "Mefenamic Acid",
+    "Meloxicam",
+    "Naproxen",
+    "Parecoxib",
+    "Piroxicam"
+  ],
+  "Other Immunomodulators": [
+    "Azathioprine",
+    "Hydroxychloroquine",
+    "Methotrexate Immunomodulator",
+    "Abatacept",
+    "Anakinra",
+    "Anifrolumab",
+    "Auranofin",
+    "Avacopan",
+    "Belimumab",
+    "Leflunomide",
+    "Mycophenolate",
+    "Tocilizumab"
+  ],
+  "Tnf Alpha Antagonists": [
+    "Adalimumab",
+    "Golimumab",
+    "Infliximab",
+    "Certolizumab",
+    "Etanercept"
+  ],
+  "Antiepileptics": [
+    "Barbiturates",
+    "Benzodiazepines Neurology",
+    "Epilepsy",
+    "Gabapentinoids",
+    "Other Antiepileptics"
+  ],
+  "Barbiturates": [
+    "Phenobarbital",
+    "Primidone"
+  ],
+  "Benzodiazepines Neurology": [
+    "Clobazam Neurology",
+    "Clonazepam",
+    "Diazepam Neurology",
+    "Lorazepam Neurology",
+    "Midazolam Neurology"
+  ],
+  "Gabapentinoids": [
+    "Gabapentin",
+    "Pregabalin"
+  ],
+  "Other Antiepileptics": [
+    "Brivaracetam",
+    "Cannabidiol",
+    "Carbamazepine",
+    "Ethosuximide",
+    "Lacosamide",
+    "Lamotrigine",
+    "Levetiracetam",
+    "Oxcarbazepine",
+    "Perampanel",
+    "Phenytoin",
+    "Rufinamide",
+    "Stiripentol",
+    "Sulthiame",
+    "Tiagabine",
+    "Topiramate",
+    "Valproate",
+    "Vigabatrin",
+    "Zonisamide"
+  ],
+  "Drugs Alzheimers Disease": [
+    "Alzheimers Disease",
+    "Anticholinesterases Alzheimers Disease",
+    "Other Drugs Alzheimers Disease"
+  ],
+  "Anticholinesterases Alzheimers Disease": [
+    "Donepezil",
+    "Galantamine",
+    "Rivastigmine"
+  ],
+  "Drugs Migraine": [
+    "Calcitonin Gene Related Peptide Antagonists",
+    "Migraine",
+    "Other Drugs Migraine",
+    "Triptans"
+  ],
+  "Calcitonin Gene Related Peptide Antagonists": [
+    "Eptinezumab",
+    "Erenumab",
+    "Fremanezumab",
+    "Galcanezumab"
+  ],
+  "Other Drugs Migraine": [
+    "Pizotifen",
+    "Rimegepant"
+  ],
+  "Triptans": [
+    "Eletriptan",
+    "Naratriptan",
+    "Rizatriptan",
+    "Sumatriptan",
+    "Zolmitriptan"
+  ],
+  "Drugs Multiple Sclerosis": [
+    "Fumarates",
+    "Multiple Sclerosis",
+    "Other Drugs Multiple Sclerosis",
+    "Sphingosine 1 Receptor Modulators"
+  ],
+  "Fumarates": [
+    "Dimethyl Fumarate",
+    "Diroximel Fumarate"
+  ],
+  "Other Drugs Multiple Sclerosis": [
+    "Alemtuzumab Neurology",
+    "Cladribine Neurology",
+    "Fampridine",
+    "Glatiramer",
+    "Interferon Beta",
+    "Natalizumab",
+    "Ocrelizumab",
+    "Ofatumumab",
+    "Teriflunomide"
+  ],
+  "Sphingosine 1 Receptor Modulators": [
+    "Fingolimod",
+    "Ozanimod",
+    "Siponimod"
+  ],
+  "Anticholinesterases Myasthenia Gravis": [
+    "Neostigmine",
+    "Pyridostigmine"
+  ],
+  "Drugs Other Neurological Conditions": [
+    "Baclofen",
+    "Dantrolene",
+    "Edaravone",
+    "Riluzole",
+    "Tetrabenazine"
+  ],
+  "Drugs Parkinsonism": [
+    "Anticholinergics",
+    "Dopamine Agonists",
+    "Monoamine Oxidase B Inhibitors",
+    "Other Drugs Parkinsons Disease",
+    "Parkinsons Disease"
+  ],
+  "Anticholinergics": [
+    "Benzatropine",
+    "Trihexyphenidyl"
+  ],
+  "Dopamine Agonists": [
+    "Apomorphine",
+    "Bromocriptine",
+    "Cabergoline",
+    "Pramipexole",
+    "Ropinirole",
+    "Rotigotine"
+  ],
+  "Monoamine Oxidase B Inhibitors": [
+    "Rasagiline",
+    "Safinamide",
+    "Selegiline"
+  ],
+  "Other Drugs Parkinsons Disease": [
+    "Amantadine",
+    "Entacapone",
+    "Foslevodopa Foscarbidopa",
+    "Levodopa Benserazide Carbidopa",
+    "Levodopa Carbidopa Entacapone",
+    "Opicapone"
+  ],
+  "Drugs Contraception": [
+    "Combined Oral Contraceptives",
+    "Contraception",
+    "Emergency Contraception",
+    "Other Drugs Contraception",
+    "Progestogens"
+  ],
+  "Combined Oral Contraceptives": [
+    "Cyproterone Ethinylestradiol",
+    "Desogestrel Ethinylestradiol",
+    "Dienogest Ethinylestradiol",
+    "Drospirenone Estetrol",
+    "Drospirenone Ethinylestradiol",
+    "Estradiol Dienogest",
+    "Gestodene Ethinylestradiol",
+    "Levonorgestrel Ethinylestradiol",
+    "Nomegestrol Estradiol",
+    "Norethisterone Ethinylestradiol"
+  ],
+  "Other Drugs Contraception": [
+    "Copper Iud",
+    "Etonogestrel Ethinylestradiol",
+    "Ulipristal"
+  ],
+  "Progestogens": [
+    "Dienogest",
+    "Drospirenone",
+    "Etonogestrel",
+    "Levonorgestrel",
+    "Levonorgestrel Iud",
+    "Medroxyprogesterone",
+    "Norethisterone",
+    "Progesterone"
+  ],
+  "Drugs Endometriosis": [
+    "Danazol",
+    "Endometriosis"
+  ],
+  "Drugs Menopausal Symptoms": [
+    "Menopausal Hormone Therapy",
+    "Menopausal Symptoms",
+    "Other Drugs Menopausal Symptoms"
+  ],
+  "Menopausal Hormone Therapy": [
+    "Conjugated Estrogens",
+    "Conjugated Estrogens Bazedoxifene",
+    "Estradiol",
+    "Estradiol Drospirenone",
+    "Estradiol Dydrogesterone",
+    "Estradiol Norethisterone",
+    "Estradiol Progesterone",
+    "Estriol",
+    "Prasterone",
+    "Tibolone"
+  ],
+  "Drugs Menstrual Symptoms": [
+    "Dysmenorrhoea",
+    "Premenstrual Syndrome"
+  ],
+  "Drugs Obstetrics": [
+    "Drugs Pre Eclampsia",
+    "Drugs Preterm Labour",
+    "Other Drugs Obstetrics",
+    "Oxytocic Drugs",
+    "Prostaglandins"
+  ],
+  "Drugs Pre Eclampsia": [
+    "Magnesium Sulfate",
+    "Pre Eclampsia"
+  ],
+  "Drugs Preterm Labour": [
+    "Nifedipine Obstetrics",
+    "Preterm Labour",
+    "Salbutamol Obstetrics"
+  ],
+  "Oxytocic Drugs": [
+    "Carbetocin",
+    "Ergometrine",
+    "Oxytocin"
+  ],
+  "Prostaglandins": [
+    "Dinoprostone",
+    "Misoprostol Obstetrics"
+  ],
+  "Drugs Vaginal Infections": [
+    "Bacterial Vaginosis",
+    "Clindamycin Vaginal",
+    "Clotrimazole Vaginal",
+    "Metronidazole Vaginal",
+    "Nystatin Vaginal",
+    "Trichomoniasis",
+    "Vulvovaginal Candidiasis"
+  ],
+  "Ssris": [
+    "Fluoxetine",
+    "Sertraline",
+    "Citalopram",
+    "Escitalopram",
+    "Fluvoxamine",
+    "Paroxetine"
+  ],
+  "Drugs Alcohol Dependence": [
+    "Alcohol Withdrawal",
+    "Acamprosate",
+    "Alcohol Dependence",
+    "Disulfiram",
+    "Naltrexone"
+  ],
+  "Drugs Anxiety Sleep Disorders": [
+    "Benzodiazepines",
+    "Insomnia",
+    "Non Amphetamine Psychostimulants",
+    "Orexin Receptor Antagonists",
+    "Other Drugs Anxiety Sleep Disorders"
+  ],
+  "Drugs Nicotine Dependence": [
+    "Nicotine Dependence",
+    "Bupropion",
+    "Nicotine",
+    "Varenicline"
+  ],
+  "Drugs Asthma Chronic Obstructive Pulmonary Disease": [
+    "Anticholinergics Inhaled",
+    "Asthma",
+    "Beta2 Agonists",
+    "Chronic Obstructive Pulmonary Disease",
+    "Corticosteroids Inhaled",
+    "Inhalers",
+    "Nebulisers",
+    "Other Drugs Asthma",
+    "Theophyllines"
+  ],
+  "Anticholinergics Inhaled": [
+    "Aclidinium",
+    "Aclidinium Formoterol",
+    "Glycopyrronium Inhaled",
+    "Ipratropium",
+    "Tiotropium",
+    "Tiotropium Olodaterol",
+    "Umeclidinium",
+    "Umeclidinium Vilanterol"
+  ],
+  "Beta2 Agonists": [
+    "Formoterol",
+    "Indacaterol",
+    "Indacaterol Glycopyrronium",
+    "Indacaterol Glycopyrronium Mometasone",
+    "Indacaterol Mometasone",
+    "Salbutamol",
+    "Salmeterol",
+    "Terbutaline"
+  ],
+  "Corticosteroids Inhaled": [
+    "Beclometasone Formoterol",
+    "Beclometasone Formoterol Glycopyrronium",
+    "Beclometasone Inhaled",
+    "Budesonide Formoterol",
+    "Budesonide Glycopyrronium Formoterol",
+    "Budesonide Inhaled",
+    "Ciclesonide Inhaled",
+    "Fluticasone Furoate Inhaled",
+    "Fluticasone Furoate Umeclidinium Vilanterol",
+    "Fluticasone Furoate Vilanterol",
+    "Fluticasone Propionate Formoterol",
+    "Fluticasone Propionate Inhaled",
+    "Fluticasone Propionate Salmeterol"
+  ],
+  "Other Drugs Asthma": [
+    "Benralizumab",
+    "Dupilumab",
+    "Mepolizumab",
+    "Montelukast",
+    "Omalizumab"
+  ],
+  "Theophyllines": [
+    "Aminophylline",
+    "Theophylline"
+  ],
+  "Drugs Cough": [
+    "Cough",
+    "Mucolytics",
+    "Opioid Cough Suppressants"
+  ],
+  "Mucolytics": [
+    "Acetylcysteine Inhaled",
+    "Bromhexine"
+  ],
+  "Opioid Cough Suppressants": [
+    "Codeine Respiratory",
+    "Dextromethorphan",
+    "Dihydrocodeine"
+  ],
+  "Drugs Cystic Fibrosis": [
+    "Dornase Alfa",
+    "Elexacaftor Tezacaftor Ivacaftor",
+    "Ivacaftor",
+    "Lumacaftor Ivacaftor",
+    "Mannitol Inhaled",
+    "Tezacaftor Ivacaftor"
+  ],
+  "Other Respiratory Drugs": [
+    "Caffeine",
+    "Pirfenidone"
+  ],
+  "Pulmonary Surfactants": [
+    "Beractant",
+    "Poractant Alfa"
+  ],
+  "Antivenoms": [
+    "Antivenoms Snakebite",
+    "Other Antivenoms",
+    "Snake Antivenoms"
+  ],
+  "Other Antivenoms": [
+    "Box Jellyfish Antivenom",
+    "Funnel Web Spider Antivenom",
+    "Red Back Spider Antivenom",
+    "Stonefish Antivenom"
+  ],
+  "Snake Antivenoms": [
+    "Black Snake Antivenom",
+    "Brown Snake Antivenom",
+    "Death Adder Antivenom",
+    "Polyvalent Snake Antivenom",
+    "Sea Snake Antivenom",
+    "Taipan Antivenom",
+    "Tiger Snake Antivenom"
+  ],
+  "Gastrointestinal Decontaminants": [
+    "Activated Charcoal",
+    "Gastrointestinal Decontamination",
+    "Macrogol Laxatives Poisoning"
+  ],
+  "Direct Thrombin Inhibitors": [
+    "Bivalirudin",
+    "Dabigatran"
+  ],
+  "Factor Xa Inhibitors": [
+    "Apixaban",
+    "Fondaparinux",
+    "Rivaroxaban"
+  ],
+  "Heparins": [
+    "Dalteparin",
+    "Danaparoid",
+    "Enoxaparin",
+    "Heparin"
+  ],
+  "Antiplatelet Drugs": [
+    "Glycoprotein Iib Iiia Inhibitors",
+    "Other Antiplatelet Drugs",
+    "P2y12 Antagonists"
+  ],
+  "Glycoprotein Iib Iiia Inhibitors": [
+    "Eptifibatide",
+    "Tirofiban"
+  ],
+  "P2Y12 Antagonists": [
+    "Clopidogrel",
+    "Clopidogrel Aspirin",
+    "Prasugrel",
+    "Ticagrelor"
+  ],
+  "Erythropoietin Agonists": [
+    "Darbepoetin Alfa",
+    "Epoetin Alfa",
+    "Epoetin Beta",
+    "Methoxy Pegepoetin Beta"
+  ],
+  "Drugs Potassium Imbalance": [
+    "Patiromer",
+    "Polystyrene Sulfonate Resins",
+    "Potassium Disturbances"
+  ],
+  "Phosphate Binders": [
+    "Aluminium Hydroxide Phosphate Binder",
+    "Calcium Carbonate Phosphate Binder",
+    "Lanthanum",
+    "Sevelamer",
+    "Sucroferric Oxyhydroxide"
+  ],
+  "Drugs Reversing Anticoagulation": [
+    "Andexanet Alfa",
+    "Idarucizumab",
+    "Protamine"
+  ],
+  "Iron Chelators": [
+    "Deferasirox",
+    "Deferiprone",
+    "Desferrioxamine"
+  ],
+  "Thrombolytics": [
+    "Alteplase",
+    "Tenecteplase"
+  ],
+  "Alpha Reductase Inhibitors": [
+    "Dutasteride",
+    "Dutasteride Tamsulosin",
+    "Finasteride Genitourinary"
+  ],
+  "Selective Alpha Blockers": [
+    "Alfuzosin",
+    "Silodosin",
+    "Tamsulosin"
+  ],
+  "Other Drugs Sexual Dysfunction": [
+    "Alprostadil",
+    "Dapoxetine",
+    "Papaverine"
+  ],
+  "Phosphodiesterase 5 Inhibitors Genitourinary": [
+    "Avanafil",
+    "Sildenafil Genitourinary",
+    "Tadalafil Genitourinary"
+  ],
+  "Other Drugs Urinary Incontinence": [
+    "Desmopressin Genitourinary",
+    "Mirabegron"
+  ],
+  "Other Drugs Urinary Tract Disorders": [
+    "Kidney Stones",
+    "Urinary Alkalinisation Acidification"
+  ],
+  "Drugs Gout": [
+    "Gout",
+    "Other Drugs Gout",
+    "Xanthine Oxidase Inhibitors"
+  ],
+  "Other Drugs Gout": [
+    "Colchicine",
+    "Probenecid"
+  ],
+  "Immunosuppressant Antibodies": [
+    "Antithymocyte Globulins",
+    "Basiliximab"
+  ],
+  "Mtor Inhibitors": [
+    "Everolimus Immunosuppressant",
+    "Sirolimus"
+  ],
+  "Antidepressants": [
+    "Adverse Effects Antidepressants",
+    "Anxiety Disorders",
+    "Eating Disorders",
+    "Major Depression",
+    "Monoamine Oxidase Inhibitors",
+    "Other Antidepressants",
+    "Serotonin Noradrenaline Reuptake Inhibitors",
+    "Ssris",
+    "Tricyclic Antidepressants"
+  ],
+  "Monoamine Oxidase Inhibitors": [
+    "Phenelzine",
+    "Tranylcypromine"
+  ],
+  "Other Antidepressants": [
+    "Agomelatine",
+    "Mianserin",
+    "Mirtazapine",
+    "Moclobemide",
+    "Reboxetine",
+    "Vortioxetine"
+  ],
+  "Serotonin Noradrenaline Reuptake Inhibitors": [
+    "Desvenlafaxine",
+    "Duloxetine",
+    "Venlafaxine"
+  ],
+  "Tricyclic Antidepressants": [
+    "Amitriptyline",
+    "Clomipramine",
+    "Dosulepin",
+    "Doxepin",
+    "Imipramine",
+    "Nortriptyline"
+  ],
+  "Antipsychotics": [
+    "Amisulpride",
+    "Aripiprazole",
+    "Asenapine",
+    "Brexpiprazole",
+    "Cariprazine",
+    "Chlorpromazine",
+    "Clozapine",
+    "Droperidol",
+    "Flupentixol",
+    "Haloperidol",
+    "Lurasidone",
+    "Olanzapine",
+    "Paliperidone",
+    "Periciazine",
+    "Quetiapine",
+    "Risperidone",
+    "Ziprasidone",
+    "Zuclopenthixol"
+  ],
+  "Benzodiazepines": [
+    "Alprazolam",
+    "Bromazepam",
+    "Clobazam",
+    "Diazepam",
+    "Flunitrazepam",
+    "Lorazepam",
+    "Nitrazepam",
+    "Oxazepam",
+    "Temazepam"
+  ],
+  "Non Amphetamine Psychostimulants": [
+    "Armodafinil",
+    "Modafinil"
+  ],
+  "Orexin Receptor Antagonists": [
+    "Lemborexant",
+    "Suvorexant"
+  ],
+  "Other Drugs Anxiety Sleep Disorders": [
+    "Buspirone",
+    "Melatonin",
+    "Zolpidem",
+    "Zopiclone"
+  ],
+  "Drugs Attention Deficit Hyperactivity Disorder": [
+    "Attention Deficit Hyperactivity Disorder",
+    "Other Drugs Attention Deficit Hyperactivity Disorder",
+    "Psychostimulants"
+  ],
+  "Other Drugs Attention Deficit Hyperactivity Disorder": [
+    "Atomoxetine",
+    "Guanfacine"
+  ],
+  "Psychostimulants": [
+    "Dexamfetamine",
+    "Lisdexamfetamine",
+    "Methylphenidate"
+  ],
+  "Drugs Bipolar Disorder": [
+    "Bipolar Disorder",
+    "Lithium"
+  ],
+  "Drugs Opioid Dependence": [
+    "Buprenorphine Naloxone",
+    "Buprenorphine Opioid Dependence",
+    "Methadone Opioid Dependence",
+    "Opioid Dependence"
+  ],
+  "Other Psychotropic Drugs": [
+    "Naltrexone Bupropion",
+    "Phentermine"
+  ]
+}

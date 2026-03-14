@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physiodle Admin</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --border: #1e293b;
+  --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b;
+  --blue: #3b82f6; --green: #22c55e; --red: #ef4444; --amber: #f59e0b;
+  --purple: #8b5cf6; --cyan: #06b6d4; --pink: #ec4899; --teal: #0d9488;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* ── Nav ── */
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+.nav-left { display: flex; align-items: center; gap: 0.75rem; }
+.nav-logo { font-size: 1.5rem; }
+.nav-title { font-size: 1.1rem; font-weight: 700; color: #fff; }
+.nav-badge { background: var(--green); color: #000; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 99px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.6} }
+.nav-tabs { display: flex; gap: 4px; }
+.nav-tab { padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 500; background: rgba(255,255,255,0.08); color: var(--text2); border: none; transition: all 0.15s; }
+.nav-tab:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.nav-tab.active { background: var(--blue); color: #fff; }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.nav-time { color: var(--text3); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.btn { background: var(--blue); color: #fff; border: none; padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600; transition: all 0.15s; }
+.btn:hover { filter: brightness(1.15); transform: translateY(-1px); }
+
+/* ── Login ── */
+#loginScreen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.login-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; width: 320px; text-align: center; }
+.login-box h2 { color: #fff; margin-bottom: 0.25rem; }
+.login-box p { color: var(--text3); font-size: 0.85rem; margin-bottom: 1.25rem; }
+.login-box input { width: 100%; padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: #fff; font-size: 0.9rem; margin-bottom: 0.75rem; outline: none; }
+.login-box input:focus { border-color: var(--blue); }
+.login-error { color: var(--red); font-size: 0.8rem; margin-top: 0.75rem; display: none; }
+
+/* ── Layout ── */
+.container { max-width: 1400px; margin: 0 auto; padding: 1.25rem; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ── Stat Cards ── */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.15rem; position: relative; overflow: hidden; }
+.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.stat-card.blue::before { background: var(--blue); } .stat-card.green::before { background: var(--green); }
+.stat-card.amber::before { background: var(--amber); } .stat-card.purple::before { background: var(--purple); }
+.stat-card.cyan::before { background: var(--cyan); } .stat-card.red::before { background: var(--red); }
+.stat-card.pink::before { background: var(--pink); } .stat-card.teal::before { background: var(--teal); }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); margin-bottom: 0.35rem; }
+.stat-value { font-size: 1.75rem; font-weight: 800; color: #fff; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat-sub { font-size: 0.75rem; color: var(--text3); margin-top: 0.3rem; }
+.stat-delta { font-size: 0.7rem; font-weight: 600; margin-top: 0.2rem; }
+.stat-delta.up { color: var(--green); } .stat-delta.down { color: var(--red); }
+
+/* ── Charts ── */
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+.chart-card.full { grid-column: 1 / -1; }
+.chart-title { font-size: 0.75rem; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.75rem; }
+.chart-wrap { position: relative; height: 220px; }
+.chart-wrap.tall { height: 340px; }
+
+/* ── Tables ── */
+.table-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); }
+td { padding: 0.5rem 0.75rem; font-size: 0.85rem; border-bottom: 1px solid rgba(30,41,59,0.5); }
+tr:hover td { background: rgba(59,130,246,0.04); }
+.table-header { padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.table-header h3 { font-size: 0.85rem; font-weight: 600; color: #fff; }
+.table-header span { font-size: 0.75rem; color: var(--text3); }
+.table-scroll { max-height: 500px; overflow-y: auto; }
+
+/* ── Rank badges ── */
+.rank { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font-size: 0.7rem; font-weight: 700; }
+.rank-1 { background: #b8860b33; color: #fbbf24; } .rank-2 { background: #6b728033; color: #d1d5db; }
+.rank-3 { background: #a0522d33; color: #d2956a; } .rank-n { background: var(--surface2); color: var(--text3); }
+
+/* ── Mini bar ── */
+.mini-bar-bg { width: 100%; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+.mini-bar { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+
+/* ── Section header ── */
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+.section-title { font-size: 0.85rem; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── Two columns ── */
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+
+/* ── Feedback ── */
+.feedback-item { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(30,41,59,0.5); }
+.feedback-item:last-child { border-bottom: none; }
+.feedback-meta { font-size: 0.7rem; color: var(--text3); }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; }
+.badge-green { background: #065f4640; color: #4ade80; }
+.badge-red { background: #991b1b40; color: #f87171; }
+.badge-yellow { background: #92400e40; color: #fbbf24; }
+.badge-blue { background: #1e40af40; color: #60a5fa; }
+.badge-teal { background: #0d948840; color: #5eead4; }
+
+/* ── Pagination ── */
+.pagination { display: flex; align-items: center; gap: 6px; padding: 0.75rem 1rem; border-top: 1px solid var(--border); justify-content: center; }
+.pagination button { padding: 4px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: var(--text2); cursor: pointer; font-size: 0.75rem; }
+.pagination button:disabled { opacity: 0.3; cursor: default; }
+.pagination button.pg-active { background: var(--blue); color: #fff; border-color: var(--blue); }
+.pagination .page-info { font-size: 0.75rem; color: var(--text3); }
+
+/* ── Puzzle Vetting ── */
+.puzzle-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.puzzle-nav button { padding: 6px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: var(--text2); cursor: pointer; font-size: 0.8rem; font-weight: 500; }
+.puzzle-nav button:hover { background: var(--surface); border-color: var(--teal); color: #fff; }
+.puzzle-nav .day-input { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: #fff; font-size: 0.85rem; width: 80px; text-align: center; outline: none; }
+.puzzle-nav .day-input:focus { border-color: var(--teal); }
+.puzzle-nav input[type="date"] { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: #fff; font-size: 0.8rem; outline: none; }
+.puzzle-info { font-size: 0.75rem; color: var(--text3); }
+
+.puzzle-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 12px; }
+.puzzle-card.today { border-color: var(--teal); box-shadow: 0 0 12px rgba(13,148,136,0.15); }
+.puzzle-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.puzzle-title { font-size: 1.1rem; font-weight: 700; color: var(--teal); }
+.puzzle-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+.puzzle-aliases { font-size: 0.8rem; color: var(--text3); margin-top: 2px; }
+.clue { padding: 10px 14px; border-left: 3px solid var(--teal); background: rgba(13,148,136,0.05); border-radius: 0 8px 8px 0; margin-bottom: 6px; }
+.clue-label { font-size: 0.7rem; font-weight: 600; color: var(--teal); text-transform: uppercase; margin-bottom: 2px; }
+.clue-text { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+.puzzle-explanation { margin-top: 12px; padding: 10px 14px; background: var(--surface2); border-radius: 8px; font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+.puzzle-warning { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; font-size: 0.8rem; color: var(--amber); }
+
+/* ── Match Tester ── */
+.match-tester { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.match-input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.match-input-wrap { position: relative; }
+.match-autocomplete { position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 0 0 8px 8px; max-height: 280px; overflow-y: auto; z-index: 50; display: none; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.match-autocomplete.show { display: block; }
+.match-ac-item { padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; color: var(--text); border-bottom: 1px solid rgba(30,41,59,0.3); }
+.match-ac-item:last-child { border-bottom: none; }
+.match-ac-item:hover, .match-ac-item.selected { background: rgba(6,182,212,0.1); color: #fff; }
+.match-ac-item strong { color: var(--cyan); font-weight: 700; }
+.match-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); font-weight: 600; }
+.match-input { padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: #fff; font-size: 0.9rem; outline: none; }
+.match-input:focus { border-color: var(--blue); }
+.match-result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+.match-result-card.correct { border-color: var(--green); }
+.match-result-card.incorrect { border-color: var(--red); }
+.match-result-badge { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem; }
+.match-result-badge.correct { background: #065f4640; color: #4ade80; }
+.match-result-badge.incorrect { background: #991b1b40; color: #f87171; }
+.match-layer { font-size: 0.85rem; color: var(--text2); margin-bottom: 0.4rem; }
+.match-layer strong { color: var(--cyan); }
+.match-details { font-size: 0.8rem; color: var(--text3); line-height: 1.6; }
+.match-quick-tests { margin-top: 1rem; }
+.match-quick-btn { display: inline-block; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); color: var(--text2); cursor: pointer; font-size: 0.75rem; margin: 2px; }
+.match-quick-btn:hover { border-color: var(--cyan); color: #fff; }
+.data-browser { margin-top: 1rem; }
+.data-browser-tabs { display: flex; gap: 4px; margin-bottom: 0.75rem; }
+.data-browser-tab { padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); color: var(--text2); cursor: pointer; font-size: 0.75rem; }
+.data-browser-tab.active { background: var(--cyan); color: #000; border-color: var(--cyan); }
+.data-browser-content { max-height: 500px; overflow-y: auto; }
+.equiv-group { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.75rem; margin-bottom: 4px; }
+.equiv-group-terms { font-size: 0.8rem; color: var(--text); }
+.equiv-group-terms span { background: var(--surface2); padding: 2px 6px; border-radius: 4px; margin: 1px; display: inline-block; font-size: 0.75rem; }
+.abbr-row { display: flex; justify-content: space-between; padding: 0.4rem 0.75rem; border-bottom: 1px solid rgba(30,41,59,0.3); font-size: 0.8rem; }
+.abbr-key { color: var(--cyan); font-weight: 600; min-width: 80px; }
+.abbr-values { color: var(--text2); }
+.match-search-filter { margin-bottom: 0.75rem; }
+.match-search-filter input { width: 100%; padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: #fff; font-size: 0.85rem; outline: none; }
+.match-search-filter input:focus { border-color: var(--cyan); }
+.puzzle-answer-picker { margin-bottom: 0.5rem; }
+.puzzle-answer-picker select { padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: #fff; font-size: 0.85rem; outline: none; width: 100%; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .chart-grid, .col-2 { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-value { font-size: 1.4rem; }
+  .container { padding: 0.75rem; }
+  .nav-tabs { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div style="font-size:2.5rem;margin-bottom:0.5rem">&#129468;</div>
+    <h2>Physiodle Admin</h2>
+    <p>Enter your admin key to continue</p>
+    <input type="password" id="adminKeyInput" placeholder="Admin key..." onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn" style="width:100%;padding:0.6rem" onclick="doLogin()">Unlock Dashboard</button>
+    <p id="loginError" class="login-error">Invalid admin key</p>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" style="display:none">
+  <nav class="nav">
+    <div class="nav-left">
+      <span class="nav-logo">&#129468;</span>
+      <span class="nav-title">Physiodle Admin</span>
+      <span class="nav-badge">Live</span>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-panel="overview">Overview</button>
+      <button class="nav-tab" data-panel="puzzles">Puzzle Vetting</button>
+      <button class="nav-tab" data-panel="users">Users</button>
+      <button class="nav-tab" data-panel="games">Game History</button>
+      <button class="nav-tab" data-panel="matcher">Match Tester</button>
+    </div>
+    <div class="nav-right">
+      <span class="nav-time" id="clock"></span>
+      <button class="btn" onclick="refreshAll()">Refresh</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- ═══ OVERVIEW PANEL ═══ -->
+    <div id="panel-overview" class="panel active">
+      <div class="stats-row" id="kpiRow"></div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-title">Page Views (30 Days)</div>
+          <div class="chart-wrap"><canvas id="pageViewsChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Unique Visitors (30 Days)</div>
+          <div class="chart-wrap"><canvas id="visitorsChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Games Played (30 Days)</div>
+          <div class="chart-wrap"><canvas id="gamesChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Sign-ups (30 Days)</div>
+          <div class="chart-wrap"><canvas id="signupsChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-title">Win / Loss</div>
+          <div class="chart-wrap"><canvas id="winLossChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Score Distribution (Winners)</div>
+          <div class="chart-wrap"><canvas id="scoreChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Device Split</div>
+          <div class="chart-wrap"><canvas id="deviceChart"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Hourly Breakdown Section -->
+      <div class="section-header" style="margin-bottom:0.6rem"><span class="section-title">Hourly Breakdown Today (AEST)</span></div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-title">Page Views by Hour</div>
+          <div class="chart-wrap"><canvas id="hourlyChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Unique Visitors by Hour</div>
+          <div class="chart-wrap"><canvas id="hourlyVisitorsChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Games Played by Hour</div>
+          <div class="chart-wrap"><canvas id="hourlyGamesChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Sign-ups by Hour</div>
+          <div class="chart-wrap"><canvas id="hourlySignupsChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div>
+          <div class="section-header"><span class="section-title">Top Players (by points)</span></div>
+          <div class="table-card" id="topPlayersTable"></div>
+        </div>
+        <div>
+          <div class="section-header"><span class="section-title">Most Active</span></div>
+          <div class="table-card" id="activeTable"></div>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div>
+          <div class="section-header"><span class="section-title">Recent Sign-ups</span></div>
+          <div class="table-card" id="signupsTable"></div>
+        </div>
+        <div>
+          <div class="section-header"><span class="section-title">Recent Feedback</span></div>
+          <div class="table-card" id="feedbackPanel"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-header"><span class="section-title">Leaderboard Tab Popularity</span></div>
+        <div class="stats-row" id="lbPop"></div>
+      </div>
+    </div>
+
+    <!-- ═══ PUZZLE VETTING PANEL ═══ -->
+    <div id="panel-puzzles" class="panel">
+      <div class="puzzle-nav">
+        <button onclick="puzzleNav(-10)">⟨⟨ -10</button>
+        <button onclick="puzzleNav(-1)">⟨ Prev</button>
+        <span style="color:var(--text3)">Day</span>
+        <input type="number" class="day-input" id="dayInput" min="1" value="1" onchange="jumpToDay(this.value)">
+        <button onclick="puzzleNav(1)">Next ⟩</button>
+        <button onclick="puzzleNav(10)">+10 ⟩⟩</button>
+        <span style="color:var(--text3);margin:0 4px">|</span>
+        <span style="color:var(--text3);font-size:0.8rem">Jump to date:</span>
+        <input type="date" id="dateJump" onchange="jumpToDate(this.value)">
+        <button onclick="jumpToDay(state.currentDay)" style="background:var(--teal);color:#fff;border-color:var(--teal)">Today</button>
+        <span class="puzzle-info" id="puzzleDayInfo"></span>
+      </div>
+      <div id="puzzleContainer"></div>
+    </div>
+
+    <!-- ═══ USERS PANEL ═══ -->
+    <div id="panel-users" class="panel">
+      <div class="table-card">
+        <div class="table-header">
+          <h3>All Users</h3>
+          <span id="userTotal"></span>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>ID</th><th>Username</th><th>Joined</th><th>Games</th><th>Won</th><th>Win %</th><th>Points</th></tr></thead>
+            <tbody id="userTableBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination" id="userPagination"></div>
+      </div>
+    </div>
+
+    <!-- ═══ GAMES PANEL ═══ -->
+    <div id="panel-games" class="panel">
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Game History</h3>
+          <span id="gameTotal"></span>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Player</th><th>Day</th><th>Result</th><th>Score</th><th>Guesses</th><th>Completed</th></tr></thead>
+            <tbody id="gameTableBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination" id="gamePagination"></div>
+      </div>
+    </div>
+
+    <!-- ═══ MATCH TESTER PANEL ═══ -->
+    <div id="panel-matcher" class="panel">
+      <div class="section-header">
+        <span class="section-title">Answer Match Tester</span>
+        <span style="font-size:0.75rem;color:var(--text3)">Test how the game evaluates guesses against answers</span>
+      </div>
+
+      <div class="match-result-card" style="margin-bottom:1rem">
+        <div class="match-tester">
+          <div class="match-input-group" id="guessInputGroup">
+            <label class="match-label">Player's Guess</label>
+            <div class="match-input-wrap">
+              <input class="match-input" id="matchGuess" placeholder="Start typing a condition..." autocomplete="off" style="width:100%">
+              <div class="match-autocomplete" id="guessAutocomplete"></div>
+            </div>
+          </div>
+          <div class="match-input-group">
+            <label class="match-label">Puzzle Answer</label>
+            <div class="puzzle-answer-picker">
+              <select id="matchAnswerSelect" onchange="onAnswerSelectChange()">
+                <option value="">— Pick from puzzles or type below —</option>
+              </select>
+            </div>
+            <input class="match-input" id="matchAnswer" placeholder="e.g. ACL Reconstruction">
+            <input class="match-input" id="matchAliases" placeholder="Aliases (comma-separated, optional)" style="font-size:0.8rem">
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:0.75rem">
+          <button class="btn" onclick="runMatchTest()">Test Match</button>
+          <button class="btn" style="background:var(--surface2);color:var(--text2)" onclick="clearMatchTest()">Clear</button>
+        </div>
+
+        <div class="match-quick-tests">
+          <span class="match-label" style="display:block;margin-bottom:4px">Quick Tests</span>
+          <button class="match-quick-btn" onclick="quickTest('ACLR','ACL Reconstruction')">ACLR → ACL Reconstruction</button>
+          <button class="match-quick-btn" onclick="quickTest('Frozen Shoulder','Adhesive Capsulitis')">Frozen Shoulder → Adhesive Capsulitis</button>
+          <button class="match-quick-btn" onclick="quickTest('Slipped Disc','Lumbar Disc Herniation')">Slipped Disc → Lumbar Disc Herniation</button>
+          <button class="match-quick-btn" onclick="quickTest('Tennis Elbow','Lateral Epicondylitis')">Tennis Elbow → Lateral Epicondylitis</button>
+          <button class="match-quick-btn" onclick="quickTest('CVA','Middle Cerebral Artery Stroke')">CVA → MCA Stroke</button>
+          <button class="match-quick-btn" onclick="quickTest('TKR','Total Knee Replacement Rehabilitation')">TKR → Total Knee Replacement Rehab</button>
+          <button class="match-quick-btn" onclick="quickTest('pain','Patellofemoral Pain Syndrome')">pain → PFPS (generic guard)</button>
+          <button class="match-quick-btn" onclick="quickTest('Acute ACL Tear','ACL Tear')">Acute ACL Tear → ACL Tear (qualifier strip)</button>
+        </div>
+      </div>
+
+      <div id="matchResultArea"></div>
+
+      <!-- Data Browser -->
+      <div class="data-browser">
+        <div class="section-header">
+          <span class="section-title">Matching Data Browser</span>
+          <span id="matchDataStats" style="font-size:0.75rem;color:var(--text3)"></span>
+        </div>
+        <div class="data-browser-tabs">
+          <button class="data-browser-tab active" onclick="showDataTab('equiv')">Equivalence Groups</button>
+          <button class="data-browser-tab" onclick="showDataTab('parents')">Parent Terms</button>
+          <button class="data-browser-tab" onclick="showDataTab('abbrevs')">Abbreviations</button>
+        </div>
+        <div class="match-search-filter">
+          <input id="dataFilterInput" placeholder="Filter..." oninput="filterDataBrowser()">
+        </div>
+        <div class="data-browser-content" id="dataBrowserContent"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ──
+let adminKey = sessionStorage.getItem('physiodle_admin_key') || '';
+const state = { currentDay: 1, viewDay: 1, totalPuzzles: 0 };
+const charts = {};
+
+// ── API helpers ──
+async function adminApi(path) {
+  const sep = path.includes('?') ? '&' : '?';
+  const r = await fetch(`/api/admin${path}${sep}key=${encodeURIComponent(adminKey)}`);
+  if (r.status === 403) { doLogout(); throw new Error('Unauthorized'); }
+  return r.json();
+}
+async function analyticsApi() {
+  const r = await fetch('/api/analytics/dashboard', { headers: { 'x-admin-key': adminKey } });
+  if (!r.ok) throw new Error('Analytics fetch failed');
+  return r.json();
+}
+
+// ── Login / Logout ──
+async function doLogin() {
+  adminKey = document.getElementById('adminKeyInput').value.trim();
+  if (!adminKey) return;
+  try {
+    await analyticsApi();
+    sessionStorage.setItem('physiodle_admin_key', adminKey);
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = '';
+    refreshAll();
+    setInterval(() => { if (document.getElementById('panel-overview').classList.contains('active')) loadAnalytics(); }, 30000);
+  } catch {
+    document.getElementById('loginError').style.display = 'block';
+    document.getElementById('adminKeyInput').value = '';
+    document.getElementById('adminKeyInput').focus();
+  }
+}
+function doLogout() {
+  adminKey = '';
+  sessionStorage.removeItem('physiodle_admin_key');
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+}
+
+// ── Init ──
+document.getElementById('adminKeyInput').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+if (adminKey) {
+  analyticsApi().then(() => {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = '';
+    refreshAll();
+    setInterval(() => { if (document.getElementById('panel-overview').classList.contains('active')) loadAnalytics(); }, 30000);
+  }).catch(() => { document.getElementById('loginScreen').style.display = 'flex'; });
+}
+
+// ── Clock ──
+function updateClock() {
+  const aest = toAEST(new Date());
+  document.getElementById('clock').textContent = aest.toISOString().slice(0,16).replace('T',' ') + ' AEST';
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── Tab switching ──
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    if (tab.dataset.panel === 'users') loadUsers(1);
+    if (tab.dataset.panel === 'games') loadGames(1);
+    if (tab.dataset.panel === 'puzzles') loadPuzzles();
+    if (tab.dataset.panel === 'overview') loadAnalytics();
+    if (tab.dataset.panel === 'matcher') loadMatchData();
+  });
+});
+
+async function refreshAll() { loadAnalytics(); }
+
+// ══════════════════════════════════════════════════════════════
+// OVERVIEW / ANALYTICS
+// ══════════════════════════════════════════════════════════════
+
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#1e293b';
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.plugins.legend.labels.boxWidth = 10;
+
+function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+async function loadAnalytics() {
+  try {
+    const d = await analyticsApi();
+    renderKPIs(d);
+    renderTrafficCharts(d);
+    renderWinLoss(d);
+    renderScoreDist(d);
+    renderHourlyAll(d);
+    renderDevices(d);
+    renderTopPlayers(d.topPlayers);
+    renderMostActive(d.mostActive);
+    renderRecentSignups(d.recentSignups);
+    renderFeedback(d.feedback);
+    renderLbPop(d.leaderboardPopularity);
+  } catch (e) { console.error('Analytics load failed:', e); }
+}
+
+function renderKPIs(d) {
+  const delta = (a, b) => { if (!b) return ''; const pct = Math.round(((a-b)/Math.max(b,1))*100); return `<div class="stat-delta ${pct>=0?'up':'down'}">${pct>=0?'+':''}${pct}% vs yesterday</div>`; };
+  const cards = [
+    { label: 'Visitors Today', value: d.uniqueVisitors.today, sub: `Total: ${d.uniqueVisitors.total}`, color: 'blue', extra: delta(d.uniqueVisitors.today, d.uniqueVisitors.yesterday) },
+    { label: 'Page Views Today', value: d.pageViews.today, sub: `Total: ${d.pageViews.total}`, color: 'cyan', extra: delta(d.pageViews.today, d.pageViews.yesterday) },
+    { label: 'Sign-ups', value: d.signups.total, sub: `Today: ${d.signups.today} | Week: ${d.signups.thisWeek}`, color: 'green' },
+    { label: 'Games Played', value: d.gamesPlayed.total, sub: `Today: ${d.gamesPlayed.today} | Week: ${d.gamesPlayed.thisWeek}`, color: 'purple' },
+    { label: 'Win Rate', value: d.winLoss.winRate + '%', sub: `${d.winLoss.wins}W / ${d.winLoss.losses}L`, color: 'amber' },
+    { label: 'Avg Score', value: d.averageScore, sub: 'Lower is better (1-5)', color: 'pink' },
+    { label: 'Conversion', value: d.conversionRate + '%', sub: 'Visitors \u2192 Sign-ups', color: 'teal' },
+    { label: 'Games / User', value: d.gamesPerUser, sub: `${d.social.totalFriendships} friendships`, color: 'cyan' },
+  ];
+  document.getElementById('kpiRow').innerHTML = cards.map(c =>
+    `<div class="stat-card ${c.color}"><div class="stat-label">${c.label}</div><div class="stat-value">${c.value}</div><div class="stat-sub">${c.sub}</div>${c.extra||''}</div>`
+  ).join('');
+}
+
+function _chartLabels(d) { return d.dailyBreakdown.map(r => { const [m,dy] = r.day.slice(5).split('-'); return parseInt(dy) + '/' + parseInt(m); }); }
+const _ttip = { backgroundColor: 'rgba(15,23,42,0.95)', titleColor: '#e2e8f0', bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1, padding: 10 };
+function _singleChart(canvasId, chartKey, labels, data, color, fillColor, type) {
+  destroyChart(chartKey);
+  const total = data.reduce((s, v) => s + v, 0);
+  const max = Math.max(...data);
+  const maxIdx = data.indexOf(max);
+  charts[chartKey] = new Chart(document.getElementById(canvasId), {
+    type: type || 'line',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        borderColor: color,
+        backgroundColor: type === 'bar' ? color + '40' : fillColor || (color + '15'),
+        borderWidth: type === 'bar' ? 1 : 2.5,
+        borderRadius: type === 'bar' ? 4 : 0,
+        pointRadius: type === 'bar' ? 0 : 3,
+        pointHoverRadius: type === 'bar' ? 0 : 5,
+        pointBackgroundColor: color,
+        tension: 0.35,
+        fill: type !== 'bar',
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { ..._ttip, callbacks: { label: (ctx) => ctx.parsed.y.toLocaleString() } },
+      },
+      scales: {
+        y: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { color: '#64748b', maxTicksLimit: 5 } },
+        x: { grid: { display: false }, ticks: { color: '#475569', maxRotation: 0, autoSkipPadding: 8 } }
+      }
+    }
+  });
+}
+
+function renderTrafficCharts(d) {
+  const labels = _chartLabels(d);
+  const signupMap = {}; (d.dailySignups || []).forEach(r => { signupMap[r.day] = r.count; });
+  const gameMap = {}; (d.dailyGames || []).forEach(r => { gameMap[r.day] = r.total; });
+
+  _singleChart('pageViewsChart', 'pageViews', labels, d.dailyBreakdown.map(r => r.views), '#3b82f6', null, 'bar');
+  _singleChart('visitorsChart', 'visitors', labels, d.dailyBreakdown.map(r => r.unique_visitors), '#06b6d4');
+  _singleChart('gamesChart', 'games', labels, d.dailyBreakdown.map(r => gameMap[r.day] || 0), '#a78bfa');
+  _singleChart('signupsChart', 'signups', labels, d.dailyBreakdown.map(r => signupMap[r.day] || 0), '#4ade80');
+}
+
+function renderWinLoss(d) {
+  destroyChart('winLoss');
+  charts.winLoss = new Chart(document.getElementById('winLossChart'), {
+    type: 'doughnut',
+    data: { labels: ['Wins', 'Losses'], datasets: [{ data: [d.winLoss.wins, d.winLoss.losses], backgroundColor: ['#22c55e', '#ef4444'], borderWidth: 0, spacing: 2 }] },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+function renderScoreDist(d) {
+  destroyChart('score');
+  const colors = ['#22c55e', '#4ade80', '#06b6d4', '#f59e0b', '#ef4444'];
+  const scoreLabels = ['1 (First try)', '2', '3', '4', '5 (Last chance)'];
+  const data = [0,0,0,0,0];
+  d.scoreDistribution.forEach(r => { if (r.score >= 1 && r.score <= 5) data[r.score-1] = r.count; });
+  charts.score = new Chart(document.getElementById('scoreChart'), {
+    type: 'bar',
+    data: { labels: scoreLabels, datasets: [{ data, backgroundColor: colors, borderRadius: 6, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } },
+      scales: { x: { beginAtZero: true, grid: { color: '#1e293b' } }, y: { grid: { display: false } } } }
+  });
+}
+
+function _hourlyBar(canvasId, chartKey, hourlyData, color) {
+  destroyChart(chartKey);
+  const data = new Array(24).fill(0);
+  (hourlyData || []).forEach(r => { data[r.hour] = r.count; });
+  const currentHour = new Date(Date.now() + 10*3600000).getUTCHours();
+  charts[chartKey] = new Chart(document.getElementById(canvasId), {
+    type: 'bar',
+    data: { labels: data.map((_,i) => i + ':00'), datasets: [{ data, backgroundColor: data.map((_,i) => i === currentHour ? color : color + '40'), borderRadius: 3 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { ..._ttip, callbacks: { label: ctx => ctx.parsed.y.toLocaleString() } } },
+      scales: { y: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { maxTicksLimit: 5 } }, x: { grid: { display: false }, ticks: { maxTicksLimit: 12 } } } }
+  });
+}
+function renderHourlyAll(d) {
+  _hourlyBar('hourlyChart', 'hourly', d.hourlyToday, '#3b82f6');
+  _hourlyBar('hourlyVisitorsChart', 'hourlyVisitors', d.hourlyVisitors, '#06b6d4');
+  _hourlyBar('hourlyGamesChart', 'hourlyGames', d.hourlyGames, '#8b5cf6');
+  _hourlyBar('hourlySignupsChart', 'hourlySignups', d.hourlySignups, '#22c55e');
+}
+
+function renderDevices(d) {
+  destroyChart('device');
+  charts.device = new Chart(document.getElementById('deviceChart'), {
+    type: 'doughnut',
+    data: { labels: ['Mobile', 'Desktop'], datasets: [{ data: [d.devices.mobile, d.devices.desktop], backgroundColor: ['#8b5cf6', '#3b82f6'], borderWidth: 0, spacing: 2 }] },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+function renderTopPlayers(rows) {
+  const el = document.getElementById('topPlayersTable');
+  if (!rows || !rows.length) { el.innerHTML = '<p style="padding:1rem;color:var(--text3)">No data yet</p>'; return; }
+  const maxPts = Math.max(...rows.map(r => r.total_points), 1);
+  el.innerHTML = '<table><thead><tr><th>#</th><th>Player</th><th>Pts</th><th>W</th><th>Avg</th><th></th></tr></thead><tbody>' +
+    rows.map((r, i) => {
+      const rc = i < 3 ? 'rank-' + (i+1) : 'rank-n';
+      return `<tr><td><span class="rank ${rc}">${i+1}</span></td><td style="font-weight:600">${esc(r.username)}</td><td style="color:#fbbf24;font-weight:700">${r.total_points}</td><td>${r.wins}/${r.games_played}</td><td>${r.avg_score||'-'}</td><td><div class="mini-bar-bg"><div class="mini-bar" style="width:${r.total_points/maxPts*100}%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderMostActive(rows) {
+  const el = document.getElementById('activeTable');
+  if (!rows || !rows.length) { el.innerHTML = '<p style="padding:1rem;color:var(--text3)">No data yet</p>'; return; }
+  const maxG = Math.max(...rows.map(r => r.games_played), 1);
+  el.innerHTML = '<table><thead><tr><th>#</th><th>Player</th><th>Games</th><th>Wins</th><th>Win%</th><th></th></tr></thead><tbody>' +
+    rows.map((r, i) => {
+      const rc = i < 3 ? 'rank-' + (i+1) : 'rank-n';
+      const wr = r.games_played > 0 ? Math.round(r.wins/r.games_played*100) : 0;
+      return `<tr><td><span class="rank ${rc}">${i+1}</span></td><td style="font-weight:600">${esc(r.username)}</td><td>${r.games_played}</td><td>${r.wins}</td><td>${wr}%</td><td><div class="mini-bar-bg"><div class="mini-bar" style="width:${r.games_played/maxG*100}%;background:linear-gradient(90deg,#8b5cf6,#a78bfa)"></div></div></td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderRecentSignups(rows) {
+  const el = document.getElementById('signupsTable');
+  if (!rows || !rows.length) { el.innerHTML = '<p style="padding:1rem;color:var(--text3)">No sign-ups yet</p>'; return; }
+  el.innerHTML = '<table><thead><tr><th>Username</th><th>Joined</th></tr></thead><tbody>' +
+    rows.map(r => `<tr><td style="font-weight:600">${esc(r.username)}</td><td style="color:var(--text3)">${fmtDateTime(r.created_at)}</td></tr>`).join('') + '</tbody></table>';
+}
+
+function renderFeedback(fb) {
+  const el = document.getElementById('feedbackPanel');
+  if (!fb || !fb.recent || !fb.recent.length) { el.innerHTML = '<p style="padding:1rem;color:var(--text3)">No feedback yet</p>'; return; }
+  const emoji = { good: '\u{1F44D}', ok: '\u{1F44C}', bad: '\u{1F44E}' };
+  el.innerHTML = fb.recent.map(r =>
+    `<div class="feedback-item"><span style="font-weight:700">${emoji[r.rating]||r.rating}</span> <strong>${esc(r.username||'Anon')}</strong> <span class="feedback-meta">Day ${r.day_number} \u00b7 ${fmtDate(r.created_at)}</span>${r.comment ? `<div style="color:var(--text2);font-size:0.8rem;margin-top:0.2rem">${esc(r.comment)}</div>` : ''}</div>`
+  ).join('');
+}
+
+function renderLbPop(rows) {
+  const el = document.getElementById('lbPop');
+  if (!rows || !rows.length) { el.innerHTML = '<p style="color:var(--text3)">No data yet</p>'; return; }
+  const maxC = Math.max(...rows.map(r => r.count), 1);
+  const colors = ['blue','green','amber','purple','cyan','pink'];
+  el.innerHTML = rows.map((r, i) => {
+    const name = (r.event_data || '').replace(/"/g, '');
+    return `<div class="stat-card ${colors[i%6]}"><div class="stat-label">${esc(name)}</div><div class="stat-value">${r.count}</div><div style="margin-top:0.4rem"><div class="mini-bar-bg"><div class="mini-bar" style="width:${r.count/maxC*100}%;background:var(--${colors[i%6]})"></div></div></div></div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════════════
+// USERS
+// ══════════════════════════════════════════════════════════════
+
+async function loadUsers(page) {
+  const data = await adminApi(`/users?page=${page}&limit=50`);
+  document.getElementById('userTotal').textContent = `${data.total} total users`;
+  document.getElementById('userTableBody').innerHTML = data.users.map(u => `
+    <tr>
+      <td style="color:var(--text3)">${u.id}</td>
+      <td style="font-weight:600">${esc(u.username)}</td>
+      <td style="color:var(--text3)">${fmtDate(u.createdAt)}</td>
+      <td>${u.gamesPlayed}</td>
+      <td>${u.gamesWon}</td>
+      <td>${u.winRate}%</td>
+      <td style="color:#fbbf24;font-weight:600">${u.totalPoints}</td>
+    </tr>
+  `).join('');
+  renderPagination('userPagination', data.page, data.totalPages, loadUsers);
+}
+
+// ══════════════════════════════════════════════════════════════
+// GAME HISTORY
+// ══════════════════════════════════════════════════════════════
+
+async function loadGames(page) {
+  const data = await adminApi(`/games?page=${page}&limit=50`);
+  document.getElementById('gameTotal').textContent = `${data.total} total games`;
+  document.getElementById('gameTableBody').innerHTML = data.games.map(g => `
+    <tr>
+      <td style="font-weight:600">${esc(g.username)}</td>
+      <td>Day ${g.dayNumber}</td>
+      <td>${g.won ? '<span class="badge badge-green">Won</span>' : '<span class="badge badge-red">Lost</span>'}</td>
+      <td>${g.won ? g.score + '/5' : '\u2014'}</td>
+      <td style="font-size:0.75rem;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text3)">${g.guesses.map(x => typeof x === 'string' ? x : (x.text || x.guess || '')).join(', ')}</td>
+      <td style="color:var(--text3)">${fmtDateTime(g.completedAt)}</td>
+    </tr>
+  `).join('');
+  renderPagination('gamePagination', data.page, data.totalPages, loadGames);
+}
+
+// ══════════════════════════════════════════════════════════════
+// PAGINATION
+// ══════════════════════════════════════════════════════════════
+
+function renderPagination(containerId, currentPage, totalPages, loadFn) {
+  const el = document.getElementById(containerId);
+  if (totalPages <= 1) { el.innerHTML = ''; return; }
+  let html = `<button ${currentPage<=1?'disabled':''}>« Prev</button>`;
+  const start = Math.max(1, currentPage - 3), end = Math.min(totalPages, currentPage + 3);
+  for (let i = start; i <= end; i++) html += `<button class="${i===currentPage?'pg-active':''}">${i}</button>`;
+  html += `<button ${currentPage>=totalPages?'disabled':''}>Next »</button>`;
+  html += `<span class="page-info">${currentPage} / ${totalPages}</span>`;
+  el.innerHTML = html;
+  el.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.textContent.trim();
+      if (t === '« Prev' && currentPage > 1) loadFn(currentPage - 1);
+      else if (t === 'Next »' && currentPage < totalPages) loadFn(currentPage + 1);
+      else if (!isNaN(t)) loadFn(parseInt(t));
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// PUZZLE VETTING
+// ══════════════════════════════════════════════════════════════
+
+async function loadPuzzles(startDay) {
+  const data = await adminApi(`/puzzles?startDay=${startDay||''}&count=10`);
+  state.currentDay = data.currentDay;
+  state.totalPuzzles = data.totalPuzzles;
+  state.viewDay = startDay || data.currentDay;
+
+  document.getElementById('dayInput').value = state.viewDay;
+  document.getElementById('puzzleDayInfo').textContent = `Current day: ${state.currentDay} | Total puzzles: ${state.totalPuzzles}`;
+
+  const warnings = findSimilarNearby(data.puzzles);
+  document.getElementById('puzzleContainer').innerHTML = data.puzzles.map(p => {
+    const isToday = p.dayNumber === state.currentDay;
+    const isPast = p.dayNumber < state.currentDay;
+    const dayLabel = isToday ? 'TODAY' : isPast ? 'Past' : `In ${p.dayNumber - state.currentDay} days`;
+    const warning = warnings[p.dayNumber];
+    return `
+      ${warning ? `<div class="puzzle-warning">\u26A0\uFE0F <strong>Similar puzzle nearby:</strong> ${esc(warning)}</div>` : ''}
+      <div class="puzzle-card${isToday ? ' today' : ''}">
+        <div class="puzzle-header">
+          <div>
+            <div class="puzzle-title">${esc(p.answer)}</div>
+            <div class="puzzle-aliases">${p.aliases.length ? 'Aliases: ' + p.aliases.map(esc).join(', ') : 'No aliases'}</div>
+          </div>
+          <div class="puzzle-meta">
+            <span class="badge ${isToday ? 'badge-teal' : isPast ? 'badge-blue' : 'badge-yellow'}">Day ${p.dayNumber} \u2014 ${dayLabel}</span>
+            <span class="badge badge-blue">${esc(p.category)}</span>
+            <span class="badge ${p.difficulty==='hard'?'badge-red':p.difficulty==='easy'?'badge-green':'badge-yellow'}">${p.difficulty}</span>
+            <span style="font-size:0.7rem;color:var(--text3)">${p.date}</span>
+          </div>
+        </div>
+        ${p.clues.map((c, i) => `
+          <div class="clue">
+            <div class="clue-label">Clue ${i+1}: ${esc(c.label)}</div>
+            <div class="clue-text">${esc(c.text)}</div>
+          </div>
+        `).join('')}
+        <div class="puzzle-explanation"><strong>Explanation:</strong> ${esc(p.explanation || 'None')}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function findSimilarNearby(puzzles) {
+  const warnings = {};
+  for (let i = 0; i < puzzles.length; i++) {
+    for (let j = i + 1; j < puzzles.length; j++) {
+      const a = puzzles[i], b = puzzles[j];
+      const dayGap = Math.abs(a.dayNumber - b.dayNumber);
+      if (dayGap > 50) continue;
+      const aW = a.answer.toLowerCase().split(/[\s\-]+/);
+      const bW = b.answer.toLowerCase().split(/[\s\-]+/);
+      const shared = aW.filter(w => bW.includes(w) && w.length > 3);
+      if (a.category === b.category && shared.length >= 1) {
+        const msg = `"${a.answer}" (Day ${a.dayNumber}) and "${b.answer}" (Day ${b.dayNumber}) — both ${a.category}, only ${dayGap} days apart`;
+        warnings[a.dayNumber] = msg; warnings[b.dayNumber] = msg;
+      }
+    }
+  }
+  return warnings;
+}
+
+function puzzleNav(delta) { jumpToDay(Math.max(1, state.viewDay + delta)); }
+function jumpToDay(day) { state.viewDay = Math.max(1, parseInt(day)||1); loadPuzzles(state.viewDay); }
+function jumpToDate(dateStr) {
+  if (!dateStr) return;
+  const diff = Math.floor((new Date(dateStr) - new Date('2026-03-04')) / 86400000) + 1;
+  if (diff >= 1) jumpToDay(diff);
+}
+
+// ── Helpers ──
+function esc(s) { const el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
+// All times in Queensland AEST (UTC+10, no DST)
+function toAEST(d) { return new Date(new Date(d).getTime() + 10 * 3600000); }
+function fmtDate(d) { if (!d) return '\u2014'; return toAEST(d).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); }
+function fmtDateTime(d) { if (!d) return '\u2014'; const a = toAEST(d); return a.toISOString().slice(0,16).replace('T',' ') + ' AEST'; }
+
+// ══════════════════════════════════════════════════════════════
+// MATCH TESTER
+// ══════════════════════════════════════════════════════════════
+
+let matchData = null;
+let currentDataTab = 'equiv';
+let allConditions = [];
+
+let matchAutocompleteReady = false;
+
+async function loadMatchData() {
+  // Load match data (equiv groups, parent terms, abbreviations)
+  if (!matchData) {
+    try {
+      matchData = await adminApi('/match-data');
+      document.getElementById('matchDataStats').textContent =
+        `${matchData.totalEquivGroups} equiv groups · ${matchData.totalParentTerms} parent terms · ${matchData.totalAbbreviations} abbreviations`;
+      renderDataBrowser();
+      loadPuzzleAnswerDropdown();
+    } catch (e) { console.error('Failed to load match data:', e); }
+  }
+  // Load condition names for autocomplete (separate from matchData guard)
+  if (!matchAutocompleteReady) {
+    try {
+      const r = await fetch('/api/puzzle/conditions');
+      const data = await r.json();
+      allConditions = data.conditions || [];
+      console.log('Loaded', allConditions.length, 'conditions for autocomplete');
+      setupGuessAutocomplete();
+      matchAutocompleteReady = true;
+    } catch (e) { console.error('Failed to load conditions:', e); }
+  }
+}
+
+// ── Guess Autocomplete (mirrors game logic) ──
+function setupGuessAutocomplete() {
+  const input = document.getElementById('matchGuess');
+  const dropdown = document.getElementById('guessAutocomplete');
+  let selectedIndex = -1;
+
+  dropdown.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    const item = e.target.closest('.match-ac-item');
+    if (item) {
+      input.value = item.getAttribute('data-value');
+      dropdown.classList.remove('show');
+      selectedIndex = -1;
+      input.focus();
+    }
+  });
+
+  input.addEventListener('input', () => {
+    const value = input.value.trim().toLowerCase();
+    selectedIndex = -1;
+    if (!value || value.length < 2) { dropdown.classList.remove('show'); return; }
+
+    const searchWords = value.split(/\s+/).filter(w => w.length > 0);
+
+    const scored = allConditions
+      .map(c => {
+        const cl = c.toLowerCase();
+        const allMatch = searchWords.every(w => cl.includes(w));
+        if (!allMatch) return null;
+        let score = 0;
+        if (cl === value) score += 1000;
+        if (cl.startsWith(value)) score += 100;
+        searchWords.forEach(w => {
+          if (cl.startsWith(w) || cl.includes(' ' + w) || cl.includes('-' + w)) score += 20;
+        });
+        score += Math.max(0, 60 - c.length);
+        return { name: c, score };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 12);
+
+    if (scored.length === 0) { dropdown.classList.remove('show'); return; }
+
+    dropdown.innerHTML = scored.map((m, i) => {
+      const orig = m.name;
+      const highlights = new Array(orig.length).fill(false);
+      searchWords.forEach(w => {
+        const regex = new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+        let match;
+        while ((match = regex.exec(orig)) !== null) {
+          for (let j = match.index; j < match.index + match[0].length; j++) highlights[j] = true;
+        }
+      });
+      let display = '';
+      let inH = false;
+      for (let j = 0; j < orig.length; j++) {
+        if (highlights[j] && !inH) { display += '<strong>'; inH = true; }
+        if (!highlights[j] && inH) { display += '</strong>'; inH = false; }
+        display += orig[j];
+      }
+      if (inH) display += '</strong>';
+      return `<div class="match-ac-item${i===selectedIndex?' selected':''}" data-index="${i}" data-value="${m.name}">${display}</div>`;
+    }).join('');
+
+    dropdown.classList.add('show');
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (!dropdown.classList.contains('show')) {
+      if (e.key === 'Enter') { runMatchTest(); return; }
+      return;
+    }
+    const items = dropdown.querySelectorAll('.match-ac-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      items.forEach((it, i) => it.classList.toggle('selected', i === selectedIndex));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, 0);
+      items.forEach((it, i) => it.classList.toggle('selected', i === selectedIndex));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (selectedIndex >= 0 && items[selectedIndex]) {
+        input.value = items[selectedIndex].getAttribute('data-value');
+        dropdown.classList.remove('show');
+        selectedIndex = -1;
+      } else {
+        dropdown.classList.remove('show');
+        runMatchTest();
+      }
+    } else if (e.key === 'Escape') {
+      dropdown.classList.remove('show');
+      selectedIndex = -1;
+    }
+  });
+
+  input.addEventListener('blur', () => {
+    setTimeout(() => { dropdown.classList.remove('show'); selectedIndex = -1; }, 200);
+  });
+}
+
+async function loadPuzzleAnswerDropdown() {
+  const sel = document.getElementById('matchAnswerSelect');
+  try {
+    const data = await adminApi('/puzzles?startDay=1&count=50');
+    // Load all puzzles for dropdown
+    const allPuzzles = [];
+    const batchSize = 50;
+    for (let start = 1; start <= data.totalPuzzles; start += batchSize) {
+      const batch = await adminApi(`/puzzles?startDay=${start}&count=${batchSize}`);
+      allPuzzles.push(...batch.puzzles);
+    }
+    // Sort by day number
+    allPuzzles.sort((a, b) => a.dayNumber - b.dayNumber);
+    // Add unique answers to dropdown
+    const seen = new Set();
+    allPuzzles.forEach(p => {
+      if (seen.has(p.answer)) return;
+      seen.add(p.answer);
+      const opt = document.createElement('option');
+      opt.value = JSON.stringify({ answer: p.answer, aliases: p.aliases || [] });
+      const dayLabel = p.dayNumber <= state.currentDay ? `Day ${p.dayNumber} (played)` : `Day ${p.dayNumber}`;
+      opt.textContent = `${dayLabel}: ${p.answer} [${p.category}]`;
+      sel.appendChild(opt);
+    });
+  } catch (e) { console.error('Failed to load puzzle answers:', e); }
+}
+
+function onAnswerSelectChange() {
+  const sel = document.getElementById('matchAnswerSelect');
+  if (!sel.value) return;
+  const data = JSON.parse(sel.value);
+  document.getElementById('matchAnswer').value = data.answer;
+  document.getElementById('matchAliases').value = (data.aliases || []).join(', ');
+}
+
+async function runMatchTest() {
+  const guess = document.getElementById('matchGuess').value.trim();
+  const answer = document.getElementById('matchAnswer').value.trim();
+  const aliasStr = document.getElementById('matchAliases').value.trim();
+  if (!guess || !answer) return;
+
+  const aliases = aliasStr ? aliasStr.split(',').map(a => a.trim()).filter(Boolean) : [];
+
+  try {
+    const sep = '/match-test'.includes('?') ? '&' : '?';
+    const r = await fetch(`/api/admin/match-test?key=${encodeURIComponent(adminKey)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ guess, answer, aliases }),
+    });
+    if (r.status === 403) { doLogout(); return; }
+    const result = await r.json();
+
+    const area = document.getElementById('matchResultArea');
+    const isCorrect = result.result === 'correct';
+    area.innerHTML = `
+      <div class="match-result-card ${isCorrect ? 'correct' : 'incorrect'}">
+        <span class="match-result-badge ${isCorrect ? 'correct' : 'incorrect'}">
+          ${isCorrect ? '&#10003; CORRECT' : '&#10007; INCORRECT'}
+        </span>
+        <div class="match-layer">
+          <strong>Guess:</strong> "${esc(guess)}" &nbsp;&rarr;&nbsp; <strong>Answer:</strong> "${esc(answer)}"
+          ${aliases.length ? `<br><strong>Aliases:</strong> ${aliases.map(a => esc(a)).join(', ')}` : ''}
+        </div>
+        <div class="match-layer" style="margin-top:0.5rem">
+          <strong>Match Layer:</strong> ${esc(result.matchLayer)}
+        </div>
+        <div class="match-details" style="margin-top:0.25rem">
+          ${esc(result.details)}
+        </div>
+      </div>
+    `;
+  } catch (e) { console.error('Match test failed:', e); }
+}
+
+function clearMatchTest() {
+  document.getElementById('matchGuess').value = '';
+  document.getElementById('matchAnswer').value = '';
+  document.getElementById('matchAliases').value = '';
+  document.getElementById('matchAnswerSelect').value = '';
+  document.getElementById('matchResultArea').innerHTML = '';
+}
+
+function quickTest(guess, answer) {
+  document.getElementById('matchGuess').value = guess;
+  document.getElementById('matchAnswer').value = answer;
+  document.getElementById('matchAliases').value = '';
+  document.getElementById('matchAnswerSelect').value = '';
+  runMatchTest();
+}
+
+function showDataTab(tab) {
+  currentDataTab = tab;
+  document.querySelectorAll('.data-browser-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.data-browser-tab[onclick="showDataTab('${tab}')"]`).classList.add('active');
+  document.getElementById('dataFilterInput').value = '';
+  renderDataBrowser();
+}
+
+function filterDataBrowser() { renderDataBrowser(); }
+
+function renderDataBrowser() {
+  if (!matchData) return;
+  const container = document.getElementById('dataBrowserContent');
+  const filter = (document.getElementById('dataFilterInput').value || '').toLowerCase();
+
+  if (currentDataTab === 'equiv') {
+    const groups = matchData.equivalenceGroups.filter(group =>
+      !filter || group.some(t => t.toLowerCase().includes(filter))
+    );
+    container.innerHTML = groups.map((group, i) =>
+      `<div class="equiv-group">
+        <span style="font-size:0.65rem;color:var(--text3);margin-right:6px">#${i+1}</span>
+        <span class="equiv-group-terms">${group.map(t => {
+          const hl = filter && t.toLowerCase().includes(filter);
+          return `<span style="${hl?'border:1px solid var(--cyan);':''}">${esc(t)}</span>`;
+        }).join(' ')}</span>
+      </div>`
+    ).join('');
+  } else if (currentDataTab === 'parents') {
+    const entries = Object.entries(matchData.parentTerms).filter(([parent, children]) =>
+      !filter || parent.toLowerCase().includes(filter) || children.some(c => c.includes(filter))
+    );
+    container.innerHTML = entries.map(([parent, children]) =>
+      `<div class="equiv-group">
+        <div style="font-size:0.85rem;font-weight:700;color:var(--cyan);margin-bottom:4px">${esc(parent)}</div>
+        <div class="equiv-group-terms">${children.map(c => `<span>${esc(c)}</span>`).join(' ')}</div>
+      </div>`
+    ).join('');
+  } else if (currentDataTab === 'abbrevs') {
+    const entries = Object.entries(matchData.abbreviationMap)
+      .filter(([abbr, terms]) =>
+        !filter || abbr.includes(filter) || terms.some(t => t.includes(filter))
+      )
+      .sort((a, b) => a[0].localeCompare(b[0]));
+    container.innerHTML = `<div class="table-card"><div class="table-scroll" style="max-height:450px">` +
+      entries.map(([abbr, terms]) =>
+        `<div class="abbr-row">
+          <span class="abbr-key">${esc(abbr.toUpperCase())}</span>
+          <span class="abbr-values">${terms.map(t => esc(t)).join(', ')}</span>
+        </div>`
+      ).join('') +
+      `</div></div>`;
+  }
+}
+</script>
+</body>
+</html>

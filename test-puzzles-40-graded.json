@@ -1,0 +1,2415 @@
+{
+  "summary": {
+    "total": 40,
+    "good": 36,
+    "acceptable": 4,
+    "needsWork": 0,
+    "poor": 0
+  },
+  "results": [
+    {
+      "puzzleId": 1,
+      "answer": "Metformin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 2,
+      "answer": "Warfarin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 3,
+      "answer": "Salbutamol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 4,
+      "answer": "Methotrexate",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 5,
+      "answer": "Lithium",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 6,
+      "answer": "Digoxin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 7,
+      "answer": "Morphine",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 8,
+      "answer": "Amoxicillin",
+      "grade": "ACCEPTABLE",
+      "fails": 0,
+      "warns": 1,
+      "passes": 11,
+      "issues": [
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_CLASS_NAME_EARLY",
+          "message": "Clue 2 mentions drug class \"penicillins\" - narrows too quickly"
+        }
+      ],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_CLASS_NAME_EARLY",
+          "message": "Clue 2 mentions drug class \"penicillins\" - narrows too quickly"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 9,
+      "answer": "Prednisolone",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 10,
+      "answer": "Clozapine",
+      "grade": "ACCEPTABLE",
+      "fails": 0,
+      "warns": 2,
+      "passes": 10,
+      "issues": [
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_CLASS_NAME_EARLY",
+          "message": "Clue 1 mentions drug class \"antipsychotics\" - narrows too quickly"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_REDUNDANCY",
+          "message": "Clues 3 and 5 share phrase: \"the first 18 weeks\""
+        }
+      ],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_CLASS_NAME_EARLY",
+          "message": "Clue 1 mentions drug class \"antipsychotics\" - narrows too quickly"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_REDUNDANCY",
+          "message": "Clues 3 and 5 share phrase: \"the first 18 weeks\""
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 11,
+      "answer": "Carbamazepine",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 12,
+      "answer": "Flucloxacillin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 13,
+      "answer": "Paracetamol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 14,
+      "answer": "Gentamicin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 15,
+      "answer": "Spironolactone",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 16,
+      "answer": "Doxycycline",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 17,
+      "answer": "Tramadol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 18,
+      "answer": "Azathioprine",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 19,
+      "answer": "Ondansetron",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 20,
+      "answer": "Propranolol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 21,
+      "answer": "Colchicine",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 22,
+      "answer": "Phenytoin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 23,
+      "answer": "Dantrolene",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 24,
+      "answer": "Leflunomide",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 25,
+      "answer": "Rifampicin",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 26,
+      "answer": "Amiodarone",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 27,
+      "answer": "Naloxone",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 28,
+      "answer": "Hydroxychloroquine",
+      "grade": "ACCEPTABLE",
+      "fails": 0,
+      "warns": 1,
+      "passes": 11,
+      "issues": [
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_REDUNDANCY",
+          "message": "Clues 4 and 5 share phrase: \"after 5 years of\""
+        }
+      ],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_REDUNDANCY",
+          "message": "Clues 4 and 5 share phrase: \"after 5 years of\""
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 29,
+      "answer": "Sotalol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 30,
+      "answer": "Misoprostol",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 31,
+      "answer": "Apixaban",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 32,
+      "answer": "Venlafaxine",
+      "grade": "ACCEPTABLE",
+      "fails": 0,
+      "warns": 1,
+      "passes": 11,
+      "issues": [
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_VAGUE_CLUES",
+          "message": "Clue 1 uses vague term \"commonly used\""
+        }
+      ],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": false,
+          "severity": "WARN",
+          "rule": "NO_VAGUE_CLUES",
+          "message": "Clue 1 uses vague term \"commonly used\""
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 33,
+      "answer": "Insulin glargine",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 34,
+      "answer": "Omeprazole",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 35,
+      "answer": "Adrenaline",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 36,
+      "answer": "Tranexamic acid",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 37,
+      "answer": "Mirabegron",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 38,
+      "answer": "Dapsone",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 39,
+      "answer": "Tacrolimus",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    },
+    {
+      "puzzleId": 40,
+      "answer": "Imiquimod",
+      "grade": "GOOD",
+      "fails": 0,
+      "warns": 0,
+      "passes": 12,
+      "issues": [],
+      "allResults": [
+        {
+          "pass": true,
+          "rule": "VALID_STRUCTURE"
+        },
+        {
+          "pass": true,
+          "rule": "NO_ANSWER_IN_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CLASS_NAME_EARLY"
+        },
+        {
+          "pass": true,
+          "rule": "NO_BRAND_BEFORE_CLUE5"
+        },
+        {
+          "pass": true,
+          "rule": "NO_CYP_BEFORE_CLUE3"
+        },
+        {
+          "pass": true,
+          "rule": "PROGRESSIVE_NARROWING"
+        },
+        {
+          "pass": true,
+          "rule": "CLUE_LENGTH"
+        },
+        {
+          "pass": true,
+          "rule": "NO_REDUNDANCY"
+        },
+        {
+          "pass": true,
+          "rule": "HAS_EXPLANATION"
+        },
+        {
+          "pass": true,
+          "rule": "CORRECT_LABELS"
+        },
+        {
+          "pass": true,
+          "rule": "NO_VAGUE_CLUES"
+        },
+        {
+          "pass": true,
+          "rule": "MAX_ALTERNATIVES"
+        }
+      ]
+    }
+  ]
+}

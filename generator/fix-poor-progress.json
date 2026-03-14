@@ -1,0 +1,46 @@
+{
+  "fixed": [
+    {
+      "id": 241,
+      "answer": "Phenobarbital",
+      "newGrade": "NEEDS_WORK"
+    },
+    {
+      "id": 370,
+      "answer": "Atropine",
+      "newGrade": "GOOD"
+    },
+    {
+      "id": 466,
+      "answer": "Zidovudine",
+      "newGrade": "POOR"
+    },
+    {
+      "id": 533,
+      "answer": "Rabeprazole",
+      "newGrade": "GOOD"
+    },
+    {
+      "id": 777,
+      "answer": "Glycerol",
+      "newGrade": "GOOD"
+    },
+    {
+      "id": 779,
+      "answer": "Loratadine",
+      "newGrade": "GOOD"
+    },
+    {
+      "id": 788,
+      "answer": "Sitagliptin",
+      "newGrade": "POOR"
+    },
+    {
+      "id": 117,
+      "answer": "Sirolimus",
+      "newGrade": "GOOD"
+    }
+  ],
+  "failed": [],
+  "skipped": []
+}

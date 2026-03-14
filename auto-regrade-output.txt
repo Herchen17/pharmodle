@@ -1,0 +1,813 @@
+📖 Loading puzzles...
+🔍 Analyzing 775 puzzles for quality...
+
+[1/775] Post-ACL Reconstruction                  ✗
+[2/775] Bell's Palsy                             ~
+[3/775] Femoroacetabular Impingement             ~
+[4/775] Temporomandibular Joint Disorder         ~
+[5/775] Overtraining Syndrome                    ✗
+[6/775] Heart Failure                            ✗
+[7/775] Femoral Stress Fracture                  ~
+[8/775] Vertebral Compression Fracture           ~
+[9/775] Cervical Spinal Cord Injury              ✗
+[10/775] Post-ACL Reconstruction                  ~
+[11/775] Fibromyalgia                             ✓
+[12/775] Lower Back Pain - Work-Related           ✗
+[13/775] Multiple Sclerosis                       ~
+[14/775] Congestive Heart Failure                 ✗
+[15/775] Legg-Calvé-Perthes Disease               ~
+[16/775] Chemotherapy-Induced Peripheral Neuropathy ~
+[17/775] Achilles Tendon Rupture                  ~
+[18/775] Adhesive Capsulitis of the Ankle         ~
+[19/775] Anterior Cruciate Ligament Tear          ~
+[20/775] Hypermobility Syndrome                   ✗
+[21/775] Myofascial Pain Syndrome                 ~
+[22/775] Pressure Injury Stage 2-3                ✗
+[23/775] Muscular Dystrophy                       ~
+[24/775] Lateral Ankle Sprain                     ✗
+[25/775] Posterior Cruciate Ligament Tear         ✗
+[26/775] Cauda Equina Syndrome                    ~
+[27/775] Osgood-Schlatter Disease                 ✗
+[28/775] Hallux Valgus                            ~
+[29/775] Tibial Plateau Fracture                  ~
+[30/775] Scaphoid Fracture                        ~
+[31/775] Computer Vision Syndrome                 ✗
+[32/775] Atrial Fibrillation                      ~
+[33/775] Sever's Disease                          ~
+[34/775] Labyrinthitis                            ✗
+[35/775] Glenohumeral Instability                 ✗
+[36/775] Cyclist's Palsy                          ✗
+[37/775] Sacroiliac Joint Dysfunction             ✗
+[38/775] Infrapatellar Bursitis                   ~
+[39/775] Diabetic Foot Ulcer                      ✗
+[40/775] Ehlers-Danlos Syndrome                   ✓
+[41/775] Long COVID                               ✗
+[42/775] Proximal Hamstring Tendinopathy          ✗
+[43/775] Psoriatic Arthritis                      ~
+[44/775] Calcaneal Fracture                       ~
+[45/775] Ulnar Nerve Palsy                        ~
+[46/775] Tarsal Coalition                         ✓
+[47/775] Idiopathic Adolescent Scoliosis          ✗
+[48/775] Spondylodiscitis                         ~
+[49/775] Wrist Sprain                             ✗
+[50/775] Occupational Asthma                      ✗
+[51/775] Radial Nerve Palsy                       ~
+[52/775] Intercostal Muscle Strain                ~
+[53/775] Metatarsalgia                            ~
+[54/775] Clubfoot                                 ~
+[55/775] Costochondritis                          ~
+[56/775] Sinus Tarsi Syndrome                     ~
+[57/775] Systemic Lupus Erythematosus             ~
+[58/775] Greater Trochanteric Pain Syndrome       ✗
+[59/775] Piriformis Syndrome                      ✗
+[60/775] Greater Trochanteric Pain Syndrome       ~
+[61/775] Hamstring Strain                         ~
+[62/775] Baker's Cyst                             ~
+[63/775] Nerve Root Adhesion                      ✓
+[64/775] Plantar Fasciitis                        ~
+[65/775] Patellofemoral Pain Syndrome             ✗
+[66/775] Acromioclavicular Joint Sprain           ✗
+[67/775] Elbow Dislocation                        ✗
+[68/775] Groin Strain                             ✗
+[69/775] Boutonniere Deformity                    ~
+[70/775] Post-Mastectomy Rehabilitation           ✗
+[71/775] Thoracic Outlet Syndrome                 ✗
+[72/775] Long COVID                               ✗
+[73/775] Cardiotoxicity Post-Cancer Treatment     ~
+[74/775] Lateral Ankle Sprain                     ✗
+[75/775] Antenatal Pelvic Girdle Pain             ✓
+[76/775] Hallux Rigidus                           ✗
+[77/775] Avascular Necrosis of the Femoral Head   ~
+[78/775] Axillary Nerve Palsy                     ~
+[79/775] Falls in the Elderly                     ✗
+[80/775] Juvenile Idiopathic Arthritis            ✗
+[81/775] Patellofemoral Pain Syndrome - Paediatric ✗
+[82/775] Traumatic Brain Injury                   ~
+[83/775] Hip Osteoarthritis                       ✗
+[84/775] Suprascapular Neuropathy                 ~
+[85/775] Post-Cardiac Surgery Rehabilitation      ✗
+[86/775] Behçet's Disease                         ~
+[87/775] Post-Herpetic Neuralgia                  ~
+[88/775] Ehlers-Danlos Syndrome                   ~
+[89/775] Antenatal Pelvic Girdle Pain             ✗
+[90/775] Vulvodynia                               ✗
+[91/775] Cerebral Palsy                           ~
+[92/775] Postural Syndrome - Work-Related         ~
+[93/775] Bronchiectasis                           ✗
+[94/775] Femoroacetabular Impingement             ~
+[95/775] Rotator Cuff Tear                        ~
+[96/775] Vibration White Finger                   ~
+[97/775] Dupuytren's Contracture                  ✗
+[98/775] Knee Arthroscopy Rehabilitation          ✗
+[99/775] Cancer-Related Fatigue                   ~
+[100/775] Parkinson's Disease                      ~
+[101/775] Cardiotoxicity Post-Cancer Treatment     ~
+[102/775] Fibromyalgia                             ✗
+[103/775] Plica Syndrome                           ~
+[104/775] De Quervain's Tenosynovitis              ~
+[105/775] Ménière's Disease                        ✗
+[106/775] High Ankle Sprain                        ✗
+[107/775] Charcot-Marie-Tooth Disease              ✗
+[108/775] Patellar Tendinopathy                    ~
+[109/775] Vision Impairment - Age-Related          ✗
+[110/775] Pes Anserine Bursitis                    ~
+[111/775] Tietze Syndrome                          ✗
+[112/775] Snapping Hip Syndrome                    ✗
+[113/775] Breast Cancer Lymphedema                 ✗
+[114/775] Congenital Torticollis                   ✗
+[115/775] Occupational Overuse Syndrome            ✗
+[116/775] Rheumatoid Arthritis                     ✗
+[117/775] Hip Osteoarthritis                       ✗
+[118/775] Pulmonary Embolism                       ~
+[119/775] Medial Tibial Stress Syndrome            ~
+[120/775] Total Knee Replacement Rehabilitation    ~
+[121/775] Spring Ligament Injury                   ✗
+[122/775] Pelvic Organ Prolapse                    ~
+[123/775] Baker's Cyst                             ~
+[124/775] Brachial Plexus Injury                   ~
+[125/775] Lisfranc Injury                          ✗
+[126/775] Delirium - Rehabilitation Phase          ✗
+[127/775] Thoracic Spine Dysfunction               ✗
+[128/775] Acquired Torticollis                     ~
+[129/775] Osteochondritis Dissecans                ~
+[130/775] Post-ACL Reconstruction                  ~
+[131/775] Hip Fracture                             ✗
+[132/775] Scheuermann's Disease                    ✗
+[133/775] Medial Epicondylitis                     ~
+[134/775] Post-Total Knee Replacement              ✗
+[135/775] Pressure Injury Stage 2-3                ~
+[136/775] Thoracic Spine Dysfunction               ✗
+[137/775] Subtrochanteric Fracture                 ~
+[138/775] Myasthenia Gravis                        ~
+[139/775] Autism Spectrum Disorder                 ~
+[140/775] Benign Paroxysmal Positional Vertigo     ~
+[141/775] Femoroacetabular Impingement             ~
+[142/775] Dementia-Related Mobility Decline        ✗
+[143/775] Lumbar Spinal Cord Injury                ✗
+[144/775] Huntington's Disease                     ✗
+[145/775] Long Head of Biceps Rupture              ~
+[146/775] Post-Total Knee Replacement              ~
+[147/775] Pneumonia                                ~
+[148/775] Wound Dehiscence Post-Surgical           ✗
+[149/775] Concussion                               ~
+[150/775] Femoroacetabular Impingement             ~
+[151/775] Asthma                                   ~
+[152/775] Lumbar Disc Herniation                   ~
+[153/775] Chronic Fatigue Syndrome                 ✗
+[154/775] Lumbar Disc Herniation                   ✗
+[155/775] Posterior Cruciate Ligament Tear         ✗
+[156/775] Vision Impairment - Age-Related          ✗
+[157/775] Ménière's Disease                        ~
+[158/775] Paget's Disease of Bone                  ~
+[159/775] Computer Vision Syndrome                 ~
+[160/775] Postural Syndrome - Work-Related         ✗
+[161/775] Ulnar Collateral Ligament Injury         ~
+[162/775] Post-Total Hip Replacement               ✗
+[163/775] Rotator Cuff Tear                        ✗
+[164/775] Peripheral Neuropathy                    ✗
+[165/775] Chronic Fatigue Syndrome                 ~
+[166/775] Hip Labral Tear                          ✗
+[167/775] Functional Neurological Disorder         ✗
+[168/775] Morton's Neuroma                         ~
+[169/775] Piriformis Syndrome                      ✓
+[170/775] Lumbar Spinal Stenosis                   ~
+[171/775] Chronic Pelvic Pain Syndrome             ✗
+[172/775] Cervical Facet Joint Syndrome            ~
+[173/775] Lower Crossed Syndrome                   ✗
+[174/775] Long Head of Biceps Rupture              ~
+[175/775] Chemotherapy-Induced Peripheral Neuropathy ~
+[176/775] Rotator Cuff Tear                        ✗
+[177/775] Hip Fracture                             ✗
+[178/775] Idiopathic Adolescent Scoliosis          ~
+[179/775] Stress Urinary Incontinence              ✗
+[180/775] Lumbar Radiculopathy                     ✗
+[181/775] Medial Tibial Stress Syndrome            ~
+[182/775] Cystic Fibrosis                          ✗
+[183/775] Spina Bifida                             ✗
+[184/775] Lymphoedema                              ~
+[185/775] Serratus Anterior Injury                 ~
+[186/775] Shoulder Arthroscopy                     ✗
+[187/775] Tension-Type Headache                    ~
+[188/775] Boxer's Fracture                         ~
+[189/775] Chronic Pelvic Pain Syndrome             ✗
+[190/775] Traumatic Brain Injury                   ~
+[191/775] Prepatellar Bursitis                     ~
+[192/775] Kinesiophobia                            ~
+[193/775] Achilles Tendinopathy                    ✗
+[194/775] Lateral Epicondylitis                    ✗
+[195/775] Stress Fracture - Metatarsal             ✗
+[196/775] Radial Head Fracture                     ~
+[197/775] Cancer-Related Fatigue                   ✗
+[198/775] Shoulder Osteoarthritis                  ✗
+[199/775] Lateral Ankle Sprain                     ✗
+[200/775] Golfer's Hip                             ✗
+[201/775] Post-Meniscectomy                        ✗
+[202/775] Plantar Fasciitis                        ~
+[203/775] Burns Rehabilitation                     ~
+[204/775] Medial Collateral Ligament Sprain        ✗
+[205/775] Exercise-Induced Mood Improvement        ~
+[206/775] Developmental Dysplasia of the Hip       ✗
+[207/775] Coccydynia                               ✗
+[208/775] Myocardial Infarction                    ✗
+[209/775] Proximal Hamstring Tendinopathy          ✗
+[210/775] Whiplash                                 ~
+[211/775] Myasthenia Gravis                        ~
+[212/775] Cervical Radiculopathy                   ✗
+[213/775] Osteitis Pubis                           ~
+[214/775] Ulnar Collateral Ligament Injury         ~
+[215/775] Hill-Sachs Lesion                        ✓
+[216/775] Rectocele                                ✗
+[217/775] Central Sensitisation Syndrome           ✓
+[218/775] Olecranon Bursitis                       ✗
+[219/775] Carpal Tunnel Syndrome                   ✗
+[220/775] Post-Total Shoulder Replacement          ~
+[221/775] Hallux Rigidus                           ~
+[222/775] Antenatal Pelvic Girdle Pain             ~
+[223/775] Phantom Limb Pain                        ✗
+[224/775] Acute Respiratory Distress Syndrome      ✗
+[225/775] Proximal Tibiofibular Joint Instability  ~
+[226/775] Achilles Tendon Rupture                  ✗
+[227/775] Cancer Rehabilitation                    ✗
+[228/775] Concussion                               ~
+[229/775] Spondylolysis                            ~
+[230/775] Sesamoiditis                             ✗
+[231/775] Cervical Spinal Cord Injury              ~
+[232/775] Autism Spectrum Disorder                 ✗
+[233/775] Vertigo - Age-Related                    ~
+[234/775] Lymphoedema                              ✗
+[235/775] Deconditioning                           ✗
+[236/775] Accessory Nerve Palsy                    ~
+[237/775] Upper Crossed Syndrome                   ✗
+[238/775] Radial Tunnel Syndrome                   ~
+[239/775] Latissimus Dorsi Strain                  ~
+[240/775] Cystic Fibrosis                          ✗
+[241/775] Developmental Coordination Disorder      ~
+[242/775] Clavicle Fracture                        ✓
+[243/775] Vertebral Compression Fracture           ✓
+[244/775] Sacral Stress Fracture                   ✗
+[245/775] Sprengel's Deformity                     ~
+[246/775] Rheumatoid Arthritis                     ~
+[247/775] Bronchiectasis                           ~
+[248/775] Antenatal Pelvic Girdle Pain             ~
+[249/775] Quadriceps Contusion                     ~
+[250/775] Postnatal Pelvic Floor Dysfunction       ~
+[251/775] Chronic Obstructive Pulmonary Disease    ✗
+[252/775] Cervicogenic Headache                    ~
+[253/775] First Rib Dysfunction                    ~
+[254/775] Thoracic Outlet Syndrome                 ✓
+[255/775] Shoulder Labral Tear                     ✗
+[256/775] Down Syndrome                            ~
+[257/775] Tibial Stress Fracture                   ✗
+[258/775] Baker's Cyst                             ~
+[259/775] Avascular Necrosis of the Femoral Head   ~
+[260/775] Myofascial Pain Syndrome                 ~
+[261/775] Medial Epicondylitis                     ~
+[262/775] Adhesive Capsulitis                      ✗
+[263/775] Sarcopenia                               ✗
+[264/775] Lumbar Spinal Stenosis                   ✓
+[265/775] Brainstem Stroke                         ~
+[266/775] Posterior Tibial Tendon Dysfunction Grade 1 ✗
+[267/775] Iliotibial Band Syndrome                 ✗
+[268/775] Intertrochanteric Fracture               ✗
+[269/775] Vaginismus                               ✗
+[270/775] Hip Pointer                              ✗
+[271/775] Lateral Collateral Ligament Sprain       ✗
+[272/775] Clubfoot                                 ✗
+[273/775] Tibialis Posterior Tendinopathy          ~
+[274/775] Ataxia                                   ~
+[275/775] Meniere's Disease                        ~
+[276/775] Tennis Leg                               ~
+[277/775] Ankle Impingement Syndrome               ✗
+[278/775] Patellofemoral Pain Syndrome - Paediatric ~
+[279/775] Cerebellar Ataxia                        ~
+[280/775] Medial Collateral Ligament Sprain        ✗
+[281/775] Atelectasis                              ✗
+[282/775] Vestibular Migraine                      ✗
+[283/775] Tibialis Posterior Tendinopathy          ~
+[284/775] Spina Bifida                             ✗
+[285/775] Posterior Cerebral Artery Stroke         ✗
+[286/775] Down Syndrome                            ✗
+[287/775] Scaphoid Fracture                        ✓
+[288/775] Spondylolysis                            ~
+[289/775] Cauda Equina Syndrome                    ~
+[290/775] Peroneal Nerve Palsy                     ~
+[291/775] Neck Tension - Desk Work                 ✗
+[292/775] Lower Crossed Syndrome                   ✗
+[293/775] Post-Spinal Fusion                       ✗
+[294/775] Acquired Torticollis                     ✗
+[295/775] Popliteal Tendinopathy                   ~
+[296/775] Anterior Cruciate Ligament Tear          ~
+[297/775] Turf Toe                                 ✓
+[298/775] Ankylosing Spondylitis                   ~
+[299/775] Thumb CMC Osteoarthritis                 ✗
+[300/775] Calcific Tendinitis                      ✗
+[301/775] Tibialis Anterior Tendinopathy           ✗
+[302/775] Metatarsalgia                            ~
+[303/775] Sacroiliac Joint Dysfunction             ~
+[304/775] Frozen Hip                               ✓
+[305/775] Lumbar Spinal Stenosis                   ~
+[306/775] Scleroderma                              ✗
+[307/775] Pleural Effusion                         ✗
+[308/775] Pes Anserine Bursitis                    ~
+[309/775] Runner's Nipple                          ~
+[310/775] Stress Fracture                          ✓
+[311/775] Flat Feet in Children                    ✗
+[312/775] Cervical Arterial Dysfunction            ✗
+[313/775] Motor Neurone Disease                    ✗
+[314/775] Retrocalcaneal Bursitis                  ✓
+[315/775] Coccydynia                               ✓
+[316/775] Cardiac Rehabilitation Post-MI           ✗
+[317/775] Post-Polio Syndrome                      ~
+[318/775] Benign Paroxysmal Positional Vertigo     ~
+[319/775] Exercise-Induced Bronchoconstriction     ~
+[320/775] Benign Paroxysmal Positional Vertigo     ✗
+[321/775] Anxiety-Related Hyperventilation         ~
+[322/775] Cauda Equina Syndrome                    ✗
+[323/775] Post-Thoracotomy Rehabilitation          ~
+[324/775] Cervical Disc Herniation                 ✓
+[325/775] Tibial Nerve Palsy                       ✓
+[326/775] Post-Traumatic Stress Disorder - Physical Rehabilitation ✗
+[327/775] Legg-Calvé-Perthes Disease               ~
+[328/775] Tarsal Tunnel Syndrome                   ✗
+[329/775] Biceps Tendinopathy                      ✗
+[330/775] Cervical Spondylosis                     ~
+[331/775] Osteoarthritis                           ~
+[332/775] Navicular Stress Fracture                ~
+[333/775] Shoulder Labral Tear                     ✗
+[334/775] Iliotibial Band Syndrome                 ~
+[335/775] Plica Syndrome                           ✗
+[336/775] Diabetic Foot Ulcer                      ✓
+[337/775] Scapular Dyskinesis                      ✗
+[338/775] Wrist Tendinopathy                       ✗
+[339/775] Snapping Hip Syndrome                    ~
+[340/775] Tibial Stress Fracture                   ✗
+[341/775] Morton's Neuroma                         ~
+[342/775] Exercise-Induced Bronchoconstriction     ~
+[343/775] Post-Total Knee Replacement              ✗
+[344/775] Scapular Fracture                        ~
+[345/775] Turf Toe                                 ~
+[346/775] Swimmer's Shoulder                       ✗
+[347/775] Plantar Plate Tear                       ✗
+[348/775] Concussion                               ~
+[349/775] SLAP Lesion                              ~
+[350/775] Achilles Tendinopathy                    ~
+[351/775] Lisfranc Injury                          ~
+[352/775] SLAP Lesion                              ~
+[353/775] Rotator Cuff Tendinopathy                ~
+[354/775] Huntington's Disease                     ~
+[355/775] ICU-Acquired Weakness                    ✗
+[356/775] Tibialis Posterior Tendinopathy          ✗
+[357/775] Calf Strain                              ~
+[358/775] Posterolateral Corner Injury             ~
+[359/775] Distal Biceps Tendon Rupture             ✓
+[360/775] Torticollis                              ~
+[361/775] Post-Ankle ORIF                          ~
+[362/775] Scheuermann's Disease                    ~
+[363/775] Osteoarthritis - Advanced                ~
+[364/775] Chronic Ankle Instability                ~
+[365/775] Deep Vein Thrombosis                     ~
+[366/775] Meniscal Tear                            ~
+[367/775] Post-Fall Anxiety Syndrome               ✗
+[368/775] Vertigo - Age-Related                    ~
+[369/775] Post-Thoracotomy Rehabilitation          ✗
+[370/775] Gamekeeper's Thumb                       ✓
+[371/775] Lumbar Instability                       ✗
+[372/775] Femoral Stress Fracture                  ✗
+[373/775] Musculocutaneous Nerve Palsy             ~
+[374/775] Fibromyalgia                             ~
+[375/775] Pilon Fracture                           ~
+[376/775] Gamekeeper's Thumb                       ✓
+[377/775] Costochondritis                          ✓
+[378/775] Thoracic Spinal Cord Injury              ✗
+[379/775] Reactive Arthritis                       ✗
+[380/775] Torticollis                              ~
+[381/775] Calf Strain                              ✗
+[382/775] Idiopathic Adolescent Scoliosis          ~
+[383/775] Osteoporosis                             ✗
+[384/775] Rectus Femoris Strain                    ~
+[385/775] Calf Strain                              ~
+[386/775] Antenatal Pelvic Girdle Pain             ~
+[387/775] Rotator Cuff Tendinopathy                ~
+[388/775] Proximal Humerus Fracture                ~
+[389/775] Sacroiliac Joint Dysfunction             ~
+[390/775] Ganglion Cyst                            ✗
+[391/775] Post-Carpal Tunnel Release               ✓
+[392/775] Flat Feet in Children                    ✗
+[393/775] Anterior Cruciate Ligament Tear          ✗
+[394/775] Parkinson's Disease                      ✗
+[395/775] Post-Total Hip Replacement               ✗
+[396/775] Anterior Cruciate Ligament Tear          ✗
+[397/775] Peripheral Neuropathy                    ✗
+[398/775] Cubital Tunnel Syndrome                  ~
+[399/775] Osgood-Schlatter Disease                 ✗
+[400/775] Exertional Rhabdomyolysis                ~
+[401/775] Vestibular Migraine                      ~
+[402/775] Athletic Pubalgia                        ✗
+[403/775] Post-Meniscectomy                        ~
+[404/775] Facet Joint Syndrome                     ~
+[405/775] Scheuermann's Disease                    ~
+[406/775] Pulmonary Fibrosis                       ~
+[407/775] Pelvic Floor Dysfunction                 ✗
+[408/775] Burns Rehabilitation                     ~
+[409/775] Clavicle Fracture                        ✓
+[410/775] Lumbar Disc Herniation                   ~
+[411/775] TFCC Tear                                ~
+[412/775] Radial Head Fracture                     ✗
+[413/775] Colles Fracture                          ✗
+[414/775] Meralgia Paraesthetica                   ~
+[415/775] Rib Fracture                             ✗
+[416/775] Intersection Syndrome                    ~
+[417/775] Erb's Palsy                              ~
+[418/775] Anterior Cerebral Artery Stroke          ✗
+[419/775] Kienbock's Disease                       ~
+[420/775] Pronator Syndrome                        ~
+[421/775] Cervicogenic Headache                    ~
+[422/775] Post-Carpal Tunnel Release               ~
+[423/775] Rectus Femoris Strain                    ~
+[424/775] Bell's Palsy                             ~
+[425/775] Whiplash Associated Disorder             ✗
+[426/775] Little League Elbow                      ✗
+[427/775] Post-Amputation Rehabilitation           ~
+[428/775] Cervical Disc Herniation                 ~
+[429/775] Motor Neurone Disease                    ✗
+[430/775] Lumbar Spondylolisthesis                 ~
+[431/775] Lateral Collateral Ligament Sprain       ✗
+[432/775] Osteoarthritis                           ~
+[433/775] Pilon Fracture                           ✗
+[434/775] Functional Neurological Disorder         ✗
+[435/775] Stress Fracture - Metatarsal             ~
+[436/775] Temporomandibular Joint Disorder         ✓
+[437/775] Smith's Fracture                         ✗
+[438/775] Achilles Tendinopathy                    ✗
+[439/775] Supraspinatous Tendon Calcification      ✓
+[440/775] Femoral Nerve Palsy                      ~
+[441/775] Plantar Fasciitis                        ✗
+[442/775] Femoral Nerve Palsy                      ~
+[443/775] Osgood-Schlatter Disease                 ✗
+[444/775] Deconditioning                           ~
+[445/775] Asthma                                   ✗
+[446/775] Athletic Pubalgia                        ✗
+[447/775] Multidirectional Instability             ~
+[448/775] Posterior Tibial Tendon Dysfunction Grade 2 ~
+[449/775] Cystic Fibrosis                          ~
+[450/775] Cerebral Palsy                           ✗
+[451/775] Hip Flexor Strain                        ✗
+[452/775] Non-Specific Low Back Pain               ~
+[453/775] Oblique Strain                           ~
+[454/775] Adhesive Capsulitis                      ✓
+[455/775] Shoulder Impingement Syndrome            ✗
+[456/775] Cervical Facet Joint Syndrome            ✓
+[457/775] Heart Failure                            ✗
+[458/775] Intertrochanteric Fracture               ~
+[459/775] Medial Collateral Ligament Sprain        ✓
+[460/775] Degenerative Disc Disease                ~
+[461/775] Whiplash Associated Disorder             ✗
+[462/775] Gout                                     ~
+[463/775] Hallux Valgus                            ~
+[464/775] Congenital Torticollis                   ~
+[465/775] Patellar Tendinopathy                    ✗
+[466/775] Generalised Joint Hypermobility          ~
+[467/775] Whiplash Associated Disorder             ~
+[468/775] Necrotising Fasciitis Post-Rehabilitation ✗
+[469/775] Subdeltoid Bursitis                      ✓
+[470/775] Postural Hypotension                     ✗
+[471/775] Occupational Overuse Syndrome            ~
+[472/775] Biceps Femoris Tendinopathy              ~
+[473/775] Hammer Toe                               ~
+[474/775] Iliopsoas Bursitis                       ✗
+[475/775] Cervical Spondylosis                     ~
+[476/775] Diastasis Rectus Abdominis               ~
+[477/775] Anxiety-Related Hyperventilation         ~
+[478/775] Non-Specific Low Back Pain               ~
+[479/775] Middle Cerebral Artery Stroke            ✗
+[480/775] Venous Leg Ulcer                         ~
+[481/775] Post-Total Hip Replacement               ~
+[482/775] Supraspinatous Tendon Calcification      ✗
+[483/775] Cuboid Syndrome                          ✓
+[484/775] Middle Cerebral Artery Stroke            ✗
+[485/775] Cardiac Rehabilitation Post-MI           ✗
+[486/775] Trigger Finger                           ✗
+[487/775] Peroneal Tendinopathy                    ~
+[488/775] Anterior Interosseous Syndrome           ✗
+[489/775] Post-Fall Anxiety Syndrome               ✗
+[490/775] Acute Wry Neck                           ✗
+[491/775] Fibula Fracture                          ~
+[492/775] Guillain-Barré Syndrome                  ✗
+[493/775] Muscle Contusion                         ✓
+[494/775] Long Thoracic Nerve Palsy                ~
+[495/775] Lateral Epicondylitis                    ✗
+[496/775] Slipped Capital Femoral Epiphysis        ~
+[497/775] ICU-Acquired Weakness                    ~
+[498/775] Developmental Dysplasia of the Hip       ~
+[499/775] Pelvic Floor Dysfunction                 ~
+[500/775] Pulmonary Embolism                       ~
+[501/775] Frailty Syndrome                         ✗
+[502/775] De Quervain's Tenosynovitis              ✗
+[503/775] Lumbar Radiculopathy                     ✗
+[504/775] Age-Related Sarcopenia                   ~
+[505/775] Groin Strain                             ✗
+[506/775] Medial Tibial Stress Syndrome            ✗
+[507/775] Tibial Shaft Fracture                    ~
+[508/775] Sinding-Larsen-Johansson Disease         ~
+[509/775] Patellofemoral Pain Syndrome             ~
+[510/775] Postural Orthostatic Tachycardia Syndrome ~
+[511/775] Peroneal Tendon Subluxation              ~
+[512/775] Chronic Obstructive Pulmonary Disease    ✗
+[513/775] Stress Urinary Incontinence              ✗
+[514/775] Traumatic Brain Injury                   ~
+[515/775] Post-Rotator Cuff Repair                 ✗
+[516/775] Patellar Dislocation                     ~
+[517/775] Intertrochanteric Fracture               ✗
+[518/775] Polymyalgia Rheumatica                   ✗
+[519/775] Posterior Ankle Impingement              ✗
+[520/775] Lymphoedema                              ✗
+[521/775] Growth Plate Injury                      ✗
+[522/775] Pressure Injury Stage 1                  ✓
+[523/775] Patellar Dislocation                     ~
+[524/775] Snapping Hip Syndrome                    ~
+[525/775] Sjögren's Syndrome                       ~
+[526/775] Lateral Epicondylitis                    ✗
+[527/775] Elbow Dislocation                        ✗
+[528/775] Age-Related Sarcopenia                   ✗
+[529/775] Obturator Nerve Entrapment               ~
+[530/775] Wrist Sprain                             ✗
+[531/775] Adductor Strain                          ~
+[532/775] Persistent Postural-Perceptual Dizziness ✗
+[533/775] Growth Plate Injury                      ✗
+[534/775] High Ankle Sprain                        ~
+[535/775] Boxer's Fracture                         ✗
+[536/775] Triceps Tendinopathy                     ~
+[537/775] Lumbar Spinal Fusion                     ✗
+[538/775] Occupational Asthma                      ~
+[539/775] Vestibular Neuritis                      ✗
+[540/775] Adductor Strain                          ~
+[541/775] Brachial Plexus Injury                   ✓
+[542/775] Cervical Myelopathy                      ~
+[543/775] Guillain-Barré Syndrome                  ✗
+[544/775] Dupuytren's Contracture                  ~
+[545/775] Biceps Tendinopathy                      ✗
+[546/775] Carpal Tunnel Syndrome                   ✗
+[547/775] Pleural Effusion                         ✗
+[548/775] Bell's Palsy                             ~
+[549/775] Anterior Cruciate Ligament Tear          ~
+[550/775] Osteoporosis                             ✗
+[551/775] Sciatic Nerve Injury                     ✗
+[552/775] Dupuytren's Disease Post-Fasciectomy     ✗
+[553/775] Calcific Tendinitis                      ~
+[554/775] Peripheral Neuropathy                    ✗
+[555/775] Diastasis Rectus Abdominis               ~
+[556/775] Proximal Hamstring Tendinopathy          ✓
+[557/775] Heart Failure                            ~
+[558/775] Proximal Humerus Fracture                ✗
+[559/775] Central Sensitisation Syndrome           ~
+[560/775] Post-Amputation Rehabilitation           ✗
+[561/775] Tuberosity Avulsion Fracture             ~
+[562/775] Ischiofemoral Impingement                ~
+[563/775] Developmental Coordination Disorder      ✗
+[564/775] Subtrochanteric Fracture                 ~
+[565/775] Cervical Spondylosis                     ~
+[566/775] Vestibular Neuritis                      ~
+[567/775] Mallet Finger                            ~
+[568/775] Reactive Arthritis                       ✗
+[569/775] Trigger Finger                           ✗
+[570/775] Jersey Finger                            ~
+[571/775] Cervical Radiculopathy                   ~
+[572/775] Cervical Spine Surgery                   ~
+[573/775] Greater Trochanteric Pain Syndrome       ✗
+[574/775] Hearing Loss                             ✗
+[575/775] Multiple Sclerosis                       ~
+[576/775] Cervical Myelopathy                      ~
+[577/775] Patellofemoral Pain Syndrome             ~
+[578/775] Femoroacetabular Impingement             ~
+[579/775] Quadriceps Tendinopathy                  ~
+[580/775] Serratus Anterior Injury                 ~
+[581/775] Thoracic Spinal Cord Injury              ✗
+[582/775] Juvenile Idiopathic Arthritis            ✗
+[583/775] Radial Nerve Palsy                       ✗
+[584/775] Iliotibial Band Syndrome                 ~
+[585/775] Golfer's Hip                             ~
+[586/775] Non-Specific Low Back Pain               ✓
+[587/775] Peroneal Tendinopathy                    ~
+[588/775] Lateral Ankle Sprain                     ✗
+[589/775] Stress Urinary Incontinence              ~
+[590/775] Meralgia Paraesthetica                   ~
+[591/775] Sarcopenia                               ~
+[592/775] Post-Traumatic Stress Disorder - Physical Rehabilitation ~
+[593/775] Patellar Dislocation                     ~
+[594/775] Postural Hypotension                     ~
+[595/775] Post-Cardiac Surgery Rehabilitation      ✗
+[596/775] Sternoclavicular Joint Injury            ✓
+[597/775] Subscapularis Tear                       ✗
+[598/775] Falls in the Elderly                     ✗
+[599/775] Mallet Finger                            ~
+[600/775] Postural Orthostatic Tachycardia Syndrome ✗
+[601/775] Glenohumeral Instability                 ~
+[602/775] Psoriatic Arthritis                      ~
+[603/775] Hamstring Strain                         ✗
+[604/775] Trigger Finger                           ~
+[605/775] Hamstring Strain                         ✓
+[606/775] Lumbar Spondylolisthesis                 ✗
+[607/775] Heterotopic Ossification                 ~
+[608/775] Lower Back Pain - Work-Related           ✗
+[609/775] Ankylosing Spondylitis                   ~
+[610/775] Atelectasis                              ~
+[611/775] Degenerative Disc Disease                ~
+[612/775] Overtraining Syndrome                    ✗
+[613/775] Frailty Syndrome                         ~
+[614/775] Dementia-Related Mobility Decline        ~
+[615/775] Knee Osteoarthritis                      ✗
+[616/775] Thoracolumbar Fascia Pain                ~
+[617/775] Rheumatoid Arthritis                     ~
+[618/775] Dyspareunia                              ✗
+[619/775] Chronic Pain Syndrome                    ✗
+[620/775] Freiberg's Disease                       ✗
+[621/775] Shoulder Dislocation                     ✗
+[622/775] Multidirectional Instability             ✓
+[623/775] Erb's Palsy                              ~
+[624/775] Chronic Ankle Instability                ✗
+[625/775] Cerebral Palsy                           ✗
+[626/775] Exercise-Induced Mood Improvement        ~
+[627/775] Adhesive Capsulitis                      ~
+[628/775] Overactive Bladder                       ✗
+[629/775] Patellar Tendinopathy                    ✗
+[630/775] Axillary Nerve Palsy                     ~
+[631/775] Post-Total Shoulder Replacement          ✗
+[632/775] Cystocele                                ~
+[633/775] Post-Total Hip Replacement               ✓
+[634/775] Diastasis Rectus Abdominis               ~
+[635/775] Pectoralis Major Rupture                 ✗
+[636/775] Meniscal Tear                            ~
+[637/775] Hearing Loss                             ✗
+[638/775] Osteitis Pubis                           ~
+[639/775] Sarcopenia                               ✗
+[640/775] Pulmonary Fibrosis                       ~
+[641/775] Patellofemoral Pain Syndrome             ✗
+[642/775] Intercostal Muscle Strain                ~
+[643/775] Atlantoaxial Instability                 ✗
+[644/775] Ganglion Cyst                            ~
+[645/775] Muscle Contusion                         ✓
+[646/775] Post-Total Hip Replacement               ~
+[647/775] Post-Rotator Cuff Repair                 ~
+[648/775] Compartment Syndrome                     ~
+[649/775] Meniscal Tear                            ~
+[650/775] Wrist Tendinopathy                       ✗
+[651/775] Radial Tunnel Syndrome                   ✓
+[652/775] Acromioclavicular Joint Sprain           ~
+[653/775] Venous Leg Ulcer                         ✗
+[654/775] Congenital Torticollis                   ~
+[655/775] Olecranon Fracture                       ✗
+[656/775] Vestibular Neuritis                      ~
+[657/775] Post-Spinal Fusion                       ~
+[658/775] Parkinson's Disease                      ✗
+[659/775] Growing Pains                            ✗
+[660/775] Trigeminal Neuralgia                     ~
+[661/775] Little League Elbow                      ~
+[662/775] Hip Fracture                             ✗
+[663/775] Endometriosis                            ~
+[664/775] Quadriceps Tendinopathy                  ~
+[665/775] Cancer Rehabilitation                    ~
+[666/775] Jones Fracture                           ~
+[667/775] Pectoralis Minor Strain                  ✓
+[668/775] Pneumonia                                ✗
+[669/775] Vibration White Finger                   ✗
+[670/775] Multiple Sclerosis                       ✗
+[671/775] Deep Vein Thrombosis                     ~
+[672/775] Runner's Nipple                          ✗
+[673/775] Posterior Ankle Impingement              ✗
+[674/775] Lumbar Radiculopathy                     ✗
+[675/775] Ankle Impingement Syndrome               ✗
+[676/775] Guyon's Canal Syndrome                   ✗
+[677/775] Posterior Tibial Tendon Dysfunction Grade 2 ~
+[678/775] Facet Joint Syndrome                     ~
+[679/775] Vasculitis                               ~
+[680/775] Hip Labral Tear                          ✗
+[681/775] De Quervain's Tenosynovitis              ✗
+[682/775] Cervical Radiculopathy                   ~
+[683/775] Polymyalgia Rheumatica                   ✗
+[684/775] Chronic Exertional Compartment Syndrome  ✗
+[685/775] Pressure Injury Stage 1                  ~
+[686/775] Systemic Lupus Erythematosus             ✗
+[687/775] Work-Related Upper Limb Disorder         ✓
+[688/775] Tibial Plateau Fracture                  ~
+[689/775] Marfan Syndrome                          ✓
+[690/775] Bronchiectasis                           ✗
+[691/775] Knee Osteoarthritis                      ✗
+[692/775] Breast Cancer Lymphedema                 ~
+[693/775] Falls in the Elderly                     ✗
+[694/775] Pes Anserine Bursitis                    ~
+[695/775] Post-Carpal Tunnel Release               ~
+[696/775] Phantom Limb Pain                        ~
+[697/775] Boutonniere Deformity                    ~
+[698/775] Swimmer's Shoulder                       ~
+[699/775] Gout                                     ~
+[700/775] Posterior Tibial Tendon Dysfunction Grade 1 ~
+[701/775] Kinesiophobia                            ~
+[702/775] Sever's Disease                          ~
+[703/775] Osteoporosis                             ✗
+[704/775] Rib Fracture                             ✗
+[705/775] Knee Osteoarthritis                      ✗
+[706/775] Upper Crossed Syndrome                   ✗
+[707/775] Neck Tension - Desk Work                 ✗
+[708/775] Chronic Obstructive Pulmonary Disease    ✗
+[709/775] Post-Total Knee Replacement              ✗
+[710/775] Post-Mastectomy Rehabilitation           ✗
+[711/775] Scapular Dyskinesis                      ✗
+[712/775] Postnatal Pelvic Floor Dysfunction       ✗
+[713/775] Rotator Cuff Tendinopathy                ✗
+[714/775] Ankle Osteoarthritis                     ✗
+[715/775] Hip Labral Tear                          ✗
+[716/775] Tennis Leg                               ✗
+[717/775] Cubital Tunnel Syndrome                  ~
+[718/775] Jersey Finger                            ✓
+[719/775] Pelvic Floor Dysfunction                 ✗
+[720/775] Morton's Neuroma                         ~
+[721/775] Delirium - Rehabilitation Phase          ~
+[722/775] Heterotopic Ossification                 ~
+[723/775] Neuropathic Pain                         ~
+[724/775] Cognitive Impairment                     ✗
+[725/775] Colles Fracture                          ✓
+[726/775] Osteogenesis Imperfecta                  ~
+[727/775] Infraspinatus Tear                       ~
+[728/775] Pneumonia                                ✗
+[729/775] Olecranon Bursitis                       ~
+[730/775] Jones Fracture                           ~
+[731/775] Temporomandibular Joint Disorder         ✗
+[732/775] Costochondritis                          ~
+[733/775] Generalised Joint Hypermobility          ~
+[734/775] Biceps Tendinopathy                      ✓
+[735/775] Myositis Ossificans                      ✗
+[736/775] Acromioclavicular Joint Sprain           ✗
+[737/775] Wound Dehiscence Post-Surgical           ~
+[738/775] Acute Wry Neck                           ~
+[739/775] Shoulder Arthroscopy                     ✗
+[740/775] Thoracic Disc Herniation                 ✗
+[741/775] Labyrinthitis                            ~
+[742/775] Persistent Postural-Perceptual Dizziness ✗
+[743/775] Carpal Tunnel Syndrome                   ~
+[744/775] Tuberosity Avulsion Fracture             ~
+[745/775] Complex Regional Pain Syndrome           ~
+[746/775] Cerebellar Stroke                        ✗
+[747/775] Calf Strain                              ✗
+[748/775] Muscular Dystrophy                       ~
+[749/775] Post-Concussion Syndrome                 ✗
+[750/775] Unilateral Vestibular Hypofunction       ✗
+[751/775] Cyclist's Palsy                          ~
+[752/775] Overactive Bladder                       ~
+[753/775] Tarsal Tunnel Syndrome                   ~
+[754/775] Scoliosis                                ~
+[755/775] Tension-Type Headache                    ✗
+[756/775] Developmental Dysplasia of the Hip       ✗
+[757/775] Piriformis Syndrome                      ✗
+[758/775] Chronic Exertional Compartment Syndrome  ~
+[759/775] Calcific Tendinitis                      ✗
+[760/775] Pelvic Organ Prolapse                    ~
+[761/775] Osteoporotic Vertebral Compression Fracture ~
+[762/775] Charcot-Marie-Tooth Disease              ~
+[763/775] Complex Regional Pain Syndrome           ✗
+[764/775] Glenohumeral Instability                 ✗
+[765/775] Cerebral Palsy - Ataxic                  ✗
+[766/775] Post-Laminectomy                         ✗
+[767/775] Ankylosing Spondylitis                   ✗
+[768/775] Suprascapular Neuropathy                 ~
+[769/775] Post-Ankle ORIF                          ~
+[770/775] Distal Humerus Fracture                  ~
+[771/775] Hip Osteoarthritis                       ✗
+[772/775] Quadriceps Contusion                     ~
+[773/775] Calcaneal Fracture                       ~
+[774/775] Post-Laminectomy                         ✗
+[775/775] Work-Related Upper Limb Disorder         ✗
+
+════════════════════════════════════════════════════════════
+✅ Re-graded 775 puzzles
+════════════════════════════════════════════════════════════
+  ✓ Good:         51 (6.6%)
+  ~ Needs Work:   384 (49.5%)
+  ✗ Poor:         340 (43.9%)
+
+📄 Saved to: data/regraded-reviews.json
+
+⚠️  POOR QUALITY (340):
+   1. Post-ACL Reconstruction             Redundant clues - insufficient new information progression
+   5. Overtraining Syndrome               Redundant clues - insufficient new information progression
+   6. Heart Failure                       Redundant clues - insufficient new information progression
+   9. Cervical Spinal Cord Injury         Diagnosis named too early, breaks game challenge
+   12. Lower Back Pain - Work-Related      Redundant clues - insufficient new information progression
+   14. Congestive Heart Failure            Redundant clues - insufficient new information progression
+   20. Hypermobility Syndrome              Redundant clues - insufficient new information progression
+   22. Pressure Injury Stage 2-3           Diagnosis named too early, breaks game challenge
+   24. Lateral Ankle Sprain                Diagnosis named too early, breaks game challenge
+   25. Posterior Cruciate Ligament Tear    Diagnosis named too early, breaks game challenge
+   27. Osgood-Schlatter Disease            Redundant clues - insufficient new information progression
+   31. Computer Vision Syndrome            Diagnosis named too early, breaks game challenge
+   34. Labyrinthitis                       Redundant clues - insufficient new information progression
+   35. Glenohumeral Instability            Redundant clues - insufficient new information progression
+   36. Cyclist's Palsy                     Redundant clues - insufficient new information progression
+   37. Sacroiliac Joint Dysfunction        Redundant clues - insufficient new information progression
+   39. Diabetic Foot Ulcer                 Redundant clues - insufficient new information progression
+   41. Long COVID                          Redundant clues - insufficient new information progression
+   42. Proximal Hamstring Tendinopathy     Redundant clues - insufficient new information progression
+   47. Idiopathic Adolescent Scoliosis     Redundant clues - insufficient new information progression
+   ... and 320 more
+
+💡 Use this updated rating to update your reports:
+   node complete-comparison-report.js --use-regraded
