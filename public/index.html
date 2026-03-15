@@ -6,8 +6,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0d9488">
-  <title>Physiodle - Physiotherapy Puzzle Game</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦴</text></svg>">
+  <title>Pharmodle - The Daily Drug Identification Game</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -1729,7 +1729,7 @@
       <div style="margin-top: 2rem; text-align: center;" id="feedbackSection">
         <button class="btn-link" id="feedbackToggle" style="font-size: 0.75rem; color: #9ca3af;">Leave feedback</button>
         <div id="feedbackForm" style="display:none; margin-top: 0.5rem;">
-          <textarea id="feedbackText" placeholder="What do you think of Physiodle? Suggestions, bugs, anything..." style="width: 100%; padding: 0.5rem; border: 1.5px solid #e5e7eb; border-radius: 0.375rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; resize: vertical; min-height: 60px; max-height: 120px; background: white;"></textarea>
+          <textarea id="feedbackText" placeholder="What do you think of Pharmodle? Suggestions, bugs, anything..." style="width: 100%; padding: 0.5rem; border: 1.5px solid #e5e7eb; border-radius: 0.375rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; resize: vertical; min-height: 60px; max-height: 120px; background: white;"></textarea>
           <button class="btn btn-primary btn-small" id="feedbackSubmitBtn" style="margin-top: 0.35rem; font-size: 0.75rem;">Send</button>
         </div>
         <div id="feedbackThanks" style="display:none;">
@@ -1759,7 +1759,7 @@
         <button class="btn btn-primary btn-full" id="resultLoginBtn" style="font-size: 1rem; padding: 0.85rem 1.5rem;">Sign In to Save Your Result</button>
         <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #6b7280;">Create a free account to track stats and compete on leaderboards</p>
       </div>
-      <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;">Check back tomorrow for the next Physiodle!</p>
+      <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;">Check back tomorrow for the next Pharmodle!</p>
     </div>
   </div>
 
@@ -1767,9 +1767,9 @@
   <div class="result-overlay" id="loginPromptOverlay">
     <div class="result-area" style="max-width: 400px;">
       <button class="result-close" id="loginPromptClose" title="Close">&times;</button>
-      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🦴</div>
-      <div style="font-size: 1.4rem; font-weight: 700; color: #0d9488; margin-bottom: 0.5rem;">Welcome to Physiodle!</div>
-      <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">The daily physiotherapy diagnosis game. Create a free account to track your stats, compete on leaderboards, and add friends.</p>
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">💊</div>
+      <div style="font-size: 1.4rem; font-weight: 700; color: #0d9488; margin-bottom: 0.5rem;">Welcome to Pharmodle!</div>
+      <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">The daily drug identification game. Create a free account to track your stats, compete on leaderboards, and add friends.</p>
       <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
         <button class="btn btn-primary" id="loginPromptSignup">Create Account</button>
         <button class="btn btn-ghost" id="loginPromptLogin">Sign In</button>
@@ -1784,7 +1784,7 @@
     try {
       // Wait for page to be ready, then show login prompt if not logged in
       function tryShowLoginPrompt() {
-        var token = localStorage.getItem('physiodle_token');
+        var token = localStorage.getItem('pharmodle_token');
         if (token) return; // logged in — don't show
 
         var overlay = document.getElementById('loginPromptOverlay');
@@ -3767,7 +3767,7 @@
       label.textContent = `${monthNames[month]} ${year}`;
 
       // Disable nav buttons appropriately
-      const launchDate = new Date(Date.UTC(2026, 2, 4));
+      const launchDate = new Date(Date.UTC(2026, 2, 14));
       const prevBtn = document.getElementById('archivePrevMonth');
       const nextBtn = document.getElementById('archiveNextMonth');
       prevBtn.disabled = (year === launchDate.getUTCFullYear() && month <= launchDate.getUTCMonth());
@@ -3820,7 +3820,7 @@
               // Convert completed_at to AEST by adding 10 hours
               const completedAEST = new Date(completedDate.getTime() + 10 * 3600000);
               // Release date for this day number (AEST calendar date)
-              const releaseAEST = new Date(Date.UTC(2026, 2, 4 + (dayNumber - 1)));
+              const releaseAEST = new Date(Date.UTC(2026, 2, 14 + (dayNumber - 1)));
               sameDay = releaseAEST.getUTCFullYear() === completedAEST.getUTCFullYear()
                 && releaseAEST.getUTCMonth() === completedAEST.getUTCMonth()
                 && releaseAEST.getUTCDate() === completedAEST.getUTCDate();
@@ -4359,7 +4359,7 @@
     // Save pending completion to localStorage (overwritten each game)
     function savePendingCompletion(dayNumber, won, score, guesses) {
       try {
-        localStorage.setItem('physiodle_pendingCompletion', JSON.stringify({
+        localStorage.setItem('pharmodle_pendingCompletion', JSON.stringify({
           dayNumber, won, score, guesses, savedAt: Date.now()
         }));
       } catch (e) { /* ignore */ }
@@ -4368,17 +4368,17 @@
     // After login/signup, try to submit any pending completion
     async function submitPendingCompletion() {
       try {
-        const raw = localStorage.getItem('physiodle_pendingCompletion');
+        const raw = localStorage.getItem('pharmodle_pendingCompletion');
         if (!raw || !gameState.userToken) return;
         const pending = JSON.parse(raw);
         // Only submit if it's today's puzzle (server will validate)
         await submitPuzzle(pending.dayNumber, pending.won, pending.score, pending.guesses);
-        localStorage.removeItem('physiodle_pendingCompletion');
+        localStorage.removeItem('pharmodle_pendingCompletion');
         console.log('Pending completion submitted successfully');
       } catch (e) {
         // 409 = already submitted, which is fine
         if (e.message && e.message.includes('already submitted')) {
-          localStorage.removeItem('physiodle_pendingCompletion');
+          localStorage.removeItem('pharmodle_pendingCompletion');
         }
         console.log('Pending completion submit:', e.message);
       }
@@ -4390,10 +4390,10 @@
 
     // Generate or retrieve a persistent visitor ID
     function getVisitorId() {
-      let vid = localStorage.getItem('physiodle_visitorId');
+      let vid = localStorage.getItem('pharmodle_visitorId');
       if (!vid) {
         vid = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
-        localStorage.setItem('physiodle_visitorId', vid);
+        localStorage.setItem('pharmodle_visitorId', vid);
       }
       return vid;
     }

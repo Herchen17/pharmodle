@@ -19,7 +19,7 @@ app.use(helmet({
 
 // ---- CORS — restrict to our own origin ----
 const ALLOWED_ORIGINS = [
-  'https://physiodle.up.railway.app',
+  'https://pharmodle.up.railway.app',
   'http://localhost:3000',
 ];
 if (process.env.CORS_ORIGIN) ALLOWED_ORIGINS.push(process.env.CORS_ORIGIN);

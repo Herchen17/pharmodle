@@ -15,7 +15,7 @@ function computeStreaks(userIds) {
   const pm = require('../puzzle-manager');
   const currentDay = pm.getCurrentDayNumber();
   // Same timezone-aware on-day window as computeLeaderboard
-  const releaseDateExpr = `DATE('2026-03-04', '+' || (gr.day_number - 1) || ' days')`;
+  const releaseDateExpr = `DATE('2026-03-14', '+' || (gr.day_number - 1) || ' days')`;
   const onDayExpr = `(
     gr.completed_at >= DATETIME(${releaseDateExpr}, '-14 hours')
     AND gr.completed_at < DATETIME(${releaseDateExpr}, '+36 hours')
@@ -78,7 +78,7 @@ function computeLeaderboard(userIds, dateFilter, currentUserId) {
   const limitClause = userIds ? '' : 'LIMIT 200';
 
   // Only on-day completions count towards leaderboard points/ranking.
-  // Day N's release date = 2026-03-04 + (N-1) days (calendar date).
+  // Day N's release date = 2026-03-14 + (N-1) days (calendar date).
   //
   // Because we serve timezone-aware puzzles, a user in e.g. UTC-5 may get day N
   // while AEST has already moved to day N+1. Their completed_at (UTC) converted
@@ -89,7 +89,7 @@ function computeLeaderboard(userIds, dateFilter, currentUserId) {
   // (latest timezone to finish day N). In practice: ~50h window centered on
   // the release date, which prevents playing old archive puzzles for points
   // while accepting any real-world timezone.
-  const releaseDateExpr = `DATE('2026-03-04', '+' || (gr.day_number - 1) || ' days')`;
+  const releaseDateExpr = `DATE('2026-03-14', '+' || (gr.day_number - 1) || ' days')`;
   const onDayExpr = `(
     gr.completed_at >= DATETIME(${releaseDateExpr}, '-14 hours')
     AND gr.completed_at < DATETIME(${releaseDateExpr}, '+36 hours')

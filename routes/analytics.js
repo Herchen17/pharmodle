@@ -260,7 +260,7 @@ router.get('/admin', (req, res) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physiodle Admin</title>
+<title>Pharmodle Admin</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
 :root {
@@ -361,7 +361,7 @@ tr:hover td { background: rgba(59,130,246,0.04); }
 <div id="loginScreen" style="display:flex;align-items:center;justify-content:center;min-height:100vh;">
   <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;width:320px;text-align:center;">
     <div style="font-size:2.5rem;margin-bottom:0.5rem;">&#129468;</div>
-    <h2 style="color:#fff;margin-bottom:0.25rem;">Physiodle Admin</h2>
+    <h2 style="color:#fff;margin-bottom:0.25rem;">Pharmodle Admin</h2>
     <p style="color:var(--text3);font-size:0.85rem;margin-bottom:1.25rem;">Enter your admin key to continue</p>
     <input type="password" id="adminKeyInput" placeholder="Admin key" style="width:100%;padding:0.6rem 0.75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:#fff;font-size:0.9rem;margin-bottom:0.75rem;outline:none;" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="btn" style="width:100%;padding:0.6rem;" onclick="doLogin()">Unlock Dashboard</button>
@@ -372,7 +372,7 @@ tr:hover td { background: rgba(59,130,246,0.04); }
 <nav class="nav" id="mainNav" style="display:none;">
   <div class="nav-left">
     <span class="nav-logo">&#129468;</span>
-    <span class="nav-title">Physiodle Admin</span>
+    <span class="nav-title">Pharmodle Admin</span>
     <span class="nav-badge">Live</span>
   </div>
   <div class="nav-right">

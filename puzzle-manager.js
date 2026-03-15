@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// Launch date: March 4, 2026 (day 1) — this is a calendar date, timezone-independent.
-// Day N was released on calendar date 2026-03-04 + (N-1) days.
+// Launch date: March 14, 2026 (day 1) — this is a calendar date, timezone-independent.
+// Day N was released on calendar date 2026-03-14 + (N-1) days.
 const LAUNCH_YEAR = 2026;
 const LAUNCH_MONTH = 2; // 0-indexed: March
-const LAUNCH_DATE = 4;
+const LAUNCH_DATE = 14;
 
 let puzzles = [];
 let conditionNames = [];

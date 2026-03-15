@@ -335,7 +335,7 @@ router.get('/puzzles', requireAdmin, (req, res) => {
 
 // Helper: convert day number to calendar date string
 function _dayToDate(dayNum) {
-  const launch = new Date(Date.UTC(2026, 2, 4)); // March 4, 2026
+  const launch = new Date(Date.UTC(2026, 2, 14)); // March 14, 2026
   const target = new Date(launch.getTime() + (dayNum - 1) * 86400000);
   return target.toISOString().split('T')[0];
 }

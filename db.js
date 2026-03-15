@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // Use DATABASE_PATH env var for persistent storage (e.g. Railway volumes)
 // Falls back to local file for development
-const dbPath = process.env.DATABASE_PATH || path.join(__dirname, 'physiodle.db');
+const dbPath = process.env.DATABASE_PATH || path.join(__dirname, 'pharmodle.db');
 
 // Ensure parent directory exists (for volume mounts like /data/)
 const dbDir = path.dirname(dbPath);
