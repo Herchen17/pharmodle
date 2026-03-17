@@ -33,19 +33,26 @@ async function crossRegister(username, passwordHash) {
 
 // Verify credentials against sibling app
 async function verifySibling(username, password) {
-  if (!SIBLING_URL || !SIBLING_SECRET) return null;
+  if (!SIBLING_URL || !SIBLING_SECRET) {
+    console.log(`[cross-verify] Skipping — SIBLING_URL="${SIBLING_URL}" SIBLING_SECRET="${SIBLING_SECRET ? 'set' : 'empty'}"`);
+    return null;
+  }
+  console.log(`[cross-verify] Calling ${SIBLING_URL}/api/auth/cross-verify for "${username}"`);
   try {
     const resp = await fetch(`${SIBLING_URL}/api/auth/cross-verify`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
       body: JSON.stringify({ username, password }),
     });
+    console.log(`[cross-verify] Response status: ${resp.status} for "${username}"`);
     if (resp.ok) {
       const data = await resp.json();
       return data; // { username, password_hash }
     }
+    const body = await resp.text();
+    console.log(`[cross-verify] Non-ok body: ${body}`);
   } catch (err) {
-    console.log(`Cross-verify failed (${username}):`, err.message);
+    console.log(`[cross-verify] Network error (${username}):`, err.message);
   }
   return null;
 }
