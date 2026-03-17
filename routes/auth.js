@@ -118,19 +118,15 @@ router.post('/login', loginLimiter, async (req, res) => {
     }
 
     let user = db.prepare('SELECT id, username, password_hash FROM users WHERE username = ?').get(username);
-    let importedFromSibling = false;
 
     if (!user) {
       // User doesn't exist locally — check sibling app (Physiodle)
       const sibling = await verifySibling(username, password);
       if (sibling) {
-        // Account exists on sibling — import it locally
         try {
           const result = db.prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)').run(sibling.username, sibling.password_hash);
           user = { id: result.lastInsertRowid, username: sibling.username, password_hash: sibling.password_hash };
-          importedFromSibling = true;
         } catch (insertErr) {
-          // Race condition: another request created the account — try fetching again
           user = db.prepare('SELECT id, username, password_hash FROM users WHERE username = ?').get(username);
         }
       }
@@ -140,16 +136,15 @@ router.post('/login', loginLimiter, async (req, res) => {
       return res.status(401).json({ error: 'Invalid username or password.' });
     }
 
-    // For imported accounts, try local password verification first.
-    // If it fails, re-hash the password they typed and update the local record.
-    // This handles bcrypt cross-environment compatibility edge cases.
     const valid = await verifyPassword(password, user.password_hash);
     if (!valid) {
-      if (importedFromSibling) {
-        // Re-hash with local bcryptjs and update — guarantees future logins work
+      // Password didn't match local hash — check if sibling has this account
+      // and re-hash locally. Handles imported accounts and bcrypt compat issues.
+      const sibling = await verifySibling(username, password);
+      if (sibling) {
         const newHash = await hashPassword(password);
         db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(newHash, user.id);
-        console.log(`[cross-login] Re-hashed password for imported user "${username}"`);
+        console.log(`[cross-login] Re-hashed password for user "${username}"`);
       } else {
         return res.status(401).json({ error: 'Invalid username or password.' });
       }
