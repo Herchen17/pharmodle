@@ -6,6 +6,50 @@ const { hashPassword, verifyPassword, generateToken, requireAuth } = require('..
 
 const USERNAME_REGEX = /^[a-zA-Z0-9._-]{2,20}$/;
 
+// ---- Cross-registration with sibling app (Physiodle) ----
+// When a user signs up here, we also create their account on the sibling app.
+// When a user tries to log in here but doesn't have a local account,
+// we check the sibling app and auto-create the account if valid.
+const SIBLING_URL = process.env.SIBLING_APP_URL || ''; // e.g. 'https://physiodle.up.railway.app'
+const SIBLING_SECRET = process.env.SIBLING_SECRET || '';
+
+// Fire-and-forget: create account on sibling app
+async function crossRegister(username, passwordHash) {
+  if (!SIBLING_URL || !SIBLING_SECRET) return;
+  try {
+    const resp = await fetch(`${SIBLING_URL}/api/auth/cross-register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
+      body: JSON.stringify({ username, password_hash: passwordHash }),
+    });
+    if (!resp.ok) {
+      const body = await resp.text();
+      console.log(`Cross-register to sibling (${username}): ${resp.status} ${body}`);
+    }
+  } catch (err) {
+    console.log(`Cross-register failed (${username}):`, err.message);
+  }
+}
+
+// Verify credentials against sibling app
+async function verifySibling(username, password) {
+  if (!SIBLING_URL || !SIBLING_SECRET) return null;
+  try {
+    const resp = await fetch(`${SIBLING_URL}/api/auth/cross-verify`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
+      body: JSON.stringify({ username, password }),
+    });
+    if (resp.ok) {
+      const data = await resp.json();
+      return data; // { username, password_hash }
+    }
+  } catch (err) {
+    console.log(`Cross-verify failed (${username}):`, err.message);
+  }
+  return null;
+}
+
 // Rate limiter: max 10 login attempts per IP per 15 minutes
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -41,6 +85,9 @@ router.post('/signup', signupLimiter, async (req, res) => {
     const result = db.prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)').run(username, passwordHash);
     const token = generateToken(result.lastInsertRowid, username);
 
+    // Cross-register on sibling app (fire-and-forget)
+    crossRegister(username, passwordHash);
+
     res.status(201).json({
       userId: result.lastInsertRowid,
       username,
@@ -63,7 +110,23 @@ router.post('/login', loginLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Username and password required.' });
     }
 
-    const user = db.prepare('SELECT id, username, password_hash FROM users WHERE username = ?').get(username);
+    let user = db.prepare('SELECT id, username, password_hash FROM users WHERE username = ?').get(username);
+
+    if (!user) {
+      // User doesn't exist locally — check sibling app (Physiodle)
+      const sibling = await verifySibling(username, password);
+      if (sibling) {
+        // Credentials valid on sibling — auto-create local account
+        try {
+          const result = db.prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)').run(sibling.username, sibling.password_hash);
+          user = { id: result.lastInsertRowid, username: sibling.username, password_hash: sibling.password_hash };
+        } catch (insertErr) {
+          // Race condition: another request created the account — try fetching again
+          user = db.prepare('SELECT id, username, password_hash FROM users WHERE username = ?').get(username);
+        }
+      }
+    }
+
     if (!user) {
       return res.status(401).json({ error: 'Invalid username or password.' });
     }
@@ -83,6 +146,50 @@ router.post('/login', loginLimiter, async (req, res) => {
     console.error('Login error:', err);
     res.status(500).json({ error: 'Server error' });
   }
+});
+
+// ---- Sibling app endpoints (called by Physiodle, not by users) ----
+
+// POST /api/auth/cross-register — sibling creates an account here
+router.post('/cross-register', async (req, res) => {
+  const secret = req.headers['x-sibling-secret'];
+  if (!SIBLING_SECRET || secret !== SIBLING_SECRET) {
+    return res.status(403).json({ error: 'Invalid sibling secret' });
+  }
+  const { username, password_hash } = req.body;
+  if (!username || !password_hash) {
+    return res.status(400).json({ error: 'username and password_hash required' });
+  }
+  try {
+    db.prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)').run(username, password_hash);
+    res.status(201).json({ success: true });
+  } catch (err) {
+    if (err.code === 'SQLITE_CONSTRAINT_UNIQUE' || (err.message && err.message.includes('UNIQUE'))) {
+      return res.json({ success: true, note: 'already exists' });
+    }
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// POST /api/auth/cross-verify — sibling checks if credentials are valid here
+router.post('/cross-verify', async (req, res) => {
+  const secret = req.headers['x-sibling-secret'];
+  if (!SIBLING_SECRET || secret !== SIBLING_SECRET) {
+    return res.status(403).json({ error: 'Invalid sibling secret' });
+  }
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ error: 'username and password required' });
+  }
+  const user = db.prepare('SELECT username, password_hash FROM users WHERE username = ?').get(username);
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+  const valid = await verifyPassword(password, user.password_hash);
+  if (!valid) {
+    return res.status(401).json({ error: 'Invalid password' });
+  }
+  res.json({ username: user.username, password_hash: user.password_hash });
 });
 
 // GET /api/auth/me
