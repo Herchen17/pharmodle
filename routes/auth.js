@@ -178,23 +178,21 @@ router.post('/cross-register', async (req, res) => {
   }
 });
 
-// POST /api/auth/cross-verify — sibling checks if credentials are valid here
+// POST /api/auth/cross-verify — sibling looks up user hash here
+// Password verification is done on the calling side (Physiodle).
+// This endpoint is protected by the shared SIBLING_SECRET.
 router.post('/cross-verify', async (req, res) => {
   const secret = req.headers['x-sibling-secret'];
   if (!SIBLING_SECRET || secret !== SIBLING_SECRET) {
     return res.status(403).json({ error: 'Invalid sibling secret' });
   }
-  const { username, password } = req.body;
-  if (!username || !password) {
-    return res.status(400).json({ error: 'username and password required' });
+  const { username } = req.body;
+  if (!username) {
+    return res.status(400).json({ error: 'username required' });
   }
   const user = db.prepare('SELECT username, password_hash FROM users WHERE username = ?').get(username);
   if (!user) {
     return res.status(404).json({ error: 'User not found' });
-  }
-  const valid = await verifyPassword(password, user.password_hash);
-  if (!valid) {
-    return res.status(401).json({ error: 'Invalid password' });
   }
   res.json({ username: user.username, password_hash: user.password_hash });
 });
