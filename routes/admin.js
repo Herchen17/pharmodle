@@ -243,8 +243,21 @@ router.delete('/users/:id', requireAdmin, (req, res) => {
   const user = db.prepare('SELECT id, username FROM users WHERE id = ?').get(userId);
   if (!user) return res.status(404).json({ error: 'User not found' });
 
+  db.prepare('DELETE FROM game_results WHERE user_id = ?').run(userId);
+  db.prepare('DELETE FROM friendships WHERE user_id = ?').run(userId);
   db.prepare('DELETE FROM users WHERE id = ?').run(userId);
   res.json({ message: `User "${user.username}" (id: ${userId}) deleted successfully` });
+});
+
+// DELETE /api/admin/users/by-name/:username — delete a user by username
+router.delete('/users/by-name/:username', requireAdmin, (req, res) => {
+  const user = db.prepare('SELECT id, username FROM users WHERE username = ?').get(req.params.username);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+
+  db.prepare('DELETE FROM game_results WHERE user_id = ?').run(user.id);
+  db.prepare('DELETE FROM friendships WHERE user_id = ?').run(user.id);
+  db.prepare('DELETE FROM users WHERE id = ?').run(user.id);
+  res.json({ message: `User "${user.username}" (id: ${user.id}) deleted successfully` });
 });
 
 // GET /api/admin/stats — overall platform stats
