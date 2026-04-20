@@ -3767,7 +3767,7 @@
       label.textContent = `${monthNames[month]} ${year}`;
 
       // Disable nav buttons appropriately
-      const launchDate = new Date(Date.UTC(2026, 2, 14));
+      const launchDate = new Date(Date.UTC(2026, 3, 19));
       const prevBtn = document.getElementById('archivePrevMonth');
       const nextBtn = document.getElementById('archiveNextMonth');
       prevBtn.disabled = (year === launchDate.getUTCFullYear() && month <= launchDate.getUTCMonth());
@@ -3820,7 +3820,7 @@
               // Convert completed_at to AEST by adding 10 hours
               const completedAEST = new Date(completedDate.getTime() + 10 * 3600000);
               // Release date for this day number (AEST calendar date)
-              const releaseAEST = new Date(Date.UTC(2026, 2, 14 + (dayNumber - 1)));
+              const releaseAEST = new Date(Date.UTC(2026, 3, 19 + (dayNumber - 1)));
               sameDay = releaseAEST.getUTCFullYear() === completedAEST.getUTCFullYear()
                 && releaseAEST.getUTCMonth() === completedAEST.getUTCMonth()
                 && releaseAEST.getUTCDate() === completedAEST.getUTCDate();
