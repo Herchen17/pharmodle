@@ -270,8 +270,8 @@ router.get('/me', requireAuth, (req, res) => {
 
   // Leaderboard rank (all-time) — compute user's points then count how many have more
   const onDayCase = `CASE WHEN gr.won = 1 AND (
-    gr.completed_at >= DATETIME(DATE('2026-03-14', '+' || (gr.day_number - 1) || ' days'), '-14 hours')
-    AND gr.completed_at < DATETIME(DATE('2026-03-14', '+' || (gr.day_number - 1) || ' days'), '+36 hours')
+    gr.completed_at >= DATETIME(DATE('2026-04-19', '+' || (gr.day_number - 1) || ' days'), '-14 hours')
+    AND gr.completed_at < DATETIME(DATE('2026-04-19', '+' || (gr.day_number - 1) || ' days'), '+36 hours')
   ) THEN (6 - gr.score) ELSE 0 END`;
 
   const myPoints = db.prepare(`
