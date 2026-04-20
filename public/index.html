@@ -1840,17 +1840,25 @@
         <p class="auth-subtitle">Sign in to track your progress</p>
         <form id="authForm">
           <div class="form-group">
-            <label class="form-label">Username</label>
+            <label class="form-label" id="authUsernameLabel">Email or username</label>
             <input
               type="text"
               class="form-input"
               id="authUsername"
-              placeholder="Enter username"
+              placeholder="Enter email or username"
               autocomplete="username"
-              minlength="2"
-              maxlength="20"
             >
-            <div class="form-hint">2-20 characters: letters, numbers, dots, hyphens, underscores</div>
+            <div class="form-hint" id="authUsernameHint" style="display:none;">2-20 characters: letters, numbers, dots, hyphens, underscores</div>
+          </div>
+          <div class="form-group" id="authEmailGroup" style="display:none;">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              id="authEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+            >
           </div>
           <div class="form-group">
             <label class="form-label">Password</label>
@@ -1886,12 +1894,12 @@
       <div class="modal-body">
         <form id="loginForm">
           <div class="form-group">
-            <label class="form-label">Username</label>
+            <label class="form-label">Email or username</label>
             <input
               type="text"
               class="form-input"
               id="loginUsername"
-              placeholder="Enter username"
+              placeholder="Enter email or username"
               autocomplete="username"
             >
             <div class="form-error" id="loginUsernameError"></div>
@@ -1926,6 +1934,17 @@
       </div>
       <div class="modal-body">
         <form id="signupForm">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              id="signupEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+            >
+            <div class="form-error" id="signupEmailError"></div>
+          </div>
           <div class="form-group">
             <label class="form-label">Username</label>
             <input
@@ -2566,10 +2585,10 @@
       return response.json();
     }
 
-    async function signup(username, password) {
+    async function signup(username, email, password) {
       const data = await apiCall('/auth/signup', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, email, password }),
       });
       gameState.userToken = data.token;
       gameState.userId = data.userId;
@@ -2577,13 +2596,15 @@
       localStorage.setItem('pharmodle_token', data.token);
       localStorage.setItem('pharmodle_userId', data.userId);
       localStorage.setItem('pharmodle_username', data.username);
+      if (data.email) localStorage.setItem('pharmodle_email', data.email);
       return data;
     }
 
-    async function login(username, password) {
+    // Accepts email or username as identifier.
+    async function login(identifier, password) {
       const data = await apiCall('/auth/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ identifier, password }),
       });
       gameState.userToken = data.token;
       gameState.userId = data.userId;
@@ -2591,6 +2612,16 @@
       localStorage.setItem('pharmodle_token', data.token);
       localStorage.setItem('pharmodle_userId', data.userId);
       localStorage.setItem('pharmodle_username', data.username);
+      if (data.email) localStorage.setItem('pharmodle_email', data.email);
+      return data;
+    }
+
+    async function addEmail(email) {
+      const data = await apiCall('/auth/add-email', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+      });
+      if (data.email) localStorage.setItem('pharmodle_email', data.email);
       return data;
     }
 
@@ -2601,6 +2632,7 @@
       localStorage.removeItem('pharmodle_token');
       localStorage.removeItem('pharmodle_userId');
       localStorage.removeItem('pharmodle_username');
+      localStorage.removeItem('pharmodle_email');
       // Clear game completion data so logout truly resets state
       localStorage.removeItem('pharmodle_lastDay');
       localStorage.removeItem('pharmodle_lastResult');
@@ -3985,6 +4017,10 @@
       const submitBtn = form.querySelector('button[type="submit"]');
       const toggleText = form.closest('.auth-card').querySelector('#authToggleText');
       const toggleBtn = form.querySelector('#authToggleBtn');
+      const usernameLabel = document.getElementById('authUsernameLabel');
+      const usernameInput = document.getElementById('authUsername');
+      const usernameHint = document.getElementById('authUsernameHint');
+      const emailGroup = document.getElementById('authEmailGroup');
 
       if (isSignupMode) {
         title.textContent = 'Create Account';
@@ -3992,12 +4028,20 @@
         submitBtn.querySelector('#authSubmitText').textContent = 'Sign Up';
         toggleText.textContent = 'Already have an account?';
         toggleBtn.textContent = 'Sign In';
+        usernameLabel.textContent = 'Username';
+        usernameInput.placeholder = 'Choose username';
+        usernameHint.style.display = 'block';
+        emailGroup.style.display = 'block';
       } else {
         title.textContent = 'Welcome';
         subtitle.textContent = 'Sign in to track your progress';
         submitBtn.querySelector('#authSubmitText').textContent = 'Sign In';
         toggleText.textContent = "Don't have an account?";
         toggleBtn.textContent = 'Sign Up';
+        usernameLabel.textContent = 'Email or username';
+        usernameInput.placeholder = 'Enter email or username';
+        usernameHint.style.display = 'none';
+        emailGroup.style.display = 'none';
       }
     }
 
@@ -4178,20 +4222,25 @@
     // Auth form
     document.getElementById('authForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const username = document.getElementById('authUsername').value.trim();
+      const identifier = document.getElementById('authUsername').value.trim();
+      const email = document.getElementById('authEmail').value.trim();
       const password = document.getElementById('authPassword').value;
 
-      if (!username || !password) {
+      if (!identifier || !password) {
         showToast('Please fill in all fields', 'error');
+        return;
+      }
+      if (isSignupMode && !email) {
+        showToast('Email is required', 'error');
         return;
       }
 
       try {
         if (isSignupMode) {
-          await signup(username, password);
+          await signup(identifier, email, password);
           showToast('Account created!', 'success');
         } else {
-          await login(username, password);
+          await login(identifier, password);
           showToast('Logged in!', 'success');
         }
         location.reload();
@@ -4231,17 +4280,20 @@
     document.getElementById('signupForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const username = document.getElementById('signupUsername').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
       const password = document.getElementById('signupPassword').value;
       const errorEl = document.getElementById('signupUsernameError');
+      const emailErrorEl = document.getElementById('signupEmailError');
       errorEl.textContent = '';
+      emailErrorEl.textContent = '';
 
-      if (!username || !password) {
+      if (!username || !email || !password) {
         errorEl.textContent = 'Please fill in all fields';
         return;
       }
 
       try {
-        await signup(username, password);
+        await signup(username, email, password);
         showToast('Account created!', 'success');
         closeModal('signupModal');
         location.reload();

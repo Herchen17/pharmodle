@@ -20,11 +20,15 @@ try { db.pragma('journal_mode = WAL'); } catch (e) { console.log('WAL mode not a
 db.pragma('foreign_keys = ON');
 
 // ==================== SCHEMA ====================
+// NOTE: Indexes referencing email column are created in the MIGRATIONS block
+// below, so existing pre-email databases don't fail on the CREATE before
+// ALTER TABLE has added the column.
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL COLLATE NOCASE,
     password_hash TEXT NOT NULL,
+    email TEXT COLLATE NOCASE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
@@ -104,5 +108,24 @@ db.exec(`
     FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL
   );
 `);
+
+// ==================== MIGRATIONS ====================
+// CREATE TABLE IF NOT EXISTS skips existing tables, so schema changes to
+// pre-existing tables need explicit ALTER TABLE calls. Each migration must
+// be idempotent (check before altering).
+
+function columnExists(table, column) {
+  const rows = db.prepare(`PRAGMA table_info(${table})`).all();
+  return rows.some(r => r.name === column);
+}
+
+// 2026-04-20: add email column to users (email-as-identity migration)
+if (!columnExists('users', 'email')) {
+  console.log('[migration] adding users.email column');
+  db.exec('ALTER TABLE users ADD COLUMN email TEXT COLLATE NOCASE');
+}
+// Always (re-)create the partial unique index on email; safe because
+// CREATE ... IF NOT EXISTS is a no-op when already present.
+db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email) WHERE email IS NOT NULL');
 
 module.exports = db;
