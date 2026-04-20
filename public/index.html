@@ -1754,9 +1754,9 @@
       background: white;
       border: 1.5px solid #e5e7eb;
       border-radius: 0.6rem;
-      padding: 0.85rem;
-      font-size: 1.6rem;
+      padding: 0.95rem 0.75rem;
       cursor: pointer;
+      font-family: inherit;
       transition: border-color 0.15s, background 0.15s, transform 0.1s;
     }
     .love-thumb:hover { border-color: #cbd5e1; background: #f9fafb; }
@@ -1765,12 +1765,10 @@
       background: #f3ebff;
       transform: scale(1.02);
     }
-    .love-thumb-label {
-      font-size: 0.68rem;
-      color: #6b7280;
-      display: block;
-      margin-top: 0.2rem;
-      font-weight: 500;
+    .love-thumb-main {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1f2937;
     }
     .love-siblings {
       display: flex;
@@ -1880,7 +1878,7 @@
 
       <!-- FEEDBACK FOOTER -->
       <div style="margin-top: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.6rem;" id="feedbackSection">
-        <button class="love-btn" id="loveBtn" type="button">❤️ Love Pharmodle?</button>
+        <button class="love-btn" id="loveBtn" type="button">Love Pharmodle?</button>
         <button class="btn-link" id="feedbackToggle" style="font-size: 0.75rem; color: #9ca3af;">Leave feedback</button>
         <div id="feedbackForm" style="display:none; margin-top: 0.5rem; width: 100%;">
           <textarea id="feedbackText" placeholder="What do you think of Pharmodle? Suggestions, bugs, anything..." style="width: 100%; padding: 0.5rem; border: 1.5px solid #e5e7eb; border-radius: 0.375rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; resize: vertical; min-height: 60px; max-height: 120px; background: white;"></textarea>
@@ -4590,16 +4588,16 @@
   <div class="modal-overlay" id="loveModal">
     <div class="modal love-modal-body">
       <button class="modal-close" id="loveModalClose" title="Close">&times;</button>
-      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem;">❤️ Love Pharmodle?</h2>
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem;">Love Pharmodle?</h2>
 
       <div class="love-section" id="loveRatingSection">
         <div class="love-section-title">How's today's puzzle?</div>
         <div class="love-thumbs">
           <button class="love-thumb" data-rating="up" type="button">
-            👍<span class="love-thumb-label">Enjoyed it</span>
+            <span class="love-thumb-main">Enjoyed it</span>
           </button>
           <button class="love-thumb" data-rating="down" type="button">
-            👎<span class="love-thumb-label">Not for me</span>
+            <span class="love-thumb-main">Not for me</span>
           </button>
         </div>
         <div class="love-thanks" id="loveThanks">Thanks for the feedback!</div>
