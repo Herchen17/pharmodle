@@ -3,7 +3,47 @@ const router = express.Router();
 const db = require('../db');
 const { requireAuth } = require('../auth');
 
-// All routes require auth
+// ---- Cross-app friend sync (sibling-to-sibling) ----
+const SIBLING_URL = process.env.SIBLING_APP_URL || '';
+const SIBLING_SECRET = process.env.SIBLING_SECRET || '';
+
+async function crossSyncFriendship(usernameA, usernameB) {
+  if (!SIBLING_URL || !SIBLING_SECRET) return;
+  try {
+    await fetch(`${SIBLING_URL}/api/friends/cross-sync`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
+      body: JSON.stringify({ user_a: usernameA, user_b: usernameB }),
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch (err) {
+    console.log(`[friend-sync] failed for ${usernameA} <-> ${usernameB}:`, err.message);
+  }
+}
+
+// POST /api/friends/cross-sync — sibling app pushes a friendship to us.
+// Idempotent (INSERT OR IGNORE) and silently skips if either user is
+// not present locally yet (sibling will retry on the next mutual event).
+// NOT user-facing — protected by the shared SIBLING_SECRET, defined
+// before the requireAuth middleware so it skips JWT auth.
+router.post('/cross-sync', express.json(), (req, res) => {
+  const secret = req.headers['x-sibling-secret'];
+  if (!SIBLING_SECRET || secret !== SIBLING_SECRET) {
+    return res.status(403).json({ error: 'Invalid sibling secret' });
+  }
+  const { user_a, user_b } = req.body;
+  if (!user_a || !user_b) return res.status(400).json({ error: 'user_a and user_b required' });
+
+  const a = db.prepare('SELECT id FROM users WHERE username = ?').get(user_a);
+  const b = db.prepare('SELECT id FROM users WHERE username = ?').get(user_b);
+  if (!a || !b) return res.json({ success: true, note: 'one or both users not present locally' });
+
+  db.prepare('INSERT OR IGNORE INTO friendships (user_id, friend_id) VALUES (?, ?)').run(a.id, b.id);
+  db.prepare('INSERT OR IGNORE INTO friendships (user_id, friend_id) VALUES (?, ?)').run(b.id, a.id);
+  res.json({ success: true });
+});
+
+// All routes below require auth
 router.use(requireAuth);
 
 // GET /api/friends — list friends with stats
@@ -188,6 +228,14 @@ function acceptRequest(requestId, fromUserId, toUserId) {
   // Insert bidirectional friendship (ignore if already exists)
   db.prepare('INSERT OR IGNORE INTO friendships (user_id, friend_id) VALUES (?, ?)').run(fromUserId, toUserId);
   db.prepare('INSERT OR IGNORE INTO friendships (user_id, friend_id) VALUES (?, ?)').run(toUserId, fromUserId);
+
+  // Cross-sync to sibling app (fire-and-forget). Both users may also
+  // exist on the sibling; if so, the friendship gets mirrored there.
+  try {
+    const a = db.prepare('SELECT username FROM users WHERE id = ?').get(fromUserId);
+    const b = db.prepare('SELECT username FROM users WHERE id = ?').get(toUserId);
+    if (a && b) crossSyncFriendship(a.username, b.username);
+  } catch (_) { /* never let sync errors break local accept */ }
 }
 
 module.exports = router;
