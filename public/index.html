@@ -1662,45 +1662,60 @@
 
     /* Sibling cross-promo side popout */
     #siblingPopout {
-      position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+      position: fixed; right: 0; bottom: 5rem;
       z-index: 50;
     }
     .sibling-popout {
-      display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
       background: white; border: 2px solid #0d9488; border-right: none;
-      border-radius: 12px 0 0 12px;
-      padding: 0.7rem 0.75rem 0.7rem 0.85rem;
-      box-shadow: -4px 4px 14px rgba(0,0,0,0.09);
-      max-width: 108px; text-align: center;
+      border-radius: 14px 0 0 14px;
+      padding: 1rem 1.1rem 0.95rem 1.2rem;
+      box-shadow: -6px 6px 20px rgba(0,0,0,0.10);
+      width: 195px; text-align: center;
       text-decoration: none; color: #1f2937;
       transition: transform 0.18s ease;
     }
-    .sibling-popout:hover { transform: translateX(-3px); }
-    .sibling-popout-icon { font-size: 1.6rem; line-height: 1; }
-    .sibling-popout-name { font-weight: 700; color: #0d9488; font-size: 0.8rem; line-height: 1.1; }
-    .sibling-popout-tag { font-size: 0.62rem; color: #6b7280; line-height: 1.3; }
+    .sibling-popout:hover { transform: translateX(-4px); }
+    .sibling-popout-eyebrow {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #6b7280;
+    }
+    .sibling-popout-icon { font-size: 2.4rem; line-height: 1; margin: 0.1rem 0; }
+    .sibling-popout-name { font-weight: 800; color: #0d9488; font-size: 1.15rem; line-height: 1.1; }
+    .sibling-popout-tag { font-size: 0.78rem; color: #4b5563; line-height: 1.35; }
+    .sibling-popout-cta {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.72rem; font-weight: 700; color: #0d9488;
+      background: rgba(13,148,136,0.10);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px; margin-top: 0.2rem;
+    }
     .sibling-popout-dismiss {
-      position: absolute; top: -8px; left: -8px;
-      background: white; border: 1px solid #e5e7eb; border-radius: 50%;
-      width: 20px; height: 20px; font-size: 0.85rem; line-height: 1;
+      position: absolute; top: -10px; left: -10px;
+      background: white; border: 1px solid #d1d5db; border-radius: 50%;
+      width: 24px; height: 24px; font-size: 0.95rem; line-height: 1;
       cursor: pointer; color: #6b7280; padding: 0;
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
     .sibling-popout-dismiss:hover { background: #f3f4f6; color: #1f2937; }
     @media (max-width: 640px) {
       #siblingPopout {
-        right: 0.5rem; bottom: 4.5rem; top: auto; transform: none;
+        right: 0.5rem; bottom: 4.5rem;
       }
       .sibling-popout {
-        flex-direction: row; max-width: none;
+        width: auto; max-width: 78vw;
+        flex-direction: row; align-items: center; gap: 0.6rem;
         border-radius: 999px; border: 1.5px solid #0d9488;
-        padding: 0.35rem 0.75rem 0.35rem 0.55rem; gap: 0.4rem;
+        padding: 0.45rem 0.95rem 0.45rem 0.7rem;
       }
       .sibling-popout:hover { transform: none; }
-      .sibling-popout-icon { font-size: 1.05rem; }
-      .sibling-popout-name { font-size: 0.72rem; }
+      .sibling-popout-eyebrow { display: none; }
+      .sibling-popout-icon { font-size: 1.4rem; margin: 0; }
+      .sibling-popout-name { font-size: 0.85rem; }
       .sibling-popout-tag { display: none; }
-      .sibling-popout-dismiss { top: -6px; left: -6px; width: 18px; height: 18px; font-size: 0.75rem; }
+      .sibling-popout-cta { padding: 0.18rem 0.55rem; font-size: 0.68rem; margin-top: 0; }
+      .sibling-popout-dismiss { top: -7px; left: -7px; width: 20px; height: 20px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -1725,9 +1740,11 @@
   <!-- SIBLING CROSS-PROMO (side popout) -->
   <div id="siblingPopout">
     <a class="sibling-popout" href="https://physiodle.up.railway.app" target="_blank" rel="noopener" aria-label="Open Physiodle in new tab">
+      <span class="sibling-popout-eyebrow">Also try</span>
       <span class="sibling-popout-icon">&#129460;</span>
       <span class="sibling-popout-name">Physiodle</span>
-      <span class="sibling-popout-tag">Same login</span>
+      <span class="sibling-popout-tag">Daily physiotherapy case puzzle</span>
+      <span class="sibling-popout-cta">Same login &rarr;</span>
     </a>
     <button class="sibling-popout-dismiss" id="siblingDismissBtn" aria-label="Dismiss">&times;</button>
   </div>
