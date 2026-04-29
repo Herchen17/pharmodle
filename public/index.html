@@ -1765,20 +1765,11 @@
     (function() {
       try {
         var b = document.getElementById('siblingPopout');
-        if (!b) return;
-        var KEY = 'pharmodle_sibling_dismissed_at';
-        var TTL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
-        var ts = parseInt(localStorage.getItem(KEY) || '0', 10);
-        if (ts && (Date.now() - ts) < TTL_MS) {
-          b.style.display = 'none';
-        } else if (ts) {
-          try { localStorage.removeItem(KEY); } catch(_) {}
-        }
         var btn = document.getElementById('siblingDismissBtn');
-        if (btn) btn.addEventListener('click', function(e) {
+        if (!b || !btn) return;
+        btn.addEventListener('click', function(e) {
           e.preventDefault(); e.stopPropagation();
           b.style.display = 'none';
-          try { localStorage.setItem(KEY, Date.now().toString()); } catch(_) {}
         });
       } catch(_) {}
     })();
