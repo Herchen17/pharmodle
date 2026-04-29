@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#0d9488">
+  <meta name="theme-color" content="#7c3aed">
   <title>Pharmodle - The Daily Drug Identification Game</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -114,7 +119,7 @@
     }
 
     .header-btn {
-      background: #f0fdf4;
+      background: #f3ebff;
       border: 1.5px solid #7c3aed;
       cursor: pointer;
       font-size: 0.75rem;
@@ -282,7 +287,7 @@
 
     .card.clue-card.revealed.clue-correct {
       border-left: 4px solid #8b5cf6;
-      background: #f0fdf4;
+      background: #f3ebff;
     }
 
     .clue-status-icon {
@@ -380,14 +385,14 @@
     .walkthrough-section {
       margin-top: 16px;
       padding: 16px;
-      background: #f0fdf4;
+      background: #f3ebff;
       border-radius: 10px;
-      border-left: 4px solid #22c55e;
+      border-left: 4px solid #7c3aed;
     }
     .walkthrough-title {
       font-weight: 700;
       font-size: 0.85rem;
-      color: #15803d;
+      color: #6d28d9;
       margin-bottom: 8px;
     }
     .walkthrough-text {
@@ -431,7 +436,7 @@
     .guess-input:focus {
       outline: none;
       border-color: #7c3aed;
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
     }
 
     .guess-input.disabled {
@@ -479,10 +484,10 @@
       border-bottom: none;
     }
 
-    .autocomplete-item strong { color: #0d9488; font-weight: 700; }
+    .autocomplete-item strong { color: #7c3aed; font-weight: 700; }
     .autocomplete-item:hover,
     .autocomplete-item.selected {
-      background: #f0fdf4;
+      background: #f3ebff;
       color: #7c3aed;
     }
 
@@ -510,7 +515,7 @@
     .btn-primary:hover:not(:disabled) {
       background: #6d28d9;
       transform: translateY(-2px);
-      box-shadow: 0 4px 6px rgba(13, 148, 136, 0.3);
+      box-shadow: 0 4px 6px rgba(124, 58, 237, 0.3);
     }
 
     .btn-primary:disabled {
@@ -547,7 +552,7 @@
     }
 
     .btn-ghost:hover {
-      background: #f0fdf4;
+      background: #f3ebff;
     }
 
     .btn-link {
@@ -740,13 +745,13 @@
     .result-answer {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #0d9488;
+      color: #7c3aed;
       margin-bottom: 0.75rem;
     }
 
     .result-explanation {
-      background: #f0fdf4;
-      border-left: 3px solid #059669;
+      background: #f3ebff;
+      border-left: 3px solid #7c3aed;
       padding: 0.75rem 1rem;
       border-radius: 0.5rem;
       margin-bottom: 0.75rem;
@@ -910,7 +915,7 @@
     .form-input:focus {
       outline: none;
       border-color: #7c3aed;
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
     }
 
     .form-error {
@@ -1020,7 +1025,7 @@
     .lb-scope-toggle {
       display: flex;
       gap: 0;
-      border: 1.5px solid #0d9488;
+      border: 1.5px solid #7c3aed;
       border-radius: 999px;
       overflow: hidden;
       flex-shrink: 0;
@@ -1066,8 +1071,8 @@
     }
 
     .lb-page-btn:hover:not(:disabled) {
-      border-color: #0d9488;
-      color: #0d9488;
+      border-color: #7c3aed;
+      color: #7c3aed;
     }
 
     .lb-page-btn:disabled {
@@ -1282,7 +1287,7 @@
 
     .cal-green {
       background: #ede9fe;
-      color: #065f46;
+      color: #6d28d9;
     }
     .cal-green .cal-cell-score { color: #8b5cf6; }
 
@@ -1617,7 +1622,7 @@
       display: inline-block;
       width: 16px;
       height: 16px;
-      border: 2px solid rgba(13, 148, 136, 0.3);
+      border: 2px solid rgba(124, 58, 237, 0.3);
       border-top: 2px solid #7c3aed;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
@@ -1654,6 +1659,30 @@
       .account-perf-label { font-size: 0.78rem; }
       .account-perf-value { font-size: 0.85rem; }
     }
+
+    /* Sibling cross-promo banner */
+    .sibling-banner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.6rem; padding: 0.45rem 1rem;
+      background: #e6f5f0; border-bottom: 1px solid #c7e7dc;
+      font-size: 0.82rem; color: #1f2937; flex-wrap: wrap;
+    }
+    .sibling-banner .sibling-icon { font-size: 1.05rem; line-height: 1; }
+    .sibling-banner a.sibling-cta {
+      color: #0d9488; font-weight: 700; text-decoration: none;
+      background: white; padding: 0.2rem 0.65rem; border-radius: 999px;
+      border: 1.5px solid #0d9488; transition: background 0.15s, color 0.15s;
+    }
+    .sibling-banner a.sibling-cta:hover { background: #0d9488; color: white; }
+    .sibling-banner .sibling-dismiss {
+      background: transparent; border: none; color: #6b7280;
+      font-size: 1.15rem; cursor: pointer; padding: 0 0.25rem; line-height: 1;
+    }
+    .sibling-banner .sibling-dismiss:hover { color: #1f2937; }
+    @media (max-width: 480px) {
+      .sibling-banner { font-size: 0.72rem; padding: 0.4rem 0.6rem; gap: 0.4rem; }
+      .sibling-banner a.sibling-cta { padding: 0.15rem 0.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -1673,6 +1702,30 @@
       </div>
     </div>
   </header>
+
+  <!-- SIBLING CROSS-PROMO -->
+  <div class="sibling-banner" id="siblingBanner">
+    <span class="sibling-icon">&#129468;</span>
+    <span>Also try <strong>Physiodle</strong> &mdash; daily physiotherapy puzzle. Same login works on both.</span>
+    <a class="sibling-cta" href="https://physiodle.up.railway.app" target="_blank" rel="noopener">Open Physiodle</a>
+    <button class="sibling-dismiss" id="siblingDismissBtn" aria-label="Dismiss">&times;</button>
+  </div>
+  <script>
+    (function() {
+      try {
+        var b = document.getElementById('siblingBanner');
+        if (!b) return;
+        if (localStorage.getItem('pharmodle_sibling_dismissed') === '1') {
+          b.style.display = 'none';
+        }
+        var btn = document.getElementById('siblingDismissBtn');
+        if (btn) btn.addEventListener('click', function() {
+          b.style.display = 'none';
+          try { localStorage.setItem('pharmodle_sibling_dismissed', '1'); } catch(e) {}
+        });
+      } catch(e) {}
+    })();
+  </script>
 
   <!-- MAIN CONTENT -->
   <div class="page active" id="gamePage">
@@ -1733,7 +1786,7 @@
           <button class="btn btn-primary btn-small" id="feedbackSubmitBtn" style="margin-top: 0.35rem; font-size: 0.75rem;">Send</button>
         </div>
         <div id="feedbackThanks" style="display:none;">
-          <p style="font-size: 0.75rem; color: #059669;">Thanks for your feedback!</p>
+          <p style="font-size: 0.75rem; color: #7c3aed;">Thanks for your feedback!</p>
         </div>
       </div>
 
@@ -1768,7 +1821,7 @@
     <div class="result-area" style="max-width: 400px;">
       <button class="result-close" id="loginPromptClose" title="Close">&times;</button>
       <div style="font-size: 2rem; margin-bottom: 0.5rem;">💊</div>
-      <div style="font-size: 1.4rem; font-weight: 700; color: #0d9488; margin-bottom: 0.5rem;">Welcome to Pharmodle!</div>
+      <div style="font-size: 1.4rem; font-weight: 700; color: #7c3aed; margin-bottom: 0.5rem;">Welcome to Pharmodle!</div>
       <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">The daily drug identification game. Create a free account to track your stats, compete on leaderboards, and add friends.</p>
       <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
         <button class="btn btn-primary" id="loginPromptSignup">Create Account</button>
@@ -1976,7 +2029,7 @@
             <div id="accountJoined" style="font-size: 0.8rem; color: #9ca3af;"></div>
           </div>
           <div id="accountRankBadge" style="margin-left: auto; text-align: center; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 0.5rem; padding: 0.35rem 0.65rem;">
-            <div id="accountRank" style="font-size: 1.1rem; font-weight: 800; color: #0d9488;">#-</div>
+            <div id="accountRank" style="font-size: 1.1rem; font-weight: 800; color: #7c3aed;">#-</div>
             <div style="font-size: 0.65rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.03em;">Rank</div>
           </div>
         </div>
@@ -1992,11 +2045,11 @@
             <div class="account-stat-label">Won</div>
           </div>
           <div class="account-stat-card">
-            <div class="account-stat-value" style="color: #0d9488;" id="accountWinRate">0%</div>
+            <div class="account-stat-value" style="color: #7c3aed;" id="accountWinRate">0%</div>
             <div class="account-stat-label">Win Rate</div>
           </div>
           <div class="account-stat-card">
-            <div class="account-stat-value" style="color: #0d9488;" id="accountTotalPts">0</div>
+            <div class="account-stat-value" style="color: #7c3aed;" id="accountTotalPts">0</div>
             <div class="account-stat-label">Points</div>
           </div>
         </div>
@@ -3949,7 +4002,7 @@
             const count = dist[label] || 0;
             const pct = Math.max(8, (count / maxVal) * 100);
             const isLoss = label === 'X';
-            const color = isLoss ? '#ef4444' : '#0d9488';
+            const color = isLoss ? '#ef4444' : '#7c3aed';
             distEl.innerHTML += `
               <div class="dist-row">
                 <span class="dist-label">${label}</span>
