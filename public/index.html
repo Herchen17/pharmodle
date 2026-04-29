@@ -7,12 +7,27 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#7c3aed">
   <title>Pharmodle - The Daily Drug Identification Game</title>
+  <meta name="description" content="Pharmodle is a daily drug identification puzzle for pharmacy students and pharmacists. Five clues, five guesses, one drug a day. Play free.">
+  <link rel="canonical" href="https://pharmodle.up.railway.app/">
+
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pharmodle - Daily Drug Identification Puzzle">
+  <meta property="og:description" content="A daily drug identification puzzle for pharmacy. Five clues, five guesses. Same login as Physiodle.">
+  <meta property="og:url" content="https://pharmodle.up.railway.app/">
+  <meta property="og:image" content="https://pharmodle.up.railway.app/favicon-192.png">
+  <meta property="og:site_name" content="Pharmodle">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pharmodle - Daily Drug Identification Puzzle">
+  <meta name="twitter:description" content="A daily drug identification puzzle for pharmacy.">
+  <meta name="twitter:image" content="https://pharmodle.up.railway.app/favicon-192.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -1660,38 +1675,38 @@
       .account-perf-value { font-size: 0.85rem; }
     }
 
-    /* Sibling cross-promo side popout */
+    /* Sibling cross-promo bottom-right bar */
     #siblingPopout {
-      position: fixed; right: 0; bottom: 5rem;
-      z-index: 50;
+      position: fixed; right: 0.85rem; bottom: 0.85rem;
+      z-index: 50; max-width: calc(100vw - 1.25rem);
     }
     .sibling-popout {
-      display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
-      background: white; border: 2px solid #0d9488; border-right: none;
-      border-radius: 14px 0 0 14px;
-      padding: 1rem 1.1rem 0.95rem 1.2rem;
-      box-shadow: -6px 6px 20px rgba(0,0,0,0.10);
-      width: 195px; text-align: center;
+      display: flex; align-items: center; gap: 0.85rem;
+      background: white; border: 1.5px solid #0d9488;
+      border-radius: 14px;
+      padding: 0.65rem 1rem 0.65rem 0.85rem;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.12);
       text-decoration: none; color: #1f2937;
-      transition: transform 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .sibling-popout:hover { transform: translateX(-4px); }
+    .sibling-popout:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.15); }
+    .sibling-popout-icon { font-size: 1.85rem; line-height: 1; flex-shrink: 0; }
+    .sibling-popout-text { display: flex; flex-direction: column; gap: 0.05rem; min-width: 0; }
     .sibling-popout-eyebrow {
-      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: #6b7280;
+      font-size: 0.58rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #6b7280; line-height: 1.2;
     }
-    .sibling-popout-icon { font-size: 2.4rem; line-height: 1; margin: 0.1rem 0; }
-    .sibling-popout-name { font-weight: 800; color: #0d9488; font-size: 1.15rem; line-height: 1.1; }
-    .sibling-popout-tag { font-size: 0.78rem; color: #4b5563; line-height: 1.35; }
+    .sibling-popout-name { font-weight: 800; color: #0d9488; font-size: 1rem; line-height: 1.15; }
+    .sibling-popout-tag { font-size: 0.74rem; color: #4b5563; line-height: 1.3; }
     .sibling-popout-cta {
       display: inline-flex; align-items: center; gap: 0.3rem;
       font-size: 0.72rem; font-weight: 700; color: #0d9488;
       background: rgba(13,148,136,0.10);
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px; margin-top: 0.2rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: 999px; white-space: nowrap; flex-shrink: 0;
     }
     .sibling-popout-dismiss {
-      position: absolute; top: -10px; left: -10px;
+      position: absolute; top: -10px; right: -10px;
       background: white; border: 1px solid #d1d5db; border-radius: 50%;
       width: 24px; height: 24px; font-size: 0.95rem; line-height: 1;
       cursor: pointer; color: #6b7280; padding: 0;
@@ -1700,22 +1715,18 @@
     }
     .sibling-popout-dismiss:hover { background: #f3f4f6; color: #1f2937; }
     @media (max-width: 640px) {
-      #siblingPopout {
-        right: 0.5rem; bottom: 4.5rem;
-      }
+      #siblingPopout { right: 0.5rem; bottom: 0.5rem; max-width: calc(100vw - 1rem); }
       .sibling-popout {
-        width: auto; max-width: 78vw;
-        flex-direction: row; align-items: center; gap: 0.6rem;
-        border-radius: 999px; border: 1.5px solid #0d9488;
-        padding: 0.45rem 0.95rem 0.45rem 0.7rem;
+        gap: 0.55rem; padding: 0.5rem 0.75rem 0.5rem 0.65rem;
+        border-radius: 12px;
       }
-      .sibling-popout:hover { transform: none; }
+      .sibling-popout:hover { transform: none; box-shadow: 0 6px 22px rgba(0,0,0,0.12); }
+      .sibling-popout-icon { font-size: 1.35rem; }
       .sibling-popout-eyebrow { display: none; }
-      .sibling-popout-icon { font-size: 1.4rem; margin: 0; }
-      .sibling-popout-name { font-size: 0.85rem; }
+      .sibling-popout-name { font-size: 0.82rem; }
       .sibling-popout-tag { display: none; }
-      .sibling-popout-cta { padding: 0.18rem 0.55rem; font-size: 0.68rem; margin-top: 0; }
-      .sibling-popout-dismiss { top: -7px; left: -7px; width: 20px; height: 20px; font-size: 0.8rem; }
+      .sibling-popout-cta { padding: 0.22rem 0.6rem; font-size: 0.66rem; }
+      .sibling-popout-dismiss { top: -7px; right: -7px; width: 20px; height: 20px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -1737,13 +1748,15 @@
     </div>
   </header>
 
-  <!-- SIBLING CROSS-PROMO (side popout) -->
+  <!-- SIBLING CROSS-PROMO (bottom-right bar) -->
   <div id="siblingPopout">
     <a class="sibling-popout" href="https://physiodle.up.railway.app" target="_blank" rel="noopener" aria-label="Open Physiodle in new tab">
-      <span class="sibling-popout-eyebrow">Also try</span>
       <span class="sibling-popout-icon">&#129460;</span>
-      <span class="sibling-popout-name">Physiodle</span>
-      <span class="sibling-popout-tag">Daily physiotherapy case puzzle</span>
+      <span class="sibling-popout-text">
+        <span class="sibling-popout-eyebrow">Also try</span>
+        <span class="sibling-popout-name">Physiodle</span>
+        <span class="sibling-popout-tag">Daily physiotherapy case puzzle</span>
+      </span>
       <span class="sibling-popout-cta">Same login &rarr;</span>
     </a>
     <button class="sibling-popout-dismiss" id="siblingDismissBtn" aria-label="Dismiss">&times;</button>
@@ -1753,14 +1766,19 @@
       try {
         var b = document.getElementById('siblingPopout');
         if (!b) return;
-        if (localStorage.getItem('pharmodle_sibling_dismissed') === '1') {
+        var KEY = 'pharmodle_sibling_dismissed_at';
+        var TTL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+        var ts = parseInt(localStorage.getItem(KEY) || '0', 10);
+        if (ts && (Date.now() - ts) < TTL_MS) {
           b.style.display = 'none';
+        } else if (ts) {
+          try { localStorage.removeItem(KEY); } catch(_) {}
         }
         var btn = document.getElementById('siblingDismissBtn');
         if (btn) btn.addEventListener('click', function(e) {
           e.preventDefault(); e.stopPropagation();
           b.style.display = 'none';
-          try { localStorage.setItem('pharmodle_sibling_dismissed', '1'); } catch(_) {}
+          try { localStorage.setItem(KEY, Date.now().toString()); } catch(_) {}
         });
       } catch(_) {}
     })();
