@@ -362,6 +362,68 @@ router.post('/match-test', requireAdmin, (req, res) => {
   res.json(result);
 });
 
+// POST /api/admin/wipe-leaderboards
+// Deletes accumulated game-history data so rankings reset. Safe by default:
+// - Only `game_results` is wiped unless `tables` is provided.
+// - Always dry-run unless `confirm=YES_WIPE` is sent.
+//
+// curl example (preview):
+//   curl -X POST 'https://pharmodle.up.railway.app/api/admin/wipe-leaderboards' \
+//     -H 'x-admin-key: <KEY>'
+//
+// curl example (actually wipe game_results):
+//   curl -X POST 'https://pharmodle.up.railway.app/api/admin/wipe-leaderboards?confirm=YES_WIPE' \
+//     -H 'x-admin-key: <KEY>'
+//
+// curl example (wipe game_results + analytics):
+//   curl -X POST 'https://pharmodle.up.railway.app/api/admin/wipe-leaderboards?confirm=YES_WIPE&tables=game_results,page_views,analytics_events' \
+//     -H 'x-admin-key: <KEY>'
+const ALLOWED_WIPE_TABLES = ['game_results', 'feedback', 'page_views', 'analytics_events'];
+router.post('/wipe-leaderboards', requireAdmin, (req, res) => {
+  const requested = (req.query.tables || 'game_results')
+    .split(',').map(s => s.trim()).filter(Boolean);
+  const invalid = requested.filter(t => !ALLOWED_WIPE_TABLES.includes(t));
+  if (invalid.length) {
+    return res.status(400).json({
+      error: 'Invalid tables requested',
+      invalid,
+      allowed: ALLOWED_WIPE_TABLES,
+    });
+  }
+
+  const counts = {};
+  for (const t of requested) {
+    counts[t] = db.prepare(`SELECT COUNT(*) AS cnt FROM ${t}`).get().cnt;
+  }
+
+  const confirmed = req.query.confirm === 'YES_WIPE';
+  if (!confirmed) {
+    return res.json({
+      dryRun: true,
+      tablesToWipe: requested,
+      rowCounts: counts,
+      preserved: ['users', 'friendships', 'friend_requests'],
+      note: 'No data deleted. Re-send with ?confirm=YES_WIPE to actually wipe.',
+    });
+  }
+
+  const deleted = {};
+  const tx = db.transaction(() => {
+    for (const t of requested) {
+      const r = db.prepare(`DELETE FROM ${t}`).run();
+      deleted[t] = r.changes;
+    }
+  });
+  tx();
+
+  res.json({
+    dryRun: false,
+    deleted,
+    preserved: ['users', 'friendships', 'friend_requests'],
+    message: 'Wipe complete.',
+  });
+});
+
 // GET /api/admin/match-data — return equivalence groups, parent terms, abbreviation map
 router.get('/match-data', requireAdmin, (req, res) => {
   // Convert Sets to arrays for JSON
