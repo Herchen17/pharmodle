@@ -105,4 +105,24 @@ db.exec(`
   );
 `);
 
+// ==================== MIGRATIONS ====================
+// CREATE TABLE IF NOT EXISTS skips existing tables, so schema changes to
+// pre-existing tables need explicit ALTER TABLE calls. Each migration must
+// be idempotent (check before altering).
+
+function columnExists(table, column) {
+  const rows = db.prepare(`PRAGMA table_info(${table})`).all();
+  return rows.some(r => r.name === column);
+}
+
+// 2026-04-30: add email column to users for cross-game identity matching.
+// Mirrors Physiodle's 2026-04-29 migration. New column is nullable; existing
+// rows keep working with username-only login. Cross-game stats endpoint
+// uses email when present, falls back to username.
+if (!columnExists('users', 'email')) {
+  console.log('[migration] adding users.email column');
+  db.exec('ALTER TABLE users ADD COLUMN email TEXT COLLATE NOCASE');
+}
+db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email) WHERE email IS NOT NULL');
+
 module.exports = db;
