@@ -90,6 +90,7 @@ app.use('/api/friends', require('./routes/friends'));
 app.use('/api/leaderboard', require('./routes/leaderboard'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/analytics', require('./routes/analytics'));
+app.use('/api/admin', require('./routes/admin-user-stats'));
 
 // Feedback endpoint (simple, inline)
 const { optionalAuth } = require('./auth');
