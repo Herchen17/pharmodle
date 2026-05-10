@@ -1872,8 +1872,11 @@
     <div class="result-area" style="max-width: 380px; padding: 1.25rem 1.25rem 1.5rem;">
       <button class="result-close" id="shareCloseBtn" title="Close">&times;</button>
       <h3 style="margin: 0 0 0.75rem; font-size: 1.05rem; color: #1f2937; font-weight: 700;">Share your result</h3>
-      <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+      <div style="display: flex; justify-content: center; margin-bottom: 0.6rem;">
         <canvas id="shareCardCanvas" width="1080" height="1080" style="width: 220px; height: 220px; border-radius: 0.75rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18);"></canvas>
+      </div>
+      <div style="text-align: center; margin-bottom: 0.85rem;">
+        <a id="shareUrlLink" target="_blank" rel="noopener noreferrer" style="font-weight: 600; text-decoration: underline; font-size: 0.85rem; word-break: break-all;"></a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 0.45rem;">
         <button class="btn btn-primary btn-full" id="shareCopyBtn" style="font-size: 0.9rem;">Copy Text</button>
@@ -3491,19 +3494,17 @@
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // BIG brand row — emoji + name
-      ctx.font = '700 110px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
-      ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 160);
-
-      // Achievement statement (2 lines)
+      // Achievement statement — brand lives inside the headline (no separate top brand row)
       const score = won ? `${guessCount}/5` : 'X/5';
-      ctx.font = '600 52px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText(`I got Day ${day}`, W / 2, 320);
-      ctx.fillText(`in ${score} guesses today`, W / 2, 390);
+      ctx.font = '700 78px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
+      ctx.fillText(`${SHARE_CONFIG.emoji} I got ${SHARE_CONFIG.brand} Day ${day}`, W / 2, 220);
+
+      ctx.font = '500 56px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText(`in ${score} guesses today`, W / 2, 320);
 
       // CTA
-      ctx.font = 'italic 600 42px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText('Can you beat me?', W / 2, 470);
+      ctx.font = 'italic 600 46px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText('Can you beat me?', W / 2, 410);
 
       // 5 horizontal boxes (always 5: red = wrong guess, green = unused/correct)
       const redCount = won ? guessCount - 1 : 5;
@@ -3512,7 +3513,7 @@
       const gap = 26;
       const totalWidth = total * squareSize + (total - 1) * gap;
       const startX = (W - totalWidth) / 2;
-      const sqY = 560;
+      const sqY = 530;
       for (let i = 0; i < total; i++) {
         ctx.fillStyle = i < redCount ? '#fca5a5' : '#86efac';
         drawRoundedRect(ctx, startX + i * (squareSize + gap), sqY, squareSize, squareSize, 18);
@@ -3522,9 +3523,9 @@
       // Footer: Try it yourself at + URL (visually underlined to suggest a link)
       ctx.fillStyle = 'white';
       ctx.globalAlpha = 0.95;
-      ctx.font = '500 34px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.font = '500 36px -apple-system, "Segoe UI", system-ui, sans-serif';
       ctx.fillText('Try it yourself at', W / 2, 850);
-      ctx.font = '700 40px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.font = '700 42px -apple-system, "Segoe UI", system-ui, sans-serif';
       const urlMetrics = ctx.measureText(SHARE_CONFIG.url);
       ctx.fillText(SHARE_CONFIG.url, W / 2, 920);
       // Underline the URL
@@ -3549,6 +3550,14 @@
       // Make the preview canvas itself clickable — opens the game URL in a new tab.
       canvas.style.cursor = 'pointer';
       canvas.onclick = () => window.open(SHARE_CONFIG.url, '_blank', 'noopener,noreferrer');
+
+      // Wire up the text URL link below the card (brand-coloured, opens new tab).
+      const urlLink = document.getElementById('shareUrlLink');
+      if (urlLink) {
+        urlLink.href = SHARE_CONFIG.url;
+        urlLink.textContent = SHARE_CONFIG.url;
+        urlLink.style.color = SHARE_CONFIG.gradientFrom;
+      }
 
       // Show "Share..." (Web Share API) only if the browser supports sharing files (mobile mostly)
       const nativeBtn = document.getElementById('shareNativeBtn');
