@@ -468,6 +468,8 @@
     }
 
     .autocomplete-dropdown {
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
       position: absolute;
       top: 100%;
       left: 0;
@@ -3042,14 +3044,34 @@
         }
       });
 
-      // Touch support — same fix for mobile
-      // Use touchend instead of touchstart for more reliable selection
+      // Touch support — distinguish tap from scroll using a movement threshold so
+      // dragging-to-scroll the dropdown doesn't select the item under your finger.
+      // Background: previously touchstart preventDefault'd to keep input focus, which
+      // blocked native scrolling and caused touchend to select the item the user was
+      // trying to scroll past.
+      let _touchStartY = null;
+      let _touchStartTime = 0;
+      let _touchMoved = false;
+      const _TAP_MOVE_PX = 10;
+      const _TAP_TIME_MS = 500;
+
       dropdown.addEventListener('touchstart', (e) => {
-        // Prevent blur on any touch within dropdown
-        e.preventDefault();
-      }, { passive: false });
+        // No preventDefault — allow native scrolling
+        _touchStartY = e.touches[0].clientY;
+        _touchStartTime = Date.now();
+        _touchMoved = false;
+      }, { passive: true });
+
+      dropdown.addEventListener('touchmove', (e) => {
+        if (_touchStartY !== null && Math.abs(e.touches[0].clientY - _touchStartY) > _TAP_MOVE_PX) {
+          _touchMoved = true;
+        }
+      }, { passive: true });
 
       dropdown.addEventListener('touchend', (e) => {
+        const wasTap = !_touchMoved && (Date.now() - _touchStartTime) < _TAP_TIME_MS;
+        _touchStartY = null;
+        if (!wasTap) return; // user was scrolling, not tapping
         const item = e.target.closest('.autocomplete-item');
         if (item) {
           e.preventDefault();
@@ -3058,7 +3080,7 @@
           selectedIndex = -1;
           input.focus();
         }
-      });
+      }, { passive: false });
 
       input.addEventListener('input', (e) => {
         const value = e.target.value.trim().toLowerCase();
