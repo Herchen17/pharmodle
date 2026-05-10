@@ -2838,12 +2838,28 @@
       });
     }
 
-    function showToast(message, type = 'success') {
+    function showToast(message, type = 'success', duration = 3000) {
       const toast = document.createElement('div');
       toast.className = `toast ${type}`;
       toast.textContent = message;
+      toast.style.cursor = 'pointer';
+      toast.title = 'Tap to dismiss';
+      let removed = false;
+      const remove = () => { if (!removed) { removed = true; toast.remove(); } };
+      toast.addEventListener('click', remove);
       document.body.appendChild(toast);
-      setTimeout(() => toast.remove(), 3000);
+      setTimeout(remove, duration);
+    }
+
+    // Hide the puzzle's answer name from a feedback string so it doesn't spoil the puzzle
+    // when shown mid-game (e.g. in the near_miss toast). The full feedback is still shown
+    // in the post-game result modal.
+    function redactAnswer(text, answer) {
+      if (!text || !answer) return text;
+      const core = answer.replace(/\s*\([^)]*\)\s*$/, '').trim();
+      if (!core) return text;
+      const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return text.replace(new RegExp(escaped, 'gi'), '[the answer]');
     }
 
     function showPage(pageId) {
@@ -3260,7 +3276,10 @@
           renderClues();
           renderGuessHistory();
           input.value = '';
-          showToast(`So close! ${feedback} ${5 - gameState.guesses.length} guesses left.`, 'error');
+          // Redact the answer name from the educational feedback so it doesn't spoil the puzzle.
+          // The unredacted feedback is still shown in the post-game result modal on loss.
+          const safeFeedback = redactAnswer(feedback, gameState.puzzle.answer);
+          showToast(`So close! ${safeFeedback} ${5 - gameState.guesses.length} guesses left.`, 'error', 15000);
         }
       } else {
         // Incorrect — mark the current clue as wrong (red)

@@ -290,11 +290,13 @@
       "walkthrough": "Terbinafine's squalene epoxidase inhibition creates a mechanistic fork in the road that immediately separates it from azole antifungals — instead of disrupting ergosterol synthesis at the demethylation step, it blocks the final epoxidation reaction, which explains both its potency against dermatophytes and its resistance profile in organisms that have adapted to azole pressure. The clinical context of onychomycosis requiring systemic treatment rules out topical agents and griseofulvin monotherapy, but terbinafine's exceptional accumulation in keratin-containing tissues and its persistence there for months after treatment ends is the pharmacological outlier that no competing antifungal matches — this lipophilic sequestration allows nail concentrations to remain fungistatic long after serum levels have dropped, enabling treatment courses of just 6–12 weeks rather than the 12+ months demanded by azoles or griseofulvin. The allylamine class membership is a structural identifier with only one oral dermatological representative, and the dual CYP2D6 and CYP3A4 metabolism creates the specific drug interaction pattern seen with beta-blockers and antiarrhythmics. What clinches terbinafine is the combination of being the only allylamine approved systemically for dermatological use, the only agent whose post-treatment tissue persistence reaches 6+ months in nails and adipose tissue, and the only one whose squalene epoxidase mechanism creates that particular resistance and efficacy profile in dermatophyte-infected keratin."
     },
     {
-      "answer": "Chlortalidone",
+      "answer": "Chlorthalidone",
       "aliases": [
         "Hygroton",
         "Thalitone",
-        "Computest"
+        "Computest",
+        "Chlorthalidone",
+        "Chlortalidone"
       ],
       "acceptable_alternatives": [],
       "near_misses": {
@@ -303,7 +305,7 @@
           "Indapamide",
           "Amiloride"
         ],
-        "feedback": "Chlortalidone has the longest half-life (40-72 hours) among thiazide-like diuretics and causes the most potent hypokalemia and hyperuricemia interactions; hydrochlorothiazide has shorter half-life; indapamide has minimal potassium effects; amiloride is potassium-sparing."
+        "feedback": "Chlorthalidone has the longest half-life (40-72 hours) among thiazide-like diuretics and causes the most potent hypokalemia and hyperuricemia interactions; hydrochlorothiazide has shorter half-life; indapamide has minimal potassium effects; amiloride is potassium-sparing."
       },
       "category": "cardiovascular drugs",
       "domain": "diuretics and antihypertensives",
@@ -331,10 +333,10 @@
           "text": "Among thiazide-type diuretics, this benzisothiazole derivative is unmatched in plasma half-life and potency of hypokalemia induction. Its metabolite retains diuretic activity, and it causes more pronounced urate retention and glucose dysregulation than hydrochlorothiazide or indapamide, making it the culprit here."
         }
       ],
-      "explanation": "Chlortalidone is uniquely identified by its exceptionally long half-life (40-72 hours), benzisothiazole structure, and superior potency in causing hypokalemia and hyperuricemia compared to other thiazide-type diuretics. The prolonged action and cumulative electrolyte depletion precipitate digoxin toxicity, distinguishing it from shorter-acting alternatives like hydrochlorothiazide.",
+      "explanation": "Chlorthalidone is uniquely identified by its exceptionally long half-life (40-72 hours), benzisothiazole structure, and superior potency in causing hypokalemia and hyperuricemia compared to other thiazide-type diuretics. The prolonged action and cumulative electrolyte depletion precipitate digoxin toxicity, distinguishing it from shorter-acting alternatives like hydrochlorothiazide.",
       "confidence": 5,
       "id": 43,
-      "walkthrough": "Chlortalidone's half-life of 40–72 hours makes it fundamentally different from the hydrochlorothiazide most clinicians reach for first—a prolonged action that sounds clinically advantageous but becomes dangerous in patients on digoxin, where even mild hypokalemia shifts the arrhythmia threshold catastrophically downward. The clinical scenario of a 68-year-old whose potassium plummeted to 3.1 mmol/L within three weeks despite being on lisinopril (which should buffer potassium losses) immediately rules out standard thiazides with shorter durations; only a drug with cumulative potassium-wasting could cause such profound depletion on a stable regimen. The mechanism clinches it: chlortalidone's benzisothiazole structure and distal convoluted tubule inhibition produce more aggressive sodium and potassium wasting than hydrochlorothiazide or indapamide, a fact compounded by its extended half-life allowing electrolyte losses to compound across days rather than hours. The concurrent NSAID use worsens renal perfusion and potassium depletion, but only chlortalidone's prolonged action and metabolite activity create the sustained electrolyte sink needed to precipitate digoxin toxicity at therapeutic digoxin levels—the distinguishing feature that no other thiazide-type diuretic can replicate."
+      "walkthrough": "Chlorthalidone's half-life of 40–72 hours makes it fundamentally different from the hydrochlorothiazide most clinicians reach for first—a prolonged action that sounds clinically advantageous but becomes dangerous in patients on digoxin, where even mild hypokalemia shifts the arrhythmia threshold catastrophically downward. The clinical scenario of a 68-year-old whose potassium plummeted to 3.1 mmol/L within three weeks despite being on lisinopril (which should buffer potassium losses) immediately rules out standard thiazides with shorter durations; only a drug with cumulative potassium-wasting could cause such profound depletion on a stable regimen. The mechanism clinches it: chlorthalidone's benzisothiazole structure and distal convoluted tubule inhibition produce more aggressive sodium and potassium wasting than hydrochlorothiazide or indapamide, a fact compounded by its extended half-life allowing electrolyte losses to compound across days rather than hours. The concurrent NSAID use worsens renal perfusion and potassium depletion, but only chlorthalidone's prolonged action and metabolite activity create the sustained electrolyte sink needed to precipitate digoxin toxicity at therapeutic digoxin levels—the distinguishing feature that no other thiazide-type diuretic can replicate."
     },
     {
       "answer": "Carvedilol",
@@ -4388,11 +4390,12 @@
       "acceptable_alternatives": [],
       "near_misses": {
         "drugs": [
-          "Chlortalidone",
+          "Chlorthalidone",
           "Indapamide",
-          "Amiloride"
+          "Amiloride",
+          "Chlortalidone"
         ],
-        "feedback": "Chlortalidone and indapamide have longer half-lives (36-72 hours and 14-24 hours respectively); amiloride is potassium-sparing rather than potassium-wasting. Only hydrochlorothiazide has the 6-12 hour half-life combined with thiazide structure and historical status as the prototypical oral diuretic for hypertension since the 1960s."
+        "feedback": "Chlorthalidone and indapamide have longer half-lives (36-72 hours and 14-24 hours respectively); amiloride is potassium-sparing rather than potassium-wasting. Only hydrochlorothiazide has the 6-12 hour half-life combined with thiazide structure and historical status as the prototypical oral diuretic for hypertension since the 1960s."
       },
       "category": "Cardiovascular drugs",
       "domain": "Antihypertensive agents and diuretics",
@@ -22681,8 +22684,9 @@
       "near_misses": {
         "drugs": [
           "Hydrochlorothiazide",
-          "Chlortalidone",
-          "Amiloride"
+          "Chlorthalidone",
+          "Amiloride",
+          "Chlortalidone"
         ],
         "feedback": "Indapamide uniquely causes minimal electrolyte disturbance and lacks significant potassium-sparing properties, making it the only thiazide-like diuretic where NSAIDs do not trigger dangerous hyperkalemia risk despite loop mechanism inhibition."
       },
@@ -22712,7 +22716,7 @@
           "text": "This sulfonamide-based indoline diuretic (Natrilix, Arindel) exhibits unique selectivity for sodium over potassium handling, making NSAID co-prescription safer regarding potassium balance than equivalent-dose alternatives, though acute kidney injury risk remains."
         }
       ],
-      "explanation": "Indapamide is a thiazide-like diuretic with exceptionally mild effects on potassium excretion compared to hydrochlorothiazide or chlortalidone. When combined with NSAIDs, while renal function deteriorates significantly, hyperkalemia risk remains low—a distinctive pharmacological property that distinguishes it from other thiazide-class agents and makes this interaction more clinically manageable.",
+      "explanation": "Indapamide is a thiazide-like diuretic with exceptionally mild effects on potassium excretion compared to hydrochlorothiazide or chlorthalidone. When combined with NSAIDs, while renal function deteriorates significantly, hyperkalemia risk remains low—a distinctive pharmacological property that distinguishes it from other thiazide-class agents and makes this interaction more clinically manageable.",
       "confidence": 5,
       "id": 515,
       "walkthrough": "Indapamide is a thiazide-like diuretic with an unusual selectivity for sodium chloride excretion over potassium wasting—a property that paradoxically makes it safer when combined with NSAIDs than structurally similar agents like hydrochlorothiazide. The clinical scenario of acute kidney injury developing within two weeks of adding an NSAID to an antihypertensive immediately signals a drug-drug interaction; NSAIDs block prostaglandin-dependent renal vasodilation while diuretics reduce intravascular volume, creating a renal perfusion crisis. However, the pattern of worsening creatinine without proportional hyperkalemia is the key diagnostic clue—potassium-sparing thiazides like spironolactone would amplify NSAID-induced hyperkalemia dangerously, whereas loop diuretics cause aggressive potassium losses that mask early injury. The mechanism reveals the distinction: indapamide's indoline structure and sulfonamide backbone confer preferential chloruresis with minimal potassium channel effects, so even when NSAIDs suppress renal prostaglandins and reduce glomerular filtration, potassium retention remains mild rather than severe. This exceptional sodium-to-potassium selectivity—preserved despite the compounded renal stress of dual medication—is what makes indapamide uniquely identifiable in this interaction scenario, as no other thiazide-class agent maintains such protective potassium balance when paired with an NSAID."
