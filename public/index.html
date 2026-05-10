@@ -3451,12 +3451,11 @@
 
     function generateShareText() {
       const { day, won, guessCount } = getShareData();
-      const wrongCount = won ? guessCount - 1 : 5;
-      const rows = [];
-      for (let i = 0; i < wrongCount; i++) rows.push('\u{1F7E5}');
-      if (won) rows.push('\u{1F7E9}');
+      const redCount = won ? guessCount - 1 : 5;
+      const greenCount = 5 - redCount;
       const score = won ? `${guessCount}/5` : 'X/5';
-      return `${SHARE_CONFIG.brand} ${day} \u2014 ${score}\n\n${rows.join('\n')}\n\n${SHARE_CONFIG.url}`;
+      const boxes = '\u{1F7E5}'.repeat(redCount) + '\u{1F7E9}'.repeat(greenCount);
+      return `I got ${SHARE_CONFIG.brand} Day ${day} in ${score} guesses today. Can you beat me?\n\n${boxes}\n\nTry it yourself at\n${SHARE_CONFIG.url}`;
     }
 
     function drawRoundedRect(ctx, x, y, w, h, r) {
@@ -3487,44 +3486,51 @@
 
       ctx.fillStyle = 'white';
       ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
 
-      // Top: emoji + brand name
-      ctx.textBaseline = 'top';
-      ctx.font = '600 80px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
-      ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 130);
+      // BIG brand row — emoji + name
+      ctx.font = '700 110px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
+      ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 160);
 
-      // Subtitle: Day N · Solved in X/5  (or  Day N · X/5  if lost)
+      // Achievement statement (2 lines)
       const score = won ? `${guessCount}/5` : 'X/5';
-      const subtitle = won ? `Day ${day} \u00B7 Solved in ${score}` : `Day ${day} \u00B7 ${score}`;
-      ctx.globalAlpha = 0.9;
-      ctx.font = '500 40px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText(subtitle, W / 2, 240);
-      ctx.globalAlpha = 1;
+      ctx.font = '600 52px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText(`I got Day ${day}`, W / 2, 320);
+      ctx.fillText(`in ${score} guesses today`, W / 2, 390);
 
-      // Center: vertical column of squares (one per guess made; last is green if won)
-      const total = won ? guessCount : 5;
-      const squareSize = total <= 3 ? 130 : (total <= 4 ? 115 : 100);
-      const gap = 18;
-      const gridHeight = total * squareSize + (total - 1) * gap;
-      const startY = (H - gridHeight) / 2 + 30;
+      // CTA
+      ctx.font = 'italic 600 42px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText('Can you beat me?', W / 2, 470);
+
+      // 5 horizontal boxes (always 5: red = wrong guess, green = unused/correct)
+      const redCount = won ? guessCount - 1 : 5;
+      const total = 5;
+      const squareSize = 150;
+      const gap = 26;
+      const totalWidth = total * squareSize + (total - 1) * gap;
+      const startX = (W - totalWidth) / 2;
+      const sqY = 560;
       for (let i = 0; i < total; i++) {
-        const isHit = won && i === total - 1;
-        ctx.fillStyle = isHit ? '#86efac' : '#fca5a5';
-        const sy = startY + i * (squareSize + gap);
-        drawRoundedRect(ctx, W / 2 - squareSize / 2, sy, squareSize, squareSize, 16);
+        ctx.fillStyle = i < redCount ? '#fca5a5' : '#86efac';
+        drawRoundedRect(ctx, startX + i * (squareSize + gap), sqY, squareSize, squareSize, 18);
         ctx.fill();
-        // soft inner shadow effect
-        ctx.strokeStyle = 'rgba(0,0,0,0.05)';
-        ctx.lineWidth = 2;
-        ctx.stroke();
       }
 
-      // Bottom: play at URL
+      // Footer: Try it yourself at + URL (visually underlined to suggest a link)
       ctx.fillStyle = 'white';
-      ctx.globalAlpha = 0.92;
-      ctx.font = '600 34px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.textBaseline = 'bottom';
-      ctx.fillText(`play at ${SHARE_CONFIG.url}`, W / 2, H - 80);
+      ctx.globalAlpha = 0.95;
+      ctx.font = '500 34px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText('Try it yourself at', W / 2, 850);
+      ctx.font = '700 40px -apple-system, "Segoe UI", system-ui, sans-serif';
+      const urlMetrics = ctx.measureText(SHARE_CONFIG.url);
+      ctx.fillText(SHARE_CONFIG.url, W / 2, 920);
+      // Underline the URL
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.beginPath();
+      ctx.moveTo(W / 2 - urlMetrics.width / 2, 945);
+      ctx.lineTo(W / 2 + urlMetrics.width / 2, 945);
+      ctx.stroke();
       ctx.globalAlpha = 1;
     }
 
@@ -3536,6 +3542,10 @@
     function openShareModal() {
       const canvas = document.getElementById('shareCardCanvas');
       renderShareCard(canvas);
+
+      // Make the preview canvas itself clickable — opens the game URL in a new tab.
+      canvas.style.cursor = 'pointer';
+      canvas.onclick = () => window.open(SHARE_CONFIG.url, '_blank', 'noopener,noreferrer');
 
       // Show "Share..." (Web Share API) only if the browser supports sharing files (mobile mostly)
       const nativeBtn = document.getElementById('shareNativeBtn');
