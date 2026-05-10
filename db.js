@@ -125,4 +125,26 @@ if (!columnExists('users', 'email')) {
 }
 db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email) WHERE email IS NOT NULL');
 
+// 2026-05-10: rebase pharmodle launch from 2026-03-14 to 2026-04-19.
+// Subtract 36 from every game_results.day_number and feedback.day_number.
+// Records that go <= 0 (pre-Apr-19 plays — internal testing only) are kept in
+// place so total stats counts are preserved; archive/streak queries filter on
+// day_number > 0 so they're naturally invisible. Idempotent via a meta table.
+db.exec(`CREATE TABLE IF NOT EXISTS schema_migrations (
+  key TEXT PRIMARY KEY,
+  applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+)`);
+const REBASE_KEY = 'pharmodle_day_rebase_2026_04_19';
+const alreadyRebased = !!db.prepare('SELECT 1 FROM schema_migrations WHERE key = ?').get(REBASE_KEY);
+if (!alreadyRebased) {
+  console.log('[migration] rebasing day_numbers by -36 (Pharmodle launch shift to 2026-04-19)');
+  const tx = db.transaction(() => {
+    const r1 = db.prepare('UPDATE game_results SET day_number = day_number - 36').run();
+    const r2 = db.prepare('UPDATE feedback SET day_number = day_number - 36').run();
+    db.prepare('INSERT INTO schema_migrations (key) VALUES (?)').run(REBASE_KEY);
+    console.log(`[migration] shifted ${r1.changes} game_results, ${r2.changes} feedback rows`);
+  });
+  tx();
+}
+
 module.exports = db;
