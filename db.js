@@ -139,8 +139,13 @@ const alreadyRebased = !!db.prepare('SELECT 1 FROM schema_migrations WHERE key =
 if (!alreadyRebased) {
   console.log('[migration] rebasing day_numbers by -36 (Pharmodle launch shift to 2026-04-19)');
   const tx = db.transaction(() => {
-    const r1 = db.prepare('UPDATE game_results SET day_number = day_number - 36').run();
-    const r2 = db.prepare('UPDATE feedback SET day_number = day_number - 36').run();
+    // Two-pass: shift to high offset first to avoid UNIQUE(user_id, day_number) collisions
+    // during the UPDATE (some users have rows at day_numbers exactly 36 apart, so a single
+    // pass would produce a transient duplicate that fails SQLite's per-row UNIQUE check).
+    db.prepare('UPDATE game_results SET day_number = day_number + 1000000').run();
+    const r1 = db.prepare('UPDATE game_results SET day_number = day_number - 1000036').run();
+    db.prepare('UPDATE feedback SET day_number = day_number + 1000000').run();
+    const r2 = db.prepare('UPDATE feedback SET day_number = day_number - 1000036').run();
     db.prepare('INSERT INTO schema_migrations (key) VALUES (?)').run(REBASE_KEY);
     console.log(`[migration] shifted ${r1.changes} game_results, ${r2.changes} feedback rows`);
   });
