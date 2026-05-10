@@ -1852,7 +1852,7 @@
         <div id="resultExplanationText"></div>
       </div>
       <div class="result-buttons" id="resultButtonsLoggedIn">
-        <button class="btn btn-primary" id="shareBtn">Copy Result</button>
+        <button class="btn btn-primary" id="shareBtn">Share</button>
         <button class="btn btn-secondary" id="archiveFromResultBtn">Browse Archive</button>
       </div>
       <!-- Login CTA for unauthenticated users — replaces buttons above -->
@@ -1861,6 +1861,26 @@
         <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #6b7280;">Create a free account to track stats and compete on leaderboards</p>
       </div>
       <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;">Check back tomorrow for the next Pharmodle!</p>
+    </div>
+  </div>
+
+  <!-- SHARE MODAL OVERLAY -->
+  <div class="result-overlay" id="shareOverlay">
+    <div class="result-area" style="max-width: 380px; padding: 1.25rem 1.25rem 1.5rem;">
+      <button class="result-close" id="shareCloseBtn" title="Close">&times;</button>
+      <h3 style="margin: 0 0 0.75rem; font-size: 1.05rem; color: #1f2937; font-weight: 700;">Share your result</h3>
+      <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+        <canvas id="shareCardCanvas" width="1080" height="1080" style="width: 220px; height: 220px; border-radius: 0.75rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18);"></canvas>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+        <button class="btn btn-primary btn-full" id="shareCopyBtn" style="font-size: 0.9rem;">Copy Text</button>
+        <button class="btn btn-secondary btn-full" id="shareDownloadBtn" style="font-size: 0.9rem;">Download Image</button>
+        <button class="btn btn-primary btn-full" id="shareNativeBtn" style="font-size: 0.9rem; display: none;">Share...</button>
+        <div style="display: flex; gap: 0.45rem;">
+          <button class="btn btn-secondary" id="shareXBtn" style="flex:1; font-size: 0.85rem;">Post to X</button>
+          <button class="btn btn-secondary" id="shareRedditBtn" style="flex:1; font-size: 0.85rem;">Post to Reddit</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2612,6 +2632,18 @@
 
       return 'incorrect';
     }
+
+    // ============================================================================
+    // SHARE CONFIG (per-game brand identity for shared cards)
+    // ============================================================================
+
+    const SHARE_CONFIG = {
+      brand: 'Pharmodle',
+      emoji: '\u{1F48A}',
+      url: 'https://pharmodle.up.railway.app',
+      gradientFrom: '#7c3aed',
+      gradientTo: '#a855f7',
+    };
 
     // ============================================================================
     // STATE & GLOBALS
@@ -3406,17 +3438,111 @@
       return null;
     }
 
-    function generateEmojiGrid() {
-      // Simple emoji grid: each row = clue state (blurred=⬜, revealed=🟩, then final result)
-      const rows = [];
-      rows.push(gameState.revealed.map(r => r ? '🟩' : '⬜').join(''));
+    // ============================================================================
+    // SHARE — text + image card generation
+    // ============================================================================
 
-      // Add final state
-      if (gameState.isCompleted) {
-        rows.push(gameState.guesses.length < 5 ? '✅ Solved' : '❌ Failed');
+    function getShareData() {
+      const day = gameState.currentDay;
+      const won = gameState.guesses.length < 5;
+      const guessCount = won ? gameState.guesses.length + 1 : 5;
+      return { day, won, guessCount };
+    }
+
+    function generateShareText() {
+      const { day, won, guessCount } = getShareData();
+      const wrongCount = won ? guessCount - 1 : 5;
+      const rows = [];
+      for (let i = 0; i < wrongCount; i++) rows.push('\u{1F7E5}');
+      if (won) rows.push('\u{1F7E9}');
+      const score = won ? `${guessCount}/5` : 'X/5';
+      return `${SHARE_CONFIG.brand} ${day} \u2014 ${score}\n\n${rows.join('\n')}\n\n${SHARE_CONFIG.url}`;
+    }
+
+    function drawRoundedRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function renderShareCard(canvas) {
+      const { day, won, guessCount } = getShareData();
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+
+      // Gradient background (135deg approx — top-left to bottom-right)
+      const grad = ctx.createLinearGradient(0, 0, W, H);
+      grad.addColorStop(0, SHARE_CONFIG.gradientFrom);
+      grad.addColorStop(1, SHARE_CONFIG.gradientTo);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
+
+      // Top: emoji + brand name
+      ctx.textBaseline = 'top';
+      ctx.font = '600 80px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
+      ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 130);
+
+      // Subtitle: Day N · Solved in X/5  (or  Day N · X/5  if lost)
+      const score = won ? `${guessCount}/5` : 'X/5';
+      const subtitle = won ? `Day ${day} \u00B7 Solved in ${score}` : `Day ${day} \u00B7 ${score}`;
+      ctx.globalAlpha = 0.9;
+      ctx.font = '500 40px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText(subtitle, W / 2, 240);
+      ctx.globalAlpha = 1;
+
+      // Center: vertical column of squares (one per guess made; last is green if won)
+      const total = won ? guessCount : 5;
+      const squareSize = total <= 3 ? 130 : (total <= 4 ? 115 : 100);
+      const gap = 18;
+      const gridHeight = total * squareSize + (total - 1) * gap;
+      const startY = (H - gridHeight) / 2 + 30;
+      for (let i = 0; i < total; i++) {
+        const isHit = won && i === total - 1;
+        ctx.fillStyle = isHit ? '#86efac' : '#fca5a5';
+        const sy = startY + i * (squareSize + gap);
+        drawRoundedRect(ctx, W / 2 - squareSize / 2, sy, squareSize, squareSize, 16);
+        ctx.fill();
+        // soft inner shadow effect
+        ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
       }
 
-      return rows.join('\n');
+      // Bottom: play at URL
+      ctx.fillStyle = 'white';
+      ctx.globalAlpha = 0.92;
+      ctx.font = '600 34px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(`play at ${SHARE_CONFIG.url}`, W / 2, H - 80);
+      ctx.globalAlpha = 1;
+    }
+
+    function shareCardBlob() {
+      const canvas = document.getElementById('shareCardCanvas');
+      return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+    }
+
+    function openShareModal() {
+      const canvas = document.getElementById('shareCardCanvas');
+      renderShareCard(canvas);
+
+      // Show "Share..." (Web Share API) only if the browser supports sharing files (mobile mostly)
+      const nativeBtn = document.getElementById('shareNativeBtn');
+      const supportsFileShare = !!(navigator.canShare && navigator.share);
+      nativeBtn.style.display = supportsFileShare ? '' : 'none';
+
+      document.getElementById('shareOverlay').classList.add('show');
     }
 
     // ============================================================================
@@ -4247,11 +4373,71 @@
       }
     });
 
-    document.getElementById('shareBtn').addEventListener('click', () => {
-      const emoji = generateEmojiGrid();
-      navigator.clipboard.writeText(`Pharmodle\n\n${emoji}`).then(() => {
+    document.getElementById('shareBtn').addEventListener('click', openShareModal);
+
+    document.getElementById('shareCloseBtn').addEventListener('click', () => {
+      document.getElementById('shareOverlay').classList.remove('show');
+    });
+    document.getElementById('shareOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('shareOverlay')) {
+        document.getElementById('shareOverlay').classList.remove('show');
+      }
+    });
+
+    document.getElementById('shareCopyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(generateShareText());
         showToast('Copied to clipboard!', 'success');
-      });
+      } catch (e) {
+        showToast('Could not copy', 'error');
+      }
+    });
+
+    document.getElementById('shareDownloadBtn').addEventListener('click', async () => {
+      try {
+        const blob = await shareCardBlob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const { day } = getShareData();
+        a.href = url;
+        a.download = `${SHARE_CONFIG.brand.toLowerCase()}-day-${day}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Image downloaded', 'success');
+      } catch (e) {
+        showToast('Download failed', 'error');
+      }
+    });
+
+    document.getElementById('shareNativeBtn').addEventListener('click', async () => {
+      try {
+        const blob = await shareCardBlob();
+        const { day } = getShareData();
+        const file = new File([blob], `${SHARE_CONFIG.brand.toLowerCase()}-day-${day}.png`, { type: 'image/png' });
+        const text = generateShareText();
+        const data = navigator.canShare && navigator.canShare({ files: [file] })
+          ? { files: [file], text, title: `${SHARE_CONFIG.brand} Day ${day}` }
+          : { text, title: `${SHARE_CONFIG.brand} Day ${day}`, url: SHARE_CONFIG.url };
+        await navigator.share(data);
+      } catch (e) {
+        if (e.name !== 'AbortError') showToast('Share failed', 'error');
+      }
+    });
+
+    document.getElementById('shareXBtn').addEventListener('click', () => {
+      const text = generateShareText();
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+
+    document.getElementById('shareRedditBtn').addEventListener('click', () => {
+      const { day, won, guessCount } = getShareData();
+      const score = won ? `${guessCount}/5` : 'X/5';
+      const title = `${SHARE_CONFIG.brand} ${day} \u2014 ${score}`;
+      const url = `https://www.reddit.com/submit?title=${encodeURIComponent(title)}&url=${encodeURIComponent(SHARE_CONFIG.url)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
     });
 
     // Close result popup — X button
