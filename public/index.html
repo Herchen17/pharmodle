@@ -3457,11 +3457,14 @@
 
     function generateShareText() {
       const { day, won, guessCount } = getShareData();
+      const ORDINALS = { 1: 'first', 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth' };
       const redCount = won ? guessCount - 1 : 5;
       const greenCount = 5 - redCount;
-      const score = won ? `${guessCount}/5` : 'X/5';
       const boxes = '\u{1F7E5}'.repeat(redCount) + '\u{1F7E9}'.repeat(greenCount);
-      return `I got ${SHARE_CONFIG.brand} Day ${day} in ${score} guesses today. Can you beat me?\n\n${boxes}\n\nTry it yourself at\n${SHARE_CONFIG.url}`;
+      const headline = won
+        ? `I got ${SHARE_CONFIG.brand} Day ${day} on my ${ORDINALS[guessCount]} guess today. Can you beat me?`
+        : `I missed ${SHARE_CONFIG.brand} Day ${day} today. Can you beat me?`;
+      return `${headline}\n\n${boxes}\n\nTry it yourself at\n${SHARE_CONFIG.url}`;
     }
 
     function drawRoundedRect(ctx, x, y, w, h, r) {
@@ -3494,17 +3497,19 @@
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // Achievement statement — brand lives inside the headline (no separate top brand row)
-      const score = won ? `${guessCount}/5` : 'X/5';
-      ctx.font = '700 78px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
-      ctx.fillText(`${SHARE_CONFIG.emoji} I got ${SHARE_CONFIG.brand} Day ${day}`, W / 2, 220);
+      // BIG brand row — emoji + name
+      ctx.font = '700 110px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
+      ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 160);
 
-      ctx.font = '500 56px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText(`in ${score} guesses today`, W / 2, 320);
+      // Achievement statement (2 lines)
+      const score = won ? `${guessCount}/5` : 'X/5';
+      ctx.font = '600 52px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText(`I got Day ${day}`, W / 2, 320);
+      ctx.fillText(`in ${score} guesses today`, W / 2, 390);
 
       // CTA
-      ctx.font = 'italic 600 46px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText('Can you beat me?', W / 2, 410);
+      ctx.font = 'italic 600 42px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.fillText('Can you beat me?', W / 2, 470);
 
       // 5 horizontal boxes (always 5: red = wrong guess, green = unused/correct)
       const redCount = won ? guessCount - 1 : 5;
@@ -3513,7 +3518,7 @@
       const gap = 26;
       const totalWidth = total * squareSize + (total - 1) * gap;
       const startX = (W - totalWidth) / 2;
-      const sqY = 530;
+      const sqY = 560;
       for (let i = 0; i < total; i++) {
         ctx.fillStyle = i < redCount ? '#fca5a5' : '#86efac';
         drawRoundedRect(ctx, startX + i * (squareSize + gap), sqY, squareSize, squareSize, 18);
@@ -3523,9 +3528,9 @@
       // Footer: Try it yourself at + URL (visually underlined to suggest a link)
       ctx.fillStyle = 'white';
       ctx.globalAlpha = 0.95;
-      ctx.font = '500 36px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.font = '500 34px -apple-system, "Segoe UI", system-ui, sans-serif';
       ctx.fillText('Try it yourself at', W / 2, 850);
-      ctx.font = '700 42px -apple-system, "Segoe UI", system-ui, sans-serif';
+      ctx.font = '700 40px -apple-system, "Segoe UI", system-ui, sans-serif';
       const urlMetrics = ctx.measureText(SHARE_CONFIG.url);
       ctx.fillText(SHARE_CONFIG.url, W / 2, 920);
       // Underline the URL
@@ -4440,9 +4445,10 @@
         const { day } = getShareData();
         const file = new File([blob], `${SHARE_CONFIG.brand.toLowerCase()}-day-${day}.png`, { type: 'image/png' });
         const text = generateShareText();
+        // No title — host apps prepend it as a separate line above the text.
         const data = navigator.canShare && navigator.canShare({ files: [file] })
-          ? { files: [file], text, title: `${SHARE_CONFIG.brand} Day ${day}` }
-          : { text, title: `${SHARE_CONFIG.brand} Day ${day}`, url: SHARE_CONFIG.url };
+          ? { files: [file], text }
+          : { text, url: SHARE_CONFIG.url };
         await navigator.share(data);
       } catch (e) {
         if (e.name !== 'AbortError') showToast('Share failed', 'error');
