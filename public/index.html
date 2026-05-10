@@ -3501,11 +3501,15 @@
       ctx.font = '700 110px -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", system-ui, sans-serif';
       ctx.fillText(`${SHARE_CONFIG.emoji} ${SHARE_CONFIG.brand}`, W / 2, 160);
 
-      // Achievement statement (2 lines)
-      const score = won ? `${guessCount}/5` : 'X/5';
+      // Achievement statement (2 lines) — different copy for win vs loss
       ctx.font = '600 52px -apple-system, "Segoe UI", system-ui, sans-serif';
-      ctx.fillText(`I got Day ${day}`, W / 2, 320);
-      ctx.fillText(`in ${score} guesses today`, W / 2, 390);
+      if (won) {
+        ctx.fillText(`I got Day ${day}`, W / 2, 320);
+        ctx.fillText(`in ${guessCount}/5 guesses today`, W / 2, 390);
+      } else {
+        ctx.fillText(`I missed Day ${day}`, W / 2, 320);
+        ctx.fillText(`today`, W / 2, 390);
+      }
 
       // CTA
       ctx.font = 'italic 600 42px -apple-system, "Segoe UI", system-ui, sans-serif';
