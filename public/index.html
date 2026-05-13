@@ -2480,7 +2480,11 @@
         PARENT_TERMS[p].forEach(c => allTerms.add(c));
       });
       // Also add all autocomplete conditions
-      if (gameState.allConditions) gameState.allConditions.forEach(c => allTerms.add(c));
+      if (gameState.allConditions) gameState.allConditions.forEach(row => {
+        if (typeof row === 'string') { allTerms.add(row); return; }
+        if (row.display) allTerms.add(row.display);
+        if (Array.isArray(row.search)) row.search.forEach(s => allTerms.add(s));
+      });
 
       allTerms.forEach(term => {
         const words = term.replace(/[''()-]/g, ' ').split(/\s+/).filter(w => w.length > 0);
@@ -2838,7 +2842,9 @@
 
     async function getConditions() {
       const data = await apiCall('/puzzle/conditions');
-      return data.conditions || [];
+      if (data && Array.isArray(data.rows)) return data.rows;
+      const flat = (data && data.conditions) || (Array.isArray(data) ? data : []);
+      return flat.map(name => ({ display: name, search: [name] }));
     }
 
     async function submitPuzzle(dayNumber, won, score, guesses) {
@@ -3162,27 +3168,28 @@
         // Split search into words for multi-word matching
         const searchWords = value.split(/\s+/).filter(w => w.length > 0);
 
-        // Score each condition: higher = better match
+        // Score each row: try every search alias, keep the best score. Display
+        // is always the canonical name (one row per puzzle), so duplicate
+        // spellings/aliases never produce duplicate dropdown entries.
         const scored = gameState.allConditions
-          .map(c => {
-            const cl = c.toLowerCase();
-            // All search words must appear somewhere in the condition
-            const allMatch = searchWords.every(w => cl.includes(w));
-            if (!allMatch) return null;
-
-            let score = 0;
-            // Exact match
-            if (cl === value) score += 1000;
-            // Starts with the search string
-            if (cl.startsWith(value)) score += 100;
-            // Each word starts a word boundary in the condition
-            searchWords.forEach(w => {
-              if (cl.startsWith(w) || cl.includes(' ' + w) || cl.includes('-' + w)) score += 20;
-            });
-            // Shorter names rank higher (more specific)
-            score += Math.max(0, 60 - c.length);
-
-            return { name: c, score };
+          .map(row => {
+            const display = typeof row === 'string' ? row : row.display;
+            const searchKeys = typeof row === 'string' ? [row] : (Array.isArray(row.search) && row.search.length ? row.search : [row.display]);
+            let best = null;
+            for (const s of searchKeys) {
+              const cl = s.toLowerCase();
+              const allMatch = searchWords.every(w => cl.includes(w));
+              if (!allMatch) continue;
+              let score = 0;
+              if (cl === value) score += 1000;
+              if (cl.startsWith(value)) score += 100;
+              searchWords.forEach(w => {
+                if (cl.startsWith(w) || cl.includes(' ' + w) || cl.includes('-' + w)) score += 20;
+              });
+              score += Math.max(0, 60 - display.length);
+              if (best === null || score > best) best = score;
+            }
+            return best === null ? null : { name: display, score: best };
           })
           .filter(Boolean)
           .sort((a, b) => b.score - a.score)

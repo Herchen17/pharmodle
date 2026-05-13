@@ -45,9 +45,14 @@ router.get('/today', optionalAuth, (req, res) => {
   });
 });
 
-// GET /api/puzzle/conditions — autocomplete list
+// GET /api/puzzle/conditions — autocomplete list. Returns:
+//  - rows: [{display, search}] — one row per puzzle (new client)
+//  - conditions: [name, ...] — flat list (back-compat for older cached clients)
 router.get('/conditions', (req, res) => {
-  res.json({ conditions: pm.getConditionNames() });
+  res.json({
+    conditions: pm.getConditionNames(),
+    rows: pm.getConditionRows ? pm.getConditionRows() : undefined,
+  });
 });
 
 // GET /api/puzzle/history — user's completed puzzles (MUST be before /:dayNumber)

@@ -139,6 +139,26 @@ function getConditionNames() {
   return conditionNames;
 }
 
+// One row per puzzle. display = canonical name, search = all strings that should
+// match this row. Used so the autocomplete dropdown collapses duplicate spellings
+// of the same drug (e.g. Chlorthalidone + Chlortalidone) into one entry.
+function getConditionRows() {
+  const rows = [];
+  const seen = new Set();
+  puzzles.forEach(p => {
+    if (!p.answer) return;
+    const key = p.answer.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    const search = [p.answer];
+    if (Array.isArray(p.aliases)) search.push(...p.aliases);
+    if (Array.isArray(p.acceptable_alternatives)) search.push(...p.acceptable_alternatives);
+    rows.push({ display: p.answer, search });
+  });
+  rows.sort((a, b) => a.display.localeCompare(b.display));
+  return rows;
+}
+
 function getRawPuzzle(dayNumber) {
   return getPuzzleForDay(dayNumber);
 }
@@ -153,5 +173,6 @@ module.exports = {
   fullPuzzle,
   getTotalPuzzles,
   getConditionNames,
+  getConditionRows,
   getRawPuzzle,
 };
