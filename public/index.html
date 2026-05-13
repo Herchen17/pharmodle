@@ -2507,7 +2507,7 @@
     }
     // Build on page load after conditions are fetched (called in loadTodaysPuzzle)
 
-    const QUALIFIERS = /^(acute|chronic|bilateral|unilateral|left|right|mild|moderate|severe|primary|secondary|idiopathic|traumatic|non-traumatic|post-surgical|recurrent|degenerative|adolescent|juvenile|paediatric|pediatric|occupational|exercise-induced|sport-specific|congenital|acquired|partial|complete|high|low)\s+/gi;
+    const QUALIFIERS = /^(acute|chronic|bilateral|unilateral|left|right|mild|moderate|severe|primary|secondary|idiopathic|traumatic|non[ -]traumatic|post[ -]surgical|recurrent|degenerative|adolescent|juvenile|paediatric|pediatric|occupational|exercise[ -]induced|sport[ -]specific|congenital|acquired|partial|complete|high|low)\s+/gi;
 
     function normalise(str) {
       let s = str.toLowerCase().trim();
@@ -2516,7 +2516,59 @@
         prev = s;
         s = s.replace(QUALIFIERS, '').trim();
       }
+      // Fold hyphens to spaces (after qualifier strip, so 'post-surgical' still
+      // matches QUALIFIERS on the way in).
+      s = s.replace(/-/g, ' ').replace(/\s+/g, ' ').trim();
       return s;
+    }
+
+    // Levenshtein edit distance for the fuzzy tier of checkGuess. Used to accept
+    // typos in long drug names (e.g. "hydroclorothiazide" -> "hydrochlorothiazide").
+    function levenshtein(a, b) {
+      if (a === b) return 0;
+      if (!a.length) return b.length;
+      if (!b.length) return a.length;
+      const m = a.length, n = b.length;
+      let prev = new Array(n + 1);
+      for (let j = 0; j <= n; j++) prev[j] = j;
+      let curr = new Array(n + 1);
+      for (let i = 1; i <= m; i++) {
+        curr[0] = i;
+        for (let j = 1; j <= n; j++) {
+          const cost = a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1;
+          curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+        }
+        [prev, curr] = [curr, prev];
+      }
+      return prev[n];
+    }
+
+    // Token-wise fuzzy match: every target token must find a close-enough guess
+    // token. Length-scaled threshold; short tokens (< 6 chars) require exact
+    // match so e.g. "Cisplatin" and "Carboplatin" don't collapse.
+    function _fuzzyTokenMatch(guess, target) {
+      const FUZZY_MIN_LEN = 6;
+      const gTokens = guess.split(/\s+/).filter(Boolean);
+      const tTokens = target.split(/\s+/).filter(Boolean);
+      if (tTokens.length === 0) return false;
+      if (gTokens.length < Math.ceil(tTokens.length * 0.6)) return false;
+      const used = new Array(gTokens.length).fill(false);
+      for (const tt of tTokens) {
+        let matched = false;
+        for (let i = 0; i < gTokens.length; i++) {
+          if (used[i]) continue;
+          const gt = gTokens[i];
+          if (tt.length < FUZZY_MIN_LEN || gt.length < FUZZY_MIN_LEN) {
+            if (gt === tt) { matched = true; used[i] = true; break; }
+            continue;
+          }
+          const maxLen = Math.max(gt.length, tt.length);
+          const threshold = Math.floor(0.15 * maxLen);
+          if (levenshtein(gt, tt) <= threshold) { matched = true; used[i] = true; break; }
+        }
+        if (!matched) return false;
+      }
+      return true;
     }
 
     /**
@@ -2636,6 +2688,22 @@
           const equivSet = _equivMap[nm];
           if (equivSet && (equivSet.has(g) || equivSet.has(gNorm))) return 'near_miss';
         }
+      }
+
+      // --- FINAL TIER: token-wise fuzzy match (handles typos in long drug names).
+      // Runs ONLY after every other tier has failed. Compares normalised guess
+      // against the normalised answer + every alias + every equivalence-group
+      // member. Per-token threshold scales with length; short tokens require
+      // exact match — see _fuzzyTokenMatch.
+      const fuzzyCandidates = new Set();
+      for (const v of allNorms) fuzzyCandidates.add(v);
+      for (const norm of allNorms) {
+        const equivSet = _equivMap[norm];
+        if (equivSet) for (const e of equivSet) fuzzyCandidates.add(e);
+      }
+      for (const candidate of fuzzyCandidates) {
+        if (!candidate || candidate.length < 6) continue;
+        if (_fuzzyTokenMatch(gNorm, candidate)) return 'correct';
       }
 
       return 'incorrect';
