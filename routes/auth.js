@@ -10,51 +10,55 @@ const USERNAME_REGEX = /^[a-zA-Z0-9._-]{2,20}$/;
 // When a user signs up here, we also create their account on the sibling app.
 // When a user tries to log in here but doesn't have a local account,
 // we check the sibling app and auto-create the account if valid.
-const SIBLING_URL = process.env.SIBLING_APP_URL || ''; // e.g. 'https://physiodle.up.railway.app'
+// Cross-registration with sibling apps. Supports SIBLING_APP_URLS (comma-separated
+// list of all -dle URLs in the family) so signup fan-out and login fall-back can
+// hit every -dle. Falls back to the singular SIBLING_APP_URL.
+const SIBLING_URLS = (process.env.SIBLING_APP_URLS || process.env.SIBLING_APP_URL || '')
+  .split(',')
+  .map(s => s.trim().replace(/\/$/, ''))
+  .filter(Boolean);
 const SIBLING_SECRET = process.env.SIBLING_SECRET || '';
 
-// Fire-and-forget: create account on sibling app
+// Fire-and-forget: broadcast signup to every sibling in parallel.
 async function crossRegister(username, passwordHash) {
-  if (!SIBLING_URL || !SIBLING_SECRET) return;
-  try {
-    const resp = await fetch(`${SIBLING_URL}/api/auth/cross-register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
-      body: JSON.stringify({ username, password_hash: passwordHash }),
-    });
-    if (!resp.ok) {
-      const body = await resp.text();
-      console.log(`Cross-register to sibling (${username}): ${resp.status} ${body}`);
+  if (SIBLING_URLS.length === 0 || !SIBLING_SECRET) return;
+  await Promise.allSettled(SIBLING_URLS.map(async (url) => {
+    try {
+      const resp = await fetch(`${url}/api/auth/cross-register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
+        body: JSON.stringify({ username, password_hash: passwordHash }),
+        signal: AbortSignal.timeout(5000),
+      });
+      if (!resp.ok) {
+        const body = await resp.text();
+        console.log(`Cross-register to ${url} (${username}): ${resp.status} ${body.slice(0,120)}`);
+      }
+    } catch (err) {
+      console.log(`Cross-register to ${url} failed (${username}):`, err.message);
     }
-  } catch (err) {
-    console.log(`Cross-register failed (${username}):`, err.message);
-  }
+  }));
 }
 
-// Verify credentials against sibling app
+// Ask each sibling in parallel; return the first one that knows this user.
 async function verifySibling(username, password) {
-  if (!SIBLING_URL || !SIBLING_SECRET) {
-    console.log(`[cross-verify] Skipping — SIBLING_URL="${SIBLING_URL}" SIBLING_SECRET="${SIBLING_SECRET ? 'set' : 'empty'}"`);
-    return null;
-  }
-  console.log(`[cross-verify] Calling ${SIBLING_URL}/api/auth/cross-verify for "${username}"`);
-  try {
-    const resp = await fetch(`${SIBLING_URL}/api/auth/cross-verify`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
-      body: JSON.stringify({ username, password }),
-    });
-    console.log(`[cross-verify] Response status: ${resp.status} for "${username}"`);
-    if (resp.ok) {
-      const data = await resp.json();
-      return data; // { username, password_hash }
+  if (SIBLING_URLS.length === 0 || !SIBLING_SECRET) return null;
+  const attempts = SIBLING_URLS.map(async (url) => {
+    try {
+      const resp = await fetch(`${url}/api/auth/cross-verify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-sibling-secret': SIBLING_SECRET },
+        body: JSON.stringify({ username, password }),
+        signal: AbortSignal.timeout(5000),
+      });
+      if (!resp.ok) return null;
+      return await resp.json();
+    } catch (err) {
+      return null;
     }
-    const body = await resp.text();
-    console.log(`[cross-verify] Non-ok body: ${body}`);
-  } catch (err) {
-    console.log(`[cross-verify] Network error (${username}):`, err.message);
-  }
-  return null;
+  });
+  const results = await Promise.all(attempts);
+  return results.find(r => r && r.username && r.password_hash) || null;
 }
 
 // Rate limiter: max 10 login attempts per IP per 15 minutes
