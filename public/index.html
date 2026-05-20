@@ -351,35 +351,6 @@
 
     /* PUZZLE PROMPT */
 
-    /* OUTAGE NOTICE */
-    .outage-notice {
-      background: #fff7ed;
-      border: 1px solid #fdba74;
-      border-left: 4px solid #ea580c;
-      color: #7c2d12;
-      padding: 10px 38px 10px 14px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      line-height: 1.45;
-      position: relative;
-    }
-    .outage-notice strong { color: #7c2d12; }
-    .outage-close {
-      position: absolute;
-      top: 2px;
-      right: 4px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #7c2d12;
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      line-height: 1;
-    }
-    .outage-close:hover { color: #431407; }
 
     .puzzle-prompt {
       text-align: center;
@@ -1811,13 +1782,6 @@
   <!-- MAIN CONTENT -->
   <div class="page active" id="gamePage">
     <div class="container">
-      <!-- OUTAGE NOTICE (May 20 2026 Railway outage) -->
-      <div id="outageNotice" class="outage-notice" style="display:none;">
-        <button class="outage-close" id="outageClose" title="Dismiss" type="button">&times;</button>
-        <strong>Service notice — 20 May 2026:</strong>
-        Our hosting provider had a major outage from approximately 08:30 to 12:15 AEST today (around 3¾ hours). We're sorry for the disruption. No account data, scores, or streaks were lost — your progress is safe. Everything's back to normal now.
-      </div>
-
       <!-- PUZZLE PROMPT (tells player what to guess) -->
       <div id="puzzlePrompt" class="puzzle-prompt" style="display:none;"></div>
 
@@ -4904,24 +4868,6 @@
 
     // Initialize on load
     init();
-  </script>
-
-  <script>
-    (function showOutageNotice() {
-      try {
-        var KEY = 'outage_notice_dismissed_2026_05_20';
-        if (localStorage.getItem(KEY)) return;
-        if (new Date() > new Date('2026-06-01T00:00:00Z')) return;
-        var el = document.getElementById('outageNotice');
-        if (!el) return;
-        el.style.display = 'block';
-        var btn = document.getElementById('outageClose');
-        if (btn) btn.addEventListener('click', function() {
-          el.style.display = 'none';
-          try { localStorage.setItem(KEY, '1'); } catch(_) {}
-        });
-      } catch(_) {}
-    })();
   </script>
 
 </body>
