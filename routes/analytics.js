@@ -92,7 +92,7 @@ router.get('/dashboard', requireAdmin, (req, res) => {
            COUNT(DISTINCT visitor_id) as unique_visitors
     FROM page_views WHERE created_at >= ?
     GROUP BY day ORDER BY day ASC
-  `).all(aestDaysAgo(30)), []);
+  `).all(aestDaysAgo(730)), []);
 
   // --- Sign-ups ---
   const signups = {
@@ -107,7 +107,7 @@ router.get('/dashboard', requireAdmin, (req, res) => {
     SELECT DATE(created_at, '+10 hours') as day, COUNT(*) as count
     FROM users WHERE created_at >= ?
     GROUP BY day ORDER BY day ASC
-  `).all(aestDaysAgo(30)), []);
+  `).all(aestDaysAgo(730)), []);
 
   // --- Games ---
   const games = {
@@ -137,7 +137,7 @@ router.get('/dashboard', requireAdmin, (req, res) => {
            SUM(CASE WHEN won = 1 THEN 1 ELSE 0 END) as wins
     FROM game_results WHERE completed_at >= ?
     GROUP BY day ORDER BY day ASC
-  `).all(aestDaysAgo(30)), []);
+  `).all(aestDaysAgo(730)), []);
 
   // --- Top 10 players (by total points) ---
   const topPlayers = safeGet(() => db.prepare(`
