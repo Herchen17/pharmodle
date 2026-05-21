@@ -216,6 +216,35 @@ router.get('/dashboard', requireAdmin, (req, res) => {
     GROUP BY hour ORDER BY hour ASC
   `).all(today), []);
 
+
+  // --- Hourly history: yesterday + same-weekday-last-week (AEST) ---
+  // Lets the dashboard do Plausible-style rolling comparisons by hour-of-day.
+  const sevenAgo = aestDaysAgo(7);
+  const sixAgo = aestDaysAgo(6);
+
+  function hourlyBetween(table, tcol, start, end) {
+    return safeGet(() => db.prepare(`
+      SELECT CAST(strftime('%H', ${tcol}, '+10 hours') AS INTEGER) as hour, COUNT(*) as count
+      FROM ${table} WHERE ${tcol} >= ? AND ${tcol} < ?
+      GROUP BY hour ORDER BY hour ASC
+    `).all(start, end), []);
+  }
+  function hourlyVisitorsBetween(start, end) {
+    return safeGet(() => db.prepare(`
+      SELECT CAST(strftime('%H', created_at, '+10 hours') AS INTEGER) as hour, COUNT(DISTINCT visitor_id) as count
+      FROM page_views WHERE created_at >= ? AND created_at < ?
+      GROUP BY hour ORDER BY hour ASC
+    `).all(start, end), []);
+  }
+  const hourlyYesterday = hourlyBetween('page_views', 'created_at', yesterday, today);
+  const hourlyVisitorsYesterday = hourlyVisitorsBetween(yesterday, today);
+  const hourlySignupsYesterday = hourlyBetween('users', 'created_at', yesterday, today);
+  const hourlyGamesYesterday = hourlyBetween('game_results', 'completed_at', yesterday, today);
+  const hourlyWeekAgo = hourlyBetween('page_views', 'created_at', sevenAgo, sixAgo);
+  const hourlyVisitorsWeekAgo = hourlyVisitorsBetween(sevenAgo, sixAgo);
+  const hourlySignupsWeekAgo = hourlyBetween('users', 'created_at', sevenAgo, sixAgo);
+  const hourlyGamesWeekAgo = hourlyBetween('game_results', 'completed_at', sevenAgo, sixAgo);
+
   // --- Conversion: visitors who signed up ---
   const conversionRate = uv.total > 0 ? Math.round((signups.total / uv.total) * 1000) / 10 : 0;
 
@@ -244,6 +273,14 @@ router.get('/dashboard', requireAdmin, (req, res) => {
     hourlyVisitors,
     hourlySignups,
     hourlyGames,
+    hourlyYesterday,
+    hourlyVisitorsYesterday,
+    hourlySignupsYesterday,
+    hourlyGamesYesterday,
+    hourlyWeekAgo,
+    hourlyVisitorsWeekAgo,
+    hourlySignupsWeekAgo,
+    hourlyGamesWeekAgo,
     conversionRate,
     gamesPerUser,
   });
