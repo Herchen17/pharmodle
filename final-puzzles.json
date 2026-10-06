@@ -1995,7 +1995,7 @@
           "Vinblastine",
           "Vinorelbine"
         ],
-        "feedback": "Vinblastine causes significant myelosuppression and is contraindicated in intrathecal use; vinorelbine is a semisynthetic derivative with different neurotoxicity profile and dosing schedule. Vincristine's defining feature is dose-limiting peripheral neuropathy rather than bone marrow toxicity, and it is the only vinca alkaloid used intrathecally in standard protocols."
+        "feedback": "Vinblastine and vinorelbine more commonly cause dose-limiting myelosuppression, whereas vincristine is characterised by dose-limiting peripheral and autonomic neuropathy. Vincristine is for intravenous use only. Intrathecal administration is contraindicated and can be fatal. Intrathecal administration is also contraindicated for the other vinca alkaloids."
       },
       "category": "Anticancer drugs",
       "domain": "Mitotic inhibitors / Vinca alkaloids",
@@ -2020,10 +2020,10 @@
         },
         {
           "label": "Identifying Detail",
-          "text": "This is the only vinca alkaloid routinely administered intrathecally in standard protocols (e.g., CNS prophylaxis in acute lymphoblastic leukaemia), a practice contraindicated for its structural analogues due to risk of fatal myeloencephalopathy."
+          "text": "Administered by intravenous infusion only, with a major safety warning: intrathecal administration is contraindicated and can be fatal. Peripheral and autonomic neuropathy are its characteristic dose-limiting toxicities."
         }
       ],
-      "explanation": "Vincristine is uniquely distinguished from other vinca alkaloids by its neurotoxicity-dominated toxicity profile rather than myelosuppression, and critically, by its accepted intrathecal use in leukaemia prophylaxis protocols. Its metabolism by CYP3A4 and weekly dosing schedule further differentiate it from related agents.",
+      "explanation": "Vincristine is a vinca alkaloid that inhibits microtubule formation. Its major dose-limiting toxicity is neurotoxicity, including peripheral and autonomic neuropathy; significant myelosuppression is uncommon compared with vinblastine and vinorelbine. Vincristine is for intravenous use only. Intrathecal administration is contraindicated and can be fatal.",
       "confidence": 5,
       "id": 40
     },
