@@ -58,7 +58,17 @@ async function verifySibling(username, password) {
     }
   });
   const results = await Promise.all(attempts);
-  return results.find(r => r && r.username && r.password_hash) || null;
+  // Passwords can differ after a local reset. An account lookup alone
+  // does not authenticate the supplied password; check every sibling.
+  for (const sibling of results) {
+    if (!sibling || !sibling.username || !sibling.password_hash) continue;
+    try {
+      if (await verifyPassword(password, sibling.password_hash)) return sibling;
+    } catch (err) {
+      // A malformed hash must not block another sibling with a valid hash.
+    }
+  }
+  return null;
 }
 
 // Rate limiter: max 10 login attempts per IP per 15 minutes

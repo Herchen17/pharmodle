@@ -155,11 +155,11 @@ function _checkGuess(guess, answer, aliases) {
 }
 
 // Simple admin key auth — set ADMIN_KEY env var on Railway
-const ADMIN_KEY = process.env.ADMIN_KEY || 'pharmodle-admin-2026';
+const ADMIN_KEY = process.env.ADMIN_KEY;
 
 function requireAdmin(req, res, next) {
   const key = req.headers['x-admin-key'] || req.query.key;
-  if (key !== ADMIN_KEY) {
+  if (!ADMIN_KEY || key !== ADMIN_KEY) {
     return res.status(403).json({ error: 'Invalid admin key' });
   }
   next();
